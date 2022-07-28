@@ -1,9 +1,9 @@
 ---
 template: HomePage
-slug: ''
-title: Yellowcake
-featuredImage: 'https://ucarecdn.com/159203d3-881d-4218-baa1-ca4427b48d0d/'
-subtitle: ' Welcome to the ultimate Gatsby and Netlify starter project.'
+slug: ""
+title: Van Til | Postmill
+featuredImage: https://ucarecdn.com/c718e6f4-5865-485c-9b6e-9d50f1a9d5f5/-/preview/-/enhance/54/
+subtitle: " Welcome to the ultimate Gatsby and Netlify starter project."
 meta:
   description: This is a meta description.
   title: The Ultimate Gatsby Starter
