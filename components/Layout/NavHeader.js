@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
+import { images } from '@/data';
 import {
   Box,
   Burger,
@@ -48,7 +49,7 @@ const NavHeader = ({ links }) => {
   const handleToggle = (value) => toggleColorScheme(value ? "dark" : "light");
 
   let logo =
-    colorScheme == "dark" ? "/assets/logoDark.png" : "/assets/logoLight.png";
+    colorScheme == "dark" ? images.logoDark : images.logoLight;
   let scrolled = scroll.y >= HEADER_HEIGHT * 2 ? true : false;
   let blog = router.asPath.split("/").length > 2;
 

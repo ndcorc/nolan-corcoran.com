@@ -4,7 +4,6 @@ import {
   getDatabase,
   getPreview,
 } from '@/lib/notion';
-import { createStyles } from '@mantine/core';
 
 import {
   Contact,
@@ -14,21 +13,6 @@ import {
 
 export const POSTS_PER_PAGE = 5;
 
-const useStyles = createStyles((theme, _params, getRef) => {
-  return {
-    "& #home": {
-      position: "relative",
-      background: 'url("/bgIMG.png")',
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "repeat",
-      [`& .${getRef("wrapper")}`]: {
-        padding: "0",
-        [`& .${getRef("copyright")}`]: { display: "none" },
-      },
-    },
-  };
-});
 
 const Home = ({ posts, initialDisplayPosts, pagination }) => {
   const handExitComplete = () => {
@@ -53,8 +37,6 @@ const Home = ({ posts, initialDisplayPosts, pagination }) => {
     <AnimatePresence exitBeforeEnter onExitComplete={handExitComplete}>
       <HeroHeader />
       <Latest posts={posts} />
-      {/*       <About />
-      <Portfolio /> */}
       <Contact />
     </AnimatePresence>
   );

@@ -1,7 +1,5 @@
+import { images } from '@/data';
 import { createStyles } from '@mantine/core';
-
-import contactDark from './contactDark.svg';
-import contactLight from './contactLight.svg';
 
 const useStyles = createStyles((theme) => {
   const isDark = theme.colorScheme === "dark";
@@ -78,7 +76,7 @@ const useStyles = createStyles((theme) => {
       position: "relative",
       borderRadius: theme.radius.lg - 2,
       backgroundImage: `url(${
-        theme.colorScheme === "dark" ? contactDark.src : contactLight.src
+        isDark ? images.contactDark.src : images.contactLight.src
       })`,
       backgroundSize: "cover",
       backgroundPosition: "center",

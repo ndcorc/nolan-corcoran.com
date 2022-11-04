@@ -31,6 +31,10 @@ const skype = "/assets/skype.png";
 const spotify = "/assets/spotify.png";
 const typescript = "/assets/typescript.png";
 const vue = "/assets/vue.png";
+const contactDark = "/assets/contactDark.svg";
+const contactLight = "/assets/contactLight.svg";
+const logoLight = "/assets/logoLight.png";
+const logoDark = "/assets/logoDark.png";
 
 export const images = {
   email,
@@ -59,6 +63,8 @@ export const images = {
   profile,
   circle,
   logo,
+  logoDark,
+  logoLight,
   adidas,
   amazon,
   asus,
@@ -66,4 +72,6 @@ export const images = {
   nb,
   skype,
   spotify,
+  contactDark,
+  contactLight,
 };

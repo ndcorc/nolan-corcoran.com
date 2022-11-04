@@ -6,6 +6,7 @@ import {
   Divider,
   Image,
   List,
+  Loader,
   Space,
   Text,
   Title,
@@ -123,7 +124,13 @@ export const BlockComponent = ({ block, matches, dir }) => {
       const caption = value?.caption ? value.caption[0]?.plain_text : "";
       returnBlock = (
         <figure>
-          <Image src={src} alt={caption} width={600} height={200} />
+          <Image
+            src={src}
+            alt={caption}
+            width={600}
+            height={200}
+            placeholder={<Loader size="lg" />}
+          />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );

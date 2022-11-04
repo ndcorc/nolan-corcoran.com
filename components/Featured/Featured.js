@@ -1,20 +1,19 @@
 import { motion } from 'framer-motion';
 
+import { images } from '@/data';
 import {
   Button,
   Center,
   Container,
   Grid,
   Image,
+  Loader,
   Stack,
   Title,
   useMantineTheme,
 } from '@mantine/core';
-//import { HiOutlineArrowLongRight } from 'react-icons/hi';
 import { IconArrowNarrowRight } from '@tabler/icons';
 
-import contactDark from '../Contact/contactDark.svg';
-import contactLight from '../Contact/contactLight.svg';
 import useStyles from './styles';
 
 const data = [
@@ -26,6 +25,7 @@ const data = [
 const Featured = () => {
   const { classes } = useStyles();
   const theme = useMantineTheme();
+  console.log(images.contactDark);
 
   return (
     <div id="about">
@@ -37,18 +37,12 @@ const Featured = () => {
             <Grid.Col span={7}>
               <Center>
                 <Stack
-                  spacing="0px !important" /* sx={{ alignItems: "center !important" }} */
-                >
+                  spacing="0px !important">
                   <Title
                     order={5}
                     m={"0 !important"}
                     py="0.25rem"
                     sx={{ lineHeight: "1 !important" }}
-                    /* className="head-text" */
-                    /*   sx={{
-                      padding: "0px !important",
-                      margin: "0px !important",
-                    }} */
                   >
                     {"August 12, 2021"}
                   </Title>
@@ -75,7 +69,6 @@ const Featured = () => {
                     my="1rem !important"
                     variant="outline"
                     fullWidth={false}
-                    //mx={"5rem !important"}
                     rightIcon={<IconArrowNarrowRight />}
                     sx={(theme) => ({
                       "&:hover": {
@@ -93,17 +86,15 @@ const Featured = () => {
             </Grid.Col>
             <Grid.Col span={5} pl={"2rem"}>
               <Image
+                placeholder={<Loader size="lg" />}
                 radius="150px"
                 src={
                   theme.colorScheme === "dark"
-                    ? contactDark.src
-                    : contactLight.src
+                    ? "/assets/contactDark.svg"
+                    : "/assets/contactLight.svg"
                 }
-                /*  src="https://img.freepik.com/free-vector/blue-background-with-halftone-diagonal-lines_1017-30146.jpg?w=2000&t=st=1666901498~exp=1666902098~hmac=c92f76aa14580250589adbf730771a66e0e0983a7c2ffdbf946e7b53f439d729" */
                 alt="featured_img"
-                /*  height={"100% !important"}*/
                 width="auto"
-                //height={"20"}
                 height={"60vh"}
                 styles={{
                   imageWrapper: { height: "50% !important" },
@@ -111,9 +102,6 @@ const Featured = () => {
                 }}
               />
             </Grid.Col>
-            {/*  <Container id="stats" sx={{ position: "relative" }}>
-          <div className={classes.root}>{stats}</div>
-        </Container> */}
           </Grid>
         </Container>
       </motion.div>

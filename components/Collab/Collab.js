@@ -1,5 +1,11 @@
-import { Container, Grid, Title } from "@mantine/core";
-import Image from "next/image";
+import Image from 'next/image';
+
+import {
+  Container,
+  Grid,
+  Loader,
+  Title,
+} from '@mantine/core';
 
 const data = [
   { src: "/kucoin.png", alt: "Kucoin" },
@@ -27,8 +33,7 @@ export default function Collab() {
         justify="center"
         align="center"
         gutter="lg"
-        sx={{ gap: "1em" }}
-      >
+        sx={{ gap: "1em" }}>
         {data.map(({ src, alt, strech = true }) => (
           <Grid.Col
             key={src}
@@ -41,14 +46,14 @@ export default function Collab() {
               justifyContent: "center",
               alignItems: "center",
               border: "1px solid gray",
-              borderRadius:"5px" ,
+              borderRadius: "5px",
 
               "&:hover": {
                 filter: "grayscale(0%)",
               },
-            }}
-          >
+            }}>
             <Image
+              placeholder={<Loader size="lg" />}
               src={src}
               alt={alt}
               width={strech ? "150%" : "95%"}

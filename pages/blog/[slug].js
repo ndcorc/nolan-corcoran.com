@@ -14,6 +14,7 @@ import {
   Center,
   Divider,
   Image,
+  Loader,
   Paper,
   Space,
   Stack,
@@ -60,6 +61,7 @@ const Post = (props) => {
         },
       })}>
       <Image
+        placeholder={<Loader size="lg" />}
         radius="lg"
         src={cover}
         alt="done"
@@ -210,6 +212,13 @@ let reducer = async (collector, curr) => {
     collector.list.push(curr);
   }
   return collector;
+};
+
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: true,
+  };
 };
 
 export const getStaticProps = async (context) => {

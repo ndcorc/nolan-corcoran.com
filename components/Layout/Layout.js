@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
+import { links } from '@/data';
 import { AppShell } from '@mantine/core';
 
-import { links } from '../../data';
 import {
   Footer,
   NavHeader,

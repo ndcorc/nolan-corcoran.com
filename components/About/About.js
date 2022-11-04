@@ -4,6 +4,7 @@ import {
   Center,
   Container,
   Image,
+  Loader,
   Text,
   Title,
   useMantineTheme,
@@ -73,6 +74,7 @@ const About = () => {
                   className={classes.profileItem}
                   key={about.title + index}>
                   <Image
+                    placeholder={<Loader size="lg" />}
                     src={about.imgUrl}
                     alt={about.title}
                     className={classes.itemImg}

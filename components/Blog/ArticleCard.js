@@ -6,6 +6,7 @@ import {
   Card,
   Group,
   Image,
+  Loader,
   Text,
   Title,
   useMantineTheme,
@@ -35,6 +36,7 @@ const ArticleCard = (props) => {
         radius="md">
         <Link href={"/blog/" + post.slug}>
           <Image
+            placeholder={<Loader size="lg" />}
             src={post.cover}
             //fit="contain"
             alt="Norway"

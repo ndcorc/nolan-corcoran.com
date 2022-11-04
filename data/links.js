@@ -7,14 +7,6 @@ export const links = [
     link: "/#about",
     label: "About",
   },
-  /*   {
-    link: "/#skills",
-    label: "Skills",
-  }, */
-  /*   {
-    link: "/#certifications",
-    label: "Certifications",
-  }, */
   {
     link: "/#contact",
     label: "Contact",

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+import { images } from '@/data';
 import {
   BackgroundImage,
   Button,
@@ -8,6 +9,7 @@ import {
   Container,
   Group,
   Image,
+  Loader,
   Stack,
   Text,
   Title,
@@ -16,7 +18,6 @@ import {
 import { useHover } from '@mantine/hooks';
 import { IconArrowNarrowRight } from '@tabler/icons';
 
-import { images } from '../../data';
 import useStyles from './styles';
 
 const HeroHeader = () => {
@@ -148,6 +149,7 @@ const HeroHeader = () => {
               className={classes.headerImg}
               id="headerImg">
               <Image
+                placeholder={<Loader size="lg" />}
                 className={classes.imgElement}
                 src={images.profile}
                 alt="profile_bg"

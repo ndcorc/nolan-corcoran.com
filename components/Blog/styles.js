@@ -4,7 +4,9 @@ const LINK_HEIGHT = 38;
 const INDICATOR_SIZE = 10;
 const INDICATOR_OFFSET = (LINK_HEIGHT - INDICATOR_SIZE) / 2;
 
-export const useStyles = createStyles((theme) => ({
+export const useStyles = createStyles((theme) => {
+const isDark = theme.colorScheme === "dark";
+return {
   blogCard: {
     transition: "transform 150ms ease, box-shadow 150ms ease",
     "&:hover": {
@@ -43,9 +45,6 @@ export const useStyles = createStyles((theme) => ({
   footer: {
     //padding: `0.5rem 1rem !important`,
     marginTop: "0rem",
-    /*    borderTop: `1px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-    }`,*/
   },
 
   bold: {
@@ -73,7 +72,7 @@ export const useStyles = createStyles((theme) => ({
     display: "block",
     textDecoration: "none",
     color:
-      theme.colorScheme === "dark"
+      isDark
         ? theme.colors.dark[0]
         : theme.colors.dark[4],
     lineHeight: `${LINK_HEIGHT}px`,
@@ -82,12 +81,12 @@ export const useStyles = createStyles((theme) => ({
     borderTopRightRadius: theme.radius.sm,
     borderBottomRightRadius: theme.radius.sm,
     borderLeft: `2px solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.dark[2]
+      isDark ? theme.colors.dark[4] : theme.colors.dark[2]
     }`,
 
     "&:hover": {
       backgroundColor:
-        theme.colorScheme === "dark"
+        isDark
           ? theme.colors.dark[6]
           : theme.colors.dark[0],
     },
@@ -96,7 +95,7 @@ export const useStyles = createStyles((theme) => ({
   linkActive: {
     fontWeight: 500,
     color:
-      theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 3 : 7],
+      theme.colors[theme.primaryColor][isDark ? 3 : 7],
   },
 
   links: {
@@ -106,14 +105,15 @@ export const useStyles = createStyles((theme) => ({
   indicator: {
     transition: "transform 150ms ease",
     border: `2px solid ${
-      theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 3 : 7]
+      theme.colors[theme.primaryColor][isDark ? 3 : 7]
     }`,
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+      isDark ? theme.colors.dark[7] : theme.white,
     height: INDICATOR_SIZE,
     width: INDICATOR_SIZE,
     borderRadius: INDICATOR_SIZE,
     position: "absolute",
     left: -INDICATOR_SIZE / 2 + 1,
   },
-}));
+};
+});

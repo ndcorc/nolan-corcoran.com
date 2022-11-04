@@ -13,6 +13,7 @@ import {
   Container,
   Group,
   Image,
+  Loader,
   SimpleGrid,
   Space,
   Text,
@@ -38,7 +39,7 @@ const BlogLayout = ({ posts, initialDisplayPosts }) => {
       <Container pt={"5rem"} px={"5rem"} fluid>
         <Box
           mt={"4rem"}
-          mb={"0rem !important"}
+          mb={0}
           px={"10rem"}
           sx={(theme) => ({
             [theme.fn.smallerThan("sm")]: {
@@ -78,101 +79,8 @@ const BlogLayout = ({ posts, initialDisplayPosts }) => {
             good.
           </Title>
         </Box>
-        {/* <Container mb={"-3rem !important"}>
-          <Title
-            order={1}
-            weight="600"
-            mx={"0rem"}
-            mt={"0rem !important"}
-            px={"0"}
-            align="center"
-            sx={(theme) => ({
-              [theme.fn.smallerThan("xs")]: {
-                margin: "2.5rem 0px 1rem 0 !important",
-                fontSize: "3rem !important",
-                textAlign: "center !important",
-              },
-              [theme.fn.largerThan("xs")]: {
-                margin: "2.5rem 0px 1rem 0 !important",
-                fontSize: "3rem !important",
-                textAlign: "center !important",
-              },
-              [theme.fn.largerThan("sm")]: {
-                textAlign: "center !important",
-              },
-            })}>
-            Featured Post
-          </Title>
-        </Container> */}
         <Featured />
-
-        {/*  {posts.length === 0 && (
-          <Container pt={64}>
-            <Box my={32}>
-              <Text size="xl" mb={4}>
-                {"There are no posts yet"}
-              </Text>
-            </Box>
-          </Container>
-        )} */}
-        <Box>
-          {/*  <Title
-            order={1}
-            weight="600"
-            mx={"0rem"}
-            my={"0rem !important"}
-            px={"md"}
-            align="left"
-            sx={(theme) => ({
-              [theme.fn.smallerThan("xs")]: {
-                margin: "2.5rem 0px 1rem 0 !important",
-                fontSize: "3rem !important",
-                textAlign: "center !important",
-              },
-              [theme.fn.largerThan("xs")]: {
-                margin: "2.5rem 0px 1rem 0 !important",
-                fontSize: "3rem !important",
-                textAlign: "center !important",
-              },
-              [theme.fn.largerThan("sm")]: {
-                textAlign: "left !important",
-              },
-            })}>
-            Featured
-          </Title>
-
-          <Grid justify="left">
-            <Grid.Col
-              key={"posts/" + featured.slug}
-              span={12}
-              lg={6}
-              md={6}
-              mx={"0rem"}
-              my={"0rem !important"}
-              px={"md"}
-              sx={{
-                cursor: "pointer",
-                [theme.fn.smallerThan("xs")]: {
-                  margin: "2.5rem 0px 1rem 0 !important",
-                  fontSize: "3rem !important",
-                  textAlign: "center !important",
-                },
-                [theme.fn.largerThan("xs")]: {
-                  margin: "0rem !important",
-                  fontSize: "3rem !important",
-                  textAlign: "center !important",
-                },
-                [theme.fn.largerThan("sm")]: {
-                  textAlign: "left !important",
-                },
-              }}>
-              <ArticleCard post={featured} featured={true} />
-            </Grid.Col>
-          </Grid> */}
-        </Box>
-
         <Space my="4rem" />
-
         <Box>
           <Title
             order={1}
@@ -223,7 +131,11 @@ const ArticlesCardsGrid = ({ posts }) => {
         className={classes.blogCard}
         align="flex-start">
         <AspectRatio ratio={2400 / 1080}>
-          <Image src={article.cover} />
+          <Image
+            placeholder={<Loader size="lg" />}
+            alt="ArticleCard2"
+            src={article.cover}
+          />
         </AspectRatio>
         <Container fluid py={"1.25rem !important"} px={0} m={0}>
           <Group
