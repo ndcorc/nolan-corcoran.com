@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import moment from 'moment';
 
 import { images } from '@/data';
 import {
@@ -9,6 +10,7 @@ import {
   Image,
   Loader,
   Stack,
+  Text,
   Title,
   useMantineTheme,
 } from '@mantine/core';
@@ -22,7 +24,7 @@ const data = [
   { title: "AMAs Completed", num: "150+" },
 ];
 
-const Featured = () => {
+const Featured = ({post}) => {
   const { classes } = useStyles();
   const theme = useMantineTheme();
   console.log(images.contactDark);
@@ -44,29 +46,31 @@ const Featured = () => {
                     py="0.25rem"
                     sx={{ lineHeight: "1 !important" }}
                   >
-                    {"August 12, 2021"}
+                    {moment(post.publishedOn).format("MMMM Do YYYY")}
                   </Title>
                   <Title
                     order={2}
                     m={"0 !important"}
-                    py="0.5rem"
+                    pt="0.5rem"
                     sx={{ lineHeight: "1 !important" }}>
-                    <em>{"Purpose "}</em>
-                    {"A blog template for Super & Notion"}
+                    {post.title}
                   </Title>
-                  <Title
-                    order={5}
-                    m={"0 !important"}
-                    py="0.5rem"
-                    sx={{ lineHeight: "1.25 !important" }}>
-                    {
-                      "Controversial or not, microdosing is proving to have some incredible benefits, learn more about what microdosing is and who's doing it."
-                    }
+                  <Title order={4}
+                    m={"0.5rem 0rem 0rem !important"}
+                    sx={{ lineHeight: "1 !important" }}
+                  >
+                    {post.description}
                   </Title>
+                  <Text mt={"0.5rem"} lineClamp={3} color="gray.8" >
+                    {post.preview}
+                  </Text>
                   <Button
                     size="lg"
-                    radius="lg"
-                    my="1rem !important"
+                    radius="md"
+                    component="a"
+                    my="1.5rem !important"
+                    href={post.slug}
+                    pr="1rem"
                     variant="outline"
                     fullWidth={false}
                     rightIcon={<IconArrowNarrowRight />}

@@ -120,7 +120,7 @@ const HeroHeader = () => {
                   </Stack>
                 </Card>
                 <Link
-                  href="https://drive.google.com/file/d/1BhExKCESOD1DhMEkqAbgqTRT2P6cTBEs/view?usp=sharing"
+                  href="/blog"
                   passHref>
                   <Button
                     ref={ref}
@@ -129,8 +129,6 @@ const HeroHeader = () => {
                     radius="lg"
                     px={30}
                     my={10}
-                    //className={classes.control}
-
                     rightIcon={<IconArrowNarrowRight />}>
                     <Text
                       size={"20px"}

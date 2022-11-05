@@ -49,12 +49,15 @@ const CommonSEO = ({
   );
 };
 
-export const PageSEO = ({ title, description }) => {
+export const PageSEO = ({ description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
+  const router = useRouter();
+  const path = router.asPath
+  let title = path === "/" ? "Nolan Corcoran - The Christian Life is Always Good" : path.charAt(1).toUpperCase() + path.slice(2);
   return (
     <CommonSEO
-      title={title}
+      title={title + " | Nolan Corcoran"}
       description={description}
       ogType="website"
       ogImage={ogImageUrl}

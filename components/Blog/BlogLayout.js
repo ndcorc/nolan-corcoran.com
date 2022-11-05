@@ -25,14 +25,14 @@ import { useMediaQuery } from '@mantine/hooks';
 
 import { useStyles } from './styles';
 
-const BlogLayout = ({ posts, initialDisplayPosts }) => {
+const BlogLayout = ({ posts, initialDisplayPosts, featured }) => {
   const theme = useMantineTheme();
   const sm = useMediaQuery("(max-width: 768px)");
 
   console.log("theme smaller than sm", theme.fn.smallerThan("sm"));
 
   let { classes } = useStyles();
-  let featured = posts.filter((post) => post.featured === true)[0];
+  //let featured = posts.filter((post) => post.featured === true)[0];
   let isDark = theme.colorScheme === "dark";
   return (
     <div className={classes.bg}>
@@ -79,7 +79,7 @@ const BlogLayout = ({ posts, initialDisplayPosts }) => {
             good.
           </Title>
         </Box>
-        <Featured />
+        <Featured post={featured} />
         <Space my="4rem" />
         <Box>
           <Title

@@ -8,17 +8,17 @@ import {
 
 export const POSTS_PER_PAGE = 5;
 
-export default function Blog({ posts, initialDisplayPosts, pagination }) {
+export default function Blog({ posts, initialDisplayPosts, pagination, featured }) {
   return (
     <>
       <PageSEO
-        title={`Blog - ${siteMetadata.author}`}
         description={siteMetadata.description}
       />
       <BlogLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
+        featured={featured}
         title="All Posts"
       />
     </>
@@ -28,7 +28,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
 export async function getStaticProps() {
   let postsTable = await getDatabase(process.env.NOTION_DB);
 
-  let posts = await postsTable.map(async (post) => {
+  let posts = (await Promise.all(await postsTable.map(async (post) => {
     let preview = await getPreview(post.id);
     let mapped = {
       cover:
@@ -47,14 +47,13 @@ export async function getStaticProps() {
       preview,
     };
     return mapped;
-  });
-  posts = await Promise.all(posts);
-  posts = posts.filter((post) => post.public === true);
+  }))).filter((post) => post.public === true);
+  let featured = posts.find((post) => post.featured === true);
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE);
   const pagination = {
     currentPage: 1,
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   };
 
-  return { props: { initialDisplayPosts, posts, pagination } };
+  return { props: { initialDisplayPosts, posts, pagination, featured  } };
 }
