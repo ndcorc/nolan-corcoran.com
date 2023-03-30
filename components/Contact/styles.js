@@ -76,7 +76,7 @@ const useStyles = createStyles((theme) => {
       position: "relative",
       borderRadius: theme.radius.lg - 2,
       backgroundImage: `url(${
-        isDark ? images.contactDark.src : images.contactLight.src
+        isDark ? images.contactDark : images.contactLight
       })`,
       backgroundSize: "cover",
       backgroundPosition: "center",

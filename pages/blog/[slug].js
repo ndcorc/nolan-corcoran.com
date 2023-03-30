@@ -5,11 +5,6 @@ import { useRouter } from 'next/router';
 
 import { BlockComponent } from '@/components';
 import {
-  getBlocks,
-  getDatabase,
-  getPage,
-} from '@/lib/notion';
-import {
   Box,
   Center,
   Divider,
@@ -27,26 +22,20 @@ import {
   useScrollIntoView,
 } from '@mantine/hooks';
 
-/* export const getStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-}; */
-
-const Post = (props) => {
+const Post = ({data, blocks}) => {
   const router = useRouter();
   const theme = useMantineTheme();
   const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView();
   const matches = useMediaQuery("(max-width: 1200px)");
-  let { cover, title, author, publishedOn, id, description } = props.data;
+  console.log("data", data);
+  let { cover, title, author, publishedOn, id, description } = data;
   let isDark = theme.colorScheme === "dark";
   let [toggleDir, setToggleDir] = useState(false);
   let [wasQuote, setWasQuote] = useState(false);
 
-  return props.noId ? (
+  return noId ? (
     router.push("/")
-  ) : !props.data ? (
+  ) : !data ? (
     <Paper />
   ) : (
     <Stack
@@ -149,7 +138,6 @@ const Post = (props) => {
 
         <Box component="article">
           <Box
-            //mt={45}
             m="4rem"
             p={"0 1rem"}
             sx={{
@@ -159,18 +147,9 @@ const Post = (props) => {
                 margin: "0rem !important",
               },
             }}>
-            {props.blocks?.map((block, index) => {
+            {blocks?.map((block, index) => {
               const { type, id } = block;
               const value = block[type];
-
-              /*  if (QUOTE && !LG_BREAKPOINT) {
-                => QUOTE = FULL
-              } else if (QUOTE && LG_BREAKPOINT && LAST!==QUOTE) {
-                => QUOTE = LEFT
-              } else if (QUOTE && LG_BREAKPOINT && LAST===PARAGRAPH) {
-                => QUOTE = RIGHT
-              } */
-
               let blockComponent = (
                 <BlockComponent
                   key={index}
@@ -189,66 +168,17 @@ const Post = (props) => {
   );
 };
 
-let reducer = async (collector, curr) => {
-  collector = await collector;
-  var key = curr.type;
-  if (key === "numbered_list_item") {
-    curr.rich_text = curr.numbered_list_item.rich_text;
-    delete curr.numbered_list_item;
-  }
-  var storedType = collector.store[key];
-  if (storedType && key === "numbered_list_item") {
-    curr.rich_text = curr.numbered_list_item.rich_text;
-    delete curr.numbered_list_item;
-    storedType.rich_text = storedType.rich_text.concat(curr.rich_text);
-  } else {
-    if (key === "column_list") {
-      let columns = await getBlocks(curr.id);
-      columns = columns.map((column) => getBlocks(column.id));
-      columns = await Promise.all(columns);
-      curr.column_list = columns;
-    }
-    collector.store[key] = curr;
-    collector.list.push(curr);
-  }
-  return collector;
-};
 
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: false,
   };
 };
 
-export const getStaticProps = async (context) => {
-  let allPosts = await getDatabase(process.env.NOTION_DB);
-  let post = allPosts.find(
-    (post) =>
-      post.properties.Slug.rich_text[0].plain_text === context.params.slug,
-  );
-  let page = await getPage(post.id);
-  let blocks = (
-    await (await getBlocks(post.id)).reduce(reducer, { store: {}, list: [] })
-  ).list;
-  let data = {
-    cover:
-      page.properties.cover?.file?.url ||
-      page.cover?.external?.url ||
-      "https://images.unsplash.com/photo-1626202378343-1e8b2a828a78",
-    title: page.properties.Name.title[0]?.plain_text || "",
-    author: page.properties.Author.rich_text[0].plain_text || "",
-    publishedOn: page.properties.Published?.date?.start || "",
-    description: page.properties.Description?.rich_text[0]?.plain_text,
-    id: page.properties.id || "",
-  };
-  return {
-    props: {
-      data,
-      blocks,
-      noId: !page,
-    },
-  };
+export const getStaticProps = async ({params}) => {
+  return await getPost(params.slug)
 };
+
 
 export default Post;

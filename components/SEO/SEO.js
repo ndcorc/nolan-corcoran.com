@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 
 import siteMetadata from '@/data/siteMetadata';
 
+const capPath = (path) => path.charAt(1).toUpperCase() + path.slice(2);
+
 const CommonSEO = ({
   title,
   description,
@@ -45,6 +47,7 @@ const CommonSEO = ({
             : `${siteMetadata.siteUrl}${router.asPath}`
         }
       />
+      <link rel="icon" href="/assets/favicon.ico" />
     </Head>
   );
 };
@@ -53,11 +56,19 @@ export const PageSEO = ({ description }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
   const router = useRouter();
-  const path = router.asPath
-  let title = path === "/" ? "Nolan Corcoran - The Christian Life is Always Good" : path.charAt(1).toUpperCase() + path.slice(2);
+  const path = router.asPath;
+  const isHome = path === "/"
+  console.log("isHome", isHome);
+  console.log("path", path);
+
+  let homeTitle = "Nolan Corcoran - The Christian Life is Always Good";
+  let title = isHome ? homeTitle : (capPath(path) + " | Nolan Corcoran");
+
+  console.log("title", title);
+
   return (
     <CommonSEO
-      title={title + " | Nolan Corcoran"}
+      title={title}
       description={description}
       ogType="website"
       ogImage={ogImageUrl}

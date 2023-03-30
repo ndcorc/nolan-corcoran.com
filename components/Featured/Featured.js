@@ -28,6 +28,8 @@ const Featured = ({post}) => {
   const { classes } = useStyles();
   const theme = useMantineTheme();
   console.log(images.contactDark);
+  console.log("slug = ", post.slug);
+
 
   return (
     <div id="about">
@@ -61,7 +63,7 @@ const Featured = ({post}) => {
                   >
                     {post.description}
                   </Title>
-                  <Text mt={"0.5rem"} lineClamp={3} color="gray.8" >
+                  <Text mt={"0.5rem"} lineClamp={3} color={theme.other.text.secondary} >
                     {post.preview}
                   </Text>
                   <Button

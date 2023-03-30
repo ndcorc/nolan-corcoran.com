@@ -99,7 +99,7 @@ const HeroHeader = () => {
                       sx={(theme) => ({
                         fontFamily: `${theme.other.fonts[1]} !important`,
                       })}>
-                      {"Full Stack Developer"}
+                      Theology and Apologetics
                     </Text>
                     <Text
                       transform="uppercase"
@@ -107,7 +107,7 @@ const HeroHeader = () => {
                       sx={(theme) => ({
                         fontFamily: `${theme.other.fonts[1]} !important`,
                       })}>
-                      Software Engineer
+                      Culture and Politics
                     </Text>
                     <Text
                       transform="uppercase"
@@ -115,10 +115,11 @@ const HeroHeader = () => {
                       sx={(theme) => ({
                         fontFamily: `${theme.other.fonts[1]} !important`,
                       })}>
-                      Cloud Architect
+                      Cloud Engineering
                     </Text>
                   </Stack>
                 </Card>
+
                 <Link
                   href="/blog"
                   passHref>
