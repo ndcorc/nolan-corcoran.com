@@ -2,15 +2,11 @@ import { AnimatePresence } from 'framer-motion';
 
 import { getHomePosts } from '@/lib/notion/notion';
 
-import {
-  Contact,
-  HeroHeader,
-  Latest,
-} from '../components';
+import { Contact, HeroHeader, Latest } from '../components';
 
 export const Home = ({ posts, initialDisplayPosts, pagination }) => {
   const handExitComplete = () => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const hashId = window.location.hash;
 
       if (hashId) {
@@ -18,9 +14,9 @@ export const Home = ({ posts, initialDisplayPosts, pagination }) => {
 
         if (element) {
           element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "nearest",
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest',
           });
         }
       }
@@ -36,9 +32,6 @@ export const Home = ({ posts, initialDisplayPosts, pagination }) => {
   );
 };
 
-export const getStaticProps = async () => {
-  return await getHomePosts();
-}
-
+export const getServerSideProps = () => getHomePosts();
 
 export default Home;

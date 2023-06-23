@@ -1,64 +1,77 @@
 import { createStyles } from '@mantine/core';
 
-const HEADER_HEIGHT = 80;
+const HEADER_HEIGHT = 90;
 
 const useStyles = createStyles((theme, _params, getRef) => {
-  const isDark = theme.colorScheme === "dark";
+  const isDark = theme.colorScheme === 'dark';
   const { colors, other } = theme;
   return {
     navRoot: {
-      position: "relative",
+      position: 'relative',
       zIndex: 1,
     },
 
     navHeader: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      height: "100%",
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: '100%',
     },
 
     header: {
       borderBottom: 0,
-      padding: "auto 80px",
-      maxWidth: "100vw !important",
+      padding: 'auto 80px',
+      maxWidth: '100vw !important',
     },
 
     unscrolled: {
-      backdropFilter: "blur(8px)",
-      backgroundColor: "transparent",
+      backdropFilter: 'blur(8px)',
+      backgroundColor: 'transparent',
     },
 
     scrolled: {
       backgroundColor: theme.fn.rgba(theme.other.background, 0.9),
-      backdropFilter: "blur(40px)",
+      backdropFilter: 'blur(40px)',
       color: theme.other.text.primary,
     },
     blog: {
       backgroundColor: theme.fn.rgba(theme.colors.dark[6], 0.5),
       color: theme.other.white,
-      backdropFilter: "blur(8px)",
+      backdropFilter: 'blur(8px)',
     },
     hInner: {
       height: HEADER_HEIGHT,
-      display: "flex",
-      alignItems: "center",
-      minWidth: "100%",
-      justifyContent: "space-between",
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'row',
+      minWidth: '100%',
     },
     hLinks: {
       height: HEADER_HEIGHT,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      [theme.fn.smallerThan("md")]: {
-        display: "none",
+      display: 'flex',
+      justifyContent: 'flex-start',
+      [theme.fn.smallerThan('lg')]: {
+        display: 'none',
       },
     },
-
+    logo: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      [theme.fn.smallerThan('lg')]: {
+        display: 'none',
+      },
+    },
+    themeBtn: {
+      height: HEADER_HEIGHT,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      flexWrap: 'nowrap',
+    },
     dropdown: {
-      position: "absolute",
+      position: 'absolute',
       top: HEADER_HEIGHT,
       left: 0,
       right: 0,
@@ -66,40 +79,31 @@ const useStyles = createStyles((theme, _params, getRef) => {
       borderTopRightRadius: 0,
       borderTopLeftRadius: 0,
       borderTopWidth: 0,
-      overflow: "hidden",
-      height: "100vh",
+      overflow: 'hidden',
+      height: '100vh',
       backgroundColor: theme.other.background,
 
-      [theme.fn.largerThan("md")]: {
-        display: "none",
-      },
-    },
-    logo: {
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      [theme.fn.smallerThan("md")]: {
-        display: "none",
+      [theme.fn.largerThan('md')]: {
+        display: 'none',
       },
     },
     siteTitle: {
-      width: "125px",
-      height: "40px",
+      width: '125px',
+      height: '40px',
       [theme.fn.largerThan(2000)]: {
-        width: "250px",
-        height: "80px",
+        width: '250px',
+        height: '80px',
       },
     },
     link: {
-      textTransform: "uppercase",
-      fontSize: "1.75rem !important",
+      textTransform: 'uppercase',
       fontFamily: `${theme.other.fonts[4]}`,
       padding: `0px ${theme.spacing.sm}px`,
       fontWeight: 500,
-      transition: "border-color 100ms ease, opacity 100ms ease",
-      "&:hover": {
+      transition: 'border-color 100ms ease, opacity 100ms ease',
+      '&:hover': {
         opacity: 1,
-        textDecoration: "none",
+        textDecoration: 'none',
         backgroundColor: `${theme.other.background} !important`,
       },
       color: `${
@@ -107,14 +111,14 @@ const useStyles = createStyles((theme, _params, getRef) => {
       } !important`,
     },
     linklabel: {
-      fontSize: "2rem !important",
+      fontSize: '2rem !important',
     },
     drawer: {
-      display: "block",
+      display: 'block',
       lineHeight: 1,
-      padding: "8px 12px",
+      padding: '8px 12px',
       borderRadius: theme.radius.sm,
-      textDecoration: "uppercase",
+      textDecoration: 'uppercase',
 
       /*  theme.colorScheme === "dark"
           ? theme.colors.dark[0]
@@ -123,67 +127,68 @@ const useStyles = createStyles((theme, _params, getRef) => {
       fontWeight: 500,
       //color: `${theme.white} !important`,
 
-      "&:hover": {
+      '&:hover': {
         backgroundColor: `${theme.colors.primary[4]} !important`,
         color: `${theme.white} !important`,
       },
-      "&:active": {
+      '&:active': {
         backgroundColor: `${theme.colors.primary[6]} !important`,
         color: `${theme.white} !important`,
       },
 
-      [theme.fn.smallerThan("md")]: {
+      [theme.fn.smallerThan('lg')]: {
         borderRadius: 0,
         padding: theme.spacing.md,
       },
     },
     themeToggle: {
-      width: "130px",
-      display: "flex",
-      justifyContent: "flex-end",
-      alignItems: "right",
+      width: '130px',
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'right',
     },
     linkActive: {
       color: theme.white,
       opacity: 1,
       borderBottomColor:
-        theme.colorScheme === "dark"
+        theme.colorScheme === 'dark'
           ? theme.white
           : theme.colors[theme.primaryColor][5],
       backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: "filled", color: theme.primaryColor })
+        theme.fn.variant({ variant: 'filled', color: theme.primaryColor })
           .background,
-        0.1,
+        0.1
       ),
     },
     burger: {
-      [theme.fn.largerThan("md")]: {
-        display: "none",
+      [theme.fn.largerThan('lg')]: {
+        display: 'none',
       },
+      alignItems: 'center',
       padding: `${theme.spacing.md}px`,
     },
     footer: {
       borderTop: `1px solid ${isDark ? colors.dark[9] : colors.gray[4]}`,
     },
     fInner: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
       padding: `${theme.spacing.md}px`,
       color: theme.other.text.primary,
 
-      [theme.fn.smallerThan("md")]: {
-        flexDirection: "column",
+      [theme.fn.smallerThan('lg')]: {
+        flexDirection: 'column',
       },
     },
 
     fLinks: {
-      textTransform: "uppercase",
+      textTransform: 'uppercase',
       color: theme.other.text.primary,
-      [theme.fn.smallerThan("md")]: {
+      [theme.fn.smallerThan('lg')]: {
         marginTop: theme.spacing.lg,
         marginBottom: theme.spacing.sm,
-        display: "none",
+        display: 'none',
       },
     },
     /*

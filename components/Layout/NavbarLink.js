@@ -17,13 +17,12 @@ import useStyles from './styles';
 const NavbarLink = ({ link, drawer }) => {
   // console.log("drawer", drawer);
   const { hovered, ref } = useHover();
-  const [active, setActive] = useState(0);
   const router = useRouter();
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { classes, cx } = useStyles();
 
-  let isDark = colorScheme === "dark";
+  let isDark = colorScheme === 'dark';
 
   return (
     <Indicator
@@ -35,28 +34,28 @@ const NavbarLink = ({ link, drawer }) => {
         (!hovered && router.route !== link.link) || drawer
         // && `/${link.label.toLowerCase()}` !== router.route
       }
-      position="top-center"
-      color={isDark ? theme.colors.dark[1] : theme.colors.primary[6]}>
-      <Link href={link.link} passHref>
-        <NavLink
-          label={
-            <Text
-              size="1rem !important"
-              sx={(theme) => ({
-                fontFamily: theme.other.fonts[1],
-              })}>
-              {link.label}
-            </Text>
-          }
-          href={link.label}
-          active={router.pathname === link.link && drawer !== false}
-          color={isDark ? theme.white : theme.colors.primary[1]}
-          variant="light"
-          className={cx(classes.link, {
-            [classes.drawer]: drawer !== false,
-          })}
-        />
-      </Link>
+      position='top-center'
+      color={isDark ? theme.colors.dark[1] : theme.colors.primary[6]}
+    >
+      <NavLink
+        label={
+          <Text
+            size='0.9rem'
+            sx={(theme) => ({
+              fontFamily: theme.other.fonts[1],
+            })}
+          >
+            {link.label}
+          </Text>
+        }
+        href={link.label}
+        active={router.pathname === link.link && drawer !== false}
+        color={isDark ? theme.white : theme.colors.primary[1]}
+        variant='light'
+        className={cx(classes.link, {
+          [classes.drawer]: drawer !== false,
+        })}
+      />
     </Indicator>
   );
 };

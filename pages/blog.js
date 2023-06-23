@@ -1,7 +1,7 @@
 import { BlogLayout } from '@/components/Blog';
 import { getHomePosts } from '@/lib/notion/notion';
 
-const Blog = async ({ posts, initialDisplayPosts, pagination, featured }) => {
+const Blog = ({ posts, initialDisplayPosts, pagination, featured }) => {
   return (
     <>
       <BlogLayout
@@ -9,14 +9,12 @@ const Blog = async ({ posts, initialDisplayPosts, pagination, featured }) => {
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
         featured={featured}
-        title="All Posts"
+        title='All Posts'
       />
     </>
   );
-}
+};
 
-export const getStaticProps = async () => {
- return await getHomePosts();
-}
+export const getServerSideProps = () => getHomePosts();
 
 export default Blog;
