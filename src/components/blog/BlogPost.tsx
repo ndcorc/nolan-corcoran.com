@@ -10,6 +10,7 @@ import type { Post } from '@/types/sanity';
 import { IconQuotes } from '@tabler/icons-react';
 import JsonLd from '../shared/JsonLd';
 import { useEffect, useState } from 'react';
+import BibleRefTagger from '../shared/BibleRefTagger';
 
 interface BlogPostProps {
     post: Post;
@@ -125,6 +126,7 @@ export default function BlogPost({ post }: BlogPostProps) {
         <>
             {/* Add JSON-LD structured data */}
             <JsonLd post={post} />
+            <BibleRefTagger />
             <AppShellMain>
                 <article className="relative">
                     {/* Hero Section with Main Image */}

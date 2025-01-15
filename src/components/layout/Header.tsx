@@ -116,6 +116,12 @@ export default function Header() {
     }, [pathname, isScrolling]);
 
     useEffect(() => {
+        if (!pathname.includes('#')) {
+            setActiveLink(pathname);
+        }
+    }, [pathname]);
+
+    useEffect(() => {
         const handleScrollBegin = () => setIsScrolling(true);
         const handleScrollEnd = () => setIsScrolling(false);
 
