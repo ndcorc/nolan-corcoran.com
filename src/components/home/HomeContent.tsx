@@ -6,7 +6,6 @@ import HeroSection from './HeroSection';
 import LatestPosts from './LatestPosts';
 import ContactForm from './ContactForm';
 import { Element } from 'react-scroll';
-import BibleRefTagger from '../shared/BibleRefTagger';
 
 export default function HomeContent() {
     const [mounted, setMounted] = useState(false);

@@ -175,7 +175,7 @@ export default function Header() {
                 </Indicator>
             );
         },
-        [handleRouteClick, handleSectionClick, handleSetActive, hoveredLink, isActive, pathname]
+        [handleRouteClick, handleSectionClick, handleSetActive, hoveredLink, isActive, pathname, isDark]
     );
 
     if (!mounted) {

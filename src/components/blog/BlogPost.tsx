@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { AppShellMain, Container, Title, Text, Divider, Blockquote, Center, List, Group } from '@mantine/core';
+import { AppShellMain, Container, Title, Text, Divider, Blockquote, Center, List } from '@mantine/core';
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';

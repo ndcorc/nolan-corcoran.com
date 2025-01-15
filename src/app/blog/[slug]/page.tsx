@@ -3,16 +3,17 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPost from '@/components/blog/BlogPost';
 import { urlForImage } from '@/lib/sanity/image';
-import { getPostBySlug } from '@/lib/sanity/sanity.client';
+import { getAllPosts, getPostBySlug } from '@/lib/sanity/sanity.client';
 
 interface BlogPostPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-    const post = await getPostBySlug(params.slug);
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
     if (!post) {
         return {
@@ -56,8 +57,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
 }
 
+// Generate static paths at build time
+export async function generateStaticParams() {
+    const posts = await getAllPosts();
+
+    return posts.map((post) => ({
+        slug: post.slug.current
+    }));
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-    const post = await getPostBySlug(params.slug);
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
     if (!post) {
         notFound();
