@@ -1,0 +1,29 @@
+@layer tw_base, mantine, tw_components, tw_utilities;
+
+/* import tailwind */
+@import 'tailwindcss/base' layer(tw_base);
+@import 'tailwindcss/components' layer(tw_components);
+@import 'tailwindcss/utilities' layer(tw_utilities);
+
+/* import mantine */
+@import '@mantine/core/styles.layer.css';
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 248, 246, 244;
+    --background-end-rgb: 255, 255, 255;
+    --button-bg: #6e0909;
+    --button-color: white;
+    --button-hover-bg: #5c0000;
+}
+
+:root[data-mantine-color-scheme='dark'] {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 18, 18, 18;
+    --background-end-rgb: 23, 23, 23;
+    --button-color: white;
+    --button-bg: var(--mantine-color-navy-4);
+    --button-hover-bg: var(--mantine-color-navy-6);
+    --mantine-primary-color-filled: var(--mantine-color-navy-4);
+    --mantine-primary-color-filled-hover: var(--mantine-color-navy-6);
+}
