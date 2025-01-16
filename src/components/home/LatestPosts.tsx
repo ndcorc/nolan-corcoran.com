@@ -8,27 +8,29 @@ import { Carousel } from '@mantine/carousel';
 import BlogCard from '../blog/BlogCard';
 import BlogCardSkeleton from '../blog/BlogCardSkeleton';
 import { motion } from 'framer-motion';
+import { useMediaQuery } from '@mantine/hooks';
 
 export default function LatestPosts() {
     const { data: posts, isLoading: postsLoading } = useQuery({
         queryKey: ['posts'],
         queryFn: getAllPosts
     });
+    const mobile = useMediaQuery('(max-width: 74em)');
 
     return (
         <section className="py-20">
             <motion.div whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }} transition={{ duration: 1 }}>
-                <Container fluid className="px-32">
-                    <Title order={2} size="h1" className="mb-12 text-center">
+                <Container fluid className="xl:px-32 px-4">
+                    <Title order={2} size="h1" className="mb-12 mb-12 text-center xl:text-6xl text-4xl">
                         Latest from the Blog
                     </Title>
                     <Carousel
                         withIndicators
                         height={475}
-                        slideSize="33.333333%"
-                        slideGap="md"
                         align="start"
-                        slidesToScroll={3}>
+                        slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
+                        slideGap={{ base: 0, sm: 'md' }}
+                        slidesToScroll={mobile ? 1 : 2}>
                         {postsLoading ? (
                             Array.from({ length: 3 }).map((_, index) => (
                                 <Carousel.Slide key={index}>

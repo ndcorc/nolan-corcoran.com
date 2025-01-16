@@ -15,12 +15,12 @@ export default function HeroSection() {
         <section>
             <BackgroundImage src={isDark ? '/img/bgDark.png' : '/img/bgIMG.png'}>
                 <Container fluid className="relative z-10">
-                    <div className="flex flex-col lg:flex-row min-h-screen px-4 lg:px-16 py-20">
+                    <div className="flex flex-col xl:flex-row min-h-screen px-0 xl:px-16 py-20">
                         {/* Left Content */}
                         <motion.div
                             whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
-                            className="flex flex-col flex-[0.5] justify-start items-end my-20 mx-8">
+                            className="flex flex-col flex-[0.5] justify-start items-end xl:my-20 xl:mx-8 mt-4 mb-0 ml-2 mr-10">
                             <Stack
                                 justify="center"
                                 mb="2rem"
@@ -62,7 +62,7 @@ export default function HeroSection() {
                         <motion.div
                             whileInView={{ opacity: [0, 1] }}
                             transition={{ duration: 0.5, delayChildren: 0.5 }}
-                            className="flex-1 flex max-h-[80%] justify-end items-start relative m-8">
+                            className="flex-1 flex max-h-[80%] justify-end items-start relative xl:m-8 m-2">
                             <Image
                                 src="/img/placeholder-profile.png"
                                 alt="profile"

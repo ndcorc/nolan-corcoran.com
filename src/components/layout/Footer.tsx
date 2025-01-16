@@ -63,6 +63,11 @@ export default function Footer() {
                             className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline">
                             BLOG
                         </Link>
+                        <Link
+                            href="/portfolio"
+                            className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline">
+                            PORTFOLIO
+                        </Link>
                     </Group>
 
                     <Group gap="md">

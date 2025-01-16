@@ -12,13 +12,15 @@ import {
     searchPostsQuery,
     getAllPostsWithCountQuery,
     getFeaturedPostQuery,
-    getLatestPostQuery
+    getLatestPostQuery,
+    getProjectsQuery
 } from './sanity.queries';
 import type {
     Post,
     Category,
     CategoryWithCount,
-    PostsResponse
+    PostsResponse,
+    Project
     //SearchQuery,
     //CategoryQuery
 } from '@/types/sanity';
@@ -69,4 +71,25 @@ export async function searchPosts(searchTerm: string): Promise<Post[]> {
 export async function getFeaturedOrLatestPost(): Promise<Post> {
     const featuredPost = await client.fetch(getFeaturedPostQuery);
     return featuredPost || (await client.fetch(getLatestPostQuery));
+}
+
+export async function getProjects(): Promise<Project[]> {
+    return await client.fetch(getProjectsQuery);
+}
+
+// Optional: Add function to get featured projects
+export async function getFeaturedProjects(): Promise<Project[]> {
+    return await client.fetch(
+        `*[_type == "project" && featured == true] | order(_createdAt desc) {
+      _id,
+      title,
+      slug,
+      description,
+      image,
+      technologies,
+      githubUrl,
+      liveUrl,
+      featured
+    }`
+    );
 }

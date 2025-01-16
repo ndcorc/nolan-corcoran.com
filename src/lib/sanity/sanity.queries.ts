@@ -162,3 +162,17 @@ export const getLatestPostQuery = groq`
   }
 }
 `;
+
+export const getProjectsQuery = groq`
+*[_type == "project"] | order(featured desc) {
+  _id,
+  title,
+  slug,
+  description,
+  image,
+  technologies,
+  githubUrl,
+  liveUrl,
+  featured
+}
+`;

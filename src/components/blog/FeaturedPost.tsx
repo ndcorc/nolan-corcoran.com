@@ -13,12 +13,12 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
     const { colorScheme } = useMantineColorScheme();
     const isDark = colorScheme === 'dark';
     return (
-        <div className={`w-full`}>
-            <Container size="lg" className="py-20">
+        <div className="w-full">
+            <Container size="lg" className="xl:py-20 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8">
-                    <div className="space-y-4 gap-0 flex flex-col justify-center">
+                    <div className="xl:space-y-4 space-y-2 gap-0 flex flex-col justify-center">
                         {/* Date */}
-                        <Text className="text-2xl">
+                        <Text className="xl:text-2xl text-lg">
                             {new Date(post.publishedAt).toLocaleDateString('en-US', {
                                 month: 'long',
                                 day: 'numeric',
@@ -27,17 +27,17 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                         </Text>
 
                         {/* Title */}
-                        <Title order={2} size="h1" className="font-normal">
+                        <Title order={2} size="h1" className="font-normal xl:text-6xl text-4xl">
                             {post.title}
                         </Title>
 
                         {/* Subtitle */}
-                        <Title order={4} size="h4" className="font-normal">
+                        <Title order={4} size="h4" className="font-normal xl:text-2xl text-lg">
                             {post.subtitle}
                         </Title>
 
                         {/* Excerpt */}
-                        <Text lineClamp={3} className="text-lg leading-tight">
+                        <Text lineClamp={3} className="xl:text-lg text-sm leading-tight">
                             {post.excerpt}
                         </Text>
 

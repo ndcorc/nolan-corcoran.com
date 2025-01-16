@@ -69,7 +69,7 @@ export default function ContactForm() {
     };
 
     return (
-        <section className="py-40">
+        <section className="xl:py-40 py-8">
             <Container size="lg">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-stone-50 dark:bg-dark-600 z-10 rounded-xl shadow-z dark:shadow-dark-z">
                     {/* Contact Information */}
@@ -124,7 +124,7 @@ export default function ContactForm() {
                             radius="md"
                             p="xl"
                             className="bg-transparent border-l-0 border-t-0 rounded-r-xl rounded-l-none border-none">
-                            <Title order={2} size="h2" mb="lg" className="font-bold">
+                            <Title order={2} size="h2" mb="lg" className="font-bold xl:text-4xl text-4xl">
                                 Get in touch
                             </Title>
 

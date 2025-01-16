@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { AppShell, ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
 import { theme } from '@/theme';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
 import QueryProvider from '@/providers/query-provider';
 import BibleRefTagger from '@/components/shared/BibleRefTagger';
+import { NavbarStateProvider } from '@/providers/navbar-state';
+import AppShellWrapper from '@/components/layout/AppShellWrapper';
 
 // Define default metadata
 export const metadata: Metadata = {
@@ -95,11 +95,9 @@ export default function RootLayout({
                 <QueryProvider>
                     <MantineProvider theme={theme}>
                         <BibleRefTagger />
-                        <AppShell header={{ height: 60 }} padding="md" className="relative">
-                            <Header />
-                            {children}
-                            <Footer />
-                        </AppShell>
+                        <NavbarStateProvider>
+                            <AppShellWrapper>{children}</AppShellWrapper>
+                        </NavbarStateProvider>
                     </MantineProvider>
                 </QueryProvider>
             </body>

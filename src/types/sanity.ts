@@ -48,3 +48,18 @@ export interface BlogContentProps {
     categories: Category[] | undefined;
     featuredPost: Post | undefined;
 }
+
+// Add this alongside your existing types
+export interface Project {
+    _id: string;
+    title: string;
+    slug: {
+        current: string;
+    };
+    description: string;
+    image?: Image;
+    technologies: string[];
+    githubUrl?: string;
+    liveUrl?: string;
+    featured: boolean;
+}

@@ -1,12 +1,13 @@
 'use client';
 
-import { Group, Text, AppShellHeader, Indicator, useMantineColorScheme, Title } from '@mantine/core';
-import { useWindowScroll } from '@mantine/hooks';
+import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger } from '@mantine/core';
+import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { animateScroll, scroller, Link as ScrollLink, Events, scrollSpy } from 'react-scroll';
 import { usePathname, useRouter } from 'next/navigation';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useNavbar } from '@/providers/navbar-state';
 
 interface NavLink {
     href: string;
@@ -18,7 +19,8 @@ const NAVIGATION_LINKS: NavLink[] = [
     { href: '/', label: 'HOME' },
     { href: '/#about', label: 'ABOUT', isScrollLink: true },
     { href: '/#contact', label: 'CONTACT', isScrollLink: true },
-    { href: '/blog', label: 'BLOG' }
+    { href: '/blog', label: 'BLOG' },
+    { href: '/portfolio', label: 'PORTFOLIO' }
 ];
 
 const SCROLL_SETTINGS = {
@@ -37,14 +39,14 @@ export default function Header() {
     const [activeLink, setActiveLink] = useState<string | null>(pathname);
     const [isScrolling, setIsScrolling] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const isActive = useCallback((href: string) => activeLink === href, [activeLink]);
+    const isDark = useMemo(() => colorScheme === 'dark', [colorScheme]);
+    const { opened, toggle, close } = useNavbar();
+    const isMobile = useMediaQuery('(max-width: 74em)');
 
     const toggleColorScheme = useCallback(() => {
         setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
     }, [colorScheme, setColorScheme]);
-
-    const isActive = useCallback((href: string) => activeLink === href, [activeLink]);
-
-    const isDark = useMemo(() => colorScheme === 'dark', [colorScheme]);
 
     const handleSectionClick = useCallback(
         (section: string) => {
@@ -189,35 +191,69 @@ export default function Header() {
     }
 
     return (
-        <AppShellHeader
-            withBorder={false}
-            className={`pl-2 pr-4 py-4 transition-colors duration-200 ${
-                scroll.y > 100 ? 'bg-white dark:bg-dark-600' : 'bg-transparent'
-            }`}>
-            <Group className="h-full gap-0" align="center">
-                <nav className="w-1/3 flex h-full">
-                    <Group gap={32} className="pl-4 gap-4">
-                        {NAVIGATION_LINKS.map(renderNavLink)}
-                    </Group>
-                </nav>
-                <Link href="/" className="no-underline dark:text-white w-1/3 flex justify-center">
-                    <Title
-                        className="text-3xl font-bold text-brand dark:text-gray-400"
-                        order={1}
-                        data-mantine-color-scheme={colorScheme}>
-                        Every Thought Captive
-                    </Title>
-                </Link>
-                <div className="w-1/3 flex justify-end pr-4">
-                    <DarkModeSwitch
-                        checked={colorScheme === 'dark'}
-                        onChange={toggleColorScheme}
-                        moonColor="#FFF"
-                        style={{ textAlign: 'right' }}
-                        size={24}
-                    />
+        <>
+            <AppShell.Header
+                withBorder={false}
+                className={`pl-2 pr-4 py-4 transition-colors duration-200 ${
+                    scroll.y > 100 ? 'bg-white dark:bg-dark-600' : 'bg-transparent'
+                }`}>
+                <Group className="h-full w-full flex gap-0 xl:pl-0 pl-2" align="center" wrap="nowrap">
+                    <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="md" />
+                    {!isMobile ? (
+                        <>
+                            <nav className="w-1/3 flex h-full">
+                                <Group gap={32} className="pl-4 gap-4">
+                                    {NAVIGATION_LINKS.map(renderNavLink)}
+                                </Group>
+                            </nav>
+                            <Link href="/" className="no-underline dark:text-white w-1/3 flex justify-center">
+                                <Title
+                                    className="text-3xl font-bold text-brand dark:text-gray-400"
+                                    order={1}
+                                    data-mantine-color-scheme={colorScheme}>
+                                    Every Thought Captive
+                                </Title>
+                            </Link>
+                            <div className="w-1/3 flex justify-end pr-4">
+                                <DarkModeSwitch
+                                    checked={colorScheme === 'dark'}
+                                    onChange={toggleColorScheme}
+                                    moonColor="#FFF"
+                                    style={{ textAlign: 'right' }}
+                                    size={24}
+                                />
+                            </div>
+                        </>
+                    ) : (
+                        <Link href="/" className="no-underline dark:text-white flex justify-center w-full">
+                            <Title
+                                className="text-2xl w-full font-bold text-brand dark:text-gray-400 text-center"
+                                order={1}
+                                data-mantine-color-scheme={colorScheme}>
+                                Every Thought Captive
+                            </Title>
+                        </Link>
+                    )}
+                </Group>
+            </AppShell.Header>
+            <AppShell.Navbar py="md" px={4}>
+                <div className="space-y-2">
+                    {NAVIGATION_LINKS.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={close}
+                            className={`
+                                block w-full px-3 py-2 rounded-md font-medium 
+                                hover:bg-gray-50 dark:hover:bg-dark-600
+                                ${pathname === item.href ? 'bg-gray-100 dark:bg-dark-700' : ''}
+                                no-underline text-inherit
+                            `}>
+                            {item.label}
+                        </Link>
+                    ))}
                 </div>
-            </Group>
-        </AppShellHeader>
+            </AppShell.Navbar>
+        </>
     );
 }

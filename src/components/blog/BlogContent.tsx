@@ -67,16 +67,16 @@ export function BlogContent() {
     return (
         <AppShellMain className="pb-32">
             {/* Hero Quote Section */}
-            <div className="py-20">
+            <div className="xl:py-20 py-12">
                 <Container size="lg">
-                    <Title order={1} className="text-center mb-4 text-6xl font-medium">
+                    <Title order={1} className="text-center mb-4 xl:text-6xl text-4xl font-medium">
                         {`The Christian life isn't always easy,`}
                         <br />
                         {`but it's `}
                         <Text span inherit className="italic font-bold text-primary">
                             always
                         </Text>
-                        good.
+                        {` good.`}
                     </Title>
                 </Container>
             </div>
@@ -85,8 +85,8 @@ export function BlogContent() {
             {featuredLoading ? <FeaturedPostSkeleton /> : featuredPost ? <FeaturedPost post={featuredPost} /> : null}
 
             {/* Blog Posts Section */}
-            <Container fluid size="lg" className="py-16 mx-8">
-                <Title order={2} className="mb-8">
+            <Container fluid size="lg" className="xl:py-16 xl:mx-8 py-8 mx-2">
+                <Title order={2} className="xl:mb-8 mb-2">
                     All Posts
                 </Title>
 
