@@ -5,16 +5,28 @@ import { useNavbar } from '@/providers/navbar-state';
 import { AppShell } from '@mantine/core';
 import Header from './Header';
 import Footer from './Footer';
+import { useEffect } from 'react';
 
 export default function AppShellWrapper({ children }: { children: React.ReactNode }) {
     const { opened } = useNavbar();
+
+    useEffect(() => {
+        if (opened) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [opened]);
 
     return (
         <AppShell
             header={{ height: 60 }}
             navbar={{
                 width: 300,
-                breakpoint: 'sm',
+                breakpoint: 'lg',
                 collapsed: { desktop: true, mobile: !opened }
             }}
             padding="md"

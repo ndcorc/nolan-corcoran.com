@@ -20,7 +20,7 @@ export default function HeroSection() {
                         <motion.div
                             whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
-                            className="flex flex-col flex-[0.5] justify-start items-end xl:my-20 xl:mx-8 mt-4 mb-0 ml-2 mr-10">
+                            className="flex flex-col flex-[0.5] justify-start items-end xl:my-20 xl:mx-8 mt-4 mb-0 m-auto">
                             <Stack
                                 justify="center"
                                 mb="2rem"

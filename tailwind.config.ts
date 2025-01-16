@@ -34,6 +34,16 @@ const config: Config = {
             }
         }
     },
-    plugins: []
+    plugins: [
+        function ({ addUtilities }: any) {
+            addUtilities({
+                '.no-scroll': {
+                    overflow: 'hidden',
+                    height: '100vh',
+                    touchAction: 'none'
+                }
+            });
+        }
+    ]
 };
 export default config;
