@@ -27,3 +27,18 @@
     --mantine-primary-color-filled: var(--mantine-color-navy-4);
     --mantine-primary-color-filled-hover: var(--mantine-color-navy-6);
 }
+
+/* Handle iOS safe areas */
+body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Adjust AppShellHeader for iOS */
+.mantine-AppShell-header {
+    padding-top: env(safe-area-inset-top);
+}
+
+/* Adjust AppShellNavbar for iOS */
+.mantine-AppShell-navbar {
+    padding-top: env(safe-area-inset-top);
+}
