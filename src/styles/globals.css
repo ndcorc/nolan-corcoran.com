@@ -15,6 +15,7 @@
     --button-bg: #6e0909;
     --button-color: white;
     --button-hover-bg: #5c0000;
+    background-color: #f8f6f4;
 }
 
 :root[data-mantine-color-scheme='dark'] {
@@ -26,19 +27,13 @@
     --button-hover-bg: var(--mantine-color-navy-6);
     --mantine-primary-color-filled: var(--mantine-color-navy-4);
     --mantine-primary-color-filled-hover: var(--mantine-color-navy-6);
+    background-color: #1a1b1e;
 }
 
 /* Handle iOS safe areas */
 body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-}
-
-/* Adjust AppShellHeader for iOS */
-.mantine-AppShell-header {
-    padding-top: env(safe-area-inset-top);
-}
-
-/* Adjust AppShellNavbar for iOS */
-.mantine-AppShell-navbar {
-    padding-top: env(safe-area-inset-top);
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
 }

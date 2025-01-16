@@ -195,7 +195,7 @@ export default function Header() {
             <AppShell.Header
                 withBorder={false}
                 className={`pl-2 pr-4 py-4 transition-colors duration-200 ${
-                    scroll.y > 100 ? 'bg-white dark:bg-dark-600' : 'bg-transparent'
+                    scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'
                 }`}>
                 <Group className="h-full w-full flex gap-0 xl:pl-0 pl-2" align="center" wrap="nowrap">
                     <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="md" />
@@ -252,6 +252,15 @@ export default function Header() {
                             {item.label}
                         </Link>
                     ))}
+                    <div className="w-1/3 flex justify-center pr-4">
+                        <DarkModeSwitch
+                            checked={colorScheme === 'dark'}
+                            onChange={toggleColorScheme}
+                            moonColor="#FFF"
+                            style={{ textAlign: 'right' }}
+                            size={24}
+                        />
+                    </div>
                 </div>
             </AppShell.Navbar>
         </>

@@ -21,7 +21,7 @@ export default function LatestPosts() {
         <section className="py-20">
             <motion.div whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }} transition={{ duration: 1 }}>
                 <Container fluid className="xl:px-32 px-4">
-                    <Title order={2} size="h1" className="mb-12 mb-12 text-center xl:text-6xl text-4xl">
+                    <Title order={2} size="h1" className="mb-12 text-center xl:text-6xl text-4xl">
                         Latest from the Blog
                     </Title>
                     <Carousel

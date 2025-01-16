@@ -12,9 +12,7 @@ const nextConfig = {
             }
         }
     },
-    // Enable React strict mode for better development
     reactStrictMode: true,
-    // Configure redirects
     async redirects() {
         return [
             {

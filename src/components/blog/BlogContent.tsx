@@ -85,13 +85,13 @@ export function BlogContent() {
             {featuredLoading ? <FeaturedPostSkeleton /> : featuredPost ? <FeaturedPost post={featuredPost} /> : null}
 
             {/* Blog Posts Section */}
-            <Container fluid size="lg" className="xl:py-16 xl:mx-8 py-8 mx-2">
-                <Title order={2} className="xl:mb-8 mb-2">
+            <Container fluid size="lg" className="xl:py-16 xl:mx-8 xl:px-4 py-8 mx-0 px-0">
+                <Title order={2} className="xl:mb-8 mb-2 px-2 xl:px-0">
                     All Posts
                 </Title>
 
                 {/* Category Filter Section */}
-                <div className="mb-8">
+                <div className="mb-8 px-2 xl:px-0">
                     {categoriesLoading ? (
                         <CategoryFilterSkeleton />
                     ) : categoriesError ? (

@@ -16,15 +16,6 @@ export const metadata: Metadata = {
         template: '%s | Every Thought Captive'
     },
     description: 'Exploring theology, apologetics, culture, and cloud engineering.',
-    appleWebApp: {
-        capable: true,
-        statusBarStyle: 'default',
-        title: 'Every Thought Captive'
-    },
-    themeColor: [
-        { media: '(prefers-color-scheme: light)', color: '#F8F6F4' },
-        { media: '(prefers-color-scheme: dark)', color: '#121212' }
-    ],
     keywords: ['Theology', 'Apologetics', 'Culture', 'Cloud Engineering', 'Christianity', 'Technology'],
     authors: [{ name: 'Nolan Corcoran' }],
     creator: 'Nolan Corcoran',
@@ -68,20 +59,13 @@ export const metadata: Metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1
         }
-    },
-    other: {
-        'apple-mobile-web-app-status-bar-style': 'default'
     }
 };
 
 // Define viewport
 export const viewport: Viewport = {
-    themeColor: [
-        { media: '(prefers-color-scheme: light)', color: '#6E0909' },
-        { media: '(prefers-color-scheme: dark)', color: '#38BDF8' }
-    ],
     width: 'device-width',
-    viewportFit: 'cover',
+    viewportFit: 'auto',
     initialScale: 1,
     maximumScale: 1,
     userScalable: false
@@ -104,16 +88,8 @@ export default function RootLayout({
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
                 />
-                <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-                <meta name="theme-color" content="#F8F6F4" media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
-                />
             </head>
-            <body className="antialiased">
+            <body className="antialiased min-h-lvh">
                 <QueryProvider>
                     <MantineProvider theme={theme}>
                         <BibleRefTagger />

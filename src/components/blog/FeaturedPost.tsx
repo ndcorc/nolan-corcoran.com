@@ -14,7 +14,7 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
     const isDark = colorScheme === 'dark';
     return (
         <div className="w-full">
-            <Container size="lg" className="xl:py-20 py-12">
+            <Container size="lg" className="xl:py-20 py-12 px-2 xl:px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8">
                     <div className="xl:space-y-4 space-y-2 gap-0 flex flex-col justify-center">
                         {/* Date */}
