@@ -137,6 +137,21 @@ export default function Header() {
         };
     }, []);
 
+    const handleLinkClick = (e: React.MouseEvent, href: string, isHash: boolean = false) => {
+        setActiveLink(href);
+
+        if (isHash && pathname === '/') {
+            // Handle smooth scroll for hash links on home page
+            e.preventDefault();
+            const element = document.querySelector(href.replace('/#', '#'));
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', href);
+            }
+        }
+        close();
+    };
+
     const renderNavLink = useCallback(
         (link: NavLink) => {
             const isDisabled = !isActive(link.href) && hoveredLink !== link.href;
@@ -190,6 +205,12 @@ export default function Header() {
         return null; // or return a skeleton/placeholder
     }
 
+    NAVIGATION_LINKS.forEach((link) => {
+        console.log('link', link);
+        console.log('isActive(item.href)', isActive(link.href));
+        console.log(activeLink);
+    });
+
     return (
         <>
             <AppShell.Header
@@ -198,7 +219,7 @@ export default function Header() {
                     scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'
                 }`}>
                 <Group className="h-full w-full flex gap-0 xl:pl-0 pl-2" align="center" wrap="nowrap">
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="md" />
+                    <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
                     {!isMobile ? (
                         <>
                             <nav className="w-1/3 flex h-full">
@@ -225,42 +246,58 @@ export default function Header() {
                             </div>
                         </>
                     ) : (
-                        <Link href="/" className="no-underline dark:text-white flex justify-center w-full">
-                            <Title
-                                className="text-2xl w-full font-bold text-brand dark:text-gray-400 text-center"
-                                order={1}
-                                data-mantine-color-scheme={colorScheme}>
-                                Every Thought Captive
-                            </Title>
-                        </Link>
+                        <>
+                            <Link href="/" className="no-underline dark:text-white flex justify-center w-full">
+                                <Title
+                                    className="text-2xl w-full font-bold text-brand dark:text-gray-400 text-center"
+                                    order={1}
+                                    data-mantine-color-scheme={colorScheme}>
+                                    Every Thought Captive
+                                </Title>
+                            </Link>
+                            <div className="flex justify-end pr-0">
+                                <DarkModeSwitch
+                                    checked={colorScheme === 'dark'}
+                                    onChange={toggleColorScheme}
+                                    moonColor="#FFF"
+                                    style={{ textAlign: 'right' }}
+                                    size={24}
+                                />
+                            </div>
+                        </>
                     )}
                 </Group>
             </AppShell.Header>
             <AppShell.Navbar py="md" px={4}>
                 <div className="space-y-2">
-                    {NAVIGATION_LINKS.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={close}
-                            className={`
-                                block w-full px-3 py-2 rounded-md font-medium 
-                                hover:bg-gray-50 dark:hover:bg-dark-600
-                                ${pathname === item.href ? 'bg-gray-100 dark:bg-dark-700' : ''}
+                    {NAVIGATION_LINKS.map((item) =>
+                        isActive(item.href) ? (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={(e) => handleLinkClick(e, item.href, item.isScrollLink)}
+                                className={`
+                                block w-full px-3 py-2 rounded-md
+                                hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
+                                bg-brand-500 dark:bg-navy-500 bg-opacity-10 dark:bg-opacity-20
                                 no-underline text-inherit
                             `}>
-                            {item.label}
-                        </Link>
-                    ))}
-                    <div className="w-1/3 flex justify-center pr-4">
-                        <DarkModeSwitch
-                            checked={colorScheme === 'dark'}
-                            onChange={toggleColorScheme}
-                            moonColor="#FFF"
-                            style={{ textAlign: 'right' }}
-                            size={24}
-                        />
-                    </div>
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={(e) => handleLinkClick(e, item.href, item.isScrollLink)}
+                                className={`
+                                block w-full px-3 py-2 rounded-md font-medium 
+                                hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
+                                no-underline text-inherit
+                            `}>
+                                {item.label}
+                            </Link>
+                        )
+                    )}
                 </div>
             </AppShell.Navbar>
         </>
