@@ -2,11 +2,13 @@ import type { Metadata, Viewport } from 'next';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
+import '@mantine/notifications/styles.css';
 import { theme } from '@/theme';
 import QueryProvider from '@/providers/query-provider';
 import BibleRefTagger from '@/components/shared/BibleRefTagger';
 import { NavbarStateProvider } from '@/providers/navbar-state';
 import AppShellWrapper from '@/components/layout/AppShellWrapper';
+import { Notifications } from '@mantine/notifications';
 
 // Define default metadata
 export const metadata: Metadata = {
@@ -59,6 +61,9 @@ export const metadata: Metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1
         }
+    },
+    icons: {
+        icon: [{ url: '/favicon.ico' }, { url: '/icon.ico' }]
     }
 };
 
@@ -80,8 +85,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <head>
                 <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+                <link rel="shortcut icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta
@@ -93,6 +97,7 @@ export default function RootLayout({
                 <QueryProvider>
                     <MantineProvider theme={theme}>
                         <BibleRefTagger />
+                        <Notifications position="top-right" />
                         <NavbarStateProvider>
                             <AppShellWrapper>{children}</AppShellWrapper>
                         </NavbarStateProvider>

@@ -127,7 +127,7 @@ export default function BlogPost({ post }: BlogPostProps) {
             {/* Add JSON-LD structured data */}
             <JsonLd post={post} />
             <BibleRefTagger />
-            <AppShellMain>
+            <AppShellMain className="pb-32">
                 <article className="relative">
                     {/* Hero Section with Main Image */}
                     {mainImage && (

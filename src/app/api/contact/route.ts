@@ -1,41 +1,53 @@
 // src/app/api/contact/route.ts
 import { NextResponse } from 'next/server';
-import { z } from 'zod';
+import { Resend } from 'resend';
 
-const schema = z.object({
-    name: z.string().min(2),
-    email: z.string().email(),
-    subject: z.string().min(2),
-    message: z.string().min(10)
-});
+// Make sure API key exists
+const resendApiKey = process.env.RESEND_API_KEY;
+if (!resendApiKey) {
+    throw new Error('Missing RESEND_API_KEY environment variable');
+}
+
+const resend = new Resend(resendApiKey);
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
+        const { name, email, subject, message } = body;
 
-        // Validate the request body
-        const { name, email, subject, message } = schema.parse(body);
+        // Validate input
+        if (!name || !email || !subject || !message) {
+            return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+        }
 
-        // Here you would typically send the email using your preferred method
-        // For example, using nodemailer, SendGrid, etc.
+        console.log('Attempting to send email with Resend...');
 
-        // For now, we'll just log it
-        console.log('Contact form submission:', {
-            name,
-            email,
-            subject,
-            message
+        // Send email
+        const { data, error } = await resend.emails.send({
+            from: 'Nolan Corcoran <onboarding@resend.dev>', // Use this email while in testing
+            to: 'nd.corc@gmail.com',
+            subject: `New Contact Form Submission: ${subject}`,
+            html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+            replyTo: email
         });
 
-        return NextResponse.json(
-            { message: 'Message sent successfully' },
-            { status: 200 }
-        );
+        if (error) {
+            console.error('Resend API Error:', error);
+            return NextResponse.json({ error: 'Failed to send email', details: error }, { status: 500 });
+        }
+
+        console.log('Email sent successfully:', data);
+
+        return NextResponse.json({ message: 'Email sent successfully', data }, { status: 200 });
     } catch (error) {
-        console.error('Error processing contact form:', error);
-        return NextResponse.json(
-            { error: 'Failed to send message' },
-            { status: 500 }
-        );
+        console.error('Unexpected error in contact form:', error);
+        return NextResponse.json({ error: 'Failed to send email', details: error }, { status: 500 });
     }
 }

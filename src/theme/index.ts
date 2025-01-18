@@ -48,7 +48,6 @@ export const colors: MantineThemeColors = {
 };
 //const colors: MantineThemeColors = DEFAULT_THEME.colors;
 export const breakpoints: MantineBreakpointsValues = DEFAULT_THEME.breakpoints;
-console.log('breakpoints', breakpoints);
 
 export const theme = mergeMantineTheme(
     DEFAULT_THEME,

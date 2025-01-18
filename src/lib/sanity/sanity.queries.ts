@@ -163,16 +163,111 @@ export const getLatestPostQuery = groq`
 }
 `;
 
-export const getProjectsQuery = groq`
-*[_type == "project"] | order(featured desc) {
+// Get all projects with basic info
+export const getAllProjectsQuery = groq`
+  *[_type == "project"] | order(featured desc) {
+    _id,
+    title,
+    slug,
+    description,
+    company,
+    period,
+    type,
+    image,
+    technologies,
+    "techStack": techStack[] {
+      "category": category,
+      "items": items
+    },
+    githubUrl,
+    liveUrl,
+    featured
+}`;
+
+export const getProjectBySlugQuery = groq`
+  *[_type == "project" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    description,
+    company,
+    period,
+    type,
+    image,
+    technologies,
+    "techStack": techStack[] {
+      "category": category,
+      "items": items
+    },
+    githubUrl,
+    liveUrl,
+    featured,
+    challenges,
+    "solutions": solutions[] {
+      title,
+      description
+    },
+    implementation,
+    results,
+    "architectureDiagram": architectureDiagram {
+      title,
+      mermaidCode
+    },
+    "architectureDiagramUrl": architectureDiagramImage.asset->url
+}`;
+
+// Get featured projects
+export const getFeaturedProjectsQuery = groq`
+*[_type == "project" && featured == true] | order(_createdAt desc) {
   _id,
   title,
   slug,
   description,
+  company,
+  period,
+  type,
   image,
-  technologies,
-  githubUrl,
-  liveUrl,
+  techStack,
+  links
+}[0...3]`;
+
+// Get projects by type
+export const getProjectsByTypeQuery = groq`
+*[_type == "project" && type == $type] | order(_createdAt desc) {
+  _id,
+  title,
+  slug,
+  description,
+  company,
+  period,
+  type,
+  image,
+  techStack,
+  links,
   featured
-}
-`;
+}`;
+
+export const getAllDiagramsQuery = groq`
+*[_type == "project" && defined(architectureDiagram)] {
+  _id,
+  title,
+  slug,
+  type,
+  architectureDiagram {
+    title,
+    mermaidCode
+  }
+}`;
+
+// Get diagram by project ID
+export const getDiagramByProjectIdQuery = groq`
+*[_type == "project" && id.current == $id][0] {
+  _id,
+  title,
+  id,
+  type,
+  architectureDiagram {
+    title,
+    mermaidCode
+  }
+}`;

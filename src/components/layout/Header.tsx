@@ -205,12 +205,6 @@ export default function Header() {
         return null; // or return a skeleton/placeholder
     }
 
-    NAVIGATION_LINKS.forEach((link) => {
-        console.log('link', link);
-        console.log('isActive(item.href)', isActive(link.href));
-        console.log(activeLink);
-    });
-
     return (
         <>
             <AppShell.Header

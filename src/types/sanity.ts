@@ -49,17 +49,65 @@ export interface BlogContentProps {
     featuredPost: Post | undefined;
 }
 
-// Add this alongside your existing types
-export interface Project {
+export interface TechStackItem {
+    category: string;
+    items: string[];
+}
+
+export interface BaseProject {
     _id: string;
     title: string;
-    slug: {
-        current: string;
-    };
     description: string;
-    image?: Image;
+    company: string;
+    period: string;
+    type: 'full-stack' | 'cloud-architecture';
+    image: Image;
     technologies: string[];
+    techStack?: TechStackItem[];
     githubUrl?: string;
     liveUrl?: string;
     featured: boolean;
+}
+
+// Interface for the project list query
+export interface Project extends BaseProject {
+    slug: {
+        current: string;
+        _type: 'slug';
+    };
+}
+
+// Interface for the single project query
+export interface ProjectDetails extends BaseProject {
+    slug: {
+        current: string;
+        _type: 'slug';
+    };
+    challenges?: string[];
+    solutions?: Solution[];
+    implementation?: string[];
+    results?: string[];
+    architectureDiagram?: ArchitectureDiagram;
+    architectureDiagramImage?: Image;
+}
+
+// src/types/sanity.ts
+export interface ArchitectureDiagram {
+    title: string;
+    mermaidCode: string;
+}
+
+export interface ProjectWithDiagram {
+    _id: string;
+    title: string;
+    id: {
+        current: string;
+    };
+    type: 'full-stack' | 'cloud-architecture';
+    architectureDiagram: ArchitectureDiagram;
+}
+
+export interface Solution {
+    title: string;
+    description: string;
 }

@@ -16,6 +16,7 @@ import {
     useMantineColorScheme
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
 import { IconMail, IconPhone, IconMapPin, IconClock } from '@tabler/icons-react';
 
 interface FormValues {
@@ -24,6 +25,13 @@ interface FormValues {
     subject: string;
     message: string;
 }
+
+const INFO_ITEMS = [
+    { icon: IconMail, label: 'Email', value: 'nd.corc@gmail.com' },
+    { icon: IconPhone, label: 'Phone', value: '+1 (737) 757-6362' },
+    { icon: IconMapPin, label: 'Address', value: `Georgetown, TX 78626` },
+    { icon: IconClock, label: 'Working hours', value: '9 AM – 5 PM (CST)' }
+];
 
 export default function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,10 +46,10 @@ export default function ContactForm() {
             message: ''
         },
         validate: {
-            name: (value) => (value.trim().length < 2 ? 'Name must have at least 2 characters' : null),
+            name: (value) => (value.length < 2 ? 'Name must have at least 2 characters' : null),
             email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-            subject: (value) => (value.trim().length < 2 ? 'Subject must have at least 2 characters' : null),
-            message: (value) => (value.trim().length < 10 ? 'Message must have at least 10 characters' : null)
+            subject: (value) => (value.length < 2 ? 'Subject must have at least 2 characters' : null),
+            message: (value) => (value.length < 10 ? 'Message must have at least 10 characters' : null)
         }
     });
 
@@ -50,9 +58,7 @@ export default function ContactForm() {
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values)
             });
 
@@ -60,9 +66,32 @@ export default function ContactForm() {
                 throw new Error('Failed to send message');
             }
 
+            // Show success notification
+            notifications.show({
+                title: 'Message Sent',
+                message: 'Thank you for your message. I will get back to you soon.',
+                classNames: {
+                    root: 'bg-green-filled before:bg-[#FFF] text-[#FFF] font-bold',
+                    description: 'text-[#FFF]',
+                    title: 'text-[#FFF]',
+                    closeButton: 'text-[#FFF] hover:bg-black/10'
+                }
+            });
+
             form.reset();
         } catch (error) {
-            console.error('Error sending message:', error);
+            console.log('error', error);
+            // Show error notification
+            notifications.show({
+                title: 'Error',
+                message: 'Failed to send message. Please try again.',
+                classNames: {
+                    root: 'bg-red before:bg-[#FFF]',
+                    description: 'text-[#FFF]',
+                    title: 'text-[#FFF]',
+                    closeButton: 'text-[#FFF] hover:bg-black/10'
+                }
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -82,37 +111,15 @@ export default function ContactForm() {
                             </Title>
 
                             <Stack gap="lg" className="text-[#FFF]">
-                                <Group>
-                                    <IconMail size={24} />
-                                    <Stack gap="0">
-                                        <Text className="text-sm">Email</Text>
-                                        <Text className="text-xl">nd.corc@gmail.com</Text>
-                                    </Stack>
-                                </Group>
-
-                                <Group>
-                                    <IconPhone size={24} />
-                                    <Stack gap="0">
-                                        <Text className="text-sm">Phone</Text>
-                                        <Text className="text-xl">+1 (737) 757-6362</Text>
-                                    </Stack>
-                                </Group>
-
-                                <Group wrap="nowrap">
-                                    <IconMapPin size={24} />
-                                    <Stack gap="0">
-                                        <Text className="text-sm">Address</Text>
-                                        <Text className="text-xl">Georgetown, TX 78626</Text>
-                                    </Stack>
-                                </Group>
-
-                                <Group>
-                                    <IconClock size={24} />
-                                    <Stack gap="0">
-                                        <Text className="text-sm">Working Hours</Text>
-                                        <Text className="text-xl">9 A.M. – 5 P.M. (CST)</Text>
-                                    </Stack>
-                                </Group>
+                                {INFO_ITEMS.map(({ icon: Icon, label, value }) => (
+                                    <Group key={label} wrap="nowrap">
+                                        <Icon className="w-[20px] min-w-[20x] flex-shrink-0" />
+                                        <Stack gap="0">
+                                            <Text className="text-sm text-[#FFF]/80">{label}</Text>
+                                            <Text className="text-xl leading-tight">{value}</Text>
+                                        </Stack>
+                                    </Group>
+                                ))}
                             </Stack>
                         </Paper>
                     </BackgroundImage>

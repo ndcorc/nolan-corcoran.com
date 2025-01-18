@@ -48,7 +48,7 @@ const techCategories = [
 
 export default function TechStack() {
     return (
-        <div className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="py-10">
             <Container size="lg">
                 <Title order={2} className="text-center mb-12 font-serif">
                     Technical Skills
@@ -60,7 +60,7 @@ export default function TechStack() {
                             key={category.title}
                             withBorder
                             radius="md"
-                            className="bg-white dark:bg-gray-800"
+                            className="bg-stone-50 dark:bg-dark rounded-xl shadow-md dark:shadow-dark-lg"
                             padding="xl">
                             <Title order={3} className="mb-6 text-center font-serif">
                                 {category.title}

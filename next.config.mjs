@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['cdn.sanity.io', 'nolan-corcoran.com', 'api.reftagger.com', 'reftagger.bibliacdn.com'],
+        remotePatterns: [
+            { hostname: 'cdn.sanity.io' },
+            { hostname: 'nolan-corcoran.com' },
+            { hostname: 'api.reftagger.com' },
+            { hostname: 'reftagger.bibliacdn.com' }
+        ],
         formats: ['image/avif', 'image/webp']
     },
     experimental: {

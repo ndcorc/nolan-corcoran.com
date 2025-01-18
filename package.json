@@ -8,13 +8,15 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "next lint --fix",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "migrate:portfolio": "tsx scripts/migratePortfolioData.ts"
     },
     "dependencies": {
-        "@mantine/carousel": "^7.15.3",
-        "@mantine/core": "^7.13.4",
-        "@mantine/form": "^7.15.3",
-        "@mantine/hooks": "^7.13.4",
+        "@mantine/carousel": "^7.16.0",
+        "@mantine/core": "^7.16.0",
+        "@mantine/form": "^7.16.0",
+        "@mantine/hooks": "^7.16.0",
+        "@mantine/notifications": "^7.16.0",
         "@portabletext/react": "^3.2.0",
         "@sanity/client": "^6.24.1",
         "@sanity/image-url": "^1.1.0",
@@ -25,6 +27,7 @@
         "embla-carousel-react": "^8.5.2",
         "framer-motion": "^11.16.1",
         "lucide-react": "^0.469.0",
+        "mermaid": "^11.4.1",
         "next": "^15.0.1",
         "next-sanity": "^9.8.32",
         "next-sitemap": "^4.2.3",
@@ -33,6 +36,7 @@
         "react-reftagger": "^2.1.0",
         "react-scroll": "^1.9.0",
         "react-toggle-dark-mode": "^1.1.1",
+        "resend": "^4.1.1",
         "sanity": "^3.68.3",
         "tailwind-preset-mantine": "^1.2.1",
         "zod": "^3.24.1"
@@ -51,6 +55,7 @@
         "postcss-simple-vars": "^7.0.1",
         "prettier": "^3.3.3",
         "tailwindcss": "^3.4.14",
+        "tsx": "^4.19.2",
         "typescript": "^5.6.3"
     },
     "packageManager": "pnpm@9.12.2"

@@ -1,10 +1,10 @@
 // src/app/portfolio/page.tsx
 import type { Metadata } from 'next';
-import { AppShellMain } from '@mantine/core';
+import { AppShellMain, Divider } from '@mantine/core';
 import PortfolioHero from '@/components/portfolio/PortfolioHero';
-import ProjectList from '@/components/portfolio/ProjectList';
-import { getProjects } from '@/lib/sanity/sanity.client';
+import { getAllProjects } from '@/lib/sanity/sanity.client';
 import TechStack from '@/components/portfolio/TechStack';
+import ProjectSection from '@/components/portfolio/ProjectsSection';
 
 export const metadata: Metadata = {
     title: 'Portfolio',
@@ -12,13 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default async function PortfolioPage() {
-    const projects = await getProjects();
+    const projects = await getAllProjects();
 
     return (
-        <AppShellMain>
+        <AppShellMain className="pb-32">
             <PortfolioHero />
+            <Divider size="xs" className="w-[50vw] mx-auto border-gray-400" />
             <TechStack />
-            <ProjectList projects={projects} />
+            <Divider size="xs" className="w-[50vw] mx-auto border-gray-400" />
+            <ProjectSection projects={projects} />
         </AppShellMain>
     );
 }
