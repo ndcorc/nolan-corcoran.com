@@ -72,9 +72,9 @@ export default function Footer() {
 
                     <Group gap="md">
                         {[
-                            { icon: IconBrandX, href: 'https://twitter.com' },
+                            { icon: IconBrandX, href: 'https://twitter.com/nolancorcoran' },
                             { icon: IconBrandYoutube, href: 'https://youtube.com' },
-                            { icon: IconBrandInstagram, href: 'https://instagram.com' }
+                            { icon: IconBrandInstagram, href: 'https://www.instagram.com/nolan.corcoran' }
                         ].map((social, index) => (
                             <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
                                 <social.icon

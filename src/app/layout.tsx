@@ -3,6 +3,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
 import '@mantine/notifications/styles.css';
+import '@mantine/tiptap/styles.css';
 import { theme } from '@/theme';
 import QueryProvider from '@/providers/query-provider';
 import BibleRefTagger from '@/components/shared/BibleRefTagger';
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        creator: '@yourtwitterhandle',
+        creator: '@nolancorcoran',
         images: '/twitter-image.jpg' // Add your Twitter card image
     },
     robots: {
@@ -86,6 +87,7 @@ export default function RootLayout({
             <head>
                 <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
                 <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="icon" href="/icon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta

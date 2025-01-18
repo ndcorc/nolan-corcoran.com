@@ -3,7 +3,7 @@
 import { RefTagger } from 'react-reftagger';
 
 const BibleRefTagger = () => {
-    return <RefTagger bibleVersion="ESV" />;
+    return <RefTagger bibleVersion="ESV" roundCorners={true} />;
 };
 
 export default BibleRefTagger;

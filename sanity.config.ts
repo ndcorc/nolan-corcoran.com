@@ -20,8 +20,5 @@ export default defineConfig({
     title: 'Every Thought Captive',
     // Add and edit the content schema in the './sanity/schemaTypes' folder
     schema,
-    plugins: [
-        structureTool({ structure }),
-        visionTool({ defaultApiVersion: apiVersion })
-    ]
+    plugins: [structureTool({ structure }), visionTool({ defaultApiVersion: apiVersion })]
 });

@@ -16,15 +16,8 @@ import {
     ThemeIcon
 } from '@mantine/core';
 import { motion } from 'framer-motion';
-import {
-    IconAffiliate,
-    IconBrandGithub,
-    IconCloudNetwork,
-    IconExternalLink,
-    IconGauge,
-    IconPlug,
-    IconWorld
-} from '@tabler/icons-react';
+import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import * as TablerIcons from '@tabler/icons-react';
 import type { ProjectDetails } from '@/types/sanity';
 import ArchitectureDiagram from './ArchitectureDiagram';
 import * as diagrams from '@/data/diagrams';
@@ -84,15 +77,9 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
         }
     ];
 
-    const solutionIcons: { [key: string]: React.ElementType } = {
-        'Modern Tech Stack': IconCloudNetwork,
-        'CMS Integration': IconPlug,
-        'Performance Optimization': IconGauge,
-        'SEO & Accessibility': IconWorld
-    };
-
-    function getSolutionIcon(solution: string): React.ElementType {
-        return solutionIcons[solution] || IconAffiliate;
+    function DynamicIcon({ iconName, size = 24 }: { iconName: string; size?: number }) {
+        const Icon = TablerIcons[iconName as keyof typeof TablerIcons] as React.ComponentType<{ size: number }>;
+        return Icon ? <Icon size={size} /> : null;
     }
 
     return (
@@ -256,8 +243,7 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                                         {project?.solutions?.map((solution, index) => (
                                             <div key={index}>
                                                 <ThemeIcon radius="md" size="xl" className="mb-2">
-                                                    {getSolutionIcon(solution.title) &&
-                                                        React.createElement(getSolutionIcon(solution.title))}
+                                                    <DynamicIcon iconName={solution.icon} size={24} />
                                                 </ThemeIcon>
                                                 <Title order={4}>{solution.title}</Title>
                                                 <Text className="text-black/60 dark:text-[#FFF]/50">

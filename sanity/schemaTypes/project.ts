@@ -137,6 +137,13 @@ export default defineType({
                             type: 'string'
                         },
                         {
+                            name: 'icon',
+                            title: 'Icon Name',
+                            type: 'string',
+                            description: 'Enter a tabler.io icon name (https://tabler.io/icons)',
+                            validation: (Rule) => Rule.required()
+                        },
+                        {
                             name: 'description',
                             title: 'Solution Description',
                             type: 'text'

@@ -2,7 +2,7 @@ import HomeContent from '@/components/home/HomeContent';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Home',
+    title: 'Nolan Corcoran | Every Thought Captive',
     description: 'Theology, Culture, and Cloud Engineering',
     openGraph: {
         title: 'Every Thought Captive',

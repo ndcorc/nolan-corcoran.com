@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/sanity/sanity.client';
+import { getAllPosts, getAllProjects } from '@/lib/sanity/sanity.client';
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,13 +15,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7
     }));
 
+    const projects = await getAllProjects();
+    const projectUrls = projects.map((project) => ({
+        url: `${baseUrl}/portfolio/${project.slug.current}`,
+        lastModified: new Date(project.period),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7
+    }));
+
     // Add static routes
-    const routes = ['', '/#about', '/#contact', '/blog'].map((route) => ({
+    const routes = ['', '/#about', '/#contact', '/blog', '/portfolio'].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: route === '' ? 1 : 0.8
     }));
 
-    return [...routes, ...blogUrls];
+    return [...routes, ...blogUrls, ...projectUrls];
 }

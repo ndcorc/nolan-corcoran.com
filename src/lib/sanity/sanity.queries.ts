@@ -205,6 +205,7 @@ export const getProjectBySlugQuery = groq`
     challenges,
     "solutions": solutions[] {
       title,
+      icon,
       description
     },
     implementation,

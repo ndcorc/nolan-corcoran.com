@@ -109,5 +109,6 @@ export interface ProjectWithDiagram {
 
 export interface Solution {
     title: string;
+    icon: string;
     description: string;
 }
