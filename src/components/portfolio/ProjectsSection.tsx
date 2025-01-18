@@ -16,7 +16,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
     return (
         <section className="py-10">
-            <Container fluid className="mx-16">
+            <Container fluid className="xl:mx-16">
                 <div className="text-center mb-12">
                     <Title order={2} className="font-serif mb-4">
                         Featured Projects

@@ -39,7 +39,10 @@ export default function Header() {
     const [activeLink, setActiveLink] = useState<string | null>(pathname);
     const [isScrolling, setIsScrolling] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const isActive = useCallback((href: string) => activeLink === href, [activeLink]);
+    const isActive = useCallback(
+        (href: string) => activeLink === href || (href !== '/' && activeLink?.startsWith(href)),
+        [activeLink]
+    );
     const isDark = useMemo(() => colorScheme === 'dark', [colorScheme]);
     const { opened, toggle, close } = useNavbar();
     const isMobile = useMediaQuery('(max-width: 74em)');
@@ -151,6 +154,8 @@ export default function Header() {
         }
         close();
     };
+
+    console.log('activeLink', activeLink);
 
     const renderNavLink = useCallback(
         (link: NavLink) => {

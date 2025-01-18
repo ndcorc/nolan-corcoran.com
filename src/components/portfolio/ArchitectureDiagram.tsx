@@ -17,7 +17,7 @@ export default function ArchitectureDiagram({ title, diagram }: ArchitectureDiag
                     {title}
                 </Title>
             )}
-            <div className="p-6 bg-[#FFF] dark:bg-dark rounded-lg shadow-dark-md">
+            <div className="p-6 bg-[#FFF] dark:bg-dark rounded-lg shadow-dark-md max-lg:overflow-scroll">
                 <Mermaid chart={diagram} />
             </div>
         </div>

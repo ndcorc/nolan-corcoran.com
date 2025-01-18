@@ -50,7 +50,7 @@ export default function TechStack() {
     return (
         <div className="py-10">
             <Container size="lg">
-                <Title order={2} className="text-center mb-12 font-serif">
+                <Title order={3} className="text-center mb-12 font-serif">
                     Technical Skills
                 </Title>
 

@@ -17,9 +17,9 @@ export default async function PortfolioPage() {
     return (
         <AppShellMain className="pb-32">
             <PortfolioHero />
-            <Divider size="xs" className="w-[50vw] mx-auto border-gray-400" />
+            <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
             <TechStack />
-            <Divider size="xs" className="w-[50vw] mx-auto border-gray-400" />
+            <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
             <ProjectSection projects={projects} />
         </AppShellMain>
     );
