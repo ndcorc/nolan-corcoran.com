@@ -24,7 +24,7 @@ import type { ProjectDetails } from '@/types/sanity';
 import ArchitectureDiagram from './ArchitectureDiagram';
 import * as diagrams from '@/data/diagrams';
 import { urlForImage } from '@/lib/sanity/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface CaseStudyContentProps {
     project: ProjectDetails;
@@ -64,6 +64,12 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
     const MotionSection = motion.section;
     const architectureDiagram = getDiagramForProject(project.slug.current);
     const { colorScheme } = useMantineColorScheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const isDark = colorScheme === 'dark';
 
     const links = [
@@ -210,47 +216,49 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                         </motion.section>
                         <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
                         {/* Tech Stack */}
-                        <MotionSection
-                            variants={fadeIn}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}>
-                            <Title order={2} className="mb-8 font-serif">
-                                Technologies Used
-                            </Title>
-                            <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
-                                {project?.techStack?.map((stack) => (
-                                    <Card
-                                        key={stack.category}
-                                        shadow="md"
-                                        radius="xl"
-                                        className="bg-[#FFF]/40 dark:bg-dark/80 border border-gray-300 dark:border-dark-500 shadow-dark-md dark:shadow-dark-z"
-                                        padding="xl">
-                                        {getTechStackIcon(stack.category)}
-                                        <Text className="text-3xl" mt="md">
-                                            {stack.category}
-                                        </Text>
-                                        <Divider
-                                            size="md"
-                                            className="w-[15%] border-brand dark:border-navy mt-2 mb-6"
-                                        />
-                                        <Group>
-                                            {stack.items &&
-                                                stack.items.map((item) => (
-                                                    <Badge
-                                                        key={item}
-                                                        size="lg"
-                                                        color={isDark ? 'navy' : 'brand'}
-                                                        variant="dot">
-                                                        {item}
-                                                    </Badge>
-                                                ))}
-                                        </Group>
-                                    </Card>
-                                ))}
-                            </SimpleGrid>
-                        </MotionSection>
+                        {mounted && (
+                            <MotionSection
+                                variants={fadeIn}
+                                initial="initial"
+                                whileInView="animate"
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}>
+                                <Title order={2} className="mb-8 font-serif">
+                                    Technologies Used
+                                </Title>
+                                <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+                                    {project?.techStack?.map((stack) => (
+                                        <Card
+                                            key={stack.category}
+                                            shadow="md"
+                                            radius="xl"
+                                            className="bg-[#FFF]/40 dark:bg-dark/80 border border-gray-300 dark:border-dark-500 shadow-dark-md dark:shadow-dark-z"
+                                            padding="xl">
+                                            {getTechStackIcon(stack.category)}
+                                            <Text className="text-3xl" mt="md">
+                                                {stack.category}
+                                            </Text>
+                                            <Divider
+                                                size="md"
+                                                className="w-[15%] border-brand dark:border-navy mt-2 mb-6"
+                                            />
+                                            <Group>
+                                                {stack.items &&
+                                                    stack.items.map((item) => (
+                                                        <Badge
+                                                            key={item}
+                                                            size="lg"
+                                                            color={isDark ? 'navy' : 'brand'}
+                                                            variant="dot">
+                                                            {item}
+                                                        </Badge>
+                                                    ))}
+                                            </Group>
+                                        </Card>
+                                    ))}
+                                </SimpleGrid>
+                            </MotionSection>
+                        )}
 
                         <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
 
@@ -303,7 +311,7 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                             </div>
                         </MotionSection>
 
-                        <Divider size="xs" className="w-[50vw] mx-auto border-gray-400 dark:border-dark-400" />
+                        <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
 
                         {/* Results & Impact */}
                         <MotionSection
