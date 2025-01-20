@@ -168,15 +168,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                                         {stack.category}:
                                     </Text>
                                     <Group gap="xs">
-                                        {stack.items.map((item) => (
-                                            <Badge
-                                                key={item}
-                                                size="sm"
-                                                variant="dot"
-                                                className="shadow-md dark:shadow-dark-sm">
-                                                {item}
-                                            </Badge>
-                                        ))}
+                                        {stack.items &&
+                                            stack.items.map((item) => (
+                                                <Badge
+                                                    key={item}
+                                                    size="sm"
+                                                    variant="dot"
+                                                    className="shadow-md dark:shadow-dark-sm">
+                                                    {item}
+                                                </Badge>
+                                            ))}
                                     </Group>
                                 </div>
                             ))}

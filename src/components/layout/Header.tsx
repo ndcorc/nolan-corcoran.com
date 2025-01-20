@@ -155,8 +155,6 @@ export default function Header() {
         close();
     };
 
-    console.log('activeLink', activeLink);
-
     const renderNavLink = useCallback(
         (link: NavLink) => {
             const isDisabled = !isActive(link.href) && hoveredLink !== link.href;

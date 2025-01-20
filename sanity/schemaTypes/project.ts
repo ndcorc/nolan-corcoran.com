@@ -44,14 +44,19 @@ export default defineType({
         defineField({
             name: 'type',
             title: 'Project Type',
-            type: 'string',
-            options: {
-                list: [
-                    { title: 'Full Stack', value: 'full-stack' },
-                    { title: 'Cloud Architecture', value: 'cloud-architecture' }
-                ]
-            },
-            validation: (Rule) => Rule.required()
+            type: 'array',
+            of: [
+                {
+                    type: 'string',
+                    options: {
+                        list: [
+                            { title: 'Full Stack', value: 'full-stack' },
+                            { title: 'Cloud Architecture', value: 'cloud-architecture' }
+                        ]
+                    }
+                }
+            ],
+            validation: (Rule) => Rule.required().min(1)
         }),
         defineField({
             name: 'image',

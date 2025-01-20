@@ -13,10 +13,12 @@ import {
     List,
     Divider,
     SimpleGrid,
-    ThemeIcon
+    ThemeIcon,
+    Card,
+    useMantineColorScheme
 } from '@mantine/core';
 import { motion } from 'framer-motion';
-import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import { IconBrandGithub, IconExternalLink, IconLayoutDashboard } from '@tabler/icons-react';
 import * as TablerIcons from '@tabler/icons-react';
 import type { ProjectDetails } from '@/types/sanity';
 import ArchitectureDiagram from './ArchitectureDiagram';
@@ -61,6 +63,8 @@ function getDiagramForProject(projectId: string): string | null {
 export default function CaseStudyContent({ project }: CaseStudyContentProps) {
     const MotionSection = motion.section;
     const architectureDiagram = getDiagramForProject(project.slug.current);
+    const { colorScheme } = useMantineColorScheme();
+    const isDark = colorScheme === 'dark';
 
     const links = [
         {
@@ -80,6 +84,34 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
     function DynamicIcon({ iconName, size = 24 }: { iconName: string; size?: number }) {
         const Icon = TablerIcons[iconName as keyof typeof TablerIcons] as React.ComponentType<{ size: number }>;
         return Icon ? <Icon size={size} /> : null;
+    }
+
+    function getTechStackIcon(stackName: string) {
+        let StackIcon = IconLayoutDashboard;
+        switch (stackName) {
+            case 'Frontend':
+                StackIcon = IconLayoutDashboard;
+                break;
+            case 'Backend':
+                StackIcon = TablerIcons.IconApi;
+                break;
+            case 'Cloud/Infrastructure':
+                StackIcon = TablerIcons.IconCloudComputing;
+                break;
+            case 'DevOps':
+                StackIcon = TablerIcons.IconGitPullRequest;
+                break;
+            case 'Database':
+                StackIcon = TablerIcons.IconDatabase;
+                break;
+            case 'Development Tools':
+                StackIcon = TablerIcons.IconTools;
+                break;
+            case 'Other':
+                StackIcon = TablerIcons.IconWand;
+                break;
+        }
+        return <StackIcon size={50} stroke={2} className="text-brand-600 dark:text-navy-400" />;
     }
 
     return (
@@ -161,6 +193,9 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                             whileInView="animate"
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}>
+                            <Title order={2} className="mb-8 font-serif">
+                                Architecture Overview
+                            </Title>
                             {project.architectureDiagramImage ? (
                                 <div className="bg-stone-50 rounded-lg dark:bg-dark-200 shadow-dark-z dark:shadow-dark-lg">
                                     <Image
@@ -170,14 +205,7 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                                     />
                                 </div>
                             ) : (
-                                architectureDiagram && (
-                                    <>
-                                        <Title order={2} className="mb-8 font-serif">
-                                            Architecture Overview
-                                        </Title>
-                                        <ArchitectureDiagram diagram={architectureDiagram} />
-                                    </>
-                                )
+                                architectureDiagram && <ArchitectureDiagram diagram={architectureDiagram} />
                             )}
                         </motion.section>
                         <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
@@ -191,22 +219,37 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                             <Title order={2} className="mb-8 font-serif">
                                 Technologies Used
                             </Title>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-stone-50 dark:bg-dark p-8 rounded-lg shadow-dark-md">
+                            <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
                                 {project?.techStack?.map((stack) => (
-                                    <div key={stack.category}>
-                                        <Title order={4} fw={500} mb="md">
+                                    <Card
+                                        key={stack.category}
+                                        shadow="md"
+                                        radius="xl"
+                                        className="bg-[#FFF]/40 dark:bg-dark/80 border border-gray-300 dark:border-dark-500 shadow-dark-md dark:shadow-dark-z"
+                                        padding="xl">
+                                        {getTechStackIcon(stack.category)}
+                                        <Text className="text-3xl" mt="md">
                                             {stack.category}
-                                        </Title>
+                                        </Text>
+                                        <Divider
+                                            size="md"
+                                            className="w-[15%] border-brand dark:border-navy mt-2 mb-6"
+                                        />
                                         <Group>
-                                            {stack.items.map((item) => (
-                                                <Badge key={item} size="lg" variant="dot">
-                                                    {item}
-                                                </Badge>
-                                            ))}
+                                            {stack.items &&
+                                                stack.items.map((item) => (
+                                                    <Badge
+                                                        key={item}
+                                                        size="lg"
+                                                        color={isDark ? 'navy' : 'brand'}
+                                                        variant="dot">
+                                                        {item}
+                                                    </Badge>
+                                                ))}
                                         </Group>
-                                    </div>
+                                    </Card>
                                 ))}
-                            </div>
+                            </SimpleGrid>
                         </MotionSection>
 
                         <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
@@ -224,8 +267,10 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                             <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-x-16 gap-y-8">
                                 {/* Left column */}
                                 <Stack>
-                                    <Title order={3}>Key Features</Title>
-                                    <Divider size="xs" className="border-gray-400 dark:border-dark-400" />
+                                    <Title order={3}>
+                                        Key Features
+                                        <Divider size="md" className="w-[48px] border-brand dark:border-navy my-2" />
+                                    </Title>
                                     <List spacing="sm">
                                         {project?.implementation?.map((feature, index) => (
                                             <List.Item key={index} className="list-disc">
@@ -237,8 +282,10 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
 
                                 {/* Right column */}
                                 <Stack>
-                                    <Title order={3}>Technical Implementation</Title>
-                                    <Divider size="xs" className="border-gray-400 dark:border-dark-400" />
+                                    <Title order={3}>
+                                        Technical Implementation
+                                        <Divider size="md" className="w-[48px] border-brand dark:border-navy my-2" />
+                                    </Title>
                                     <SimpleGrid cols={{ base: 1, md: 2 }} spacing={30}>
                                         {project?.solutions?.map((solution, index) => (
                                             <div key={index}>

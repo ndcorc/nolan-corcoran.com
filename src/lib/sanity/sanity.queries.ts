@@ -214,7 +214,7 @@ export const getProjectBySlugQuery = groq`
       title,
       mermaidCode
     },
-    "architectureDiagramUrl": architectureDiagramImage.asset->url
+    architectureDiagramImage
 }`;
 
 // Get featured projects
