@@ -22,9 +22,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
 
     // Get the post's main image URL if it exists
+    console.log('post.mainImage', post.mainImage);
     const imageUrl = post.mainImage
         ? urlForImage(post.mainImage).width(1200).height(630).url()
         : 'https://nolan-corcoran.com/og-image.jpg'; // fallback image
+    console.log('imageUrl', imageUrl);
 
     return {
         title: post.title,

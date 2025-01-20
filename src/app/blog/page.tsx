@@ -11,7 +11,15 @@ export const metadata: Metadata = {
         url: 'https://nolan-corcoran.com/blog',
         siteName: 'Every Thought Captive',
         locale: 'en_US',
-        type: 'website'
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Nolan Corcoran'
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
