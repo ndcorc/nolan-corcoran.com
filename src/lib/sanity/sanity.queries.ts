@@ -272,3 +272,75 @@ export const getDiagramByProjectIdQuery = groq`
     mermaidCode
   }
 }`;
+
+export const getProjectCountQuery = groq`
+  count(*[_type == "project"])
+`;
+
+export const getPaginatedProjectsQuery = groq`
+  *[_type == "project"] | order(featured desc, _createdAt desc) [$start...$end]
+`;
+
+export const getPaginatedProjectsByTypeQuery = groq`
+  *[_type == "project" && type == $type] | order(featured desc, _createdAt desc) [$start...$end]
+`;
+
+export const searchProjectsQuery = groq`
+  *[_type == "project" && (
+    title match $searchTerm ||
+    description match $searchTerm ||
+    company match $searchTerm ||
+    technologies[] match $searchTerm
+  )] | order(featured desc, _createdAt desc) {
+    _id,
+    title,
+    id,
+    description,
+    company,
+    period,
+    type,
+    image,
+    technologies,
+    techStack,
+    githubUrl,
+    liveUrl,
+    featured
+  }
+`;
+
+export const getRelatedProjectsQuery = groq`
+  *[_type == "project" 
+    && id.current != $currentId 
+    && count((technologies[])[@ in $technologies]) > 0
+  ] | order(count((technologies[])[@ in $technologies]) desc) [0...$limit] {
+    _id,
+    title,
+    id,
+    description,
+    type,
+    image,
+    technologies,
+    featured
+  }
+`;
+
+export const getProjectStatsQuery = groq`{
+  "total": count(*[_type == "project"]),
+  "fullStack": count(*[_type == "project" && type == "full-stack"]),
+  "cloudArchitecture": count(*[_type == "project" && type == "cloud-architecture"]),
+  "featured": count(*[_type == "project" && featured == true]),
+  "technologies": *[_type == "project"].technologies[]
+}`;
+
+export const getDiagramsByProjectTypeQuery = groq`
+  *[_type == "project" && defined(architectureDiagram) && type == $type] {
+    _id,
+    title,
+    id,
+    type,
+    architectureDiagram {
+      title,
+      mermaidCode
+    }
+  }
+`;

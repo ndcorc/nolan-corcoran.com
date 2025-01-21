@@ -1,6 +1,7 @@
 // src/components/shared/GradientButton.tsx
 'use client';
 
+import { nprogress } from '@mantine/nprogress';
 import Link from 'next/link';
 
 interface GradientButtonProps {
@@ -12,6 +13,7 @@ export function GradientButton({ href, className = '' }: GradientButtonProps) {
     return (
         <Link
             href={href}
+            onClick={nprogress.start}
             className={`
 				text-[#FFF] hover:text-brand-500 dark:text-white dark:hover:text-navy-500
 				inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 

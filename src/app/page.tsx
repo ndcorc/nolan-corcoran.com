@@ -1,5 +1,7 @@
 import HomeContent from '@/components/home/HomeContent';
+import Loading from '@/components/shared/Loading';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
     title: 'Nolan Corcoran | Every Thought Captive',
@@ -28,5 +30,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-    return <HomeContent />;
+    return (
+        <Suspense fallback={<Loading />}>
+            <HomeContent />
+        </Suspense>
+    );
 }

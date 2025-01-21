@@ -11,6 +11,7 @@ import { IconQuotes } from '@tabler/icons-react';
 import JsonLd from '../shared/JsonLd';
 import { useEffect, useState } from 'react';
 import BibleRefTagger from '../shared/BibleRefTagger';
+import Loading from '../shared/Loading';
 
 interface BlogPostProps {
     post: Post;
@@ -119,7 +120,7 @@ export default function BlogPost({ post }: BlogPostProps) {
     }, []);
 
     if (!mounted) {
-        return null;
+        return <Loading />;
     }
 
     return (

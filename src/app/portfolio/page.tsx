@@ -2,9 +2,9 @@
 import type { Metadata } from 'next';
 import { AppShellMain, Divider } from '@mantine/core';
 import PortfolioHero from '@/components/portfolio/PortfolioHero';
-import { getAllProjects } from '@/lib/sanity/sanity.client';
 import TechStack from '@/components/portfolio/TechStack';
 import ProjectSection from '@/components/portfolio/ProjectsSection';
+import { createServerSanity } from '@/lib/sanity/sanity.service.server';
 
 export const metadata: Metadata = {
     title: 'Portfolio',
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default async function PortfolioPage() {
-    const projects = await getAllProjects();
+    const serverSanity = await createServerSanity();
+    const projects = await serverSanity.getAllProjects();
 
     return (
         <AppShellMain className="pb-32">

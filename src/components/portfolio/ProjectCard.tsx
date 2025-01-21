@@ -26,6 +26,7 @@ import { motion } from 'framer-motion';
 import type { Project } from '@/types/sanity';
 import { useDisclosure } from '@mantine/hooks';
 import { urlForImage } from '@/lib/sanity/image';
+import { nprogress } from '@mantine/nprogress';
 
 const MotionCard = motion<CardProps>(Card);
 
@@ -134,6 +135,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                                 key={link.type}
                                 component="a"
                                 {...getLinkProps(link)}
+                                onClick={nprogress.start}
                                 variant="light"
                                 size="sm"
                                 leftSection={getIcon(link.type)}

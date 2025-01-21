@@ -5,9 +5,11 @@ import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { animateScroll, scroller, Link as ScrollLink, Events, scrollSpy } from 'react-scroll';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useNavbar } from '@/providers/navbar-state';
+import Loading from '../shared/Loading';
+import { NavigationProgress, nprogress } from '@mantine/nprogress';
 
 interface NavLink {
     href: string;
@@ -34,6 +36,7 @@ export default function Header() {
     const [scroll] = useWindowScroll();
     const router = useRouter();
     const pathname = usePathname();
+    const searchParams = useSearchParams();
 
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const [activeLink, setActiveLink] = useState<string | null>(pathname);
@@ -55,6 +58,7 @@ export default function Header() {
         (section: string) => {
             setActiveLink(section);
             if (pathname !== '/') {
+                nprogress.start();
                 router.push(section);
                 return;
             }
@@ -72,6 +76,7 @@ export default function Header() {
             const newPath = `/#${to}`;
             setActiveLink(newPath);
             if (pathname === '/') {
+                nprogress.start();
                 router.replace(newPath);
             }
         },
@@ -92,7 +97,7 @@ export default function Header() {
                 window.history.replaceState(null, '', path);
                 return;
             }
-
+            nprogress.start();
             router.push(path);
         },
         [isScrolling, pathname, router]
@@ -139,6 +144,10 @@ export default function Header() {
             Events.scrollEvent.remove('end');
         };
     }, []);
+
+    useEffect(() => {
+        nprogress.complete();
+    }, [pathname, searchParams]);
 
     const handleLinkClick = (e: React.MouseEvent, href: string, isHash: boolean = false) => {
         setActiveLink(href);
@@ -205,7 +214,7 @@ export default function Header() {
     );
 
     if (!mounted) {
-        return null; // or return a skeleton/placeholder
+        return <Loading />;
     }
 
     return (
@@ -215,6 +224,7 @@ export default function Header() {
                 className={`pl-2 pr-4 py-4 transition-colors duration-200 ${
                     scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'
                 }`}>
+                <NavigationProgress color={isDark ? 'navy' : 'brand'} />
                 <Group className="h-full w-full flex gap-0 xl:pl-0 pl-2" align="center" wrap="nowrap">
                     <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
                     {!isMobile ? (

@@ -1,11 +1,12 @@
-import { getAllPosts, getAllProjects } from '@/lib/sanity/sanity.client';
+import { createServerSanity } from '@/lib/sanity/sanity.service.server';
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://nolan-corcoran.com';
 
+    const serverSanity = await createServerSanity();
     // Get all blog posts
-    const posts = await getAllPosts();
+    const posts = await serverSanity.getAllPosts();
 
     // Create blog post URLs
     const blogUrls = posts.map((post) => ({
@@ -15,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7
     }));
 
-    const projects = await getAllProjects();
+    const projects = await serverSanity.getAllProjects();
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/portfolio/${project.slug.current}`,
         lastModified: new Date(project.period),

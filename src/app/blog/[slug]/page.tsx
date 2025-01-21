@@ -1,9 +1,13 @@
 // src/app/blog/[slug]/page.tsx
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import BlogPost from '@/components/blog/BlogPost';
 import { urlForImage } from '@/lib/sanity/image';
-import { getAllPosts, getPostBySlug } from '@/lib/sanity/sanity.client';
+import { createServerSanity } from '@/lib/sanity/sanity.service.server';
+import { client } from '@/../sanity/lib/client'; // Import the regular client
+import { Post } from '@/types/sanity';
+import { Suspense } from 'react';
+import Loading from '../loading';
 
 interface BlogPostPageProps {
     params: Promise<{
@@ -13,7 +17,9 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
     const { slug } = await params;
-    const post = await getPostBySlug(slug);
+    const serverSanity = await createServerSanity();
+
+    const post = await serverSanity.getPostBySlug(slug);
 
     if (!post) {
         return {
@@ -22,11 +28,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
 
     // Get the post's main image URL if it exists
-    console.log('post.mainImage', post.mainImage);
     const imageUrl = post.mainImage
         ? urlForImage(post.mainImage).width(1200).height(630).url()
         : 'https://nolan-corcoran.com/og-image.jpg'; // fallback image
-    console.log('imageUrl', imageUrl);
 
     return {
         title: post.title,
@@ -61,20 +65,25 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 // Generate static paths at build time
 export async function generateStaticParams() {
-    const posts = await getAllPosts();
+    const posts = await client.fetch(`*[_type == "post"]{ slug }`);
 
-    return posts.map((post) => ({
+    return posts.map((post: Post) => ({
         slug: post.slug.current
     }));
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug } = await params;
-    const post = await getPostBySlug(slug);
+    const serverSanity = await createServerSanity();
+    const post = await serverSanity.getPostBySlug(slug);
 
     if (!post) {
-        notFound();
+        redirect('/404');
     }
 
-    return <BlogPost post={post} />;
+    return (
+        <Suspense fallback={<Loading />}>
+            <BlogPost post={post} />
+        </Suspense>
+    );
 }

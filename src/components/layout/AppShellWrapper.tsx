@@ -5,7 +5,8 @@ import { useNavbar } from '@/providers/navbar-state';
 import { AppShell } from '@mantine/core';
 import Header from './Header';
 import Footer from './Footer';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
+import Loading from '../shared/Loading';
 
 export default function AppShellWrapper({ children }: { children: React.ReactNode }) {
     const { opened } = useNavbar();
@@ -22,18 +23,20 @@ export default function AppShellWrapper({ children }: { children: React.ReactNod
     }, [opened]);
 
     return (
-        <AppShell
-            header={{ height: 60 }}
-            navbar={{
-                width: 300,
-                breakpoint: 'lg',
-                collapsed: { desktop: true, mobile: !opened }
-            }}
-            padding="md"
-            className="relative">
-            <Header />
-            {children}
-            <Footer />
-        </AppShell>
+        <Suspense fallback={<Loading />}>
+            <AppShell
+                header={{ height: 60 }}
+                navbar={{
+                    width: 300,
+                    breakpoint: 'lg',
+                    collapsed: { desktop: true, mobile: !opened }
+                }}
+                padding="md"
+                className="relative">
+                <Header />
+                {children}
+                <Footer />
+            </AppShell>
+        </Suspense>
     );
 }

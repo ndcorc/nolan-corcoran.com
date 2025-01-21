@@ -1,7 +1,9 @@
 // src/app/portfolio/[slug]/page.tsx
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import CaseStudyContent from '@/components/portfolio/CaseStudyContent';
-import { getProjectBySlug } from '@/lib/sanity/sanity.client';
+import { createServerSanity } from '@/lib/sanity/sanity.service.server';
+import { Suspense } from 'react';
+import Loading from '@/components/shared/Loading';
 
 interface CaseStudyPageProps {
     params: Promise<{
@@ -11,7 +13,9 @@ interface CaseStudyPageProps {
 
 export async function generateMetadata({ params }: CaseStudyPageProps) {
     const { slug } = await params;
-    const project = await getProjectBySlug(slug);
+    const serverSanity = await createServerSanity();
+
+    const project = await serverSanity.getProjectBySlug(slug);
 
     if (!project) {
         return {
@@ -27,11 +31,16 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     const { slug } = await params;
-    const project = await getProjectBySlug(slug);
+    const serverSanity = await createServerSanity();
+    const project = await serverSanity.getProjectBySlug(slug);
 
     if (!project) {
-        notFound();
+        redirect('/404');
     }
 
-    return <CaseStudyContent project={project} />;
+    return (
+        <Suspense fallback={<Loading />}>
+            <CaseStudyContent project={project} />
+        </Suspense>
+    );
 }

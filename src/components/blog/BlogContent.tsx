@@ -11,9 +11,7 @@ import CategoryFilter from './CategoryFilter';
 import CategoryFilterSkeleton from './CategoryFilterSkeleton';
 import { FeaturedPost } from './FeaturedPost';
 import { FeaturedPostSkeleton } from './FeaturedPostSkeleton';
-import { Category, Post } from '@/types/sanity';
-import { useQuery } from '@tanstack/react-query';
-import { getAllCategories, getAllPosts, getFeaturedOrLatestPost } from '@/lib/sanity/sanity.client';
+import { useCategories, useFeaturedOrLatestPost, usePosts } from '@/lib/sanity/sanity.hooks';
 
 const POSTS_PER_PAGE = 9;
 
@@ -23,28 +21,9 @@ export function BlogContent() {
     const [postsPerPage, setPostsPerPage] = useState(POSTS_PER_PAGE);
 
     // Client-side data fetching with initial data
-    const {
-        data: posts,
-        isLoading: postsLoading,
-        error: postsError
-    } = useQuery<Post[], Error>({
-        queryKey: ['posts'],
-        queryFn: getAllPosts
-    });
-
-    const {
-        data: categories,
-        isLoading: categoriesLoading,
-        error: categoriesError
-    } = useQuery<Category[], Error>({
-        queryKey: ['categories'],
-        queryFn: getAllCategories
-    });
-
-    const { data: featuredPost, isLoading: featuredLoading } = useQuery<Post, Error>({
-        queryKey: ['featuredPost'],
-        queryFn: getFeaturedOrLatestPost
-    });
+    const { data: posts, isLoading: postsLoading, error: postsError } = usePosts();
+    const { data: categories, isLoading: categoriesLoading, error: categoriesError } = useCategories();
+    const { data: featuredPost, isLoading: featuredLoading } = useFeaturedOrLatestPost();
 
     // Filter posts by category
     const filteredPosts = selectedCategory

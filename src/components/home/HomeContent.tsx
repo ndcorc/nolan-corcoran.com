@@ -6,6 +6,7 @@ import HeroSection from './HeroSection';
 import LatestPosts from './LatestPosts';
 import ContactForm from './ContactForm';
 import { Element } from 'react-scroll';
+import Loading from '../shared/Loading';
 
 export default function HomeContent() {
     const [mounted, setMounted] = useState(false);
@@ -15,7 +16,7 @@ export default function HomeContent() {
     }, []);
 
     if (!mounted) {
-        return null;
+        return <Loading />;
     }
 
     return (

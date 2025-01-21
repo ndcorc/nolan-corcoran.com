@@ -2,6 +2,7 @@
 'use client';
 
 import { AppShellFooter, Container, Group, Text } from '@mantine/core';
+import { nprogress } from '@mantine/nprogress';
 import { IconBrandInstagram, IconBrandX, IconBrandYoutube } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -25,6 +26,7 @@ export default function Footer() {
             }
             window.history.replaceState(null, '', path);
         }
+        nprogress.start();
     };
 
     if (pathname.startsWith('/studio')) {
@@ -60,11 +62,13 @@ export default function Footer() {
                         </Link>
                         <Link
                             href="/blog"
+                            onClick={nprogress.start}
                             className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline">
                             BLOG
                         </Link>
                         <Link
                             href="/portfolio"
+                            onClick={nprogress.start}
                             className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline">
                             PORTFOLIO
                         </Link>

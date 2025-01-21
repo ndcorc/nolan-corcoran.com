@@ -1,6 +1,8 @@
 // src/app/blog/page.tsx
 import type { Metadata } from 'next';
 import { BlogContent } from '@/components/blog/BlogContent';
+import { Suspense } from 'react';
+import Loading from '@/components/shared/Loading';
 
 export const metadata: Metadata = {
     title: 'Blog',
@@ -29,5 +31,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-    return <BlogContent />;
+    return (
+        <Suspense fallback={<Loading />}>
+            <BlogContent />
+        </Suspense>
+    );
 }

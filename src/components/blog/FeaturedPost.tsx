@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button, Container, Text, Title, useMantineColorScheme } from '@mantine/core';
 import { Post } from '@/types/sanity';
 import Image from 'next/image';
+import { nprogress } from '@mantine/nprogress';
 
 interface FeaturedPostProps {
     post: Post;
@@ -42,7 +43,10 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                         </Text>
 
                         {/* Read More Button */}
-                        <Link href={`/blog/${post.slug.current}`} className="inline-block no-underline mt-4">
+                        <Link
+                            onClick={nprogress.start}
+                            href={`/blog/${post.slug.current}`}
+                            className="inline-block no-underline mt-4">
                             <Button
                                 variant="outline"
                                 size="md"

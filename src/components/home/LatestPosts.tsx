@@ -2,19 +2,15 @@
 'use client';
 
 import { Container, Title, Text } from '@mantine/core';
-import { useQuery } from '@tanstack/react-query';
-import { getAllPosts } from '@/lib/sanity/sanity.client';
 import { Carousel } from '@mantine/carousel';
 import BlogCard from '../blog/BlogCard';
 import BlogCardSkeleton from '../blog/BlogCardSkeleton';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from '@mantine/hooks';
+import { usePosts } from '@/lib/sanity/sanity.hooks';
 
 export default function LatestPosts() {
-    const { data: posts, isLoading: postsLoading } = useQuery({
-        queryKey: ['posts'],
-        queryFn: getAllPosts
-    });
+    const { data: posts, isLoading: postsLoading } = usePosts();
     const mobile = useMediaQuery('(max-width: 74em)');
 
     return (

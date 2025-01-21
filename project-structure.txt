@@ -1,0 +1,145 @@
+.
+├── LICENSE
+├── README.md
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── project-structure.txt
+├── public
+│   ├── favicon.ico
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── icons
+│   │   ├── circle.svg
+│   │   ├── contactDark.svg
+│   │   └── contactLight.svg
+│   ├── img
+│   │   ├── bgDark.png
+│   │   ├── bgIMG.png
+│   │   ├── blog-portfolio.png
+│   │   ├── gradient-dark.png
+│   │   ├── gradient.png
+│   │   ├── placeholder-profile.png
+│   │   ├── retail-app.png
+│   │   └── retail-arch.png
+│   ├── manifest.json
+│   ├── next.svg
+│   ├── og-image.jpg
+│   ├── resume.pdf
+│   ├── static
+│   │   └── reftagger.js
+│   ├── vercel.svg
+│   └── window.svg
+├── sanity
+│   ├── env.ts
+│   ├── lib
+│   │   ├── client.ts
+│   │   ├── image.ts
+│   │   └── live.ts
+│   ├── schemaTypes
+│   │   ├── category.ts
+│   │   ├── index.ts
+│   │   ├── post.ts
+│   │   └── project.ts
+│   └── structure.ts
+├── sanity.cli.ts
+├── sanity.config.ts
+├── src
+│   ├── app
+│   │   ├── about
+│   │   ├── api
+│   │   │   └── contact
+│   │   │       └── route.ts
+│   │   ├── blog
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   ├── loading.tsx
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── fonts
+│   │   │   ├── GeistMonoVF.woff
+│   │   │   └── GeistVF.woff
+│   │   ├── icon.ico
+│   │   ├── layout.tsx
+│   │   ├── og-image.jpg
+│   │   ├── page.tsx
+│   │   ├── portfolio
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── robots.ts
+│   │   ├── sitemap.ts
+│   │   └── studio
+│   │       └── [[...tool]]
+│   │           └── page.tsx
+│   ├── components
+│   │   ├── blog
+│   │   │   ├── BlogCard.tsx
+│   │   │   ├── BlogCardSkeleton.tsx
+│   │   │   ├── BlogContent.tsx
+│   │   │   ├── BlogPost.tsx
+│   │   │   ├── CategoryFilter.tsx
+│   │   │   ├── CategoryFilterSkeleton.tsx
+│   │   │   ├── FeaturedPost.tsx
+│   │   │   └── FeaturedPostSkeleton.tsx
+│   │   ├── home
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── HomeContent.tsx
+│   │   │   └── LatestPosts.tsx
+│   │   ├── layout
+│   │   │   ├── AppShellWrapper.tsx
+│   │   │   ├── ColorThemeSwitcher.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.tsx
+│   │   │   └── ThemeToggle.tsx
+│   │   ├── portfolio
+│   │   │   ├── ArchitectureDiagram.tsx
+│   │   │   ├── CaseStudyContent.tsx
+│   │   │   ├── PortfolioHero.tsx
+│   │   │   ├── ProjectCard.tsx
+│   │   │   ├── ProjectList.tsx
+│   │   │   ├── ProjectsSection.tsx
+│   │   │   └── TechStack.tsx
+│   │   └── shared
+│   │       ├── BibleRefTagger.tsx
+│   │       ├── Error.tsx
+│   │       ├── GradientButton.tsx
+│   │       ├── JsonLd.tsx
+│   │       ├── Loading.tsx
+│   │       ├── Mermaid.tsx
+│   │       └── StructuredData.tsx
+│   ├── data
+│   │   ├── case-studies
+│   │   │   └── portfolio-website.ts
+│   │   ├── diagrams.ts
+│   │   └── projects.ts
+│   ├── lib
+│   │   ├── config
+│   │   │   ├── metadata.ts
+│   │   │   ├── robots.ts
+│   │   │   └── sitemap.ts
+│   │   ├── hooks
+│   │   │   └── useHash.ts
+│   │   ├── sanity
+│   │   │   ├── image.ts
+│   │   │   ├── sanity.client.ts
+│   │   │   └── sanity.queries.ts
+│   │   └── utils
+│   │       └── scroll.ts
+│   ├── providers
+│   │   ├── navbar-state.tsx
+│   │   └── query-provider.tsx
+│   ├── styles
+│   │   ├── blog-post.css
+│   │   └── globals.css
+│   ├── theme
+│   │   └── index.ts
+│   └── types
+│       ├── portfolio.ts
+│       └── sanity.ts
+├── tailwind.config.ts
+└── tsconfig.json
+
+37 directories, 106 files
