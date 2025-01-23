@@ -1,7 +1,7 @@
 'use client';
 
 import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger } from '@mantine/core';
-import { useMediaQuery, useWindowScroll } from '@mantine/hooks';
+import { useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { animateScroll, scroller, Link as ScrollLink, Events, scrollSpy } from 'react-scroll';
@@ -10,6 +10,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useNavbar } from '@/providers/navbar-state';
 import Loading from '../shared/Loading';
 import { NavigationProgress, nprogress } from '@mantine/nprogress';
+import useDevice from '@/lib/hooks/useDevice';
 
 interface NavLink {
     href: string;
@@ -37,7 +38,6 @@ export default function Header() {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
-
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const [activeLink, setActiveLink] = useState<string | null>(pathname);
     const [isScrolling, setIsScrolling] = useState(false);
@@ -48,7 +48,7 @@ export default function Header() {
     );
     const isDark = useMemo(() => colorScheme === 'dark', [colorScheme]);
     const { opened, toggle, close } = useNavbar();
-    const isMobile = useMediaQuery('(max-width: 74em)');
+    const { isMobile } = useDevice();
 
     const toggleColorScheme = useCallback(() => {
         setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
@@ -153,7 +153,6 @@ export default function Header() {
         setActiveLink(href);
 
         if (isHash && pathname === '/') {
-            // Handle smooth scroll for hash links on home page
             e.preventDefault();
             const element = document.querySelector(href.replace('/#', '#'));
             if (element) {
@@ -194,7 +193,7 @@ export default function Header() {
                                 onClick={() => handleSectionClick(link.href)}
                                 ignoreCancelEvents={true}
                                 className="no-underline font-medium cursor-pointer">
-                                <Text className="text-brand dark:text-gray-400">{link.label}</Text>
+                                <Text className="text-brand dark:text-gray-400 md:text-[16px]">{link.label}</Text>
                             </ScrollLink>
                         </div>
                     ) : (
@@ -221,18 +220,14 @@ export default function Header() {
         <>
             <AppShell.Header
                 withBorder={false}
-                className={`pl-2 pr-4 py-4 transition-colors duration-200 ${
-                    scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'
-                }`}>
+                className={`p-4 transition-colors duration-200 ${scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'}`}>
                 <NavigationProgress color={isDark ? 'navy' : 'brand'} />
-                <Group className="h-full w-full flex gap-0 xl:pl-0 pl-2" align="center" wrap="nowrap">
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
+                <Group className="h-full w-full flex gap-0 md:pl-0 pl-2" align="center" wrap="nowrap">
+                    {isMobile && <Burger opened={opened} onClick={toggle} size="sm" />}
                     {!isMobile ? (
                         <>
                             <nav className="w-1/3 flex h-full">
-                                <Group gap={32} className="pl-4 gap-4">
-                                    {NAVIGATION_LINKS.map(renderNavLink)}
-                                </Group>
+                                <Group className="gap-3">{NAVIGATION_LINKS.map(renderNavLink)}</Group>
                             </nav>
                             <Link href="/" className="no-underline dark:text-white w-1/3 flex justify-center">
                                 <Title

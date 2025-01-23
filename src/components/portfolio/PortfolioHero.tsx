@@ -8,7 +8,7 @@ export default function PortfolioHero() {
         <div className="pt-20 pb-10">
             <Container size="lg" className="flex flex-col gap-8">
                 <div className="text-center">
-                    <Title order={1} className="xl:text-6xl text-4xl mb-6 font-serif">
+                    <Title order={1} className="md:text-6xl text-4xl mb-6 font-serif">
                         Cloud Engineering & Development
                     </Title>
                     <Text className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">

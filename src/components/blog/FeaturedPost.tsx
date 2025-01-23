@@ -15,11 +15,11 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
     const isDark = colorScheme === 'dark';
     return (
         <div className="w-full">
-            <Container size="lg" className="xl:py-20 py-12 px-2 xl:px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8">
-                    <div className="xl:space-y-4 space-y-2 gap-0 flex flex-col justify-center">
+            <Container size="lg" className="md:py-20 py-12 px-2 md:px-4">
+                <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-8">
+                    <div className="md:space-y-4 space-y-2 gap-0 flex flex-col justify-center">
                         {/* Date */}
-                        <Text className="xl:text-2xl text-lg">
+                        <Text className="md:text-2xl text-lg">
                             {new Date(post.publishedAt).toLocaleDateString('en-US', {
                                 month: 'long',
                                 day: 'numeric',
@@ -28,17 +28,17 @@ export function FeaturedPost({ post }: FeaturedPostProps) {
                         </Text>
 
                         {/* Title */}
-                        <Title order={2} size="h1" className="font-normal xl:text-6xl text-4xl">
+                        <Title order={2} size="h1" className="font-normal md:text-6xl text-4xl">
                             {post.title}
                         </Title>
 
                         {/* Subtitle */}
-                        <Title order={4} size="h4" className="font-normal xl:text-2xl text-lg">
+                        <Title order={4} size="h4" className="font-normal md:text-2xl text-lg">
                             {post.subtitle}
                         </Title>
 
                         {/* Excerpt */}
-                        <Text lineClamp={3} className="xl:text-lg text-sm leading-tight">
+                        <Text lineClamp={3} className="md:text-lg text-sm leading-tight">
                             {post.excerpt}
                         </Text>
 

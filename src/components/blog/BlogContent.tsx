@@ -46,9 +46,9 @@ export function BlogContent() {
     return (
         <AppShellMain className="pb-32">
             {/* Hero Quote Section */}
-            <div className="xl:py-20 py-12">
+            <div className="md:py-20 py-12">
                 <Container size="lg">
-                    <Title order={1} className="text-center mb-4 xl:text-6xl text-4xl font-medium">
+                    <Title order={1} className="text-center mb-4 md:text-6xl text-4xl font-medium">
                         {`The Christian life isn't always easy,`}
                         <br />
                         {`but it's `}
@@ -64,13 +64,13 @@ export function BlogContent() {
             {featuredLoading ? <FeaturedPostSkeleton /> : featuredPost ? <FeaturedPost post={featuredPost} /> : null}
 
             {/* Blog Posts Section */}
-            <Container fluid size="lg" className="xl:py-16 xl:mx-8 xl:px-4 py-8 mx-0 px-0">
-                <Title order={2} className="xl:mb-8 mb-2 px-2 xl:px-0">
+            <Container fluid size="lg" className="md:py-16 md:mx-8 md:px-4 py-8 mx-0 px-0">
+                <Title order={2} className="md:mb-8 mb-2 px-2 md:px-0">
                     All Posts
                 </Title>
 
                 {/* Category Filter Section */}
-                <div className="mb-8 px-2 xl:px-0">
+                <div className="mb-8 px-2 md:px-0">
                     {categoriesLoading ? (
                         <CategoryFilterSkeleton />
                     ) : categoriesError ? (

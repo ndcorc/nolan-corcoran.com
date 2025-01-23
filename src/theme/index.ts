@@ -2,7 +2,6 @@
 /** Custom theme */
 import {
     DEFAULT_THEME,
-    type MantineBreakpointsValues,
     MantineThemeColors,
     createTheme,
     mergeMantineTheme,
@@ -46,21 +45,21 @@ export const colors: MantineThemeColors = {
     ],
     ...DEFAULT_THEME.colors
 };
-//const colors: MantineThemeColors = DEFAULT_THEME.colors;
-export const breakpoints: MantineBreakpointsValues = DEFAULT_THEME.breakpoints;
+
+export const breakpoints = {
+    xs: '30em',
+    sm: '48em',
+    md: '64em',
+    lg: '74em',
+    xl: '90em'
+};
 
 export const theme = mergeMantineTheme(
     DEFAULT_THEME,
     createTheme({
         fontFamily: fonts[5],
         fontFamilyMonospace: 'Cormorant Garamond, serif',
-        breakpoints: {
-            xs: '30em',
-            sm: '48em',
-            md: '64em',
-            lg: '74em',
-            xl: '90em'
-        },
+        breakpoints,
         primaryColor: 'brand',
         colors,
         white: '#EDEDE8',
@@ -68,8 +67,15 @@ export const theme = mergeMantineTheme(
         primaryShade: 6,
         shadows: {
             md: '1px 1px 3px rgba(0, 0, 0, .25)',
-            xl: '5px 5px 3px rgba(0, 0, 0, .25)'
+            lg: '5px 5px 3px rgba(0, 0, 0, .25)'
         },
+        fontSizes: {
+            xs: '12px',
+            sm: '14px',
+            md: '16px',
+            lg: '18px',
+            xl: '20px',
+          },
         headings: {
             fontFamily: fonts[5],
             sizes: {

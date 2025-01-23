@@ -13,7 +13,7 @@ interface ProjectListProps {
 export default function ProjectList({ projects }: ProjectListProps) {
     return (
         <Container size="lg" className="py-20">
-            <SimpleGrid cols={{ base: 1, md: 2, lg: 3 }} spacing="lg">
+            <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
                 {projects.map((project) => (
                     <Card
                         key={project._id}

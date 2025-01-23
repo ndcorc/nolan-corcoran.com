@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { breakpoints, colors } from './src/theme';
 import tailwindPresetMantine from 'tailwind-preset-mantine';
 import type { Config } from 'tailwindcss';
@@ -16,10 +17,14 @@ const config: Config = {
         })
     ],
     theme: {
+        screens: {
+            'xs': '30em',
+            sm: '48em',
+            md: '64em',
+            lg: '74em',
+            xl: '90em'
+        },
         extend: {
-            maxHeight: {
-                '90': '90%' // Custom utility for 90% max height
-            },
             boxShadow: {
                 z: '-1px -1px 16px 2px rgba(34, 33, 31, 0.35)',
                 'dark-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.1)',

@@ -82,7 +82,7 @@ const ptComponents = {
                         cite={citation || undefined}
                         icon={icon}
                         iconSize={36}
-                        className="bg-white dark:bg-dark-500 xl:max-w-[50%] w-[90%] my-2 rounded-md shadow-dark-md border-l-0">
+                        className="bg-white dark:bg-dark-500 md:max-w-[50%] w-[90%] my-2 rounded-md shadow-dark-md border-l-0">
                         {children}
                     </Blockquote>
                 </Center>
@@ -128,12 +128,12 @@ export default function BlogPost({ post }: BlogPostProps) {
             {/* Add JSON-LD structured data */}
             <JsonLd post={post} />
             <BibleRefTagger />
-            <AppShellMain className="pb-32 max-lg:px-0">
+            <AppShellMain className="pb-32 max-md:px-0">
                 <article className="relative">
                     {/* Hero Section with Main Image */}
                     {mainImage && (
                         <Center>
-                            <div className="relative xl:w-[85vw] w-[100vw] h-[50vh] mb-8">
+                            <div className="relative md:w-[85vw] w-[100vw] h-[50vh] mb-8">
                                 <Image
                                     src={urlForImage(mainImage).url()}
                                     alt={title}
@@ -148,7 +148,7 @@ export default function BlogPost({ post }: BlogPostProps) {
                     {/* Post Content */}
                     <Container
                         size="md"
-                        className="relative py-12 xl:px-20 px-8 -mt-[calc(50vh/3)] mb-24 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
+                        className="relative py-12 md:px-20 px-8 -mt-[calc(50vh/3)] mb-24 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
                         {/* Post Header */}
                         <header className="mb-12 flex flex-col items-center gap-8">
                             {/* Publication Date */}
@@ -159,12 +159,12 @@ export default function BlogPost({ post }: BlogPostProps) {
                             {/* Title and Subtitle */}
                             <Title
                                 order={1}
-                                className="xl:text-6xl text-3xl font-medium text-primary dark:text-white text-center">
+                                className="md:text-6xl text-3xl font-medium text-primary dark:text-white text-center">
                                 {title}
                             </Title>
                             <Divider size="lg" className="w-24" />
                             {subtitle && (
-                                <Text fs="italic" className="dark:text-gray-500 xl:text-xl text-lg">
+                                <Text fs="italic" className="dark:text-gray-500 md:text-xl text-lg">
                                     {subtitle}
                                 </Text>
                             )}

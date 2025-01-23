@@ -5,7 +5,7 @@ export function FeaturedPostSkeleton() {
     return (
         <div className={`w-full`}>
             <Container size="lg" className="py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
                         {/* Date skeleton */}
                         <Skeleton height={20} width={120} radius="sm" />

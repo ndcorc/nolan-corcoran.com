@@ -8,7 +8,14 @@
 /* import mantine */
 @import '@mantine/core/styles.layer.css';
 
+html {
+    overflow-y: scroll;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
 :root {
+    --vh: 1vh;
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 248, 246, 244;
     --background-end-rgb: 255, 255, 255;
@@ -36,4 +43,11 @@ body {
     min-height: 100vh;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }

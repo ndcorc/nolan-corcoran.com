@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';
 import QueryProvider from '@/providers/query-provider';
@@ -67,17 +67,8 @@ export const metadata: Metadata = {
         }
     },
     icons: {
-        icon: [{ url: '/favicon.ico' }, { url: '/icon.ico' }]
+        icon: [{ url: '/icon.ico' }]
     }
-};
-
-// Define viewport
-export const viewport: Viewport = {
-    width: 'device-width',
-    viewportFit: 'auto',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false
 };
 
 export default function RootLayout({
@@ -89,14 +80,10 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <head>
                 <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
-                <link rel="shortcut icon" href="/favicon.ico" />
                 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.json" />
-                <meta
-                    name="viewport"
-                    content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
-                />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
             <body className="antialiased min-h-lvh">
                 <SanityPreview />

@@ -16,7 +16,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
     return (
         <section className="py-10">
-            <Container fluid className="xl:mx-16">
+            <Container fluid className="md:mx-16">
                 <div className="text-center mb-12">
                     <Title order={2} className="font-serif mb-4">
                         Featured Projects
@@ -39,7 +39,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     />
                 </Group>
 
-                <SimpleGrid cols={{ base: 1, md: 2, xl: 4 }} spacing="md" verticalSpacing="xl" className="max-w-full">
+                <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="md" verticalSpacing="xl" className="max-w-full">
                     {filteredProjects.map((project, index) => (
                         <div key={project.slug.current} className="h-auto">
                             <ProjectCard key={project.slug.current} project={project} index={index} />

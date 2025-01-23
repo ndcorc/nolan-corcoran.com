@@ -28,7 +28,7 @@ export default function AppShellWrapper({ children }: { children: React.ReactNod
                 header={{ height: 60 }}
                 navbar={{
                     width: 300,
-                    breakpoint: 'lg',
+                    breakpoint: 'sm',
                     collapsed: { desktop: true, mobile: !opened }
                 }}
                 padding="md"

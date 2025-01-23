@@ -124,14 +124,14 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
         <article className="py-20">
             <div className="min-h-screen">
                 {/* Hero Section */}
-                <Group className="xl:py-32 py-12 flex xl:mx-24 mx-4 items-center xl:flex-nowrap">
+                <Group className="md:py-32 py-12 flex md:mx-24 mx-4 items-center md:flex-nowrap">
                     <Container size="lg">
                         <motion.div
                             variants={fadeIn}
                             initial="initial"
                             animate="animate"
                             transition={{ duration: 0.5 }}>
-                            <Title className="xl:text-6xl text-5xl mb-4 font-serif">{project.title}</Title>
+                            <Title className="md:text-6xl text-5xl mb-4 font-serif">{project.title}</Title>
                             <Group mb="md">
                                 <Badge
                                     size="lg"
@@ -179,7 +179,7 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                             )}
                         </motion.div>
                     </Container>
-                    <Container className="xl:max-w-[40%] w-full xl:mt-0 mt-8">
+                    <Container className="md:max-w-[40%] w-full md:mt-0 mt-8">
                         <Image
                             src={urlForImage(project.image)}
                             alt={project.title}
@@ -190,7 +190,7 @@ export default function CaseStudyContent({ project }: CaseStudyContentProps) {
                 <Divider size="xs" className="w-[75vw] mx-auto border-gray-400 dark:border-dark-400" />
 
                 {/* Main Content */}
-                <Container size="xl" className="py-16 max-lg:mx-4">
+                <Container size="xl" className="py-16 max-md:mx-4">
                     <Stack gap={80}>
                         {/* Architecture Diagram */}
                         <motion.section

@@ -1,7 +1,7 @@
 // src/components/home/HeroSection.tsx
 'use client';
 
-import { Container, Title, Text, Stack, useMantineColorScheme, BackgroundImage, Group } from '@mantine/core';
+import { Container, Title, Text, Stack, useMantineColorScheme, BackgroundImage, Group, Overlay } from '@mantine/core';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { GradientButton } from '../shared/GradientButton';
@@ -13,23 +13,23 @@ export default function HeroSection() {
 
     return (
         <section>
-            <BackgroundImage src={isDark ? '/img/bgDark.png' : '/img/bgIMG.png'}>
+            <BackgroundImage src={isDark ? '/img/bgDark.png' : '/img/bgIMG.png'} className="max-h-[80%]">
                 <Container fluid className="relative z-10">
-                    <div className="flex flex-col xl:flex-row min-h-screen px-0 xl:px-16 py-20">
+                    <div className="flex flex-col md:flex-row min-h-screen px-0 md:px-16 py-20">
                         {/* Left Content */}
                         <motion.div
                             whileInView={{ x: [-100, 0], opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
-                            className="flex flex-col flex-[0.5] justify-start items-end xl:my-20 xl:mx-8 mt-4 mb-0 m-auto">
+                            className="flex flex-col flex-[0.5] justify-start items-end md:my-20 md:mx-8 mt-4 mb-0 m-auto">
                             <Stack
                                 justify="center"
                                 mb="2rem"
                                 gap={12}
                                 className="w-full flex justify-end items-end flex-col">
                                 {/* Greeting Card */}
-                                <div className="bg-stone-50 dark:bg-gray-800 rounded-2xl shadow-sm border p-[16px_40px]">
+                                <div className="bg-stone-50 dark:bg-dark rounded-2xl shadow-sm dark:shadow-dark-z border p-[16px_40px]">
                                     <Group>
-                                        <span className="text-4xl 2xl:text-6xl">👋</span>
+                                        <span className="text-4xl 2md:text-6xl">👋</span>
                                         <Stack gap={0} ml={20}>
                                             <Text size="xs" className="uppercase tracking-wide w-full leading-normal">
                                                 Hello, I am
@@ -42,7 +42,7 @@ export default function HeroSection() {
                                 </div>
 
                                 {/* Topics Card */}
-                                <div className="bg-stone-50 dark:bg-gray-800 rounded-2xl shadow-sm border p-[16px_40px]">
+                                <div className="bg-stone-50 dark:bg-dark rounded-2xl shadow-sm dark:shadow-dark-z border p-[16px_40px]">
                                     <Stack align="flex-end" gap={0}>
                                         {['Theology and Apologetics', 'Culture and Politics', 'Cloud Engineering'].map(
                                             (text) => (
@@ -54,7 +54,7 @@ export default function HeroSection() {
                                     </Stack>
                                 </div>
                                 {/* Button */}
-                                <GradientButton href={`/blog`} className="no-underline justify-end flex" />
+                                <GradientButton href={`/blog`} className="no-underline justify-end flex z-[20]" />
                             </Stack>
                         </motion.div>
 
@@ -62,7 +62,7 @@ export default function HeroSection() {
                         <motion.div
                             whileInView={{ opacity: [0, 1] }}
                             transition={{ duration: 0.5, delayChildren: 0.5 }}
-                            className="flex-1 flex max-h-[80%] justify-end items-start relative xl:m-8 m-2">
+                            className="flex-1 flex max-h-[80%] justify-end items-start relative md:m-8 m-2">
                             <Image
                                 src="/img/placeholder-profile.png"
                                 alt="profile"
@@ -82,6 +82,13 @@ export default function HeroSection() {
                     </div>
                 </Container>
             </BackgroundImage>
+            {isDark && (
+                <Overlay
+                    color="#FFF"
+                    opacity={0.1} // Adjust opacity
+                    zIndex={5}
+                />
+            )}
         </section>
     );
 }
