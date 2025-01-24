@@ -6,6 +6,7 @@ import BibleRefTagger from '@/components/shared/BibleRefTagger';
 import { NavbarStateProvider } from '@/providers/navbar-state';
 import AppShellWrapper from '@/components/layout/AppShellWrapper';
 import { Notifications } from '@mantine/notifications';
+import { Analytics } from '@vercel/analytics/react';
 
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
@@ -96,6 +97,7 @@ export default function RootLayout({
                         </NavbarStateProvider>
                     </MantineProvider>
                 </QueryProvider>
+                <Analytics />
             </body>
         </html>
     );
