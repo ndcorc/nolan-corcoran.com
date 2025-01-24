@@ -6,14 +6,15 @@ import BibleRefTagger from '@/components/shared/BibleRefTagger';
 import { NavbarStateProvider } from '@/providers/navbar-state';
 import AppShellWrapper from '@/components/layout/AppShellWrapper';
 import { Notifications } from '@mantine/notifications';
+import SanityPreview from '@/components/shared/SanityPreview.server';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/tiptap/styles.css';
 import '@mantine/nprogress/styles.css';
-import SanityPreview from '@/components/shared/SanityPreview.server';
 
 // Define default metadata
 export const metadata: Metadata = {
@@ -98,6 +99,7 @@ export default function RootLayout({
                     </MantineProvider>
                 </QueryProvider>
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
