@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // src/app/blog/[slug]/page.tsx
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
@@ -76,6 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug } = await params;
     const serverSanity = await createServerSanity();
     const post = await serverSanity.getPostBySlug(slug);
+    const adjacentPosts = post ? await serverSanity.getAdjacentPosts(post.publishedAt) : null;
 
     if (!post) {
         redirect('/404');
@@ -83,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     return (
         <Suspense fallback={<Loading />}>
-            <BlogPost post={post} />
+            <BlogPost post={post} previousPost={adjacentPosts?.previous} nextPost={adjacentPosts?.next} />
         </Suspense>
     );
 }

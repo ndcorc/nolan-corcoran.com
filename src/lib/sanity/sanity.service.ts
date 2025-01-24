@@ -32,7 +32,8 @@ import {
     searchProjectsQuery,
     getRelatedProjectsQuery,
     getProjectStatsQuery,
-    getDiagramsByProjectTypeQuery
+    getDiagramsByProjectTypeQuery,
+    getAdjacentPostsQuery
 } from './sanity.queries';
 import { QueryParams } from 'next-sanity';
 
@@ -146,6 +147,15 @@ export class SanityService {
             })
         );
     }
+
+    async getAdjacentPosts(publishedAt: string): Promise<{ previous?: Post; next?: Post }> {
+        return this.extractData(
+          this.fetcher({
+            query: getAdjacentPostsQuery,
+            params: { publishedAt }
+          })
+        );
+      }
 
     async getAllProjects(): Promise<Project[]> {
         return this.extractData(

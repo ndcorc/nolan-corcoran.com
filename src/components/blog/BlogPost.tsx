@@ -1,21 +1,25 @@
+'use client';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // src/components/blog/BlogPost.tsx
-'use client';
 
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { AppShellMain, Container, Title, Text, Divider, Blockquote, Center, List } from '@mantine/core';
-import { PortableText } from '@portabletext/react';
+import { AppShellMain, Container, Title, Text, Divider, Center, List, Group } from '@mantine/core';
+import { PortableText, toPlainText } from '@portabletext/react';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
-import { IconQuotes } from '@tabler/icons-react';
 import JsonLd from '../shared/JsonLd';
 import { useEffect, useState } from 'react';
 import BibleRefTagger from '../shared/BibleRefTagger';
 import Loading from '../shared/Loading';
+import CustomBlockquote from './CustomBlockquote';
+import BlogNavigation from './BlogNavigation';
+import ShareButtons from './ShareButtons';
 
 interface BlogPostProps {
     post: Post;
+    previousPost?: Post;
+    nextPost?: Post;
 }
 
 const splitNumberAndText = (str: string) => {
@@ -27,7 +31,7 @@ const splitNumberAndText = (str: string) => {
     return [null, str];
 };
 
-const ptComponents = {
+const basePtComponents = {
     types: {
         image: ({ value }: any) => {
             if (!value?.asset?._ref) {
@@ -73,20 +77,16 @@ const ptComponents = {
             }
             return <Text className="mb-4 leading-relaxed">{children}</Text>;
         },
-        blockquote: ({ children }: any) => {
+        blockquote: ({ children, value }: any) => {
             const citation = children[children.length - 1]?.props?.children?.[0];
             children = children.filter((child: any) => !child?.props || child?.props?.children?.[0] !== citation);
-            const icon = <IconQuotes size={32} className="dark:text-white" />;
             return (
-                <Center>
-                    <Blockquote
-                        cite={citation || undefined}
-                        icon={icon}
-                        iconSize={36}
-                        className="bg-white dark:bg-dark-500 md:max-w-[50%] w-[90%] my-2 rounded-md shadow-dark-md border-l-0">
-                        {children}
-                    </Blockquote>
-                </Center>
+                <CustomBlockquote
+                    citation={citation}
+                    currentUrl={typeof window !== 'undefined' ? window.location.href : ''}
+                    quoteText={toPlainText(value)}>
+                    {children}
+                </CustomBlockquote>
             );
         }
     },
@@ -112,7 +112,38 @@ const ptComponents = {
     }
 };
 
-export default function BlogPost({ post }: BlogPostProps) {
+const nestedPtComponents = {
+    ...basePtComponents,
+    types: {
+        ...basePtComponents.types,
+        twoColumnBlock: undefined // prevent infinite recursion
+    }
+};
+
+const ptComponents = {
+    ...basePtComponents,
+    types: {
+        ...basePtComponents.types,
+        twoColumnBlock: ({ value }: any) => {
+            try {
+                const { leftColumn, rightColumn } = value;
+                if (!leftColumn || !rightColumn) return null;
+
+                return (
+                    <div style={{ display: 'flex', gap: '2rem' }}>
+                        <PortableText value={leftColumn} components={nestedPtComponents} />
+                        <PortableText value={rightColumn} components={nestedPtComponents} />
+                    </div>
+                );
+            } catch (error) {
+                console.error('Error rendering twoColumnBlock:', error);
+                return null;
+            }
+        }
+    }
+};
+
+export default function BlogPost({ post, previousPost, nextPost }: BlogPostProps) {
     const { title, subtitle, mainImage, publishedAt, body } = post;
     const [mounted, setMounted] = useState(false);
 
@@ -149,13 +180,23 @@ export default function BlogPost({ post }: BlogPostProps) {
                     {/* Post Content */}
                     <Container
                         size="md"
-                        className="relative py-12 md:px-20 px-8 -mt-[calc(50vh/3)] mb-24 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
+                        className="relative py-12 md:px-20 px-8 -mt-[calc(50vh/3)] mb-8 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
                         {/* Post Header */}
                         <header className="mb-12 flex flex-col items-center gap-8">
-                            {/* Publication Date */}
-                            <Text size="sm" className="dark:text-gray-500">
-                                {format(new Date(publishedAt), 'MMMM d, yyyy').toUpperCase()}
-                            </Text>
+                            {/* Publication Date and Author */}
+                            <Group gap="xs" className="flex items-center justify-center">
+                                <Text size="sm" className="dark:text-gray-500">
+                                    {`${format(new Date(publishedAt), 'MMMM d, yyyy').toUpperCase()}`}
+                                </Text>
+                                <Text size="sm" className="dark:text-gray-500">
+                                    •
+                                </Text>
+                                <Group gap="xs" className="items-center">
+                                    <Text size="sm" className="dark:text-gray-500">
+                                        NOLAN CORCORAN
+                                    </Text>
+                                </Group>
+                            </Group>
 
                             {/* Title and Subtitle */}
                             <Title
@@ -175,6 +216,10 @@ export default function BlogPost({ post }: BlogPostProps) {
                         <div className="prose dark:prose-invert max-w-none">
                             <PortableText value={body!} components={ptComponents} />
                         </div>
+                    </Container>
+                    <Container size="md" className="relative px-0">
+                        <ShareButtons post={post} url={typeof window !== 'undefined' ? window.location.href : ''} />
+                        <BlogNavigation previousPost={previousPost} nextPost={nextPost} />
                     </Container>
                 </article>
             </AppShellMain>

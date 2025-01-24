@@ -6,6 +6,8 @@ import { client } from './client';
 import { apiVersion, dataset, projectId } from '../env';
 import { draftMode } from 'next/headers';
 
+const token = process.env.SANITY_API_TOKEN;
+
 export async function createLiveClient() {
     const { isEnabled: isDraftMode } = await draftMode();
 
@@ -20,6 +22,8 @@ export async function createLiveClient() {
                 enabled: isDraftMode,
                 studioUrl: '/studio'
             }
-        })
+        }),
+        serverToken: token,
+        browserToken: token,
     });
 }

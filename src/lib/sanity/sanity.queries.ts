@@ -344,3 +344,18 @@ export const getDiagramsByProjectTypeQuery = groq`
     }
   }
 `;
+
+export const getAdjacentPostsQuery = groq`
+{
+  "previous": *[_type == "post" && publishedAt < $publishedAt] | order(publishedAt desc)[0] {
+    title,
+    slug,
+    publishedAt
+  },
+  "next": *[_type == "post" && publishedAt > $publishedAt] | order(publishedAt asc)[0] {
+    title,
+    slug,
+    publishedAt
+  }
+}
+`;

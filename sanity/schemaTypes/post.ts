@@ -112,7 +112,8 @@ export default defineType({
                             title: 'Caption'
                         }
                     ]
-                }
+                },
+                { type: 'twoColumnBlock' }
             ]
         })
     ],

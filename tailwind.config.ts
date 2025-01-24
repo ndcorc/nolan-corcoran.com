@@ -26,7 +26,7 @@ const config: Config = {
         },
         extend: {
             boxShadow: {
-                z: '-1px -1px 16px 2px rgba(34, 33, 31, 0.35)',
+                z: '-1px 1px 12px 2px rgba(94, 94, 91, 0.35)',
                 'dark-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.1)',
                 'dark-md': '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
                 'dark-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',

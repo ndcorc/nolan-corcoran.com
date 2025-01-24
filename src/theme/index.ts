@@ -95,13 +95,6 @@ export const theme = mergeMantineTheme(
             md: rem(8),
             lg: rem(16),
             xl: rem(32)
-        },
-        components: {
-            ActionIcon: {
-                defaultProps: {
-                    color: 'green'
-                }
-            }
         }
     })
 );
