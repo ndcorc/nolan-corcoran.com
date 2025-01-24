@@ -82,13 +82,7 @@ export default function HeroSection() {
                     </div>
                 </Container>
             </BackgroundImage>
-            {isDark && (
-                <Overlay
-                    color="#FFF"
-                    opacity={0.1} // Adjust opacity
-                    zIndex={5}
-                />
-            )}
+            {isDark && <Overlay color="#FFF" opacity={0.1} zIndex={5} />}
         </section>
     );
 }
