@@ -1,3 +1,4 @@
+// src/lib/hooks/useHash.ts
 import { useState, useEffect } from 'react';
 
 export const useHash = () => {

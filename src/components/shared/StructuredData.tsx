@@ -1,4 +1,4 @@
-// /components/shared/StructuredData.tsx
+// src/components/shared/StructuredData.tsx
 import { siteMetadata } from '@/lib/config/metadata';
 
 export const generateStructuredData = {

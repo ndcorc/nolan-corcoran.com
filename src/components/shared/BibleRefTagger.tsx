@@ -1,3 +1,4 @@
+// src/components/shared/BibleRefTagger.tsx
 'use client';
 
 import { RefTagger } from 'react-reftagger';

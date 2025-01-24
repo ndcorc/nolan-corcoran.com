@@ -1,4 +1,4 @@
-// sanity.service.server.ts
+// src/lib/sanity/sanity.service.server.ts
 import { createLiveClient } from '@/../sanity/lib/live.server';
 import { SanityService } from './sanity.service';
 

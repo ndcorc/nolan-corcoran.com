@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// src/config/metadata.ts
 
 import { urlForImage } from '../sanity/image';
 
-// src/config/metadata.ts
 export const siteMetadata = {
     title: 'Every Thought Captive',
     description: `The Christian life isn't always easy, but it's always good.`,

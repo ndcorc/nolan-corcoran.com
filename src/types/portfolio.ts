@@ -1,3 +1,4 @@
+// src/lib/types/portfolio.ts
 export type TechStack = {
     category: string;
     items: string[];

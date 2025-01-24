@@ -1,4 +1,4 @@
-// /lib/config/robots.ts
+// src/lib/config/robots.ts
 import { MetadataRoute } from 'next';
 import { siteMetadata } from './metadata';
 

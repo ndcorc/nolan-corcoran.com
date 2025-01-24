@@ -1,3 +1,4 @@
+// src/lib/sanity/sanity.service.ts
 import type {
     Post,
     Category,

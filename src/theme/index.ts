@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// src/lib/theme/index.ts
+
 /** Custom theme */
 import {
     DEFAULT_THEME,

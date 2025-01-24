@@ -1,3 +1,4 @@
+// src/lib/hooks/useDevice.ts
 import { useMediaQuery } from '@mantine/hooks';
 
 const useDevice = () => {

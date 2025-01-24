@@ -1,3 +1,4 @@
+// src/app/404/page.tsx
 import Loading from '@/components/shared/Loading';
 import { Button } from '@mantine/core';
 import Link from 'next/link';

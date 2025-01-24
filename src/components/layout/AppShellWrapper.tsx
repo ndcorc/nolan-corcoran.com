@@ -1,4 +1,4 @@
-// Create a client component wrapper for AppShell
+// src/components/layout/AppShellWrapper.tsx
 'use client';
 
 import { useNavbar } from '@/providers/navbar-state';

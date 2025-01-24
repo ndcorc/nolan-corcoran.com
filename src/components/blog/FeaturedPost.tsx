@@ -1,3 +1,4 @@
+// src/components/blog/FeaturedPost.tsx
 'use client';
 
 import Link from 'next/link';

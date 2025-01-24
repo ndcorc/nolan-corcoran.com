@@ -1,3 +1,4 @@
+// src/app/layout.ts
 import type { Metadata } from 'next';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// src/components/blog/BlogPost.tsx
 'use client';
 
 import Image from 'next/image';

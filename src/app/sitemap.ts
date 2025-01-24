@@ -1,3 +1,4 @@
+// src/app/sitemap.ts
 import { createServerSanity } from '@/lib/sanity/sanity.service.server';
 import { MetadataRoute } from 'next';
 

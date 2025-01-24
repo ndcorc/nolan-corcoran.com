@@ -1,3 +1,4 @@
+// src/components/portfolio/ProjectsSection.tsx
 'use client';
 
 import { Container, Title, Text, SimpleGrid, SegmentedControl, Group } from '@mantine/core';

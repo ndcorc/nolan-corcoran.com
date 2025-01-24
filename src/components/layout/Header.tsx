@@ -1,3 +1,4 @@
+// src/components/layout/Header.tsx
 'use client';
 
 import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger } from '@mantine/core';

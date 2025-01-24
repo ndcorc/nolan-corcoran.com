@@ -1,3 +1,4 @@
+// src/components/home/HomeContent.tsx
 'use client';
 
 import { useEffect, useState } from 'react';

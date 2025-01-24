@@ -1,3 +1,4 @@
+// src/components/layout/ColorThemeSwitcher.tsx
 'use client';
 
 import { useMantineColorScheme, Button, Group } from '@mantine/core';

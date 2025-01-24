@@ -1,3 +1,4 @@
+// src/lib/sanity/image.ts
 import { client } from '@/../sanity/lib/client';
 import imageUrlBuilder from '@sanity/image-url';
 import { type Image } from 'sanity';

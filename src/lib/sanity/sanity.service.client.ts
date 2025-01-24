@@ -1,3 +1,4 @@
+// src/lib/sanity/sanity.service.client.ts
 import { client } from '@/../sanity/lib/client';
 import { Fetcher, SanityService } from './sanity.service';
 

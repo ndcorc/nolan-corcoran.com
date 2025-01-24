@@ -1,4 +1,4 @@
-// /lib/config/sitemap.ts
+// src/lib/config/sitemap.ts
 import { MetadataRoute } from 'next';
 import { siteMetadata } from './metadata';
 

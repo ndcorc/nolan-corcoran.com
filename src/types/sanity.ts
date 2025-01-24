@@ -1,3 +1,4 @@
+// src/lib/types/sanity.ts
 import { PortableTextBlock } from '@portabletext/types';
 import { Image } from 'sanity';
 
