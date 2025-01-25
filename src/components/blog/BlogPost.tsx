@@ -4,7 +4,7 @@
 
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { AppShellMain, Container, Title, Text, Divider, Center, List, Group } from '@mantine/core';
+import { AppShellMain, Container, Title, Text, Divider, Center, List, Group, SimpleGrid } from '@mantine/core';
 import { PortableText, toPlainText } from '@portabletext/react';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
@@ -130,10 +130,10 @@ const ptComponents = {
                 if (!leftColumn || !rightColumn) return null;
 
                 return (
-                    <div style={{ display: 'flex', gap: '2rem' }}>
+                    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl" verticalSpacing="xs">
                         <PortableText value={leftColumn} components={nestedPtComponents} />
                         <PortableText value={rightColumn} components={nestedPtComponents} />
-                    </div>
+                    </SimpleGrid>
                 );
             } catch (error) {
                 console.error('Error rendering twoColumnBlock:', error);
@@ -180,7 +180,7 @@ export default function BlogPost({ post, previousPost, nextPost }: BlogPostProps
                     {/* Post Content */}
                     <Container
                         size="md"
-                        className="relative py-12 md:px-20 px-8 -mt-[calc(50vh/3)] mb-8 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
+                        className="relative py-12 md:px-20 px-8 max-sm:-mt-[calc(50vh/2)] -mt-[calc(50vh/3)] mb-8 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
                         {/* Post Header */}
                         <header className="mb-12 flex flex-col items-center gap-8">
                             {/* Publication Date and Author */}

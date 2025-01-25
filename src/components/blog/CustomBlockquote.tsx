@@ -17,7 +17,7 @@ export default function CustomBlockquote({ children, citation, currentUrl, quote
 
     return (
         <Center>
-            <div className="bg-white dark:bg-dark-500 w-[100%] my-2 rounded-md shadow-dark-md border-l-0">
+            <div className="bg-white dark:bg-dark-500 w-[100%] my-2 rounded-md shadow-dark-md border-l-0 max-sm:my-2">
                 <Blockquote
                     cite={citation || undefined}
                     icon={icon}

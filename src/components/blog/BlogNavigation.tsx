@@ -12,12 +12,12 @@ interface BlogNavigationProps {
 
 const BlogNavigation = ({ previousPost, nextPost }: BlogNavigationProps) => {
     return (
-        <Group justify="space-between" className="my-8">
+        <Group justify="space-between" className="my-8 max-sm:px-2">
             {previousPost ? (
                 <Link
                     href={`/blog/${previousPost.slug.current}`}
                     onClick={nprogress.start}
-                    className="no-underline w-[48%]">
+                    className="no-underline w-full md:w-[48%]">
                     <Card
                         className="bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
                         padding="lg">
@@ -42,7 +42,7 @@ const BlogNavigation = ({ previousPost, nextPost }: BlogNavigationProps) => {
                 <Link
                     href={`/blog/${nextPost.slug.current}`}
                     onClick={nprogress.start}
-                    className="no-underline w-[48%]">
+                    className="no-underline w-full md:w-[48%]">
                     <Card
                         className="bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
                         padding="lg">
