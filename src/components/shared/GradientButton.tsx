@@ -17,7 +17,7 @@ export function GradientButton({ href, className = '' }: GradientButtonProps) {
             className={`
 				text-[#FFF] hover:text-brand-500 dark:text-white
                 dark:hover:text-navy-500 inline-flex items-center 
-                gap-2 px-6 py-3 rounded-lg font-medium transition-all 
+                gap-2 px-6 py-3 rounded-[12px] font-medium transition-all 
                 duration-100 bg-gradient-to-b from-brand-600 to-brand-300 
                 hover:bg-none hover:border hover:border-brand-500 
                 hover:bg-transparent 

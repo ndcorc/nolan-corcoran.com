@@ -359,3 +359,16 @@ export const getAdjacentPostsQuery = groq`
   }
 }
 `;
+
+export const getFeedPostsQuery = groq`
+*[_type == "post"] | order(publishedAt desc) {
+  _id,
+  title,
+  subtitle,
+  slug,
+  mainImage,
+  publishedAt,
+  excerpt,
+  body,
+  "categories": categories[]->{ title },
+}`;

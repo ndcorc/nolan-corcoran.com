@@ -19,13 +19,10 @@ interface BlogPostPageProps {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
     const { slug } = await params;
     const serverSanity = await createServerSanity();
-
     const post = await serverSanity.getPostBySlug(slug);
 
     if (!post) {
-        return {
-            title: 'Post Not Found'
-        };
+        return { title: 'Post Not Found' };
     }
 
     // Get the post's main image URL if it exists

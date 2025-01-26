@@ -14,13 +14,10 @@ interface CaseStudyPageProps {
 export async function generateMetadata({ params }: CaseStudyPageProps) {
     const { slug } = await params;
     const serverSanity = await createServerSanity();
-
     const project = await serverSanity.getProjectBySlug(slug);
 
     if (!project) {
-        return {
-            title: 'Project Not Found'
-        };
+        return { title: 'Project Not Found' };
     }
 
     return {
