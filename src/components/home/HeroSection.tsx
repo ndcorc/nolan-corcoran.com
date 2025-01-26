@@ -12,7 +12,7 @@ export default function HeroSection() {
     const isDark = colorScheme === 'dark';
 
     return (
-        <section>
+        <section className="relative">
             <BackgroundImage src={isDark ? '/img/bgDark.png' : '/img/bgIMG.png'} className="max-h-[80%]">
                 <Container fluid className="relative z-10">
                     <div className="flex flex-col md:flex-row min-h-screen px-0 md:px-16 py-20">
@@ -82,7 +82,7 @@ export default function HeroSection() {
                     </div>
                 </Container>
             </BackgroundImage>
-            {isDark && <Overlay color="#FFF" opacity={0.1} zIndex={5} />}
+            {isDark && <Overlay color="#FFF" opacity={0.1} zIndex={5} className="absolute" />}
         </section>
     );
 }
