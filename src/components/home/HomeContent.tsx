@@ -8,6 +8,7 @@ import LatestPosts from './LatestPosts';
 import ContactForm from './ContactForm';
 import { Element } from 'react-scroll';
 import Loading from '../shared/Loading';
+import AboutSection from './AboutSection';
 
 export default function HomeContent() {
     const [mounted, setMounted] = useState(false);
@@ -21,12 +22,13 @@ export default function HomeContent() {
     }
 
     return (
-        <AppShellMain className="p-0 pb-20">
+        <AppShellMain className="p-0">
             <Element name="" id="">
                 <HeroSection />
             </Element>
 
             <Element name="about" id="about">
+                <AboutSection />
                 <LatestPosts />
             </Element>
 

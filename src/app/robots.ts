@@ -1,4 +1,5 @@
 // src/app/robots.ts
+import { siteMetadata } from '@/lib/config/metadata';
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
@@ -8,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/studio/', '/api/']
         },
-        sitemap: 'https://nolan-corcoran.com/sitemap.xml'
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`
     };
 }

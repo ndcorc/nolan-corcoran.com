@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const adjacentPosts = post ? await serverSanity.getAdjacentPosts(post.publishedAt) : null;
 
     if (!post) {
-        redirect('/404');
+        redirect('/not-found');
     }
 
     return (

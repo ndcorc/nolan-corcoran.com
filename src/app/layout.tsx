@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';
 import QueryProvider from '@/providers/query-provider';
-import BibleRefTagger from '@/components/shared/BibleRefTagger';
 import { NavbarStateProvider } from '@/providers/navbar-state';
 import AppShellWrapper from '@/components/layout/AppShellWrapper';
 import { Notifications } from '@mantine/notifications';
@@ -92,7 +91,6 @@ export default function RootLayout({
                 <SanityPreview />
                 <QueryProvider>
                     <MantineProvider theme={theme}>
-                        <BibleRefTagger />
                         <Notifications position="top-right" />
                         <NavbarStateProvider>
                             <AppShellWrapper>{children}</AppShellWrapper>

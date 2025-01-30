@@ -32,7 +32,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     const project = await serverSanity.getProjectBySlug(slug);
 
     if (!project) {
-        redirect('/404');
+        redirect('/not-found');
     }
 
     return (

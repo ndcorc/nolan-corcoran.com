@@ -9,6 +9,7 @@ import { formatDistance } from 'date-fns';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
 import { IconNews } from '@tabler/icons-react';
+import { nprogress } from '@mantine/nprogress';
 
 interface BlogCardProps {
     post: Post;
@@ -22,7 +23,7 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
     const [imageLoading, setImageLoading] = useState(true);
 
     return (
-        <Link href={`/blog/${post.slug.current}`} className="no-underline">
+        <Link href={`/blog/${post.slug.current}`} onClick={nprogress.start} className="no-underline">
             <MotionCard
                 className="h-full rounded-xl shadow-sm hover:shadow-md border border-solid dark:border-dark-400 bg-slate-50 dark:bg-dark-600 dark:shadow-dark-md"
                 initial={{ opacity: 0, y: 20 }}

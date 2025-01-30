@@ -98,8 +98,11 @@ export default function ContactForm() {
     };
 
     return (
-        <section className="md:py-40 py-8">
-            <Container size="lg">
+        <section className="md:h-screen">
+            <Container size="xl" className="md:px-12 px-4 py-20 h-full">
+                <Title order={2} size="h1" className="mb-12 text-center md:text-6xl text-4xl">
+                    Contact Me
+                </Title>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-stone-50 dark:bg-dark-600 z-10 rounded-xl shadow-z dark:shadow-dark-z">
                     {/* Contact Information */}
                     <BackgroundImage

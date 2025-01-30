@@ -17,16 +17,16 @@ export default function CustomBlockquote({ children, citation, currentUrl, quote
 
     return (
         <Center>
-            <div className="bg-white dark:bg-dark-500 w-[100%] my-2 rounded-md shadow-dark-md border-l-0 max-sm:my-2">
+            <div className="bg-white dark:bg-dark-500 w-[100%] my-2 rounded-md shadow-dark-md border-l-0 max-sm:my-2 relative">
+                <QuoteShareButtons className="top-1 right-0 z-20 absolute" quote={quoteText} url={currentUrl} />
                 <Blockquote
                     cite={citation || undefined}
                     icon={icon}
                     iconSize={36}
-                    className="border-l-0 pb-0 bg-white dark:bg-dark-500"
+                    className="border-l-0 pt-10 pb-8 bg-white dark:bg-dark-500"
                     styles={{ cite: { marginTop: '0.5rem' } }}>
                     {children}
                 </Blockquote>
-                <QuoteShareButtons quote={quoteText} url={currentUrl} />
             </div>
         </Center>
     );

@@ -14,10 +14,10 @@ export default function LatestPosts() {
     const mobile = useMediaQuery('(max-width: 74em)');
 
     return (
-        <section className="py-20">
+        <section className="md:pt-10 md:pb-20 pt-6 pb-12">
             <motion.div whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }} transition={{ duration: 1 }}>
-                <Container fluid className="md:px-32 px-4">
-                    <Title order={2} size="h1" className="mb-12 text-center md:text-6xl text-4xl">
+                <Container size="xl" className="md:px-12 px-4">
+                    <Title order={3} size="h2" className="mb-12 text-center md:text-5xl text-2xl">
                         Latest from the Blog
                     </Title>
                     <Carousel
