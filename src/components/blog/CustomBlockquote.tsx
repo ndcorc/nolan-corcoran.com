@@ -1,9 +1,9 @@
 // src/components/blog/CustomBlockquote.tsx
 'use client';
-import { IconQuotes } from '@tabler/icons-react';
 import { Center, Blockquote } from '@mantine/core';
 import { ReactElement } from 'react';
 import QuoteShareButtons from './QuoteShareButtons';
+import QuotesIcon from './QuotesIcon';
 
 interface CustomBlockquoteProps {
     children: ReactElement[];
@@ -13,17 +13,23 @@ interface CustomBlockquoteProps {
 }
 
 export default function CustomBlockquote({ children, citation, currentUrl, quoteText }: CustomBlockquoteProps) {
-    const icon = <IconQuotes size={32} className="dark:text-white" />;
-
     return (
         <Center>
             <div className="bg-white dark:bg-dark-500 w-[100%] my-2 rounded-md shadow-dark-md border-l-0 max-sm:my-2 relative">
+                <QuotesIcon
+                    size={24}
+                    color="bg-brand dark:bg-stone-50"
+                    className="absolute top-0 left-1 z-20 bg-transparent"
+                />
+                <QuotesIcon
+                    size={24}
+                    color="bg-brand dark:bg-stone-50"
+                    className="absolute bottom-0 right-1 z-20 bg-transparent rotate-180"
+                />
                 <QuoteShareButtons className="top-1 right-0 z-20 absolute" quote={quoteText} url={currentUrl} />
                 <Blockquote
                     cite={citation || undefined}
-                    icon={icon}
-                    iconSize={36}
-                    className="border-l-0 pt-10 pb-8 bg-white dark:bg-dark-500"
+                    className="border-l-0 pt-9 pb-6 bg-white dark:bg-dark-500"
                     styles={{ cite: { marginTop: '0.5rem' } }}>
                     {children}
                 </Blockquote>

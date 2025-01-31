@@ -15,6 +15,7 @@ import Loading from '../shared/Loading';
 import CustomBlockquote from './CustomBlockquote';
 import BlogNavigation from './BlogNavigation';
 import ShareButtons from './ShareButtons';
+import QuotesIcon from './QuotesIcon';
 
 interface BlogPostProps {
     post: Post;
@@ -220,6 +221,7 @@ export default function BlogPost({ post, previousPost, nextPost }: BlogPostProps
                     <Container size="md" className="relative px-0">
                         <ShareButtons post={post} url={typeof window !== 'undefined' ? window.location.href : ''} />
                         <BlogNavigation previousPost={previousPost} nextPost={nextPost} />
+                        <QuotesIcon size={36} color="currentColor" className="z-20" />
                     </Container>
                 </article>
             </AppShellMain>
