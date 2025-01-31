@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         remotePatterns: [
-            { hostname: 'cdn.sanity.io' },
+            { protocol: 'https', hostname: 'cdn.sanity.io' },
             { hostname: 'nolan-corcoran.com' },
             { hostname: 'api.reftagger.com' },
             { hostname: 'reftagger.bibliacdn.com' }

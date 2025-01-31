@@ -4,7 +4,7 @@
 
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { AppShellMain, Container, Title, Text, Divider, Center, List, Group, SimpleGrid } from '@mantine/core';
+import { AppShellMain, Container, Title, Text, Divider, Center, List, Group, SimpleGrid, Stack } from '@mantine/core';
 import { PortableText, toPlainText } from '@portabletext/react';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
@@ -16,21 +16,13 @@ import CustomBlockquote from './CustomBlockquote';
 import BlogNavigation from './BlogNavigation';
 import ShareButtons from './ShareButtons';
 import QuotesIcon from './QuotesIcon';
+import { splitByLastDash, splitNumberAndText } from '@/lib/utils';
 
 interface BlogPostProps {
     post: Post;
     previousPost?: Post;
     nextPost?: Post;
 }
-
-const splitNumberAndText = (str: string) => {
-    const regex = /^(\d+)\.\s*(.*)/;
-    const match = str.match(regex);
-    if (match) {
-        return [Number(parseInt(match[1], 10)), match[2]];
-    }
-    return [null, str];
-};
 
 const basePtComponents = {
     types: {
@@ -52,25 +44,25 @@ const basePtComponents = {
     },
     block: {
         h2: ({ children }: any) => (
-            <Title order={2} className="mt-8 mb-4">
+            <Title order={2} className="my-4">
                 {children}
             </Title>
         ),
         h3: ({ children }: any) => (
-            <Title order={4} className="mt-8 mb-4">
+            <Title order={4} className="my-4">
                 {children}
             </Title>
         ),
         normal: ({ children }: any) => {
             if (children[0].startsWith('--')) {
-                return <Divider my="md" />;
+                return <Divider size="md" className="text-dark-500 my-4" />;
             }
             const [point, text] = splitNumberAndText(children[0]);
             const newChildren = [...children];
             newChildren[0] = text;
             if (point) {
                 return (
-                    <div className="grid grid-cols-[1rem,1fr] gap-2 mt-3">
+                    <div className="grid grid-cols-[1rem,1fr] gap-2 mb-4">
                         <Text className="leading-relaxed">{`${point}. `}</Text>
                         <Text className="leading-relaxed">{newChildren}</Text>
                     </div>
@@ -79,11 +71,11 @@ const basePtComponents = {
             return <Text className="mb-4 leading-relaxed">{children}</Text>;
         },
         blockquote: ({ children, value }: any) => {
-            const citation = children[children.length - 1]?.props?.children?.[0];
-            children = children.filter((child: any) => !child?.props || child?.props?.children?.[0] !== citation);
+            const [quote, citation] = splitByLastDash(children);
+            children = quote;
             return (
                 <CustomBlockquote
-                    citation={citation}
+                    citation={`— ${citation}`}
                     currentUrl={typeof window !== 'undefined' ? window.location.href : ''}
                     quoteText={toPlainText(value)}>
                     {children}
@@ -103,7 +95,7 @@ const basePtComponents = {
         },
         number: ({ children }: any) => {
             return (
-                <List type="ordered" className="list-decimal">
+                <List type="ordered" className="list-decimal mb-4">
                     {children.map((child: any, index: number) => (
                         <List.Item key={index}>{child.props.children}</List.Item>
                     ))}
@@ -132,8 +124,12 @@ const ptComponents = {
 
                 return (
                     <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl" verticalSpacing="xs">
-                        <PortableText value={leftColumn} components={nestedPtComponents} />
-                        <PortableText value={rightColumn} components={nestedPtComponents} />
+                        <Stack className="gap-0">
+                            <PortableText value={leftColumn} components={nestedPtComponents} />
+                        </Stack>
+                        <Stack className="gap-0">
+                            <PortableText value={rightColumn} components={nestedPtComponents} />
+                        </Stack>
                     </SimpleGrid>
                 );
             } catch (error) {
