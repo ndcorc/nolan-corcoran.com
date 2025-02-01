@@ -44,7 +44,7 @@ export function BlogContent() {
     };
 
     return (
-        <AppShellMain className="pb-32">
+        <AppShellMain className="pb-32 px-0">
             {/* Hero Quote Section */}
             <div className="md:py-20 py-12">
                 <Container size="lg">
