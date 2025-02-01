@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Card, Image, Text, Badge, Title, Group, Skeleton, CardProps } from '@mantine/core';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { formatDistance } from 'date-fns';
+import { format } from 'date-fns';
 import { urlForImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
 import { IconNews } from '@tabler/icons-react';
@@ -67,26 +67,14 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
                 )}
 
                 <Text size="sm" c="dimmed" className="mb-1">
-                    {formatDistance(new Date(post.publishedAt), new Date(), { addSuffix: true })}
+                    {format(new Date(post.publishedAt), 'MMMM dd, yyyy')}
                 </Text>
 
                 {excerpt && <Text lineClamp={3}>{post.excerpt}</Text>}
 
                 <Group mt="md" mb="xs">
                     {post.categories.map((category) => (
-                        <Badge
-                            key={category._id}
-                            color={
-                                category.color === 'theology'
-                                    ? 'blue'
-                                    : category.color === 'christian-living'
-                                      ? 'green'
-                                      : category.color === 'apologetics'
-                                        ? 'red'
-                                        : category.color === 'philosophy'
-                                          ? 'violet'
-                                          : 'gray'
-                            }>
+                        <Badge key={category._id} color={category.color}>
                             {category.title}
                         </Badge>
                     ))}

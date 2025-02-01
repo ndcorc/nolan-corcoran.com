@@ -25,17 +25,7 @@ export default function CategoryFilter({
                     key={category._id}
                     variant={selectedCategory === category._id ? 'filled' : 'light'}
                     onClick={() => onSelectCategory(category._id)}
-                    color={
-                        category.color === 'theology'
-                            ? 'blue'
-                            : category.color === 'christian-living'
-                              ? 'green'
-                              : category.color === 'apologetics'
-                                ? 'red'
-                                : category.color === 'philosophy'
-                                  ? 'violet'
-                                  : 'gray'
-                    }>
+                    color={category.color}>
                     {category.title}
                 </Button>
             ))}

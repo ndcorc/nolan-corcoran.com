@@ -27,11 +27,11 @@ export default defineType({
             type: 'string',
             options: {
                 list: [
-                    { title: 'Theology', value: 'theology' },
-                    { title: 'Christian Living', value: 'christian-living' },
-                    { title: 'Apologetics', value: 'apologetics' },
-                    { title: 'Philosophy', value: 'philosophy' },
-                    { title: 'Worldview & Culture', value: 'worldview-culture' }
+                    { title: 'Theology', value: '#364e62' },
+                    { title: 'Christian Living', value: '#797d62' },
+                    { title: 'Apologetics', value: '#f1dca7' },
+                    { title: 'Philosophy', value: '#6E0909' },
+                    { title: 'Worldview & Culture', value: '#997b66' }
                 ]
             },
             validation: (Rule) => Rule.required()

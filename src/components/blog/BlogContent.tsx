@@ -64,7 +64,9 @@ export function BlogContent() {
             {featuredLoading ? <FeaturedPostSkeleton /> : featuredPost ? <FeaturedPost post={featuredPost} /> : null}
 
             {/* Blog Posts Section */}
-            <Container fluid size="lg" className="md:py-16 md:mx-8 md:px-4 py-8 mx-0 px-0">
+            <Container
+                fluid
+                className="md:py-16 sm:mx-auto sm:px-4 py-8 px-2 sm:max-w-[1200px] md:max-w-[1390px] max-w-[576px] mx-auto">
                 <Title order={2} className="md:mb-8 mb-2 px-2 md:px-0">
                     All Posts
                 </Title>

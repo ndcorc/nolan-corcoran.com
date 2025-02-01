@@ -38,19 +38,11 @@ export default defineConfig({
         productionUrl: async (prev, context) => {
           // context includes the client and other details
           const {dataset, document} = context
-          //const client = getClient({apiVersion: '2023-05-31'})
     
           if (document._type === 'post') {
-            console.log("document", document);
-            /* const slug = await client.fetch(
-              `*[_type == 'post' && post._id == 'drafts.'+$postId][0].slug.current`,
-              {postId: document._id}
-            ) */
               const slug = (document as any).slug.current;
-            console.log("slug", slug);
     
-            const params = new URLSearchParams()
-            console.log("params", params);
+            const params = new URLSearchParams();
             params.set('preview', 'true')
             params.set('dataset', dataset)
     
