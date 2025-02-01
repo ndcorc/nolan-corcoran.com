@@ -8,5 +8,5 @@ export const client = createClient({
   apiVersion,
   useCdn: true,
   timeout: 30000,
-  stega: { studioUrl: "http://localhost:3000/studio" },
+  stega: { studioUrl: "/studio" },
 })
