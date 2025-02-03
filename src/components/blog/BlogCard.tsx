@@ -74,7 +74,10 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
 
                 <Group mt="md" mb="xs">
                     {post.categories.map((category) => (
-                        <Badge key={category._id} color={category.color}>
+                        <Badge
+                            key={category._id}
+                            color={category.color}
+                            className={category.title === 'Apologetics' ? 'text-[#6B6042]' : ''}>
                             {category.title}
                         </Badge>
                     ))}

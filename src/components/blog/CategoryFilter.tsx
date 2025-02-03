@@ -25,7 +25,8 @@ export default function CategoryFilter({
                     key={category._id}
                     variant={selectedCategory === category._id ? 'filled' : 'light'}
                     onClick={() => onSelectCategory(category._id)}
-                    color={category.color}>
+                    color={category.color}
+                    className={category.title === 'Apologetics' ? 'text-[#6B6042] border-[#6B6042] border-0.5' : ''}>
                     {category.title}
                 </Button>
             ))}
