@@ -22,11 +22,11 @@ export default function LatestPosts() {
                     </Title>
                     <Carousel
                         withIndicators
-                        height={475}
                         align="start"
                         slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
                         slideGap={{ base: 0, sm: 'md' }}
-                        slidesToScroll={mobile ? 1 : 2}>
+                        slidesToScroll={mobile ? 1 : 2}
+                        className="min-h-[475px]">
                         {postsLoading ? (
                             Array.from({ length: 3 }).map((_, index) => (
                                 <Carousel.Slide key={index}>

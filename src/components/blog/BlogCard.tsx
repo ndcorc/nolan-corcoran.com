@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, Image, Text, Badge, Title, Group, Skeleton, CardProps } from '@mantine/core';
+import { Card, Image, Text, Badge, Title, Group, Skeleton, CardProps, Stack } from '@mantine/core';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { format } from 'date-fns';
@@ -46,33 +46,35 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
                         />
                     </Card.Section>
                 )}
-
                 {!excerpt ? (
-                    <Group gap="8" className="flex items-center">
-                        <IconNews size="24" className="mt-2 mb-1" />
-                        <Title order={4} lineClamp={2} className="mt-2 mb-1 font-bold text-[20px]">
+                    <Stack className="gap-0 mt-4 mb-1">
+                        <Group gap="8" wrap="nowrap" className="flex items-center mb-4">
+                            <IconNews size="24" className="mb-1" />
+                            <Title order={5} className="font-[525]">
+                                Article
+                            </Title>
+                        </Group>
+                        <Title order={3} className="mb-1 font-[500]">
                             {post.title}
                         </Title>
-                    </Group>
+                    </Stack>
                 ) : (
-                    <Title order={4} lineClamp={2} className="mt-2 mb-1 font-bold">
+                    <Title order={3} lineClamp={2} className="mt-2 mb-1 font-[500]">
                         {post.title}
                     </Title>
                 )}
 
-                {post.subtitle && (
-                    <Text size="sm" c="dimmed" className="mb-1">
-                        {post.subtitle}
+                <Text size="md" className="mt-0 mb-5 font-[IBM_Plex_Sans]">
+                    {format(new Date(post.publishedAt), 'MMMM dd, yyyy').toUpperCase()}
+                </Text>
+
+                {excerpt && (
+                    <Text className="mb-4" lineClamp={3}>
+                        {post.excerpt}
                     </Text>
                 )}
 
-                <Text size="sm" c="dimmed" className="mb-1">
-                    {format(new Date(post.publishedAt), 'MMMM dd, yyyy')}
-                </Text>
-
-                {excerpt && <Text lineClamp={3}>{post.excerpt}</Text>}
-
-                <Group mt="md" mb="xs">
+                <Group mb="xs" gap={4} className="mt-auto min-h-[44px] items-start">
                     {post.categories.map((category) => (
                         <Badge
                             key={category._id}

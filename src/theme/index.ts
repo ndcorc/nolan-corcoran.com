@@ -17,7 +17,10 @@ export const fonts = [
     'Source Sans Pro, sans-serif',
     'Simplifia, sans-serif',
     'Blogger, sans',
-    'Roboto, sans-serif'
+    'Roboto, sans-serif',
+    'Lato, sans-serif',
+    'IBM Plex Sans, sans-serif',
+    'IBM Plex Serif, serif'
 ];
 
 export const colors: MantineThemeColors = {
@@ -72,21 +75,21 @@ export const theme = mergeMantineTheme(
             lg: '5px 5px 3px rgba(0, 0, 0, .25)'
         },
         fontSizes: {
-            xs: '12px',
-            sm: '14px',
-            md: '16px',
-            lg: '18px',
-            xl: '20px',
+            xs: rem(10),
+            sm: rem(11),
+            md: rem(14),
+            lg: rem(16),
+            xl: rem(20),
           },
         headings: {
             fontFamily: fonts[5],
             sizes: {
-                h1: { fontSize: '3.5rem', fontWeight: '400' },
-                h2: { fontSize: '2.75rem', fontWeight: '400' },
-                h3: { fontSize: '2rem', fontWeight: '400' },
-                h4: { fontSize: '1.5rem', fontWeight: '400' },
-                h5: { fontSize: '1rem', fontWeight: '400' },
-                h6: { fontSize: '0.75rem', fontWeight: '400' }
+                h1: { fontSize: rem(42.5) },
+                h2: { fontSize: rem(32.5) },
+                h3: { fontSize: rem(27.5) },
+                h4: { fontSize: rem(22.5) },
+                h5: { fontSize: rem(20) },
+                h6: { fontSize: rem(17.5) },
             }
         },
         radius: {
