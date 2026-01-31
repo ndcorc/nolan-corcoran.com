@@ -1,0 +1,982 @@
+{
+  "id": "preconditions-of-intelligibility",
+  "title": "Preconditions of Intelligibility",
+  "description": "A Van Tilian framework showing the 36 preconditions necessary for rational thought and knowledge, all grounded in the Triune God.",
+  "category": "Epistemology",
+  "nodes": [
+    {
+      "id": "trinity-center",
+      "type": "default",
+      "position": { "x": 900, "y": 600 },
+      "data": {
+        "label": "THE ONTOLOGICAL TRINITY",
+        "description": "Ultimate Precondition - Self-Authenticating Ground",
+        "glossaryTermId": "ontological-trinity",
+        "nodeType": "scripture",
+        "nodeCategory": "central",
+        "detailPanelId": "trinity-detail"
+      }
+    },
+    {
+      "id": "father",
+      "type": "default",
+      "position": { "x": 800, "y": 720 },
+      "data": {
+        "label": "FATHER",
+        "description": "Unbegotten Source",
+        "glossaryTermId": "trinity",
+        "nodeType": "scripture",
+        "nodeCategory": "central"
+      }
+    },
+    {
+      "id": "son",
+      "type": "default",
+      "position": { "x": 1000, "y": 720 },
+      "data": {
+        "label": "SON",
+        "description": "Begotten Logos",
+        "glossaryTermId": "trinity",
+        "nodeType": "scripture",
+        "nodeCategory": "central"
+      }
+    },
+    {
+      "id": "spirit",
+      "type": "default",
+      "position": { "x": 900, "y": 840 },
+      "data": {
+        "label": "SPIRIT",
+        "description": "Proceeding Life-giver",
+        "glossaryTermId": "trinity",
+        "nodeType": "scripture",
+        "nodeCategory": "central"
+      }
+    },
+    {
+      "id": "one-and-many",
+      "type": "default",
+      "position": { "x": 900, "y": 980 },
+      "data": {
+        "label": "ONE-AND-MANY",
+        "description": "Equal ultimacy of unity & diversity",
+        "glossaryTermId": "one-and-many",
+        "nodeType": "concept",
+        "nodeCategory": "central",
+        "detailPanelId": "one-many-detail"
+      }
+    },
+    {
+      "id": "van-til-insight",
+      "type": "default",
+      "position": { "x": 900, "y": 50 },
+      "data": {
+        "label": "VAN TIL'S CENTRAL INSIGHT",
+        "description": "36 preconditions form one interlocking system",
+        "glossaryTermId": "van-til",
+        "nodeType": "group",
+        "nodeCategory": "default",
+        "detailPanelId": "vantil-detail"
+      }
+    },
+
+    {
+      "id": "metaphysical-group",
+      "type": "default",
+      "position": { "x": 100, "y": 400 },
+      "data": {
+        "label": "I. METAPHYSICAL",
+        "description": "What reality must be like",
+        "nodeType": "group",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-1-identity",
+      "type": "default",
+      "position": { "x": 0, "y": 520 },
+      "data": {
+        "label": "1. Identity",
+        "description": "A = A",
+        "glossaryTermId": "identity",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-2-difference",
+      "type": "default",
+      "position": { "x": 150, "y": 520 },
+      "data": {
+        "label": "2. Difference",
+        "description": "Real distinctions",
+        "glossaryTermId": "difference",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-3-unity",
+      "type": "default",
+      "position": { "x": 300, "y": 520 },
+      "data": {
+        "label": "3. Unity",
+        "description": "Many → kinds",
+        "glossaryTermId": "unity",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-4-persistence",
+      "type": "default",
+      "position": { "x": 0, "y": 640 },
+      "data": {
+        "label": "4. Persistence",
+        "description": "Change ≠ destruction",
+        "glossaryTermId": "persistence",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-5-causality",
+      "type": "default",
+      "position": { "x": 150, "y": 640 },
+      "data": {
+        "label": "5. Causality",
+        "description": "Events have causes",
+        "glossaryTermId": "causality",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-6-uniformity",
+      "type": "default",
+      "position": { "x": 300, "y": 640 },
+      "data": {
+        "label": "6. Uniformity",
+        "description": "Nature is regular",
+        "glossaryTermId": "uniformity-of-nature",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-7-modality",
+      "type": "default",
+      "position": { "x": 75, "y": 760 },
+      "data": {
+        "label": "7. Modality",
+        "description": "Necessity/possibility",
+        "glossaryTermId": "modality",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+    {
+      "id": "meta-8-order",
+      "type": "default",
+      "position": { "x": 225, "y": 760 },
+      "data": {
+        "label": "8. Order",
+        "description": "Non-chaos",
+        "glossaryTermId": "order",
+        "nodeType": "concept",
+        "nodeCategory": "metaphysical"
+      }
+    },
+
+    {
+      "id": "logical-group",
+      "type": "default",
+      "position": { "x": 350, "y": 150 },
+      "data": {
+        "label": "II. LOGICAL",
+        "description": "For reasoning to be possible",
+        "nodeType": "group",
+        "nodeCategory": "logical"
+      }
+    },
+    {
+      "id": "logic-9-laws",
+      "type": "default",
+      "position": { "x": 250, "y": 270 },
+      "data": {
+        "label": "9. Laws of Logic",
+        "description": "Identity, Non-contradiction, Excluded Middle",
+        "glossaryTermId": "laws-of-logic",
+        "nodeType": "concept",
+        "nodeCategory": "logical",
+        "detailPanelId": "logic-detail"
+      }
+    },
+    {
+      "id": "logic-10-applicability",
+      "type": "default",
+      "position": { "x": 450, "y": 270 },
+      "data": {
+        "label": "10. Applicability",
+        "description": "Logic describes reality",
+        "glossaryTermId": "laws-of-logic",
+        "nodeType": "concept",
+        "nodeCategory": "logical"
+      }
+    },
+    {
+      "id": "logic-11-normativity",
+      "type": "default",
+      "position": { "x": 350, "y": 390 },
+      "data": {
+        "label": "11. Normativity",
+        "description": "Logic governs reasoning",
+        "glossaryTermId": "normativity",
+        "nodeType": "concept",
+        "nodeCategory": "logical"
+      }
+    },
+
+    {
+      "id": "epistemological-group",
+      "type": "default",
+      "position": { "x": 1500, "y": 400 },
+      "data": {
+        "label": "III. EPISTEMOLOGICAL",
+        "description": "For knowledge to be possible",
+        "nodeType": "group",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-12-knowability",
+      "type": "default",
+      "position": { "x": 1400, "y": 520 },
+      "data": {
+        "label": "12. Knowability",
+        "description": "Reality intelligible",
+        "glossaryTermId": "knowability",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-13-subject-object",
+      "type": "default",
+      "position": { "x": 1550, "y": 520 },
+      "data": {
+        "label": "13. Subject-Object",
+        "description": "Knower ≠ Known",
+        "glossaryTermId": "subject-object-relation",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-14-faculties",
+      "type": "default",
+      "position": { "x": 1700, "y": 520 },
+      "data": {
+        "label": "14. Reliable Faculties",
+        "description": "Minds → truth",
+        "glossaryTermId": "reliable-faculties",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-15-senses",
+      "type": "default",
+      "position": { "x": 1850, "y": 520 },
+      "data": {
+        "label": "15. Sense Perception",
+        "description": "Senses correspond",
+        "glossaryTermId": "sense-perception",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-16-memory",
+      "type": "default",
+      "position": { "x": 1400, "y": 680 },
+      "data": {
+        "label": "16. Memory",
+        "description": "Past retained",
+        "glossaryTermId": "memory",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-17-induction",
+      "type": "default",
+      "position": { "x": 1550, "y": 680 },
+      "data": {
+        "label": "17. Induction",
+        "description": "Past → Future",
+        "glossaryTermId": "induction",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-18-testimony",
+      "type": "default",
+      "position": { "x": 1700, "y": 680 },
+      "data": {
+        "label": "18. Testimony",
+        "description": "Communication transmits",
+        "glossaryTermId": "testimony",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+    {
+      "id": "epist-19-error",
+      "type": "default",
+      "position": { "x": 1850, "y": 680 },
+      "data": {
+        "label": "19. Error Distinction",
+        "description": "Seems ≠ Is",
+        "glossaryTermId": "error-distinction",
+        "nodeType": "concept",
+        "nodeCategory": "epistemological"
+      }
+    },
+
+    {
+      "id": "semantic-group",
+      "type": "default",
+      "position": { "x": 550, "y": 1150 },
+      "data": {
+        "label": "IV. SEMANTIC",
+        "description": "For meaning and language",
+        "nodeType": "group",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-20-meaning",
+      "type": "default",
+      "position": { "x": 400, "y": 1280 },
+      "data": {
+        "label": "20. Meaning",
+        "description": "Symbols refer",
+        "glossaryTermId": "meaning",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-21-reference",
+      "type": "default",
+      "position": { "x": 550, "y": 1280 },
+      "data": {
+        "label": "21. Reference",
+        "description": "Words pick out",
+        "glossaryTermId": "reference",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-22-predication",
+      "type": "default",
+      "position": { "x": 700, "y": 1280 },
+      "data": {
+        "label": "22. Predication",
+        "description": "S is P",
+        "glossaryTermId": "predication",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-23-universals",
+      "type": "default",
+      "position": { "x": 400, "y": 1420 },
+      "data": {
+        "label": "23. Universals",
+        "description": "Shared properties",
+        "glossaryTermId": "universals",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-24-stable-defs",
+      "type": "default",
+      "position": { "x": 550, "y": 1420 },
+      "data": {
+        "label": "24. Stable Defs",
+        "description": "Terms retain meaning",
+        "glossaryTermId": "stable-definitions",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+    {
+      "id": "sem-25-coherence",
+      "type": "default",
+      "position": { "x": 700, "y": 1420 },
+      "data": {
+        "label": "25. Coherence",
+        "description": "Meanings fit",
+        "glossaryTermId": "coherence",
+        "nodeType": "concept",
+        "nodeCategory": "semantic"
+      }
+    },
+
+    {
+      "id": "moral-group",
+      "type": "default",
+      "position": { "x": 1350, "y": 150 },
+      "data": {
+        "label": "V. MORAL/NORMATIVE",
+        "description": "For obligation and responsibility",
+        "nodeType": "group",
+        "nodeCategory": "moral"
+      }
+    },
+    {
+      "id": "moral-26-normativity",
+      "type": "default",
+      "position": { "x": 1250, "y": 270 },
+      "data": {
+        "label": "26. Normativity",
+        "description": "There are oughts",
+        "glossaryTermId": "normativity",
+        "nodeType": "concept",
+        "nodeCategory": "moral"
+      }
+    },
+    {
+      "id": "moral-27-realism",
+      "type": "default",
+      "position": { "x": 1400, "y": 270 },
+      "data": {
+        "label": "27. Moral Realism",
+        "description": "Right/wrong objective",
+        "glossaryTermId": "moral-realism",
+        "nodeType": "concept",
+        "nodeCategory": "moral"
+      }
+    },
+    {
+      "id": "moral-28-responsibility",
+      "type": "default",
+      "position": { "x": 1550, "y": 270 },
+      "data": {
+        "label": "28. Responsibility",
+        "description": "Agents accountable",
+        "glossaryTermId": "responsibility",
+        "nodeType": "concept",
+        "nodeCategory": "moral"
+      }
+    },
+    {
+      "id": "moral-29-agency",
+      "type": "default",
+      "position": { "x": 1400, "y": 390 },
+      "data": {
+        "label": "29. Personal Agency",
+        "description": "Actions chosen",
+        "glossaryTermId": "personal-agency",
+        "nodeType": "concept",
+        "nodeCategory": "moral"
+      }
+    },
+
+    {
+      "id": "social-group",
+      "type": "default",
+      "position": { "x": 1250, "y": 1150 },
+      "data": {
+        "label": "VI. PERSONAL/SOCIAL",
+        "description": "For persons and society",
+        "nodeType": "group",
+        "nodeCategory": "social"
+      }
+    },
+    {
+      "id": "social-30-personhood",
+      "type": "default",
+      "position": { "x": 1100, "y": 1280 },
+      "data": {
+        "label": "30. Personhood",
+        "description": "Minds > matter",
+        "glossaryTermId": "personhood",
+        "nodeType": "concept",
+        "nodeCategory": "social"
+      }
+    },
+    {
+      "id": "social-31-trust",
+      "type": "default",
+      "position": { "x": 1250, "y": 1280 },
+      "data": {
+        "label": "31. Trust",
+        "description": "Others truthful",
+        "glossaryTermId": "trust",
+        "nodeType": "concept",
+        "nodeCategory": "social"
+      }
+    },
+    {
+      "id": "social-32-authority",
+      "type": "default",
+      "position": { "x": 1400, "y": 1280 },
+      "data": {
+        "label": "32. Authority",
+        "description": "Norms bind",
+        "glossaryTermId": "authority",
+        "nodeType": "concept",
+        "nodeCategory": "social"
+      }
+    },
+
+    {
+      "id": "historical-group",
+      "type": "default",
+      "position": { "x": 100, "y": 1000 },
+      "data": {
+        "label": "VII. HISTORICAL",
+        "description": "For history to be meaningful",
+        "nodeType": "group",
+        "nodeCategory": "historical"
+      }
+    },
+    {
+      "id": "hist-33-temporal",
+      "type": "default",
+      "position": { "x": 0, "y": 1130 },
+      "data": {
+        "label": "33. Temporal Order",
+        "description": "Past/Present/Future",
+        "glossaryTermId": "temporal-order",
+        "nodeType": "concept",
+        "nodeCategory": "historical"
+      }
+    },
+    {
+      "id": "hist-34-identity",
+      "type": "default",
+      "position": { "x": 150, "y": 1130 },
+      "data": {
+        "label": "34. Historical ID",
+        "description": "Agents persist",
+        "glossaryTermId": "historical-identity",
+        "nodeType": "concept",
+        "nodeCategory": "historical"
+      }
+    },
+    {
+      "id": "hist-35-teleology",
+      "type": "default",
+      "position": { "x": 300, "y": 1130 },
+      "data": {
+        "label": "35. Teleology",
+        "description": "Direction/Purpose",
+        "glossaryTermId": "teleology",
+        "nodeType": "concept",
+        "nodeCategory": "historical"
+      }
+    },
+    {
+      "id": "hist-36-relevance",
+      "type": "default",
+      "position": { "x": 150, "y": 1270 },
+      "data": {
+        "label": "36. Relevance",
+        "description": "Some matters more",
+        "glossaryTermId": "relevance",
+        "nodeType": "concept",
+        "nodeCategory": "historical"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-trinity-father",
+      "source": "trinity-center",
+      "target": "father",
+      "type": "default"
+    },
+    {
+      "id": "e-trinity-son",
+      "source": "trinity-center",
+      "target": "son",
+      "type": "default"
+    },
+    {
+      "id": "e-father-spirit",
+      "source": "father",
+      "target": "spirit",
+      "type": "default"
+    },
+    {
+      "id": "e-son-spirit",
+      "source": "son",
+      "target": "spirit",
+      "type": "default"
+    },
+    {
+      "id": "e-spirit-onemany",
+      "source": "spirit",
+      "target": "one-and-many",
+      "type": "default"
+    },
+
+    {
+      "id": "e-trinity-meta",
+      "source": "trinity-center",
+      "target": "metaphysical-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-trinity-logic",
+      "source": "trinity-center",
+      "target": "logical-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-trinity-epist",
+      "source": "trinity-center",
+      "target": "epistemological-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-trinity-moral",
+      "source": "trinity-center",
+      "target": "moral-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-onemany-sem",
+      "source": "one-and-many",
+      "target": "semantic-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-trinity-social",
+      "source": "trinity-center",
+      "target": "social-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+    {
+      "id": "e-onemany-hist",
+      "source": "one-and-many",
+      "target": "historical-group",
+      "type": "dependency",
+      "label": "grounds",
+      "animated": true
+    },
+
+    {
+      "id": "e-meta-sem",
+      "source": "metaphysical-group",
+      "target": "semantic-group",
+      "type": "contrast",
+      "style": { "strokeDasharray": "5,5" }
+    },
+    {
+      "id": "e-epist-sem",
+      "source": "epistemological-group",
+      "target": "semantic-group",
+      "type": "contrast",
+      "style": { "strokeDasharray": "5,5" }
+    },
+    {
+      "id": "e-moral-social",
+      "source": "moral-group",
+      "target": "social-group",
+      "type": "contrast",
+      "style": { "strokeDasharray": "5,5" }
+    },
+    {
+      "id": "e-meta-hist",
+      "source": "metaphysical-group",
+      "target": "historical-group",
+      "type": "contrast",
+      "style": { "strokeDasharray": "5,5" }
+    },
+    {
+      "id": "e-sem-social",
+      "source": "semantic-group",
+      "target": "social-group",
+      "type": "contrast",
+      "style": { "strokeDasharray": "5,5" }
+    },
+
+    {
+      "id": "e-meta-g-1",
+      "source": "metaphysical-group",
+      "target": "meta-1-identity",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-g-2",
+      "source": "metaphysical-group",
+      "target": "meta-2-difference",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-g-3",
+      "source": "metaphysical-group",
+      "target": "meta-3-unity",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-1-4",
+      "source": "meta-1-identity",
+      "target": "meta-4-persistence",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-2-5",
+      "source": "meta-2-difference",
+      "target": "meta-5-causality",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-3-6",
+      "source": "meta-3-unity",
+      "target": "meta-6-uniformity",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-4-7",
+      "source": "meta-4-persistence",
+      "target": "meta-7-modality",
+      "type": "default"
+    },
+    {
+      "id": "e-meta-6-8",
+      "source": "meta-6-uniformity",
+      "target": "meta-8-order",
+      "type": "default"
+    },
+
+    {
+      "id": "e-logic-g-9",
+      "source": "logical-group",
+      "target": "logic-9-laws",
+      "type": "default"
+    },
+    {
+      "id": "e-logic-g-10",
+      "source": "logical-group",
+      "target": "logic-10-applicability",
+      "type": "default"
+    },
+    {
+      "id": "e-logic-9-11",
+      "source": "logic-9-laws",
+      "target": "logic-11-normativity",
+      "type": "default"
+    },
+    {
+      "id": "e-logic-10-11",
+      "source": "logic-10-applicability",
+      "target": "logic-11-normativity",
+      "type": "default"
+    },
+
+    {
+      "id": "e-epist-g-12",
+      "source": "epistemological-group",
+      "target": "epist-12-knowability",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-g-13",
+      "source": "epistemological-group",
+      "target": "epist-13-subject-object",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-g-14",
+      "source": "epistemological-group",
+      "target": "epist-14-faculties",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-g-15",
+      "source": "epistemological-group",
+      "target": "epist-15-senses",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-12-16",
+      "source": "epist-12-knowability",
+      "target": "epist-16-memory",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-13-17",
+      "source": "epist-13-subject-object",
+      "target": "epist-17-induction",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-14-18",
+      "source": "epist-14-faculties",
+      "target": "epist-18-testimony",
+      "type": "default"
+    },
+    {
+      "id": "e-epist-15-19",
+      "source": "epist-15-senses",
+      "target": "epist-19-error",
+      "type": "default"
+    },
+
+    {
+      "id": "e-sem-g-20",
+      "source": "semantic-group",
+      "target": "sem-20-meaning",
+      "type": "default"
+    },
+    {
+      "id": "e-sem-g-21",
+      "source": "semantic-group",
+      "target": "sem-21-reference",
+      "type": "default"
+    },
+    {
+      "id": "e-sem-g-22",
+      "source": "semantic-group",
+      "target": "sem-22-predication",
+      "type": "default"
+    },
+    {
+      "id": "e-sem-20-23",
+      "source": "sem-20-meaning",
+      "target": "sem-23-universals",
+      "type": "default"
+    },
+    {
+      "id": "e-sem-21-24",
+      "source": "sem-21-reference",
+      "target": "sem-24-stable-defs",
+      "type": "default"
+    },
+    {
+      "id": "e-sem-22-25",
+      "source": "sem-22-predication",
+      "target": "sem-25-coherence",
+      "type": "default"
+    },
+
+    {
+      "id": "e-moral-g-26",
+      "source": "moral-group",
+      "target": "moral-26-normativity",
+      "type": "default"
+    },
+    {
+      "id": "e-moral-g-27",
+      "source": "moral-group",
+      "target": "moral-27-realism",
+      "type": "default"
+    },
+    {
+      "id": "e-moral-g-28",
+      "source": "moral-group",
+      "target": "moral-28-responsibility",
+      "type": "default"
+    },
+    {
+      "id": "e-moral-27-29",
+      "source": "moral-27-realism",
+      "target": "moral-29-agency",
+      "type": "default"
+    },
+
+    {
+      "id": "e-social-g-30",
+      "source": "social-group",
+      "target": "social-30-personhood",
+      "type": "default"
+    },
+    {
+      "id": "e-social-g-31",
+      "source": "social-group",
+      "target": "social-31-trust",
+      "type": "default"
+    },
+    {
+      "id": "e-social-g-32",
+      "source": "social-group",
+      "target": "social-32-authority",
+      "type": "default"
+    },
+
+    {
+      "id": "e-hist-g-33",
+      "source": "historical-group",
+      "target": "hist-33-temporal",
+      "type": "default"
+    },
+    {
+      "id": "e-hist-g-34",
+      "source": "historical-group",
+      "target": "hist-34-identity",
+      "type": "default"
+    },
+    {
+      "id": "e-hist-g-35",
+      "source": "historical-group",
+      "target": "hist-35-teleology",
+      "type": "default"
+    },
+    {
+      "id": "e-hist-34-36",
+      "source": "hist-34-identity",
+      "target": "hist-36-relevance",
+      "type": "default"
+    }
+  ],
+  "detailPanels": {
+    "trinity-detail": {
+      "id": "trinity-detail",
+      "title": "The Ontological Trinity as Ultimate Ground",
+      "content": "The Triune God is the ultimate precondition of intelligibility. Unity and diversity are equally ultimate in God: one essence, three Persons. This solves the one-and-many problem that plagues all non-Christian philosophy. The Father is the unbegotten source, the Son is the eternally begotten Logos (reason/word), and the Spirit is the life-giving proceeder. Because God is personal, rationality is personal at its foundation. Because God is self-sufficient, He needs no external ground. Because God is triune, unity and diversity coexist without one absorbing the other.",
+      "glossaryTermIds": ["trinity", "ontological-trinity", "one-and-many"],
+      "scriptureReferences": ["John 1:1-3", "Colossians 1:16-17", "Hebrews 1:3"]
+    },
+    "one-many-detail": {
+      "id": "one-many-detail",
+      "title": "The One-and-Many Problem",
+      "content": "The one-and-many problem asks: Is unity or diversity more fundamental? Monism says unity is ultimate (all is one), making distinctions illusory. Pluralism says diversity is ultimate (all is many), making unity arbitrary. Both fail to account for real unity-in-diversity. Only the Trinity—three distinct Persons sharing one undivided essence—provides equal ultimacy to both. This is Precondition #37: A unified, self-consistent, personal ground where neither unity nor diversity is more ultimate.",
+      "glossaryTermIds": ["one-and-many", "trinity"]
+    },
+    "vantil-detail": {
+      "id": "vantil-detail",
+      "title": "Van Til's Central Insight",
+      "content": "These 36 preconditions are not independent foundations but form ONE INTERLOCKING SYSTEM that either stands or collapses together. The unbeliever borrows all of them while having no metaphysical ground for any of them. This is the 'borrowed capital' of unbelief. Only the Triune God satisfies all conditions simultaneously. The system is self-authenticating: it doesn't appeal to a more basic standard (which would make that standard ultimate), but the God who grounds all intelligibility also reveals Himself as its ground.",
+      "glossaryTermIds": ["van-til", "preconditions-of-intelligibility"],
+      "scriptureReferences": ["Proverbs 1:7", "Colossians 2:3", "Romans 1:18-21"]
+    },
+    "logic-detail": {
+      "id": "logic-detail",
+      "title": "Laws of Logic",
+      "content": "The three fundamental laws are: (1) Identity: A = A—a thing is itself. (2) Non-contradiction: A cannot be both B and not-B at the same time in the same sense. (3) Excluded Middle: Either A or not-A; there is no third option. These laws are presupposed by ALL seven categories of preconditions. They cannot be argued for without using them (circular), nor argued against without using them (self-defeating). They must be grounded in a necessary, eternal, rational being: God.",
+      "glossaryTermIds": ["laws-of-logic", "normativity"]
+    }
+  }
+}

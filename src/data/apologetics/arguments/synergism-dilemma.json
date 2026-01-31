@@ -1,0 +1,72 @@
+{
+  "id": "synergism-dilemma",
+  "title": "The Synergism Dilemma",
+  "description": "An argument demonstrating that synergistic soteriology either collapses into monergism or violates divine aseity through explanatory dependence.",
+  "category": "Soteriology",
+  "relatedDiagramId": "synergism-dilemma",
+  "premises": [
+    {
+      "id": "p1",
+      "content": "Either God's knowledge of future human choices is logically grounded in His own will and decree, or God's knowledge of future human choices is logically grounded in the creature's will.",
+      "glossaryTermIds": ["omniscience", "decree"],
+      "supportingReferences": ["Isaiah 46:9-10", "Ephesians 1:11"]
+    },
+    {
+      "id": "p2",
+      "content": "If God's knowledge of future human choices is logically grounded in His own will and decree, then monergism is true—God alone determines who will be saved.",
+      "glossaryTermIds": ["monergism", "decree"],
+      "supportingReferences": ["Romans 9:16", "John 6:44"]
+    },
+    {
+      "id": "p3",
+      "content": "If God's knowledge of future human choices is logically grounded in the creature's will, then God's knowledge is explanatorily dependent on something external to Himself.",
+      "glossaryTermIds": ["aseity"],
+      "supportingReferences": ["Acts 17:25", "Romans 11:35-36"]
+    },
+    {
+      "id": "p4",
+      "content": "If God's knowledge is explanatorily dependent on something external to Himself, then God's aseity (self-existence and self-sufficiency) is violated.",
+      "glossaryTermIds": ["aseity", "divine-simplicity"],
+      "supportingReferences": ["Exodus 3:14", "John 5:26"]
+    },
+    {
+      "id": "p5",
+      "content": "Divine aseity cannot be violated, for a God who depends on creatures for His knowledge is not the God of classical theism.",
+      "glossaryTermIds": ["aseity", "classical-theism"],
+      "supportingReferences": ["Isaiah 40:13-14", "Romans 11:33-34"]
+    }
+  ],
+  "conclusion": {
+    "id": "c1",
+    "content": "Therefore, synergism is false. God's knowledge of future human choices must be grounded in His own will and decree, which entails monergism.",
+    "glossaryTermIds": ["monergism", "synergism"],
+    "supportingReferences": ["Ephesians 1:4-5", "2 Timothy 1:9"]
+  },
+  "objections": [
+    {
+      "id": "obj1",
+      "title": "Ontological Ground",
+      "content": "God is the one who enables participation in the first place by His free grace offered to all according to His predestined plan of creation.",
+      "response": "This conflates ontological grounding with logical grounding. Grace may explain how a person is able to participate, but it does not explain why one person participates while another does not. The dilemma concerns the logical ground of God's knowledge of who will participate, not the ontological conditions that make participation possible."
+    },
+    {
+      "id": "obj2",
+      "title": "Middle Knowledge (Molinism)",
+      "content": "God knows what creatures would freely do in any circumstance (counterfactuals of creaturely freedom) prior to His decree. This 'middle knowledge' allows God to have exhaustive foreknowledge without determining creaturely choices.",
+      "response": "Middle knowledge does not escape the dilemma. The question remains: what grounds the truth of counterfactuals of creaturely freedom? If these truths are grounded in creatures (even possible creatures), God's knowledge still depends explanatorily on something external to Himself. The truth-makers for these counterfactuals cannot be God's decree (that would be monergism), so they must be located in creaturely essences—making God's knowledge dependent on creation."
+    },
+    {
+      "id": "obj3",
+      "title": "Simple Foreknowledge",
+      "content": "God simply knows the future as a brute fact, without His knowledge being 'grounded' in anything. God's eternal perspective transcends the question of grounding.",
+      "response": "This response conflates the metaphysics of divine timelessness with the logic of truth-making. Even if God knows all truths timelessly, the question of what makes future contingent propositions true remains. Either these truths are determined by God's decree (monergism), or they are determined by creaturely wills that God merely observes (violating aseity). Divine timelessness does not eliminate the need for truth-makers."
+    },
+    {
+      "id": "obj4",
+      "title": "Libertarian Freedom is Compatible with Sovereignty",
+      "content": "God can be sovereign over all things while still granting creatures libertarian free will. His sovereignty is exercised through permission and concurrence rather than determination.",
+      "response": "The argument does not deny that God can permit creaturely choices. The point is epistemic and metaphysical: what grounds God's knowledge of what creatures will choose? If God merely permits and observes, His knowledge depends on what creatures do—which violates aseity. If God's knowledge is explanatorily prior to creaturely choices, then those choices are determined by God's decree."
+    }
+  ],
+  "relatedArguments": ["external-infallibility-dilemma"]
+}

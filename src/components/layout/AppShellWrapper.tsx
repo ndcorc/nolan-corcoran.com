@@ -6,10 +6,15 @@ import { AppShell } from '@mantine/core';
 import Header from './Header';
 import Footer from './Footer';
 import { Suspense, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Loading from '../shared/Loading';
 
 export default function AppShellWrapper({ children }: { children: React.ReactNode }) {
     const { opened } = useNavbar();
+    const pathname = usePathname();
+
+    // Hide footer on apologetics pages
+    const hideFooter = pathname?.startsWith('/apologetics');
 
     useEffect(() => {
         if (opened) {
@@ -35,7 +40,7 @@ export default function AppShellWrapper({ children }: { children: React.ReactNod
                 className="relative">
                 <Header />
                 {children}
-                <Footer />
+                {!hideFooter && <Footer />}
             </AppShell>
         </Suspense>
     );

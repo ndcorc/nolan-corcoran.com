@@ -1,7 +1,43 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { breakpoints, colors } from './src/theme';
 import tailwindPresetMantine from 'tailwind-preset-mantine';
 import type { Config } from 'tailwindcss';
+
+// Inline values to avoid Turbopack module resolution warnings
+// Keep in sync with src/theme/index.ts
+const breakpoints = {
+    xs: '30em',
+    sm: '48em',
+    md: '64em',
+    lg: '74em',
+    xl: '90em'
+};
+
+const colors = {
+    brand: [
+        '#FFF5F5',
+        '#FFE3E3',
+        '#A45252',
+        '#923939',
+        '#802121',
+        '#6E0909',
+        '#5C0000',
+        '#4A0000',
+        '#380000',
+        '#260000'
+    ],
+    navy: [
+        '#0092BD',
+        '#008FB9',
+        '#008BB3',
+        '#0088B0',
+        '#0084AC',
+        '#007C9F',
+        '#027595',
+        '#086E8B',
+        '#0C6883',
+        '#0E627B'
+    ]
+};
 
 const config: Config = {
     content: [

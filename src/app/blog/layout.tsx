@@ -2,7 +2,7 @@
 
 import { DisableDraftMode } from '@/components/shared/DisableDraftMode';
 import SanityPreview from '@/components/shared/SanityPreview.server';
-import { VisualEditing } from 'next-sanity';
+import { VisualEditing } from 'next-sanity/visual-editing';
 import { draftMode } from 'next/headers';
 
 export default async function RootLayout({

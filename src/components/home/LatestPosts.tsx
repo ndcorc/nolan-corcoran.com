@@ -22,10 +22,9 @@ export default function LatestPosts() {
                     </Title>
                     <Carousel
                         withIndicators
-                        align="start"
                         slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
                         slideGap={{ base: 0, sm: 'md' }}
-                        slidesToScroll={mobile ? 1 : 2}
+                        emblaOptions={{ align: 'start', slidesToScroll: mobile ? 1 : 2 }}
                         className="min-h-[475px]">
                         {postsLoading ? (
                             Array.from({ length: 3 }).map((_, index) => (

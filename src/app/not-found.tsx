@@ -1,4 +1,6 @@
 // src/app/not-found.tsx
+'use client';
+
 import Loading from '@/components/shared/Loading';
 import { Button } from '@mantine/core';
 import Link from 'next/link';

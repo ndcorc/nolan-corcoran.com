@@ -1,0 +1,62 @@
+[
+  {
+    "id": "preconditions-of-intelligibility",
+    "title": "Preconditions of Intelligibility",
+    "description": "The necessary conditions for rational thought and knowledge, including interdependencies and epistemic/scriptural warrant.",
+    "category": "Epistemology"
+  },
+  {
+    "id": "chain-of-epistemic-warrant",
+    "title": "Chain/Circle of Epistemic Warrant",
+    "description": "Comparing Reformed and Eastern Orthodox approaches to epistemic warrant and justification.",
+    "category": "Epistemology"
+  },
+  {
+    "id": "natural-vs-moral-agency",
+    "title": "Natural Agency vs Moral Agency",
+    "description": "The distinction between natural will (voluntas ut natura) and moral will (voluntas ut ratio).",
+    "category": "Anthropology"
+  },
+  {
+    "id": "synergism-dilemma",
+    "title": "The Synergism Dilemma",
+    "description": "Visual representation of the dilemma facing synergistic accounts of salvation.",
+    "category": "Soteriology"
+  },
+  {
+    "id": "external-infallibility-dilemma",
+    "title": "The External Infallibility Dilemma",
+    "description": "The epistemic problems with locating infallibility outside of Scripture.",
+    "category": "Ecclesiology"
+  },
+  {
+    "id": "arbitrary-logoi-argument",
+    "title": "The Arbitrary Logoi Argument",
+    "description": "Critique of the Eastern Orthodox doctrine of logoi and its implications.",
+    "category": "Eastern Orthodoxy"
+  },
+  {
+    "id": "virtuous-vs-vicious-circle",
+    "title": "Virtuous Circle vs Vicious Circle",
+    "description": "Distinguishing legitimate circular reasoning from fallacious circularity.",
+    "category": "Epistemology"
+  },
+  {
+    "id": "creator-creature-distinction",
+    "title": "Creator / Creature Distinction",
+    "description": "The fundamental ontological divide between God and all created things.",
+    "category": "Theology Proper"
+  },
+  {
+    "id": "apophatic-cataphatic-knowledge",
+    "title": "Apophatic & Limited Cataphatic Knowledge",
+    "description": "Understanding real, analogical, propositional knowledge of God.",
+    "category": "Epistemology"
+  },
+  {
+    "id": "trinitarian-models",
+    "title": "Trinitarian Models",
+    "description": "Comparing Filioque and Monarchical Trinitarian approaches.",
+    "category": "Theology Proper"
+  }
+]

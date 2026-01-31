@@ -1,0 +1,23 @@
+[
+  {
+    "id": "synergism-dilemma",
+    "title": "The Synergism Dilemma",
+    "description": "An argument demonstrating the internal tensions in synergistic soteriology.",
+    "category": "Soteriology",
+    "relatedDiagramId": "synergism-dilemma"
+  },
+  {
+    "id": "external-infallibility-dilemma",
+    "title": "The External Infallibility Dilemma",
+    "description": "An argument against locating ultimate epistemic authority outside Scripture.",
+    "category": "Ecclesiology",
+    "relatedDiagramId": "external-infallibility-dilemma"
+  },
+  {
+    "id": "arbitrary-logoi-argument",
+    "title": "The Arbitrary Logoi Argument",
+    "description": "A critique of the Eastern Orthodox doctrine of divine logoi, including the problem of induction.",
+    "category": "Eastern Orthodoxy",
+    "relatedDiagramId": "arbitrary-logoi-argument"
+  }
+]

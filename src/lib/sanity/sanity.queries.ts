@@ -372,3 +372,48 @@ export const getFeedPostsQuery = groq`
   body,
   "categories": categories[]->{ title },
 }`;
+
+// Get all quotes
+export const getAllQuotesQuery = groq`
+*[_type == "quote"] | order(_createdAt desc) {
+  _id,
+  text,
+  author,
+  source,
+  topic,
+  subtopic,
+  tags,
+  slug
+}
+`;
+
+// Get quotes with filters
+export const getFilteredQuotesQuery = groq`
+*[_type == "quote" 
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.author ? `&& author == $author` : '')}
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.source ? `&& source == $source` : '')}
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.topic ? `&& topic == $topic` : '')}
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.subtopic ? `&& subtopic == $subtopic` : '')}
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.tag ? `&& $tag in tags` : '')}
+  ${(params: { author?: string; source?: string; topic?: string; subtopic?: string; tag?: string; searchTerm?: string }) => (params.searchTerm ? `&& (text match $searchTerm || author match $searchTerm || source match $searchTerm)` : '')}
+] | order(_createdAt desc) {
+  _id,
+  text,
+  author,
+  source,
+  topic,
+  subtopic,
+  tags,
+  slug
+}
+`;
+
+// Get unique values for filters
+export const getQuoteFilterOptionsQuery = groq`{
+  "authors": *[_type == "quote"].author,
+  "sources": *[_type == "quote"].source,
+  "topics": *[_type == "quote"].topic,
+  "subtopics": *[_type == "quote"].subtopic,
+  "tags": *[_type == "quote"].tags[]
+}
+`;

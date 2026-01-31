@@ -8,7 +8,9 @@ import type {
     PostsResponse,
     Project,
     ProjectWithDiagram,
-    ProjectDetails
+    ProjectDetails,
+    QuoteFilterOptions,
+    Quote
 } from '@/types/sanity';
 
 // Posts Hooks
@@ -175,5 +177,37 @@ export function useDiagramsByProjectType(type: 'full-stack' | 'cloud-architectur
         queryKey: ['diagrams-by-type', type],
         queryFn: () => clientSanity.getDiagramsByProjectType(type),
         enabled: !!type
+    });
+}
+
+export function useQuotes() {
+    return useQuery<Quote[], Error>({
+        queryKey: ['quotes'],
+        queryFn: () => clientSanity.getAllQuotes()
+    });
+}
+
+export function useFilteredQuotes(filters: {
+    author?: string;
+    source?: string;
+    topic?: string;
+    subtopic?: string;
+    tag?: string;
+    searchTerm?: string;
+}) {
+    const filterKeys = Object.entries(filters)
+        .filter(([, value]) => !!value)
+        .map(([key]) => key);
+
+    return useQuery<Quote[], Error>({
+        queryKey: ['filtered-quotes', ...filterKeys.map((key) => filters[key as keyof typeof filters])],
+        queryFn: () => clientSanity.getFilteredQuotes(filters)
+    });
+}
+
+export function useQuoteFilterOptions() {
+    return useQuery<QuoteFilterOptions, Error>({
+        queryKey: ['quote-filter-options'],
+        queryFn: () => clientSanity.getQuoteFilterOptions()
     });
 }

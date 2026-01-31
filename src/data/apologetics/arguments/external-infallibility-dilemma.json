@@ -1,0 +1,60 @@
+{
+  "id": "external-infallibility-dilemma",
+  "title": "The External Infallibility Dilemma",
+  "description": "An argument demonstrating that infallibility cannot be located outside of God's own speech (Scripture), defeating both positive and negative charism models of ecclesial infallibility.",
+  "category": "Ecclesiology",
+  "relatedDiagramId": "external-infallibility-dilemma",
+  "premises": [
+    {
+      "id": "governing-principle",
+      "content": "Governing Principle: Infallibility is a modal property that belongs properly only to God and to God's own speech. God alone is a necessary being with exhaustive self-knowledge; God's speech is infallible because God is infallible. Finite agents are contingent, fallible, and epistemically limited. Any attribution of infallibility outside divine speech must be derivative and grounded, not autonomous.",
+      "glossaryTermIds": ["infallibility", "aseity", "omniscience"],
+      "supportingReferences": ["Numbers 23:19", "Titus 1:2", "Hebrews 6:18"]
+    },
+    {
+      "id": "p1",
+      "content": "Major Premise: If a subject or act is infallible, then error is metaphysically impossible for that subject or act with respect to the propositions affirmed. (This is the definition of infallibility as modal impossibility of error, not mere reliability.)",
+      "glossaryTermIds": ["infallibility", "modality"],
+      "supportingReferences": ["2 Timothy 3:16", "2 Peter 1:21"]
+    },
+    {
+      "id": "p2",
+      "content": "Minor Premise: For any subject or act external to God's own speech, the possibility of error is reintroduced unless the infallibility is grounded directly and exclusively in God's act of speaking rather than in the cognition, intention, conditions, or reception of a finite agent. Ignorance, misclassification, or misapplication by finite agents reintroduces modal error-possibility.",
+      "glossaryTermIds": ["infallibility", "reliable-faculties"],
+      "supportingReferences": ["1 Corinthians 13:9", "James 3:2"]
+    }
+  ],
+  "conclusion": {
+    "id": "c1",
+    "content": "Therefore, no subject or act external to God's own Word/speech/Scripture can be infallible. All claims of ecclesial, conciliar, papal, or traditional infallibility necessarily collapse into fallibility unless they are reducible to God's own speech.",
+    "glossaryTermIds": ["sola-scriptura", "infallibility"],
+    "supportingReferences": ["Isaiah 8:20", "Matthew 15:3-9", "Acts 17:11"]
+  },
+  "objections": [
+    {
+      "id": "obj1",
+      "title": "Positive Charism (Eastern Orthodox / some RC variants)",
+      "content": "God grants a finite subject (council, pope, church) sufficient knowledge to affirm truth infallibly. The Spirit guides the Church into all truth, enabling infallible pronouncements.",
+      "response": "Positive charism relocates infallibility from God's speech to human consciousness—and thus fails the minor premise. 'Sufficient knowledge' is a state of human cognition, which is contingent and non-exhaustive. Any infallibility grounded in cognition, rather than divine speech, is hostage to epistemic limitation. The human subject must: (1) correctly identify that they possess sufficient knowledge, (2) correctly identify the scope of that knowledge, (3) correctly apply it to the matter at hand. Each of these is a truth-apt judgment made by a fallible agent, so error remains metaphysically possible."
+    },
+    {
+      "id": "obj2",
+      "title": "Negative Charism (Standard RC model)",
+      "content": "God merely prevents error at decisive moments, without granting exhaustive knowledge. The pope or council is preserved from error by divine intervention, not by receiving positive revelation.",
+      "response": "Negative charism requires infallibility about the conditions of infallibility, which either implies functional omniscience or collapses into fallibility. 'Prevention' presupposes: (1) correct identification of the decisive moment, (2) correct identification of the scope of protection, (3) correct classification of doctrine as falling under the charism. All of these are truth-apt judgments made by fallible agents. If any of these can be mistaken, error remains possible. The subject must infallibly know when and how they are being preserved from error—but this is precisely what finite cognition cannot provide."
+    },
+    {
+      "id": "obj3",
+      "title": "Scripture Also Requires Interpretation",
+      "content": "If Scripture requires fallible human interpretation, how does Sola Scriptura escape the same dilemma? You need an infallible interpreter to have infallible truth.",
+      "response": "This objection conflates the ground of truth with its reception. Scripture escapes the dilemma because: (1) It is God's speech—the infallibility is located in the text as divine authorship, not in human interpretation. (2) Its infallibility is not mediated by human self-awareness—the apostles need not know they are infallible for God to speak infallibly through them. (3) The ground of truth is divine authorship, not human epistemic sufficiency. Formally: God's speech is infallible per se; human instruments are infallible per accidens only insofar as God speaks. Thus infallibility is located ontologically, not epistemically."
+    },
+    {
+      "id": "obj4",
+      "title": "The Church Determined the Canon",
+      "content": "The Church infallibly determined which books belong in Scripture. Therefore, ecclesial infallibility is presupposed by Sola Scriptura itself.",
+      "response": "This confuses recognition with constitution. The Church recognized the canon; it did not constitute it. The books of Scripture are canonical because God inspired them, not because the Church declared them so. The Church's role was ministerial (recognizing what God had done) not magisterial (making books canonical by declaration). Moreover, if the Church were infallible in recognizing the canon, this would be a one-time act grounded in the self-authenticating nature of Scripture (autopistia), not an ongoing charism of ecclesial infallibility."
+    }
+  ],
+  "relatedArguments": ["synergism-dilemma"]
+}

@@ -1,7 +1,7 @@
 // src/components/layout/Header.tsx
 'use client';
 
-import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger } from '@mantine/core';
+import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger, Menu } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useEffect, useState, useCallback, useMemo } from 'react';
@@ -12,19 +12,43 @@ import { useNavbar } from '@/providers/navbar-state';
 import Loading from '../shared/Loading';
 import { NavigationProgress, nprogress } from '@mantine/nprogress';
 import useDevice from '@/lib/hooks/useDevice';
+import { IconChevronDown } from '@tabler/icons-react';
 
 interface NavLink {
     href: string;
     label: string;
     isScrollLink?: boolean;
+    submenu?: NavLink[]; // Add this line to support dropdown menus
 }
 
 const NAVIGATION_LINKS: NavLink[] = [
     { href: '/', label: 'HOME' },
-    { href: '/#about', label: 'ABOUT', isScrollLink: true },
-    { href: '/#contact', label: 'CONTACT', isScrollLink: true },
-    { href: '/blog', label: 'BLOG' },
-    { href: '/portfolio', label: 'PORTFOLIO' }
+    {
+        href: '#',
+        label: 'ABOUT',
+        submenu: [
+            { href: '/#about', label: 'ABOUT', isScrollLink: true },
+            { href: '/#contact', label: 'CONTACT', isScrollLink: true }
+        ]
+    },
+    {
+        href: '#',
+        label: 'BLOG',
+        submenu: [
+            { href: '/blog', label: 'BLOG' },
+            { href: '/portfolio', label: 'PORTFOLIO' }
+        ]
+    },
+    {
+        href: '#',
+        label: 'BOOKS',
+        submenu: [
+            { href: '/quotes', label: 'QUOTES' }
+            // You can add more book-related pages here in the future
+            // For example: { href: '/books/reviews', label: 'REVIEWS' }
+        ]
+    },
+    { href: '/apologetics', label: 'APOLOGETICS' }
 ];
 
 const SCROLL_SETTINGS = {
@@ -168,6 +192,51 @@ export default function Header() {
         (link: NavLink) => {
             const isDisabled = !isActive(link.href) && hoveredLink !== link.href;
 
+            // If this is a dropdown menu
+            if (link.submenu && link.submenu.length > 0) {
+                return (
+                    <Menu
+                        key={link.label}
+                        trigger="hover"
+                        openDelay={100}
+                        closeDelay={400}
+                        position="bottom"
+                        offset={10}>
+                        <Menu.Target>
+                            <div
+                                className="no-underline font-medium cursor-pointer"
+                                onMouseEnter={() => setHoveredLink(link.href)}
+                                onMouseLeave={() => setHoveredLink(null)}>
+                                <Group gap={4}>
+                                    <Text className="text-brand dark:text-gray-400">{link.label}</Text>
+                                    <IconChevronDown size={16} className="text-brand dark:text-gray-400" />
+                                </Group>
+                            </div>
+                        </Menu.Target>
+                        <Menu.Dropdown>
+                            {link.submenu.map((sublink) => (
+                                <Menu.Item
+                                    key={sublink.href}
+                                    component={Link}
+                                    href={sublink.href}
+                                    onClick={(e) => {
+                                        if (sublink.isScrollLink && pathname === '/') {
+                                            e.preventDefault();
+                                            handleSectionClick(sublink.href);
+                                        } else {
+                                            handleRouteClick(e, sublink.href);
+                                        }
+                                        close();
+                                    }}>
+                                    {sublink.label}
+                                </Menu.Item>
+                            ))}
+                        </Menu.Dropdown>
+                    </Menu>
+                );
+            }
+
+            // For regular links (non-dropdown)
             return (
                 <Indicator
                     key={link.href}
@@ -210,7 +279,7 @@ export default function Header() {
                 </Indicator>
             );
         },
-        [handleRouteClick, handleSectionClick, handleSetActive, hoveredLink, isActive, pathname, isDark]
+        [handleRouteClick, handleSectionClick, handleSetActive, hoveredLink, isActive, pathname, isDark, close]
     );
 
     if (!mounted) {
@@ -273,18 +342,47 @@ export default function Header() {
             </AppShell.Header>
             <AppShell.Navbar py="md" px={4}>
                 <div className="space-y-2">
-                    {NAVIGATION_LINKS.map((item) =>
-                        isActive(item.href) ? (
+                    {NAVIGATION_LINKS.map((item) => {
+                        // If it's a dropdown menu
+                        if (item.submenu && item.submenu.length > 0) {
+                            return (
+                                <div key={item.label} className="mb-2">
+                                    <Text className="px-3 py-2 font-medium">{item.label}</Text>
+                                    <div className="pl-4">
+                                        {item.submenu.map((subItem) => (
+                                            <Link
+                                                key={subItem.href}
+                                                href={subItem.href}
+                                                onClick={(e) => handleLinkClick(e, subItem.href, subItem.isScrollLink)}
+                                                className={`
+                                    block w-full px-3 py-2 rounded-md
+                                    ${
+                                        isActive(subItem.href)
+                                            ? 'bg-brand-500 dark:bg-navy-500 bg-opacity-10 dark:bg-opacity-20'
+                                            : 'hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20'
+                                    }
+                                    no-underline text-inherit
+                                `}>
+                                                {subItem.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            );
+                        }
+
+                        // Otherwise, render a regular link
+                        return isActive(item.href) ? (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 onClick={(e) => handleLinkClick(e, item.href, item.isScrollLink)}
                                 className={`
-                                block w-full px-3 py-2 rounded-md
-                                hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
-                                bg-brand-500 dark:bg-navy-500 bg-opacity-10 dark:bg-opacity-20
-                                no-underline text-inherit
-                            `}>
+                    block w-full px-3 py-2 rounded-md
+                    hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
+                    bg-brand-500 dark:bg-navy-500 bg-opacity-10 dark:bg-opacity-20
+                    no-underline text-inherit
+                `}>
                                 {item.label}
                             </Link>
                         ) : (
@@ -293,14 +391,14 @@ export default function Header() {
                                 href={item.href}
                                 onClick={(e) => handleLinkClick(e, item.href, item.isScrollLink)}
                                 className={`
-                                block w-full px-3 py-2 rounded-md font-medium 
-                                hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
-                                no-underline text-inherit
-                            `}>
+                    block w-full px-3 py-2 rounded-md font-medium 
+                    hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20
+                    no-underline text-inherit
+                `}>
                                 {item.label}
                             </Link>
-                        )
-                    )}
+                        );
+                    })}
                 </div>
             </AppShell.Navbar>
         </>

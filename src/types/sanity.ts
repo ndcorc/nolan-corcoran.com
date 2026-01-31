@@ -113,3 +113,24 @@ export interface Solution {
     icon: string;
     description: string;
 }
+
+export interface Quote {
+    _id: string;
+    text: string;
+    author: string;
+    source?: string;
+    topic?: string;
+    subtopic?: string;
+    tags?: string[];
+    slug?: {
+        current: string;
+    };
+}
+
+export interface QuoteFilterOptions {
+    authors: string[];
+    sources: string[];
+    topics: string[];
+    subtopics: string[];
+    tags: string[];
+}

@@ -10,11 +10,11 @@ const nextConfig = {
         formats: ['image/avif', 'image/webp']
     },
     experimental: {
-        optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
-        turbo: {
-            rules: {
-                // Your custom rules
-            }
+        optimizePackageImports: ['@mantine/core', '@mantine/hooks']
+    },
+    turbopack: {
+        rules: {
+            // Your custom rules
         }
     },
     reactStrictMode: true,

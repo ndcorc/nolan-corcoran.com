@@ -1,0 +1,892 @@
+{
+  "agent-agency": {
+    "id": "agent-agency",
+    "term": "Agent/Agency",
+    "definition": "A being capable of performing actions; the capacity to act or exert power.",
+    "fullDescription": "In philosophical and theological discourse, an agent is any being that possesses the capacity to perform actions. Agency refers to the capacity itself—the ability to act, make choices, and bring about effects in the world. This concept is fundamental to discussions of moral responsibility, divine action, and human will.",
+    "category": "Foundational Concepts",
+    "relatedTerms": ["human-will", "moral-agency"]
+  },
+  "human-will": {
+    "id": "human-will",
+    "term": "Human Will",
+    "definition": "The faculty by which human beings make choices and determine their actions.",
+    "fullDescription": "The human will is the faculty of the soul by which persons make choices. In Reformed theology, this is carefully distinguished into different aspects: the natural will (voluntas ut natura) and the moral will (voluntas ut ratio).",
+    "category": "Anthropology",
+    "relatedTerms": ["natural-will", "moral-will", "agent-agency"]
+  },
+  "natural-will": {
+    "id": "natural-will",
+    "term": "Natural Will",
+    "aliases": ["voluntas ut natura"],
+    "definition": "The will considered as a natural faculty oriented toward the good as such.",
+    "fullDescription": "The natural will (voluntas ut natura) refers to the will as a basic appetite or inclination of human nature toward the good. It is the will considered simply as a faculty, prior to deliberation, that naturally tends toward what is perceived as good. This concept is important in Christological discussions regarding Christ's human will.",
+    "parentId": "human-will",
+    "category": "Anthropology",
+    "relatedTerms": ["human-will", "moral-will"]
+  },
+  "moral-will": {
+    "id": "moral-will",
+    "term": "Moral Will",
+    "aliases": ["voluntas ut ratio", "Gnomic Will"],
+    "definition": "The will considered as deliberative reason choosing between particular goods.",
+    "fullDescription": "The moral will (voluntas ut ratio) refers to the will as engaged in deliberation and choice between specific options. It involves reasoning about means to ends and selecting particular courses of action. In human beings, this deliberative willing can be affected by sin and requires grace for proper orientation.",
+    "parentId": "human-will",
+    "category": "Anthropology",
+    "relatedTerms": ["human-will", "natural-will", "moral-agency"]
+  },
+  "moral-agency": {
+    "id": "moral-agency",
+    "term": "Moral Agency",
+    "definition": "The capacity to make morally significant choices and bear responsibility for them.",
+    "fullDescription": "Moral agency is the capacity of a rational being to make choices that have moral significance and to be held accountable for those choices. It presupposes the existence of moral norms, the ability to recognize them, and the capacity to act in accordance with or against them.",
+    "category": "Ethics",
+    "relatedTerms": ["agent-agency", "human-will", "moral-will"]
+  },
+  "infallibility": {
+    "id": "infallibility",
+    "term": "Infallibility",
+    "definition": "The quality of being incapable of error in a specified domain.",
+    "fullDescription": "Infallibility refers to the impossibility of error within a defined scope. In theological discussions, this concept is applied to Scripture, church teaching, and divine knowledge in different ways. The Reformed position maintains the infallibility of Scripture as God's Word while denying ecclesiastical infallibility in the Roman Catholic or Eastern Orthodox sense.",
+    "category": "Epistemology",
+    "relatedTerms": ["epistemic-warrant", "warrant"]
+  },
+  "ontological-warrant": {
+    "id": "ontological-warrant",
+    "term": "Ontological Warrant",
+    "definition": "The grounding of knowledge or authority in the very being or nature of something.",
+    "fullDescription": "Ontological warrant refers to the basis for knowledge or authority that derives from the nature or being of a thing itself. In theological epistemology, this relates to how God's nature grounds the reliability of revelation and knowledge.",
+    "category": "Epistemology",
+    "relatedTerms": ["warrant", "epistemic-warrant"]
+  },
+  "epistemic-warrant": {
+    "id": "epistemic-warrant",
+    "term": "Epistemic Warrant",
+    "definition": "That which justifies or grounds a belief as knowledge rather than mere opinion.",
+    "fullDescription": "Epistemic warrant is what elevates a true belief to the status of knowledge. It is the property that makes a belief properly basic or justified. In Reformed epistemology, the internal testimony of the Holy Spirit provides warrant for belief in Scripture's authority.",
+    "category": "Epistemology",
+    "relatedTerms": ["warrant", "justification", "ontological-warrant"]
+  },
+  "gods-will": {
+    "id": "gods-will",
+    "term": "God's Will",
+    "definition": "The faculty and expressions of divine volition, understood in various aspects.",
+    "fullDescription": "God's will refers to the divine faculty of volition and its various expressions. Reformed theology carefully distinguishes between different aspects of God's will to account for the relationship between divine sovereignty and human responsibility, as well as the distinction between God's inner life and His external works.",
+    "category": "Theology Proper",
+    "relatedTerms": ["divine-will", "decretive-will", "prescriptive-will", "ad-intra", "ad-extra"]
+  },
+  "ad-intra-ad-extra": {
+    "id": "ad-intra-ad-extra",
+    "term": "Ad intra vs Ad extra",
+    "definition": "The distinction between God's internal life and His external works toward creation.",
+    "fullDescription": "This fundamental distinction separates God's inner trinitarian life (ad intra—'toward the inside') from His external works of creation, providence, and redemption (ad extra—'toward the outside'). What is ad intra is necessary to God's being; what is ad extra is free and contingent.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-intra", "ad-extra", "gods-will"]
+  },
+  "divine-will": {
+    "id": "divine-will",
+    "term": "Divine Will",
+    "definition": "God's will considered essentially as a perfection of His nature.",
+    "fullDescription": "The divine will refers to God's will considered as an essential attribute or perfection of the divine nature. In classical theism, God's will is identical with His essence and is therefore simple, eternal, and immutable.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["gods-will", "ad-intra", "divine-simplicity"]
+  },
+  "gods-moral-will": {
+    "id": "gods-moral-will",
+    "term": "Moral Will (Divine)",
+    "definition": "God's will as expressed in moral commands and prescriptions for creatures.",
+    "fullDescription": "God's moral will refers to what He has revealed as His standard for creaturely conduct. It is expressed in His law and commands. This aspect of God's will can be disobeyed by creatures, though their disobedience falls within His decretive will.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["prescriptive-will", "decretive-will", "gods-will"]
+  },
+  "decretive-will": {
+    "id": "decretive-will",
+    "term": "Decretive/Hidden Will",
+    "aliases": ["Will of Decree", "Secret Will"],
+    "definition": "God's eternal decree determining all that comes to pass.",
+    "fullDescription": "The decretive will (voluntas decreti) is God's eternal, all-encompassing decree that determines everything that comes to pass in creation and history. It is 'hidden' in the sense that we do not know its full content apart from its unfolding in providence. Nothing can thwart or fail to come to pass according to this will.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["prescriptive-will", "gods-will"]
+  },
+  "prescriptive-will": {
+    "id": "prescriptive-will",
+    "term": "Prescriptive/Revealed Will",
+    "aliases": ["Will of Precept", "Preceptive Will"],
+    "definition": "God's will as revealed in His commands and moral standards.",
+    "fullDescription": "The prescriptive will (voluntas praecepti) is God's will as revealed in Scripture through commands, prohibitions, and moral instruction. Unlike the decretive will, it can be disobeyed by creatures. It represents God's revealed standard of righteousness rather than His sovereign purpose.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["decretive-will", "gods-will", "gods-moral-will"]
+  },
+  "expressions-of-will": {
+    "id": "expressions-of-will",
+    "term": "Expressions of Will",
+    "definition": "The various ways God's will is manifested or communicated.",
+    "fullDescription": "God's will is expressed through various means: commands, prohibitions, permissions, and providential acts. These expressions relate to how God's internal will becomes externally manifest in creation and revelation.",
+    "parentId": "gods-will",
+    "category": "Theology Proper",
+    "relatedTerms": ["gods-will", "ad-extra"]
+  },
+  "distinctions": {
+    "id": "distinctions",
+    "term": "Distinctions",
+    "definition": "Logical and metaphysical differentiations used in theological reasoning.",
+    "fullDescription": "Theological distinctions are tools of precision that allow us to speak accurately about God, creation, and their relationship. Different types of distinctions (real, ontological, virtual, etc.) have different implications for the nature of what is being distinguished.",
+    "category": "Methodology",
+    "relatedTerms": ["real-distinction", "ontological-distinction", "virtual-distinction"]
+  },
+  "real-distinction": {
+    "id": "real-distinction",
+    "term": "Real Distinction",
+    "definition": "A distinction between things that exist independently of our concepts.",
+    "fullDescription": "A real distinction exists between things that are actually separate or separable in reality, not merely in our way of thinking about them. In classical metaphysics, a real distinction exists between substance and accidents, between one creature and another.",
+    "parentId": "distinctions",
+    "category": "Methodology",
+    "relatedTerms": ["distinctions", "ontological-distinction", "virtual-distinction"]
+  },
+  "ontological-distinction": {
+    "id": "ontological-distinction",
+    "term": "Ontological Distinction",
+    "definition": "A distinction pertaining to being or existence itself.",
+    "fullDescription": "An ontological distinction concerns the level of being or existence. The most fundamental ontological distinction in Christian theology is between the uncreated being of God and the created being of everything else (the Creator/creature distinction).",
+    "parentId": "distinctions",
+    "category": "Methodology",
+    "relatedTerms": ["distinctions", "creator-creature-distinction", "real-distinction"]
+  },
+  "virtual-distinction": {
+    "id": "virtual-distinction",
+    "term": "Virtual Distinction",
+    "definition": "A distinction with a foundation in reality but not involving actual separation.",
+    "fullDescription": "A virtual distinction (distinctio virtualis) exists when there is a real foundation for distinguishing concepts, though the things distinguished are not actually separate. The divine attributes are virtually distinct: they have a foundation in God's infinite perfection but are not really separate in Him.",
+    "parentId": "distinctions",
+    "category": "Methodology",
+    "relatedTerms": ["distinctions", "divine-simplicity"]
+  },
+  "necessary-distinction": {
+    "id": "necessary-distinction",
+    "term": "Necessary Distinction",
+    "definition": "A distinction that holds in all possible circumstances.",
+    "fullDescription": "A necessary distinction is one that must hold given the natures of the things distinguished. It cannot be otherwise. The distinction between God's necessary existence and creatures' contingent existence is a necessary distinction.",
+    "parentId": "distinctions",
+    "category": "Methodology",
+    "relatedTerms": ["distinctions", "accidental-distinction"]
+  },
+  "accidental-distinction": {
+    "id": "accidental-distinction",
+    "term": "Accidental/Consequential/Contingent Distinction",
+    "aliases": ["Consequential Distinction", "Contingent Distinction"],
+    "definition": "A distinction that holds but might not have held under different circumstances.",
+    "fullDescription": "An accidental or contingent distinction is one that exists but is not necessary—things could have been otherwise. Many distinctions among creatures are contingent, depending on God's free creative choice.",
+    "parentId": "distinctions",
+    "category": "Methodology",
+    "relatedTerms": ["distinctions", "necessary-distinction"]
+  },
+  "essence-energies-distinction": {
+    "id": "essence-energies-distinction",
+    "term": "Essence/Energies Distinction",
+    "definition": "The Eastern Orthodox distinction between God's unknowable essence and His knowable energies.",
+    "fullDescription": "The essence/energies distinction, developed especially by Gregory Palamas, distinguishes between God's utterly transcendent and unknowable essence (ousia) and His uncreated energies (energeia) by which He acts and can be known. Reformed theology typically critiques this distinction as compromising divine simplicity.",
+    "category": "Eastern Orthodoxy",
+    "relatedTerms": ["divine-simplicity", "apophatic-knowledge", "cataphatic-knowledge"]
+  },
+  "logoi": {
+    "id": "logoi",
+    "term": "Logoi",
+    "definition": "Divine principles or reasons underlying created things (in Eastern theology).",
+    "fullDescription": "In Eastern Orthodox theology, particularly as developed by Maximus the Confessor, the logoi (singular: logos) are the divine principles, ideas, or reasons that underlie all created things. They are the eternal patterns in God's mind according to which creatures are made and toward which they tend.",
+    "category": "Eastern Orthodoxy",
+    "relatedTerms": ["essence-energies-distinction"]
+  },
+  "preconditions-of-intelligibility": {
+    "id": "preconditions-of-intelligibility",
+    "term": "Preconditions of Intelligibility",
+    "definition": "The necessary conditions that must be true for rational thought and knowledge to be possible.",
+    "fullDescription": "Preconditions of intelligibility are the foundational conditions that must obtain for any rational thought, argument, or knowledge claim to be meaningful. These include the laws of logic, the reliability of sense perception, the uniformity of nature, and the correspondence between mind and reality. Presuppositional apologetics argues that only the Christian worldview can account for these preconditions.",
+    "category": "Apologetics",
+    "relatedTerms": ["epistemic-warrant", "warrant"]
+  },
+  "warrant": {
+    "id": "warrant",
+    "term": "Warrant",
+    "definition": "The property or condition that turns true belief into knowledge.",
+    "fullDescription": "Warrant, in epistemology, is what must be added to true belief to yield knowledge. Different epistemological theories offer different accounts of what warrant consists in: justification, proper function, reliable processes, etc. In Reformed epistemology (Plantinga), warrant involves beliefs formed by cognitive faculties functioning properly according to a design plan aimed at truth.",
+    "category": "Epistemology",
+    "relatedTerms": ["epistemic-warrant", "ontological-warrant", "justification"]
+  },
+  "justification": {
+    "id": "justification",
+    "term": "Justification (Epistemic)",
+    "definition": "The state of a belief being held in an epistemically responsible manner.",
+    "fullDescription": "Epistemic justification refers to the property of a belief being held in a way that is epistemically responsible or reasonable. A justified belief is one the believer is entitled to hold given their evidence, reasoning, or other epistemically relevant factors.",
+    "category": "Epistemology",
+    "relatedTerms": ["warrant", "epistemic-warrant", "belief"]
+  },
+  "motivation": {
+    "id": "motivation",
+    "term": "Motivation",
+    "definition": "The reasons or causes that move an agent to act.",
+    "fullDescription": "Motivation refers to the internal factors—desires, intentions, goals, reasons—that move an agent to perform an action. In discussions of faith and conversion, the question of motivation concerns what moves a person toward belief and what role divine grace plays in that movement.",
+    "category": "Anthropology",
+    "relatedTerms": ["agent-agency", "human-will"]
+  },
+  "faith": {
+    "id": "faith",
+    "term": "Faith",
+    "definition": "Trust in God and assent to His revealed truth.",
+    "fullDescription": "Faith (fides) in Reformed theology involves knowledge (notitia), assent (assensus), and trust (fiducia). It is the instrument by which we receive Christ and His benefits. Saving faith is itself a gift of God, worked by the Holy Spirit through the Word.",
+    "category": "Soteriology",
+    "relatedTerms": ["belief", "warrant", "epistemic-warrant"]
+  },
+  "belief": {
+    "id": "belief",
+    "term": "Belief",
+    "definition": "Mental assent to a proposition as true.",
+    "fullDescription": "Belief is the mental state of accepting or affirming a proposition as true. It is distinguished from mere opinion by its degree of conviction, and from knowledge by the additional requirement of warrant or justification for knowledge.",
+    "category": "Epistemology",
+    "relatedTerms": ["faith", "belief-object", "warrant"]
+  },
+  "belief-object": {
+    "id": "belief-object",
+    "term": "Object of Belief",
+    "definition": "That which is believed; the propositional content of a belief.",
+    "fullDescription": "The object of belief is what the belief is about—its content or the proposition believed. In Christian faith, the primary object is God Himself as revealed in Christ and Scripture.",
+    "parentId": "belief",
+    "category": "Epistemology",
+    "relatedTerms": ["belief", "faith"]
+  },
+  "ad-intra": {
+    "id": "ad-intra",
+    "term": "Ad Intra",
+    "definition": "Pertaining to God's internal life and essential operations.",
+    "fullDescription": "Ad intra ('toward the inside') refers to God's internal trinitarian life and those attributes and operations that belong to His essential being. What is ad intra is necessary—it could not be otherwise and does not depend on creation.",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-extra", "divine-simplicity", "ad-intra-ad-extra"]
+  },
+  "divine-simplicity": {
+    "id": "divine-simplicity",
+    "term": "Divine Simplicity",
+    "definition": "The doctrine that God is not composed of parts but is absolutely one.",
+    "fullDescription": "Divine simplicity is the classical doctrine that God is not composed of parts—whether physical, metaphysical, or logical. God does not have His attributes but is His attributes. His essence, existence, attributes, and will are all identical with each other and with Himself. This is foundational to classical theism.",
+    "parentId": "ad-intra",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-intra", "virtual-distinction"]
+  },
+  "will-equals-decree": {
+    "id": "will-equals-decree",
+    "term": "Will = Decree = Operations",
+    "definition": "In God's inner life, His will, decree, and operations are identical.",
+    "fullDescription": "Due to divine simplicity, in God ad intra there is no distinction between His will, His decree, and His operations. These are one simple eternal act considered under different aspects. The distinctions we make are for our understanding, not separations in God.",
+    "parentId": "ad-intra",
+    "category": "Theology Proper",
+    "relatedTerms": ["divine-simplicity", "ad-intra"]
+  },
+  "ad-extra": {
+    "id": "ad-extra",
+    "term": "Ad Extra",
+    "definition": "Pertaining to God's external works toward creation.",
+    "fullDescription": "Ad extra ('toward the outside') refers to God's external works of creation, providence, redemption, and all His actions toward and in the created order. These works are free, not necessary to God's being, and involve temporal effects in creation.",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-intra", "ad-intra-ad-extra"]
+  },
+  "effects-of-will": {
+    "id": "effects-of-will",
+    "term": "Effects of Will / Operations",
+    "definition": "The temporal results of God's eternal will in creation.",
+    "fullDescription": "The effects of God's will are the temporal results in creation that flow from His eternal decree. While the decree is eternal and simple, its effects are temporal and multiple. God's will is the cause; created events are the effects.",
+    "parentId": "ad-extra",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-extra", "decretive-will"]
+  },
+  "covenantal-revelation": {
+    "id": "covenantal-revelation",
+    "term": "Covenantal Revelation/God's Expression",
+    "definition": "God's self-disclosure through covenant relationship and His revealed Word.",
+    "fullDescription": "Covenantal revelation refers to God's self-disclosure within the context of His covenant relationship with His people. It is how God accommodates Himself to human understanding, expressing His will and character through Scripture, prophets, and ultimately in Christ.",
+    "parentId": "ad-extra",
+    "category": "Theology Proper",
+    "relatedTerms": ["ad-extra", "prescriptive-will"]
+  },
+  "virtuous-circle": {
+    "id": "virtuous-circle",
+    "term": "Virtuous Circle",
+    "definition": "A circular argument or process where each element properly supports the others.",
+    "fullDescription": "A virtuous circle is a form of circular reasoning that is not viciously fallacious because it involves a coherent system of mutually supporting elements. In epistemology, the mutual support between Scripture and the testimony of the Spirit may be understood as a virtuous rather than vicious circle.",
+    "category": "Epistemology",
+    "relatedTerms": ["vicious-circle", "epistemic-warrant"]
+  },
+  "vicious-circle": {
+    "id": "vicious-circle",
+    "term": "Vicious Circle",
+    "definition": "A circular argument that fails to provide genuine justification.",
+    "fullDescription": "A vicious circle is a form of circular reasoning that is fallacious because it merely assumes what needs to be proven, providing no independent support for its conclusion. In epistemology, certain forms of foundationalism and coherentism have been accused of vicious circularity.",
+    "category": "Epistemology",
+    "relatedTerms": ["virtuous-circle", "warrant"]
+  },
+  "creator-creature-distinction": {
+    "id": "creator-creature-distinction",
+    "term": "Creator / Creature Distinction",
+    "definition": "The fundamental ontological divide between God and everything He has made.",
+    "fullDescription": "The Creator/creature distinction is the most basic ontological distinction in Christian theology. God alone is uncreated, self-existent, infinite, and independent. Everything else is created, dependent, finite, and contingent. This distinction is absolute and cannot be bridged from the creature's side; it can only be crossed by God in revelation and redemption.",
+    "category": "Theology Proper",
+    "relatedTerms": ["ontological-distinction", "ad-intra", "ad-extra"]
+  },
+  "knowledge-of-god": {
+    "id": "knowledge-of-god",
+    "term": "Knowledge of God",
+    "definition": "The various ways and degrees in which God can be known by creatures.",
+    "fullDescription": "Knowledge of God encompasses the different modes by which finite creatures can have cognitive access to the infinite Creator. This includes natural and revealed knowledge, and is understood through distinctions between apophatic and cataphatic, archetypal and ectypal, univocal and analogical knowledge.",
+    "category": "Epistemology",
+    "relatedTerms": ["apophatic-knowledge", "cataphatic-knowledge", "analogical-knowledge"]
+  },
+  "apophatic-knowledge": {
+    "id": "apophatic-knowledge",
+    "term": "Apophatic Knowledge",
+    "aliases": ["Via Negativa", "Negative Theology"],
+    "definition": "Knowledge of God expressed through negations—what God is not.",
+    "fullDescription": "Apophatic theology or knowledge proceeds by negation, saying what God is not rather than what He is. God is infinite (not finite), immutable (not changing), incorporeal (not bodily), etc. This approach recognizes the inadequacy of human concepts to capture divine reality and is particularly emphasized in Eastern Orthodox theology.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["cataphatic-knowledge", "knowledge-of-god", "limited-cataphatic-knowledge"]
+  },
+  "cataphatic-knowledge": {
+    "id": "cataphatic-knowledge",
+    "term": "Cataphatic Knowledge",
+    "aliases": ["Via Positiva", "Positive Theology"],
+    "definition": "Knowledge of God expressed through positive affirmations—what God is.",
+    "fullDescription": "Cataphatic theology or knowledge makes positive statements about God: God is good, wise, loving, just, etc. While these affirmations are true, they must be understood as analogical rather than univocal, applying to God in a manner that exceeds our comprehension.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["apophatic-knowledge", "knowledge-of-god", "analogical-knowledge"]
+  },
+  "limited-cataphatic-knowledge": {
+    "id": "limited-cataphatic-knowledge",
+    "term": "Limited Cataphatic Knowledge",
+    "definition": "Positive knowledge of God that is true but finite and incomplete.",
+    "fullDescription": "Limited cataphatic knowledge refers to true positive knowledge of God that is nonetheless finite, partial, and accommodated to creaturely capacity. We can know God truly but not exhaustively. Our positive knowledge is real but bounded by our creaturely finitude.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["cataphatic-knowledge", "analogical-knowledge"]
+  },
+  "analogical-knowledge": {
+    "id": "analogical-knowledge",
+    "term": "Analogical Knowledge",
+    "definition": "Knowledge of God that is neither identical to nor completely different from creaturely concepts.",
+    "fullDescription": "Analogical knowledge of God holds that our concepts apply to God in a way that is neither univocal (exactly the same meaning) nor equivocal (completely different meaning), but analogical—similar yet different. When we say God is 'good,' we mean something genuinely related to creaturely goodness but infinitely transcending it.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["univocal-knowledge", "equivocal-knowledge", "cataphatic-knowledge"]
+  },
+  "true-knowledge": {
+    "id": "true-knowledge",
+    "term": "True Knowledge",
+    "definition": "Knowledge that corresponds to reality as God knows it.",
+    "fullDescription": "True knowledge of God is knowledge that genuinely corresponds to who God is, even if that knowledge is analogical and limited. We can have true knowledge without having exhaustive or comprehensive knowledge. Our knowledge can be accurate without being identical to God's self-knowledge.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["analogical-knowledge", "propositional-knowledge"]
+  },
+  "propositional-knowledge": {
+    "id": "propositional-knowledge",
+    "term": "Propositional Knowledge",
+    "definition": "Knowledge expressible in the form of true statements or propositions.",
+    "fullDescription": "Propositional knowledge is knowledge that can be stated in the form of propositions—declarative sentences that are either true or false. Christian theology affirms that God has revealed propositional truths about Himself in Scripture that we can know and affirm.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["true-knowledge", "belief"]
+  },
+  "ontological-knowledge": {
+    "id": "ontological-knowledge",
+    "term": "Ontological Knowledge",
+    "definition": "Direct knowledge of being rather than propositions about it.",
+    "fullDescription": "Ontological knowledge refers to knowledge that involves direct acquaintance with or participation in being itself, rather than merely propositional knowledge about something. Some theological traditions emphasize ontological knowledge of God through union or deification.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["propositional-knowledge", "knowledge-of-god"]
+  },
+  "univocal-knowledge": {
+    "id": "univocal-knowledge",
+    "term": "Univocal Knowledge",
+    "definition": "Knowledge using concepts with exactly the same meaning when applied to God and creatures.",
+    "fullDescription": "Univocal predication applies terms with the same meaning to both God and creatures. Classical theism generally rejects strictly univocal knowledge of God as collapsing the Creator/creature distinction. If 'good' meant exactly the same thing for God and creatures, God would be a creature.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["analogical-knowledge", "equivocal-knowledge"]
+  },
+  "equivocal-knowledge": {
+    "id": "equivocal-knowledge",
+    "term": "Equivocal Knowledge",
+    "definition": "Knowledge using concepts with completely different meanings for God and creatures.",
+    "fullDescription": "Equivocal predication uses terms with entirely different meanings when applied to God and creatures. If our language about God were purely equivocal, we could have no genuine knowledge of God at all. Classical theism rejects pure equivocation as undermining revelation.",
+    "parentId": "knowledge-of-god",
+    "category": "Epistemology",
+    "relatedTerms": ["analogical-knowledge", "univocal-knowledge"]
+  },
+  "cause-principle-explanation": {
+    "id": "cause-principle-explanation",
+    "term": "Cause, or Principle, or Explanation",
+    "definition": "That which accounts for something's existence, nature, or occurrence.",
+    "fullDescription": "A cause, principle, or explanation is that which makes something intelligible—that which answers the question 'why?' Different types of causation or explanation account for different aspects of things: their existence, their nature, their origin, their purpose.",
+    "category": "Metaphysics",
+    "relatedTerms": ["efficient-cause", "instrumental-cause", "ontological-cause", "logical-cause"]
+  },
+  "efficient-cause": {
+    "id": "efficient-cause",
+    "term": "Efficient Cause",
+    "definition": "The agent or force that brings something into being or produces a change.",
+    "fullDescription": "The efficient cause is the agent that produces an effect or brings something about. In Aristotelian terms, it is 'that from which the change or the resting from change first begins.' God is the primary efficient cause of all creation; secondary causes operate under His providence.",
+    "parentId": "cause-principle-explanation",
+    "category": "Metaphysics",
+    "relatedTerms": ["instrumental-cause", "cause-principle-explanation"]
+  },
+  "instrumental-cause": {
+    "id": "instrumental-cause",
+    "term": "Instrumental Cause",
+    "definition": "A secondary cause used by a primary cause to produce an effect.",
+    "fullDescription": "An instrumental cause is a means or tool by which a primary efficient cause produces its effect. Scripture can be understood as an instrumental cause of faith, with the Holy Spirit as the primary efficient cause. The instrument contributes to the effect but derives its causal power from the primary agent.",
+    "parentId": "cause-principle-explanation",
+    "category": "Metaphysics",
+    "relatedTerms": ["efficient-cause", "cause-principle-explanation"]
+  },
+  "ontological-cause": {
+    "id": "ontological-cause",
+    "term": "Ontological Cause",
+    "definition": "A cause that accounts for the being or existence of something.",
+    "fullDescription": "An ontological cause is one that explains why something exists at all rather than merely how it came about. God is the ontological cause of all created being, sustaining everything in existence at every moment.",
+    "parentId": "cause-principle-explanation",
+    "category": "Metaphysics",
+    "relatedTerms": ["efficient-cause", "cause-principle-explanation"]
+  },
+  "logical-cause": {
+    "id": "logical-cause",
+    "term": "Logical Cause",
+    "definition": "A reason or ground that explains why a conclusion follows or a truth holds.",
+    "fullDescription": "A logical cause or ground is a reason that accounts for why something must be so. It may be a premise from which a conclusion follows, or a principle that explains a truth. Logical causation operates in the realm of reasons and inference rather than physical production.",
+    "parentId": "cause-principle-explanation",
+    "category": "Metaphysics",
+    "relatedTerms": ["cause-principle-explanation"]
+  },
+  "trinity": {
+    "id": "trinity",
+    "term": "Trinity",
+    "definition": "The Christian doctrine that God is one Being in three Persons: Father, Son, and Holy Spirit.",
+    "fullDescription": "The Trinity is the central mystery of Christian faith: one God eternally existing as three distinct Persons—Father, Son, and Holy Spirit—who share one divine essence or nature. The Persons are distinguished by their relations of origin, not by differences in essence or attributes.",
+    "category": "Theology Proper",
+    "relatedTerms": ["filioque", "monarchical-trinity", "ontological-trinity", "economic-trinity"]
+  },
+  "filioque": {
+    "id": "filioque",
+    "term": "Filioque",
+    "definition": "The Western addition stating the Spirit proceeds from the Father 'and the Son.'",
+    "fullDescription": "The Filioque ('and the Son') is the Western church's addition to the Nicene Creed, stating that the Holy Spirit proceeds from the Father and the Son. This addition is rejected by Eastern Orthodoxy and represents a major point of theological division between East and West. Reformed theology affirms the Filioque.",
+    "parentId": "trinity",
+    "category": "Theology Proper",
+    "relatedTerms": ["trinity", "monarchical-trinity"]
+  },
+  "monarchical-trinity": {
+    "id": "monarchical-trinity",
+    "term": "Monarchical Trinitarianism",
+    "definition": "Emphasis on the Father as sole source or 'monarchy' within the Trinity.",
+    "fullDescription": "Monarchical Trinitarianism emphasizes the Father as the sole principle (monarchia) or source of divinity within the Trinity. The Son is eternally begotten from the Father alone, and the Spirit proceeds from the Father alone. This is characteristic of Eastern Orthodox theology in contrast to the Western Filioque.",
+    "parentId": "trinity",
+    "category": "Theology Proper",
+    "relatedTerms": ["trinity", "filioque"]
+  },
+  "ontological-trinity": {
+    "id": "ontological-trinity",
+    "term": "Ontological Trinity",
+    "aliases": ["Immanent Trinity"],
+    "definition": "The Trinity as it exists eternally in itself, apart from creation.",
+    "fullDescription": "The ontological or immanent Trinity refers to God as He is eternally in Himself—the inner-trinitarian relations of Father, Son, and Spirit apart from any reference to creation. It concerns who God is in His eternal being.",
+    "parentId": "trinity",
+    "category": "Theology Proper",
+    "relatedTerms": ["trinity", "economic-trinity", "ad-intra"]
+  },
+  "economic-trinity": {
+    "id": "economic-trinity",
+    "term": "Economic Trinity",
+    "definition": "The Trinity as revealed and active in the works of creation and redemption.",
+    "fullDescription": "The economic Trinity refers to God as He is revealed in His works (economy) of creation, providence, and redemption. It concerns the roles the Persons take in relation to creatures. The classical principle states that the economic Trinity reveals the ontological Trinity.",
+    "parentId": "trinity",
+    "category": "Theology Proper",
+    "relatedTerms": ["trinity", "ontological-trinity", "ad-extra"]
+  },
+  "one-and-many": {
+    "id": "one-and-many",
+    "term": "One-and-Many Problem",
+    "definition": "The philosophical problem of how unity and diversity can both be equally ultimate.",
+    "fullDescription": "The one-and-many problem asks how unity and diversity can coexist without one being more fundamental than the other. Non-Christian philosophies tend toward monism (unity absorbs diversity) or pluralism (diversity without real unity). Van Til argues that only the Trinity—three Persons in one Being—provides equal ultimacy to both unity and diversity.",
+    "category": "Apologetics",
+    "relatedTerms": ["trinity", "preconditions-of-intelligibility"]
+  },
+  "laws-of-logic": {
+    "id": "laws-of-logic",
+    "term": "Laws of Logic",
+    "definition": "The fundamental principles of valid reasoning: identity, non-contradiction, and excluded middle.",
+    "fullDescription": "The laws of logic are the foundational principles governing rational thought. The law of identity (A = A), the law of non-contradiction (A cannot be both B and not-B at the same time and in the same sense), and the law of excluded middle (either A or not-A) are presupposed in all reasoning. Van Til argues these laws are grounded in the nature of the Triune God.",
+    "category": "Logic",
+    "relatedTerms": ["preconditions-of-intelligibility"]
+  },
+  "uniformity-of-nature": {
+    "id": "uniformity-of-nature",
+    "term": "Uniformity of Nature",
+    "definition": "The principle that natural laws and processes operate consistently across time and space.",
+    "fullDescription": "The uniformity of nature is the assumption that the same causes produce the same effects, and that natural regularities observed in the past will continue in the future. This precondition underlies all scientific inquiry and inductive reasoning. It requires explanation: why should nature be uniform? The Christian answer points to God's faithful providence.",
+    "category": "Metaphysics",
+    "relatedTerms": ["preconditions-of-intelligibility", "induction"]
+  },
+  "induction": {
+    "id": "induction",
+    "term": "Induction",
+    "definition": "Reasoning from particular observations to general conclusions about unobserved cases.",
+    "fullDescription": "Induction is the form of reasoning that moves from observed instances to conclusions about unobserved cases (e.g., 'the sun has always risen, so it will rise tomorrow'). The 'problem of induction' (Hume) asks what justifies this inference. Van Til argues that only divine providence and the Creator's design of human minds for truth can ground inductive reasoning.",
+    "category": "Epistemology",
+    "relatedTerms": ["uniformity-of-nature", "preconditions-of-intelligibility"]
+  },
+  "causality": {
+    "id": "causality",
+    "term": "Causality",
+    "definition": "The relationship between causes and their effects; the principle that events have causes.",
+    "fullDescription": "Causality is the metaphysical principle that effects have causes—that events don't just happen randomly but are produced by prior conditions or agents. As a precondition of intelligibility, causality makes explanation possible. Without it, science and rational inquiry would be impossible.",
+    "category": "Metaphysics",
+    "relatedTerms": ["efficient-cause", "preconditions-of-intelligibility"]
+  },
+  "universals": {
+    "id": "universals",
+    "term": "Universals",
+    "definition": "Abstract properties or kinds that multiple particular things can share.",
+    "fullDescription": "Universals are the shared properties (like 'redness' or 'humanity') that allow us to classify particulars into kinds. The problem of universals asks: what grounds the fact that many different things share the same property? Without universals, classification, language, and predication would be impossible. Van Til locates universals in the mind of God.",
+    "category": "Metaphysics",
+    "relatedTerms": ["preconditions-of-intelligibility", "predication"]
+  },
+  "predication": {
+    "id": "predication",
+    "term": "Predication",
+    "definition": "The act of attributing a property or characteristic to a subject (saying 'S is P').",
+    "fullDescription": "Predication is the logical operation of attributing a predicate to a subject—saying that something is something. 'The apple is red' predicates redness of the apple. Predication presupposes that universals apply to particulars and that language can accurately describe reality.",
+    "category": "Logic",
+    "relatedTerms": ["universals", "preconditions-of-intelligibility"]
+  },
+  "personal-agency": {
+    "id": "personal-agency",
+    "term": "Personal Agency",
+    "definition": "The capacity of persons to initiate actions based on reasons and intentions.",
+    "fullDescription": "Personal agency is the capacity of rational beings to act intentionally, based on reasons, beliefs, and purposes. It involves more than mere causation—personal agents choose their actions. As a precondition of intelligibility, personal agency grounds the possibility of rational inquiry, moral responsibility, and communication.",
+    "category": "Anthropology",
+    "relatedTerms": ["agent-agency", "moral-agency", "preconditions-of-intelligibility"]
+  },
+  "testimony": {
+    "id": "testimony",
+    "term": "Testimony",
+    "definition": "Knowledge acquired through the communication of others.",
+    "fullDescription": "Testimony is knowledge that comes through the reports of other persons rather than direct observation. Most human knowledge is testimonial—we rely on teachers, witnesses, and authorities. As a precondition, testimony requires that communication can transmit truth and that some sources are trustworthy.",
+    "category": "Epistemology",
+    "relatedTerms": ["preconditions-of-intelligibility", "trust"]
+  },
+  "trust": {
+    "id": "trust",
+    "term": "Trust",
+    "definition": "Warranted reliance on the truthfulness and reliability of others.",
+    "fullDescription": "Trust is the justified confidence in the truthfulness and reliability of other persons or sources. It is essential for testimony, social cooperation, and knowledge acquisition. As a precondition, trust requires that persons can be truthful and that we can discern trustworthiness.",
+    "category": "Personal/Social",
+    "relatedTerms": ["testimony", "preconditions-of-intelligibility"]
+  },
+  "meaning": {
+    "id": "meaning",
+    "term": "Meaning",
+    "definition": "The semantic content that symbols, words, and signs convey.",
+    "fullDescription": "Meaning is what language and symbols refer to or express. For intelligibility, words must have determinate meanings that can be communicated between minds. The precondition of meaning asks: what grounds the fact that symbols refer to things beyond themselves? Van Til argues that meaning presupposes a God who designed language and minds to correspond.",
+    "category": "Semantics",
+    "relatedTerms": ["reference", "preconditions-of-intelligibility"]
+  },
+  "reference": {
+    "id": "reference",
+    "term": "Reference",
+    "definition": "The relation between words or symbols and the objects or concepts they pick out.",
+    "fullDescription": "Reference is the semantic relation by which words 'hook onto' the world—how 'cat' refers to cats. Without reference, language couldn't describe reality. As a precondition, reference requires that mind, language, and world be designed to correspond to each other.",
+    "category": "Semantics",
+    "relatedTerms": ["meaning", "preconditions-of-intelligibility"]
+  },
+  "normativity": {
+    "id": "normativity",
+    "term": "Normativity",
+    "definition": "The existence of binding standards or 'oughts' that govern thought and action.",
+    "fullDescription": "Normativity refers to the existence of norms or standards that prescribe how things ought to be. Logic has norms (valid vs. invalid reasoning), ethics has norms (right vs. wrong action), and epistemology has norms (justified vs. unjustified belief). Van Til argues that normativity presupposes a personal God whose character is the standard.",
+    "category": "Ethics",
+    "relatedTerms": ["moral-realism", "preconditions-of-intelligibility"]
+  },
+  "moral-realism": {
+    "id": "moral-realism",
+    "term": "Moral Realism",
+    "definition": "The view that objective moral facts exist independently of human opinion.",
+    "fullDescription": "Moral realism holds that moral truths are objective—some things really are right or wrong regardless of what anyone thinks. This is a precondition for meaningful moral discourse and responsibility. Van Til grounds moral realism in God's character as the ultimate standard of goodness.",
+    "category": "Ethics",
+    "relatedTerms": ["normativity", "preconditions-of-intelligibility"]
+  },
+  "responsibility": {
+    "id": "responsibility",
+    "term": "Responsibility",
+    "definition": "Accountability for one's actions based on agency and moral norms.",
+    "fullDescription": "Responsibility is the state of being accountable for one's actions—being rightly subject to praise or blame. It presupposes personal agency (you could have done otherwise), moral norms (there's a right and wrong), and a legitimate authority to hold one accountable. Ultimately, responsibility points to God as the final Judge.",
+    "category": "Ethics",
+    "relatedTerms": ["moral-agency", "normativity", "preconditions-of-intelligibility"]
+  },
+  "personhood": {
+    "id": "personhood",
+    "term": "Personhood",
+    "definition": "The status of being a person with mind, will, and relational capacity.",
+    "fullDescription": "Personhood is the metaphysical status of beings who possess rationality, will, self-consciousness, and the capacity for relationships. Persons are subjects, not mere objects. Van Til argues that personhood is grounded in the personal God—the ultimate Person—and that impersonal ultimate realities cannot account for personal existence.",
+    "category": "Personal/Social",
+    "relatedTerms": ["personal-agency", "preconditions-of-intelligibility"]
+  },
+  "authority": {
+    "id": "authority",
+    "term": "Authority",
+    "definition": "The right to command and the obligation of others to obey.",
+    "fullDescription": "Authority is the legitimate power to prescribe norms and require compliance. It differs from mere power by involving rightful claim. As a precondition, authority asks: where do binding norms come from? Who has the right to obligate? Van Til grounds all authority ultimately in God's sovereign right over His creation.",
+    "category": "Personal/Social",
+    "relatedTerms": ["normativity", "preconditions-of-intelligibility"]
+  },
+  "temporal-order": {
+    "id": "temporal-order",
+    "term": "Temporal Order",
+    "definition": "The sequential structure of time: past, present, and future.",
+    "fullDescription": "Temporal order is the precondition that time has a real structure—that past, present, and future are genuinely distinct and that events occur in sequence. Without temporal order, historical knowledge, planning, and even causation would be unintelligible. God's eternal governance grounds the meaningfulness of temporal sequence.",
+    "category": "Historical",
+    "relatedTerms": ["preconditions-of-intelligibility"]
+  },
+  "teleology": {
+    "id": "teleology",
+    "term": "Teleology",
+    "definition": "Purpose or goal-directedness in nature, history, or action.",
+    "fullDescription": "Teleology is the existence of purposes, goals, or ends toward which things tend. It asks: does anything happen for a reason? Is history going somewhere? Van Til argues that only a purposeful God can ground real teleology—otherwise the universe is just meaningless motion.",
+    "category": "Historical",
+    "relatedTerms": ["preconditions-of-intelligibility"]
+  },
+  "knowability": {
+    "id": "knowability",
+    "term": "Knowability",
+    "definition": "The property of reality being accessible to knowledge.",
+    "fullDescription": "Knowability is the precondition that reality is the sort of thing that can be known—that it is intelligible to minds. Why should the universe be comprehensible? Why should minds be capable of grasping truth about external reality? Van Til argues that only a rational Creator who designed both minds and reality can account for their correspondence.",
+    "category": "Epistemology",
+    "relatedTerms": ["preconditions-of-intelligibility"]
+  },
+  "subject-object-relation": {
+    "id": "subject-object-relation",
+    "term": "Subject-Object Relation",
+    "definition": "The epistemological relationship between a knowing mind and the object of knowledge.",
+    "fullDescription": "The subject-object relation is the basic structure of knowledge: a knower (subject) knows something (object). This presupposes that subjects and objects are both real and that they can stand in cognitive relation to each other. How do minds 'reach out' to grasp external objects? This requires explanation.",
+    "category": "Epistemology",
+    "relatedTerms": ["knowability", "preconditions-of-intelligibility"]
+  },
+  "reliable-faculties": {
+    "id": "reliable-faculties",
+    "term": "Reliable Faculties",
+    "definition": "Cognitive faculties (senses, reason, memory) that generally produce true beliefs.",
+    "fullDescription": "Reliable faculties are cognitive powers—sensation, reason, memory, introspection—that tend to produce true beliefs when functioning properly. This is a precondition for knowledge: if our faculties were unreliable, we couldn't trust any of our beliefs. Plantinga argues that only theism (design) can account for reliable faculties aimed at truth.",
+    "category": "Epistemology",
+    "relatedTerms": ["sense-perception", "memory", "preconditions-of-intelligibility"]
+  },
+  "sense-perception": {
+    "id": "sense-perception",
+    "term": "Sense Perception",
+    "definition": "Knowledge acquired through the five senses.",
+    "fullDescription": "Sense perception is the faculty by which we gain knowledge of the physical world through sight, hearing, touch, taste, and smell. As a precondition, we must assume our senses generally correspond to reality—that what we perceive is what exists. This correspondence requires explanation.",
+    "category": "Epistemology",
+    "relatedTerms": ["reliable-faculties", "preconditions-of-intelligibility"]
+  },
+  "memory": {
+    "id": "memory",
+    "term": "Memory",
+    "definition": "The faculty of retaining and recalling past experiences and knowledge.",
+    "fullDescription": "Memory is the cognitive faculty that preserves knowledge of the past. Without reliable memory, learning, identity, and reasoning from past to future would be impossible. The reliability of memory is a precondition that requires grounding—why should our memories be trustworthy?",
+    "category": "Epistemology",
+    "relatedTerms": ["reliable-faculties", "preconditions-of-intelligibility"]
+  },
+  "error-distinction": {
+    "id": "error-distinction",
+    "term": "Error Distinction",
+    "definition": "The ability to distinguish between true beliefs and false beliefs.",
+    "fullDescription": "Error distinction is the capacity to recognize that some beliefs are true and others false—that there is a difference between seeming and being. Without this distinction, knowledge would be impossible since we couldn't separate knowledge from mere opinion or error. This presupposes objective truth as a standard.",
+    "category": "Epistemology",
+    "relatedTerms": ["true-knowledge", "preconditions-of-intelligibility"]
+  },
+  "coherence": {
+    "id": "coherence",
+    "term": "Coherence",
+    "definition": "Logical consistency and mutual fit among beliefs or propositions.",
+    "fullDescription": "Coherence is the property of beliefs or propositions fitting together without contradiction. As a precondition, meanings and beliefs must be capable of coherence—of forming a unified, non-contradictory system. Reality itself must be coherent for knowledge of it to be possible.",
+    "category": "Semantics",
+    "relatedTerms": ["laws-of-logic", "preconditions-of-intelligibility"]
+  },
+  "stable-definitions": {
+    "id": "stable-definitions",
+    "term": "Stable Definitions",
+    "definition": "The requirement that terms retain their meanings over time and across uses.",
+    "fullDescription": "Stable definitions are the precondition that words and concepts maintain their meanings rather than shifting arbitrarily. Without semantic stability, communication, argument, and accumulated knowledge would be impossible—we couldn't even formulate a thought that retained its meaning.",
+    "category": "Semantics",
+    "relatedTerms": ["meaning", "preconditions-of-intelligibility"]
+  },
+  "identity": {
+    "id": "identity",
+    "term": "Identity",
+    "aliases": ["Law of Identity"],
+    "definition": "The principle that a thing is what it is (A = A).",
+    "fullDescription": "Identity is the most basic principle of being and thought: a thing is itself and not something else. The law of identity (A = A) underlies all predication and reasoning. Without identity, nothing could be distinguished from anything else, and thought would be impossible.",
+    "category": "Metaphysics",
+    "relatedTerms": ["laws-of-logic", "preconditions-of-intelligibility"]
+  },
+  "difference": {
+    "id": "difference",
+    "term": "Difference",
+    "definition": "The existence of real distinctions between things.",
+    "fullDescription": "Difference is the metaphysical precondition that real distinctions exist—that things are not all the same. Without difference, there would be no plurality, no classification, no distinction between true and false, good and evil, or self and other.",
+    "category": "Metaphysics",
+    "relatedTerms": ["identity", "preconditions-of-intelligibility"]
+  },
+  "unity": {
+    "id": "unity",
+    "term": "Unity",
+    "definition": "The principle that many things can belong together as one kind or system.",
+    "fullDescription": "Unity is the precondition that multiplicity can be unified—that many particulars can share properties and belong to kinds. Without unity, there could be no universals, no classification, no system of knowledge. The one-and-many problem asks how unity and diversity can be equally ultimate.",
+    "category": "Metaphysics",
+    "relatedTerms": ["one-and-many", "universals", "preconditions-of-intelligibility"]
+  },
+  "persistence": {
+    "id": "persistence",
+    "term": "Persistence",
+    "definition": "The endurance of things through change over time.",
+    "fullDescription": "Persistence is the precondition that things endure through time and change—that the same thing exists at different moments. Without persistence, there could be no continued existence, no identity over time, no history, and no stable objects of knowledge.",
+    "category": "Metaphysics",
+    "relatedTerms": ["temporal-order", "preconditions-of-intelligibility"]
+  },
+  "modality": {
+    "id": "modality",
+    "term": "Modality",
+    "definition": "The categories of necessity and possibility.",
+    "fullDescription": "Modality concerns what must be, what could be, and what cannot be—necessity, possibility, and impossibility. These modal categories are preconditions for logic, counterfactual reasoning, and distinguishing between essential and accidental properties.",
+    "category": "Metaphysics",
+    "relatedTerms": ["laws-of-logic", "preconditions-of-intelligibility"]
+  },
+  "order": {
+    "id": "order",
+    "term": "Order",
+    "definition": "The arrangement of things according to pattern rather than chaos.",
+    "fullDescription": "Order is the precondition that reality exhibits structure and pattern rather than mere chaos. Without order, prediction, explanation, and science would be impossible. The existence of order requires explanation: why is there cosmos rather than chaos?",
+    "category": "Metaphysics",
+    "relatedTerms": ["uniformity-of-nature", "preconditions-of-intelligibility"]
+  },
+  "historical-identity": {
+    "id": "historical-identity",
+    "term": "Historical Identity",
+    "definition": "The persistence of agents and entities through historical time.",
+    "fullDescription": "Historical identity is the precondition that agents and entities maintain their identity through historical time—that the same persons and things exist across temporal intervals. Without this, historical knowledge, personal responsibility, and covenantal faithfulness would be unintelligible.",
+    "category": "Historical",
+    "relatedTerms": ["persistence", "temporal-order", "preconditions-of-intelligibility"]
+  },
+  "relevance": {
+    "id": "relevance",
+    "term": "Relevance",
+    "definition": "The principle that some things matter more than others for a given purpose.",
+    "fullDescription": "Relevance is the precondition that not everything is equally important—that some facts, events, and considerations bear on a question while others do not. Without relevance, inquiry and explanation would be impossible since everything would be equally (ir)relevant to everything else.",
+    "category": "Historical",
+    "relatedTerms": ["teleology", "preconditions-of-intelligibility"]
+  },
+  "van-til": {
+    "id": "van-til",
+    "term": "Cornelius Van Til",
+    "definition": "Dutch-American Reformed theologian and father of presuppositional apologetics.",
+    "fullDescription": "Cornelius Van Til (1895-1987) was a Reformed theologian who taught at Westminster Theological Seminary. He developed presuppositional apologetics, arguing that all reasoning presupposes the Triune God of Scripture. His key insight was that the preconditions of intelligibility form an interlocking system that only Christian theism can ground.",
+    "category": "Historical Theology",
+    "relatedTerms": ["preconditions-of-intelligibility", "trinity"]
+  },
+  "aseity": {
+    "id": "aseity",
+    "term": "Aseity",
+    "aliases": ["Divine Self-Existence", "A se"],
+    "definition": "God's attribute of existing from Himself, being self-sufficient and dependent on nothing outside Himself.",
+    "fullDescription": "Aseity (from Latin a se, 'from oneself') is the divine attribute by which God exists from Himself and is entirely self-sufficient. God depends on nothing outside Himself for His existence, knowledge, will, or any perfection. This attribute is foundational to classical theism and distinguishes the Creator from all creatures, who exist contingently and dependently. Aseity implies that God cannot be explanatorily dependent on creation for anything—including His knowledge of creaturely choices.",
+    "category": "Theology Proper",
+    "relatedTerms": ["divine-simplicity", "classical-theism", "creator-creature-distinction"],
+    "scriptureReferences": ["Exodus 3:14", "John 5:26", "Acts 17:25", "Romans 11:35-36"]
+  },
+  "omniscience": {
+    "id": "omniscience",
+    "term": "Omniscience",
+    "definition": "God's attribute of knowing all things—past, present, future, actual, and possible.",
+    "fullDescription": "Omniscience is the divine attribute of complete and exhaustive knowledge. God knows all truths: all that was, is, will be, could be, and would be under any circumstances. In classical theism, God's knowledge is not acquired or dependent on external sources but flows from His own being. The question of how God knows future free creaturely acts is central to debates between Calvinism, Arminianism, and Molinism.",
+    "category": "Theology Proper",
+    "relatedTerms": ["aseity", "decree", "divine-simplicity"],
+    "scriptureReferences": ["Psalm 139:1-6", "Isaiah 46:9-10", "Hebrews 4:13", "1 John 3:20"]
+  },
+  "decree": {
+    "id": "decree",
+    "term": "Decree",
+    "aliases": ["Divine Decree", "Eternal Decree"],
+    "definition": "God's eternal plan by which He has foreordained whatsoever comes to pass.",
+    "fullDescription": "The divine decree is God's eternal, all-comprehensive plan that determines whatsoever comes to pass. It is singular (one unified plan), eternal (from before creation), free (not necessitated by anything outside God), immutable (unchanging), and efficacious (certainly accomplished). The decree includes both God's direct causation and His permission of creaturely acts, while maintaining that God is not the author of sin. Reformed theology holds that God's foreknowledge is grounded in His decree, not vice versa.",
+    "category": "Theology Proper",
+    "relatedTerms": ["decretive-will", "omniscience", "monergism"],
+    "scriptureReferences": ["Ephesians 1:11", "Isaiah 46:10", "Acts 2:23", "Romans 8:28-30"]
+  },
+  "monergism": {
+    "id": "monergism",
+    "term": "Monergism",
+    "definition": "The doctrine that regeneration and saving faith are the work of God alone, without any contribution from the human will.",
+    "fullDescription": "Monergism (from Greek monos 'alone' + ergon 'work') is the soteriological position that God alone brings about regeneration and the gift of saving faith in the elect. It stands in contrast to synergism. In monergism, the unregenerate human will is spiritually dead and unable to contribute to its own salvation; God must act first and decisively to grant new life, after which the regenerate person freely believes. This view is characteristic of Reformed/Calvinist soteriology.",
+    "category": "Soteriology",
+    "relatedTerms": ["synergism", "decree", "regeneration"],
+    "scriptureReferences": ["John 6:44", "John 6:65", "Ephesians 2:1-5", "Romans 9:16"]
+  },
+  "synergism": {
+    "id": "synergism",
+    "term": "Synergism",
+    "definition": "The doctrine that salvation involves cooperation between divine grace and human will.",
+    "fullDescription": "Synergism (from Greek syn 'together' + ergon 'work') is the soteriological position that salvation involves cooperation between God's grace and the human will. On this view, God's grace is necessary but not sufficient for salvation; the human will must contribute by freely accepting or not resisting grace. Synergism is characteristic of Arminian, Wesleyan, Roman Catholic, and Eastern Orthodox soteriology. Critics argue that synergism compromises divine aseity by making God's saving knowledge dependent on creaturely decisions.",
+    "category": "Soteriology",
+    "relatedTerms": ["monergism", "aseity", "decree"],
+    "scriptureReferences": ["John 1:12-13", "Philippians 2:12-13"]
+  },
+  "sola-scriptura": {
+    "id": "sola-scriptura",
+    "term": "Sola Scriptura",
+    "aliases": ["Scripture Alone"],
+    "definition": "The doctrine that Scripture alone is the sole infallible rule of faith and practice for the church.",
+    "fullDescription": "Sola Scriptura ('Scripture alone') is the Reformation principle that the Bible is the only infallible source and norm of Christian doctrine. It does not deny the usefulness of tradition, creeds, or church authority, but subordinates all of these to Scripture as the final arbiter of theological disputes. Scripture is self-authenticating (autopistia) and sufficient for all matters of faith and life. This stands in contrast to Roman Catholic and Eastern Orthodox views that locate infallibility also in church tradition or magisterium.",
+    "category": "Bibliology",
+    "relatedTerms": ["infallibility", "autopistia"],
+    "scriptureReferences": ["Isaiah 8:20", "Matthew 15:3-9", "Acts 17:11", "2 Timothy 3:16-17"]
+  },
+  "classical-theism": {
+    "id": "classical-theism",
+    "term": "Classical Theism",
+    "definition": "The traditional view of God affirming divine simplicity, aseity, immutability, eternity, and other classical attributes.",
+    "fullDescription": "Classical theism is the understanding of God that developed through the early church and medieval periods, drawing on both Scripture and philosophical reflection. It affirms that God is absolutely simple (without composition), self-existent (a se), immutable, eternal, omniscient, omnipotent, and wholly good. Classical theism stands in contrast to theistic personalism and open theism, which modify or reject some of these attributes. Reformed theology embraces classical theism as the proper framework for understanding the God of Scripture.",
+    "category": "Theology Proper",
+    "relatedTerms": ["aseity", "divine-simplicity", "omniscience"],
+    "scriptureReferences": ["Exodus 3:14", "Malachi 3:6", "James 1:17", "1 Timothy 6:16"]
+  },
+  "autopistia": {
+    "id": "autopistia",
+    "term": "Autopistia",
+    "aliases": ["Self-Authentication"],
+    "definition": "The property of Scripture by which it authenticates itself as God's Word through its own divine qualities.",
+    "fullDescription": "Autopistia ('self-authenticating') is the Reformed doctrine that Scripture bears witness to its own divine origin and authority. Scripture does not derive its authority from the church's recognition but possesses authority intrinsically as God's Word. The internal testimony of the Holy Spirit enables believers to recognize this self-authenticating character. This concept is central to defending Sola Scriptura against the charge that Scripture's authority depends on ecclesial certification.",
+    "category": "Bibliology",
+    "relatedTerms": ["sola-scriptura", "infallibility"],
+    "scriptureReferences": ["John 10:27", "1 Corinthians 2:12-14", "1 Thessalonians 2:13"]
+  },
+  "regeneration": {
+    "id": "regeneration",
+    "term": "Regeneration",
+    "aliases": ["New Birth"],
+    "definition": "The supernatural work of the Holy Spirit giving spiritual life to those dead in sin.",
+    "fullDescription": "Regeneration is the sovereign work of the Holy Spirit by which He imparts new spiritual life to the elect. It is instantaneous, not gradual; monergistic, not synergistic; and logically prior to faith, not consequent upon it. The regenerate person receives a new heart with new affections and is enabled to respond in faith and repentance. Regeneration is the beginning of the ordo salutis (order of salvation) in Reformed theology.",
+    "category": "Soteriology",
+    "relatedTerms": ["monergism", "faith"],
+    "scriptureReferences": ["John 3:3-8", "Ezekiel 36:26-27", "Titus 3:5", "1 Peter 1:3"]
+  }
+}

@@ -6,7 +6,9 @@ import type {
     PostsResponse,
     Project,
     ProjectWithDiagram,
-    ProjectDetails
+    ProjectDetails,
+    Quote,
+    QuoteFilterOptions
 } from '@/types/sanity';
 import {
     getAllPostsQuery,
@@ -34,7 +36,10 @@ import {
     getProjectStatsQuery,
     getDiagramsByProjectTypeQuery,
     getAdjacentPostsQuery,
-    getFeedPostsQuery
+    getFeedPostsQuery,
+    getAllQuotesQuery,
+    getFilteredQuotesQuery,
+    getQuoteFilterOptionsQuery
 } from './sanity.queries';
 import { QueryParams } from 'next-sanity';
 
@@ -151,17 +156,17 @@ export class SanityService {
 
     async getAdjacentPosts(publishedAt: string): Promise<{ previous?: Post; next?: Post }> {
         return this.extractData(
-          this.fetcher({
-            query: getAdjacentPostsQuery,
-            params: { publishedAt }
-          })
+            this.fetcher({
+                query: getAdjacentPostsQuery,
+                params: { publishedAt }
+            })
         );
-      }
+    }
 
     async getFeedPosts(): Promise<Post[]> {
         return this.extractData(
             this.fetcher({
-            query: getFeedPostsQuery
+                query: getFeedPostsQuery
             })
         );
     }
@@ -269,6 +274,40 @@ export class SanityService {
             this.fetcher({
                 query: getDiagramsByProjectTypeQuery,
                 params: { type }
+            })
+        );
+    }
+
+    // Add these methods to your SanityService class
+    async getAllQuotes(): Promise<Quote[]> {
+        return this.extractData(
+            this.fetcher({
+                query: getAllQuotesQuery
+            })
+        );
+    }
+
+    async getFilteredQuotes(filters: {
+        author?: string;
+        source?: string;
+        topic?: string;
+        subtopic?: string;
+        tag?: string;
+        searchTerm?: string;
+    }): Promise<Quote[]> {
+        const { author, source, topic, subtopic, tag, searchTerm } = filters;
+        return this.extractData(
+            this.fetcher({
+                query: getFilteredQuotesQuery,
+                params: { author, source, topic, subtopic, searchTerm, tagValue: tag }
+            })
+        );
+    }
+
+    async getQuoteFilterOptions(): Promise<QuoteFilterOptions> {
+        return this.extractData(
+            this.fetcher({
+                query: getQuoteFilterOptionsQuery
             })
         );
     }

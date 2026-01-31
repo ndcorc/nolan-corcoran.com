@@ -22,6 +22,11 @@ html {
     --button-bg: #6e0909;
     --button-color: white;
     --button-hover-bg: #5c0000;
+    --apologetics-badge-color: inherit;
+    --apologetics-primary: var(--mantine-color-brand-6);
+    --apologetics-badge-bg: var(--mantine-color-brand-light);
+    --apologetics-navlink-hover-bg: var(--mantine-color-brand-light-hover);
+    --apologetics-navlink-active-bg: var(--mantine-color-brand-light);
     background-color: #f8f6f4;
 }
 
@@ -34,6 +39,11 @@ html {
     --button-hover-bg: var(--mantine-color-navy-6);
     --mantine-primary-color-filled: var(--mantine-color-navy-4);
     --mantine-primary-color-filled-hover: var(--mantine-color-navy-6);
+    --apologetics-badge-color: #c9c9c9;
+    --apologetics-primary: var(--mantine-color-navy-4);
+    --apologetics-badge-bg: var(--mantine-color-navy-light);
+    --apologetics-navlink-hover-bg: var(--mantine-color-navy-light-hover);
+    --apologetics-navlink-active-bg: var(--mantine-color-navy-light);
     background-color: #1a1b1e;
 }
 
@@ -43,4 +53,58 @@ body {
     min-height: 100vh;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
+}
+
+/* Apologetics section - override Mantine primary color variables in dark mode */
+:root[data-mantine-color-scheme='dark'] {
+    /* Override Mantine's brand color references to use navy in dark mode */
+    --mantine-color-brand-filled: var(--mantine-color-navy-4);
+    --mantine-color-brand-filled-hover: var(--mantine-color-navy-5);
+    --mantine-color-brand-light: var(--mantine-color-navy-light);
+    --mantine-color-brand-light-hover: var(--mantine-color-navy-light-hover);
+    --mantine-color-brand-light-color: var(--mantine-color-navy-light-color);
+}
+
+/* Apologetics NavLink styling for hover and active states */
+.apologetics-navlink:hover {
+    background-color: var(--apologetics-navlink-hover-bg) !important;
+}
+
+.apologetics-navlink[data-active='true'] {
+    background-color: var(--apologetics-navlink-active-bg) !important;
+    color: var(--apologetics-primary) !important;
+}
+
+/* Apologetics section header (Diagrams/Arguments dropdown buttons) hover state */
+.apologetics-section-header:hover {
+    background-color: var(--apologetics-navlink-hover-bg) !important;
+}
+
+/* Apologetics card link hover state (Related Diagram card) */
+.apologetics-card-link:hover {
+    background-color: var(--mantine-color-default-hover) !important;
+    border-color: var(--apologetics-primary) !important;
+}
+
+/* Apologetics inline link hover state (Related Argument link) */
+.apologetics-inline-link:hover {
+    background-color: var(--mantine-color-default-hover) !important;
+}
+
+/* Apologetics-specific border colors - match sidebar border in light mode */
+[data-section='apologetics'] {
+    --mantine-color-default-border: var(--mantine-color-gray-4);
+}
+
+:root[data-mantine-color-scheme='dark'] [data-section='apologetics'] {
+    --mantine-color-default-border: var(--mantine-color-dark-4);
+}
+
+/* Override Mantine Paper border color in apologetics section */
+[data-mantine-color-scheme='light'] [data-section='apologetics'] {
+    --paper-border-color: var(--mantine-color-gray-4) !important;
+}
+
+[data-mantine-color-scheme='dark'] [data-section='apologetics'] {
+    --paper-border-color: var(--mantine-color-dark-4) !important;
 }
