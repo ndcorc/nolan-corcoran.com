@@ -16,10 +16,10 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: '/og-image.jpg',
+                url: '/og-apologetics.png',
                 width: 1200,
                 height: 630,
-                alt: 'Reformed Apologetics'
+                alt: 'Reformed Apologetics - Soli Deo Gloria'
             }
         ]
     },
@@ -27,7 +27,8 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Reformed Apologetics | Every Thought Captive',
         description:
-            'Explore interactive diagrams, structured arguments, and a comprehensive glossary for understanding and defending the Reformed faith.'
+            'Explore interactive diagrams, structured arguments, and a comprehensive glossary for understanding and defending the Reformed faith.',
+        images: ['/og-apologetics.png']
     }
 };
 
