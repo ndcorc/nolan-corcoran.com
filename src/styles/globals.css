@@ -65,12 +65,14 @@ body {
     --mantine-color-brand-light-color: var(--mantine-color-navy-light-color);
 }
 
-/* Apologetics NavLink styling for hover and active states */
-.apologetics-navlink:hover {
+/* Nav item styling for hover and active states (apologetics sidebar, header dropdowns) */
+.apologetics-navlink:hover,
+.header-nav-menu-item:hover {
     background-color: var(--apologetics-navlink-hover-bg) !important;
 }
 
-.apologetics-navlink[data-active='true'] {
+.apologetics-navlink[data-active='true'],
+.header-nav-menu-item[data-active='true'] {
     background-color: var(--apologetics-navlink-active-bg) !important;
     color: var(--apologetics-primary) !important;
 }

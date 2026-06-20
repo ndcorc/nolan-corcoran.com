@@ -211,6 +211,8 @@ export default function Header() {
                                     key={sublink.href}
                                     component={Link}
                                     href={sublink.href}
+                                    className="header-nav-menu-item rounded-md"
+                                    data-active={isActive(sublink.href) ? 'true' : undefined}
                                     onClick={(e) => {
                                         if (sublink.isScrollLink && pathname === '/') {
                                             e.preventDefault();
@@ -346,15 +348,8 @@ export default function Header() {
                                                 key={subItem.href}
                                                 href={subItem.href}
                                                 onClick={(e) => handleLinkClick(e, subItem.href, subItem.isScrollLink)}
-                                                className={`
-                                    block w-full px-3 py-2 rounded-md
-                                    ${
-                                        isActive(subItem.href)
-                                            ? 'bg-brand-500 dark:bg-navy-500 bg-opacity-10 dark:bg-opacity-20'
-                                            : 'hover:bg-brand-500 dark:hover:bg-navy-500 hover:bg-opacity-10 dark:hover:bg-opacity-20'
-                                    }
-                                    no-underline text-inherit
-                                `}>
+                                                className="header-nav-menu-item block w-full px-3 py-2 rounded-md no-underline text-inherit"
+                                                data-active={isActive(subItem.href) ? 'true' : undefined}>
                                                 {subItem.label}
                                             </Link>
                                         ))}
