@@ -3,10 +3,8 @@
 // https://github.com/sanity-io/next-sanity#live-content-api for more information.
 import { defineLive } from 'next-sanity/live';
 import { client } from './client';
-import { apiVersion, dataset, projectId } from '../env';
+import { apiVersion, dataset, projectId, token } from '../env';
 import { draftMode } from 'next/headers';
-
-const token = process.env.SANITY_API_READ_TOKEN;
 
 export async function createLiveClient() {
     const { isEnabled: isDraftMode } = await draftMode();

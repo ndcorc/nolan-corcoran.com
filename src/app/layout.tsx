@@ -3,10 +3,7 @@ import type { Metadata } from 'next';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '@/theme';
 import QueryProvider from '@/providers/query-provider';
-import { NavbarStateProvider } from '@/providers/navbar-state';
-import AppShellWrapper from '@/components/layout/AppShellWrapper';
 import { Notifications } from '@mantine/notifications';
-import SanityPreview from '@/components/shared/SanityPreview.server';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -69,13 +66,10 @@ export default function RootLayout({
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
             <body className="antialiased min-h-lvh">
-                <SanityPreview />
                 <QueryProvider>
                     <MantineProvider theme={theme}>
                         <Notifications position="top-right" />
-                        <NavbarStateProvider>
-                            <AppShellWrapper>{children}</AppShellWrapper>
-                        </NavbarStateProvider>
+                        {children}
                     </MantineProvider>
                 </QueryProvider>
                 <Analytics />

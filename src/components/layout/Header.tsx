@@ -28,7 +28,8 @@ const NAVIGATION_LINKS: NavLink[] = [
         label: 'ABOUT',
         submenu: [
             { href: '/#about', label: 'ABOUT', isScrollLink: true },
-            { href: '/#contact', label: 'CONTACT', isScrollLink: true }
+            { href: '/#contact', label: 'CONTACT', isScrollLink: true },
+            { href: '/quotes', label: 'QUOTES' }
         ]
     },
     {
@@ -37,15 +38,6 @@ const NAVIGATION_LINKS: NavLink[] = [
         submenu: [
             { href: '/blog', label: 'BLOG' },
             { href: '/portfolio', label: 'PORTFOLIO' }
-        ]
-    },
-    {
-        href: '#',
-        label: 'BOOKS',
-        submenu: [
-            { href: '/quotes', label: 'QUOTES' }
-            // You can add more book-related pages here in the future
-            // For example: { href: '/books/reviews', label: 'REVIEWS' }
         ]
     },
     { href: '/apologetics', label: 'APOLOGETICS' }
@@ -292,16 +284,16 @@ export default function Header() {
                 withBorder={false}
                 className={`p-4 transition-colors duration-200 ${scroll.y > 100 ? 'bg-white dark:bg-dark-700' : 'bg-transparent'}`}>
                 <NavigationProgress color={isDark ? 'navy' : 'brand'} />
-                <Group className="h-full w-full flex gap-0 md:pl-0 pl-2" align="center" wrap="nowrap">
+                <Group className="h-full w-full flex gap-0 lg:pl-0 pl-2" align="center" wrap="nowrap">
                     {isMobile && <Burger opened={opened} onClick={toggle} size="sm" />}
                     {!isMobile ? (
                         <>
                             <nav className="w-1/3 flex h-full">
-                                <Group className="gap-3">{NAVIGATION_LINKS.map(renderNavLink)}</Group>
+                                <Group className="gap-3" wrap="nowrap">{NAVIGATION_LINKS.map(renderNavLink)}</Group>
                             </nav>
                             <Link href="/" className="no-underline dark:text-white w-1/3 flex justify-center">
                                 <Title
-                                    className="text-3xl font-bold text-brand dark:text-gray-400"
+                                    className="text-3xl font-bold text-brand dark:text-gray-400 whitespace-nowrap"
                                     order={1}
                                     data-mantine-color-scheme={colorScheme}>
                                     Every Thought Captive
