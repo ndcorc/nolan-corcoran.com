@@ -16,12 +16,12 @@ export default function QuoteShareButtons({ quote, url, className }: ShareButton
     return (
         <Group justify="flex-end" className={`px-4 pb-2 gap-0 ${className}`}>
             <TwitterShareButton url={url} title={quote}>
-                <ActionIcon variant="subtle" className="hover:bg-gray-100 dark:hover:bg-dark-400">
+                <ActionIcon component="div" variant="subtle" className="hover:bg-gray-100 dark:hover:bg-dark-400">
                     <IconBrandX size={16} />
                 </ActionIcon>
             </TwitterShareButton>
             <FacebookShareButton url={url}>
-                <ActionIcon variant="subtle" className="hover:bg-gray-100 dark:hover:bg-dark-400">
+                <ActionIcon component="div" variant="subtle" className="hover:bg-gray-100 dark:hover:bg-dark-400">
                     <IconBrandFacebook size={16} />
                 </ActionIcon>
             </FacebookShareButton>
