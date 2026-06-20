@@ -3,6 +3,7 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import BlogPost from '@/components/blog/BlogPost';
+import { createPageMetadata, siteMetadata } from '@/lib/config/metadata';
 import { urlForImage } from '@/lib/sanity/image';
 import { createServerSanity } from '@/lib/sanity/sanity.service.server';
 import { client } from '@/../sanity/lib/client'; // Import the regular client
@@ -25,40 +26,21 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         return { title: 'Post Not Found' };
     }
 
-    // Get the post's main image URL if it exists
     const imageUrl = post.mainImage
         ? urlForImage(post.mainImage).width(1200).height(630).url()
-        : 'https://nolan-corcoran.com/og-image.jpg'; // fallback image
+        : siteMetadata.defaultOgImage;
 
-    return {
+    return createPageMetadata({
         title: post.title,
-        description: post.excerpt,
-        openGraph: {
-            title: `${post.title} | Every Thought Captive`,
-            description: post.excerpt,
-            url: `https://nolan-corcoran.com/blog/${post.slug.current}`,
-            siteName: 'Every Thought Captive',
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: post.title
-                }
-            ],
-            locale: 'en_US',
-            type: 'article',
-            publishedTime: post.publishedAt,
-            authors: ['Nolan Corcoran'],
-            tags: post.categories.map((cat) => cat.title)
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: post.title,
-            description: post.excerpt,
-            images: [imageUrl]
-        }
-    };
+        description: post.excerpt ?? '',
+        path: `/blog/${post.slug.current}`,
+        ogImage: imageUrl,
+        ogImageAlt: post.title,
+        type: 'article',
+        publishedTime: post.publishedAt,
+        authors: ['Nolan Corcoran'],
+        tags: post.categories.map((cat) => cat.title)
+    });
 }
 
 // Generate static paths at build time

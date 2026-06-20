@@ -1,24 +1,86 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/config/metadata.ts
-
+import type { Metadata } from 'next';
 import { urlForImage } from '../sanity/image';
 
 export const siteMetadata = {
     title: 'Every Thought Captive',
-    description: `The Christian life isn't always easy, but it's always good.`,
+    description: 'Exploring theology, apologetics, culture, and cloud engineering.',
     siteUrl: 'https://nolan-corcoran.com',
     siteName: 'Every Thought Captive',
-    twitterHandle: '@nolan.corcoran',
-    defaultOgImage: '/img/og-default.jpg'
+    twitterHandle: '@nolancorcoran',
+    defaultOgImage: '/og-image.jpg',
+    apologeticsOgImage: '/og-apologetics.png'
 };
 
-export type MetadataProps = {
-    title?: string;
-    description?: string;
-    canonicalUrl?: string;
+type CreatePageMetadataOptions = {
+    title: string;
+    description: string;
+    path: string;
     ogImage?: string;
+    ogImageAlt?: string;
+    type?: 'website' | 'article';
     noIndex?: boolean;
+    publishedTime?: string;
+    authors?: string[];
+    tags?: string[];
+    absoluteTitle?: string;
 };
+
+export function createPageMetadata({
+    title,
+    description,
+    path,
+    ogImage = siteMetadata.defaultOgImage,
+    ogImageAlt = siteMetadata.siteName,
+    type = 'website',
+    noIndex = false,
+    publishedTime,
+    authors,
+    tags,
+    absoluteTitle
+}: CreatePageMetadataOptions): Metadata {
+    const ogTitle = absoluteTitle ?? `${title} | ${siteMetadata.siteName}`;
+
+    const metadata: Metadata = {
+        title: absoluteTitle ? { absolute: absoluteTitle } : title,
+        description,
+        alternates: {
+            canonical: path
+        },
+        openGraph: {
+            title: ogTitle,
+            description,
+            url: `${siteMetadata.siteUrl}${path}`,
+            siteName: siteMetadata.siteName,
+            locale: 'en_US',
+            type,
+            images: [
+                {
+                    url: ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: ogImageAlt
+                }
+            ],
+            ...(type === 'article' && publishedTime ? { publishedTime } : {}),
+            ...(type === 'article' && authors ? { authors } : {}),
+            ...(type === 'article' && tags ? { tags } : {})
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: ogTitle,
+            description,
+            images: [ogImage],
+            creator: siteMetadata.twitterHandle
+        }
+    };
+
+    if (noIndex) {
+        metadata.robots = { index: false, follow: false };
+    }
+
+    return metadata;
+}
 
 export function generateWebsiteSchema() {
     return {
@@ -48,7 +110,7 @@ export function generateBlogPostSchema(post: any) {
             name: 'Nolan Corcoran',
             url: siteMetadata.siteUrl
         },
-        image: post.mainImage ? urlForImage(post.mainImage).url() : siteMetadata.defaultOgImage,
+        image: post.mainImage ? urlForImage(post.mainImage).url() : `${siteMetadata.siteUrl}${siteMetadata.defaultOgImage}`,
         url: `${siteMetadata.siteUrl}/blog/${post.slug.current}`
     };
 }

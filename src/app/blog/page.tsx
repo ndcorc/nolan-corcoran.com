@@ -1,34 +1,15 @@
 // src/app/blog/page.tsx
-import type { Metadata } from 'next';
 import { BlogContent } from '@/components/blog/BlogContent';
-import { Suspense } from 'react';
 import Loading from '@/components/shared/Loading';
+import { createPageMetadata } from '@/lib/config/metadata';
+import { Suspense } from 'react';
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
     title: 'Blog',
     description: 'Articles on theology, apologetics, culture, and cloud engineering.',
-    openGraph: {
-        title: 'Blog | Every Thought Captive',
-        description: 'Articles on theology, apologetics, culture, and cloud engineering.',
-        url: 'https://nolan-corcoran.com/blog',
-        siteName: 'Every Thought Captive',
-        locale: 'en_US',
-        type: 'website',
-        images: [
-            {
-                url: '/og-image.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Nolan Corcoran'
-            }
-        ]
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Blog | Every Thought Captive',
-        description: 'Articles on theology, apologetics, culture, and cloud engineering.'
-    }
-};
+    path: '/blog',
+    ogImageAlt: 'Every Thought Captive Blog'
+});
 
 export default function BlogPage() {
     return (

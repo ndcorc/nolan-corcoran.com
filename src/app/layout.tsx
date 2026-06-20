@@ -10,20 +10,21 @@ import SanityPreview from '@/components/shared/SanityPreview.server';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+import { siteMetadata } from '@/lib/config/metadata';
+
 import '@/styles/globals.css';
 import '@mantine/carousel/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/tiptap/styles.css';
 import '@mantine/nprogress/styles.css';
 
-// Define default metadata
 export const metadata: Metadata = {
-    metadataBase: new URL('https://nolan-corcoran.com'),
+    metadataBase: new URL(siteMetadata.siteUrl),
     title: {
-        default: 'Every Thought Captive',
-        template: '%s | Every Thought Captive'
+        default: siteMetadata.title,
+        template: `%s | ${siteMetadata.siteName}`
     },
-    description: 'Exploring theology, apologetics, culture, and cloud engineering.',
+    description: siteMetadata.description,
     keywords: ['Theology', 'Apologetics', 'Culture', 'Cloud Engineering', 'Christianity', 'Technology'],
     authors: [{ name: 'Nolan Corcoran' }],
     creator: 'Nolan Corcoran',
@@ -33,29 +34,9 @@ export const metadata: Metadata = {
         address: false,
         telephone: false
     },
-    alternates: {
-        canonical: '/'
-    },
-    openGraph: {
-        type: 'website',
-        siteName: 'Every Thought Captive',
-        title: 'Every Thought Captive',
-        description: 'Exploring theology, apologetics, culture, and cloud engineering.',
-        url: 'https://nolan-corcoran.com',
-        locale: 'en_US',
-        images: [
-            {
-                url: '/og-image.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Every Thought Captive'
-            }
-        ]
-    },
     twitter: {
         card: 'summary_large_image',
-        creator: '@nolancorcoran',
-        images: '/og-image.jpg' // Add your Twitter card image
+        creator: siteMetadata.twitterHandle
     },
     robots: {
         index: true,
