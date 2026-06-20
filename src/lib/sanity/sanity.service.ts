@@ -3,6 +3,7 @@ import type {
     Post,
     Category,
     CategoryWithCount,
+    BlogListingData,
     PostsResponse,
     Project,
     ProjectWithDiagram,
@@ -12,6 +13,7 @@ import type {
 } from '@/types/sanity';
 import {
     getAllPostsQuery,
+    getBlogListingDataQuery,
     getPostBySlugQuery,
     getAllCategoriesQuery,
     getPostsByCategoryQuery,
@@ -67,6 +69,14 @@ export class SanityService {
         return this.extractData(
             this.fetcher({
                 query: getAllPostsQuery
+            })
+        );
+    }
+
+    async getBlogListingData(): Promise<BlogListingData> {
+        return this.extractData(
+            this.fetcher({
+                query: getBlogListingDataQuery
             })
         );
     }

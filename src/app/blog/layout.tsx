@@ -1,11 +1,10 @@
-// src/app/(blog)/layout.tsx
+// src/app/blog/layout.tsx
 
 import { DisableDraftMode } from '@/components/shared/DisableDraftMode';
-import SanityPreview from '@/components/shared/SanityPreview.server';
 import { VisualEditing } from 'next-sanity/visual-editing';
 import { draftMode } from 'next/headers';
 
-export default async function RootLayout({
+export default async function BlogLayout({
     children
 }: Readonly<{
     children: React.ReactNode;
@@ -13,7 +12,6 @@ export default async function RootLayout({
     return (
         <div className="min-h-screen">
             {children}
-            <SanityPreview />
             {(await draftMode()).isEnabled && (
                 <>
                     <DisableDraftMode />

@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { richTextBlock } from './richTextBlock';
 
 export default defineType({
     name: 'twoColumnBlock',
@@ -6,16 +7,16 @@ export default defineType({
     title: 'Two Column Block',
     fields: [
         defineField({
-        name: 'leftColumn',
-        type: 'array',
-        title: 'Left Column',
-        of: [{ type: 'block' }],
-      }),
-      defineField({
-        name: 'rightColumn',
-        type: 'array',
-        title: 'Right Column',
-        of: [{ type: 'block' }],
-      }),
-    ],
-  });
+            name: 'leftColumn',
+            type: 'array',
+            title: 'Left Column',
+            of: [richTextBlock]
+        }),
+        defineField({
+            name: 'rightColumn',
+            type: 'array',
+            title: 'Right Column',
+            of: [richTextBlock]
+        })
+    ]
+});

@@ -1,12 +1,11 @@
-// src/components/blog/BlogCard.tsx
 'use client';
 
-import { useState } from 'react';
-import { Card, Image, Text, Badge, Title, Group, Skeleton, CardProps, Stack } from '@mantine/core';
+import { Card, Text, Badge, Title, Group, CardProps, Stack } from '@mantine/core';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { urlForImage } from '@/lib/sanity/image';
+import { urlForListingImage } from '@/lib/sanity/image';
 import type { Post } from '@/types/sanity';
 import { IconNews } from '@tabler/icons-react';
 import { nprogress } from '@mantine/nprogress';
@@ -20,8 +19,6 @@ interface BlogCardProps {
 const MotionCard = motion<CardProps>(Card);
 
 export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
-    const [imageLoading, setImageLoading] = useState(true);
-
     return (
         <Link href={`/blog/${post.slug.current}`} onClick={nprogress.start} className="no-underline">
             <MotionCard
@@ -36,14 +33,15 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
                 whileHover={{ y: -4 }}>
                 {post.mainImage && (
                     <Card.Section>
-                        {imageLoading && <Skeleton height={200} />}
-                        <Image
-                            src={urlForImage(post.mainImage).url()}
-                            alt={post.title}
-                            onLoad={() => setImageLoading(false)}
-                            className="max-h-48 object-cover"
-                            style={{ display: imageLoading ? 'none' : 'block' }}
-                        />
+                        <div className="relative h-48 w-full">
+                            <Image
+                                src={urlForListingImage(post.mainImage).url()}
+                                alt={post.title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 25vw"
+                            />
+                        </div>
                     </Card.Section>
                 )}
                 {!excerpt ? (

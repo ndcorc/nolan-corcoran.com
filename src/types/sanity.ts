@@ -44,10 +44,16 @@ export interface CategoryWithCount extends Category {
     postCount: number;
 }
 
+export interface BlogListingData {
+    posts: Post[];
+    categories: Category[];
+    featuredPost: Post | null;
+}
+
 export interface BlogContentProps {
-    posts: Post[] | undefined;
-    categories: Category[] | undefined;
-    featuredPost: Post | undefined;
+    posts: Post[];
+    categories: Category[];
+    featuredPost: Post | null;
 }
 
 export interface TechStackItem {

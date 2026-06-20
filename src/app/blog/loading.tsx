@@ -1,4 +1,6 @@
 // src/app/blog/loading.tsx
+'use client';
+
 import { AppShellMain, Container, Skeleton, SimpleGrid } from '@mantine/core';
 
 export default function BlogPageSkeleton() {

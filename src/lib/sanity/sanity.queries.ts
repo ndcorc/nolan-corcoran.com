@@ -15,6 +15,50 @@ export const getAllPostsQuery = groq`
 }
 `;
 
+export const getBlogListingDataQuery = groq`
+{
+  "posts": *[_type == "post"] | order(publishedAt desc) {
+    _id,
+    title,
+    subtitle,
+    slug,
+    mainImage,
+    publishedAt,
+    excerpt,
+    "categories": categories[]->{ _id, title, slug, color },
+  },
+  "categories": *[_type == "category"] | order(title asc) {
+    _id,
+    title,
+    slug,
+    color,
+    description,
+  },
+  "featuredPost": coalesce(
+    *[_type == "post" && featured == true] | order(publishedAt desc)[0] {
+      _id,
+      title,
+      subtitle,
+      slug,
+      mainImage,
+      publishedAt,
+      excerpt,
+      "categories": categories[]->{ _id, title, slug, color },
+    },
+    *[_type == "post"] | order(publishedAt desc)[0] {
+      _id,
+      title,
+      subtitle,
+      slug,
+      mainImage,
+      publishedAt,
+      excerpt,
+      "categories": categories[]->{ _id, title, slug, color },
+    }
+  )
+}
+`;
+
 export const getAllPostsWithCountQuery = groq`
 {
   "posts": *[_type == "post"] | order(publishedAt desc) {

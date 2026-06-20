@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { richTextBlock } from './blocks/richTextBlock';
 
 export default defineType({
     name: 'post',
@@ -64,37 +65,7 @@ export default defineType({
             title: 'Body',
             type: 'array',
             of: [
-                {
-                    type: 'block',
-                    styles: [
-                        { title: 'Normal', value: 'normal' },
-                        { title: 'H2', value: 'h2' },
-                        { title: 'H3', value: 'h3' },
-                        { title: 'H4', value: 'h4' },
-                        { title: 'Quote', value: 'blockquote' }
-                    ],
-                    marks: {
-                        decorators: [
-                            { title: 'Strong', value: 'strong' },
-                            { title: 'Emphasis', value: 'em' },
-                            { title: 'Code', value: 'code' }
-                        ],
-                        annotations: [
-                            {
-                                title: 'URL',
-                                name: 'link',
-                                type: 'object',
-                                fields: [
-                                    {
-                                        title: 'URL',
-                                        name: 'href',
-                                        type: 'url'
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
+                richTextBlock,
                 {
                     type: 'image',
                     options: { hotspot: true },

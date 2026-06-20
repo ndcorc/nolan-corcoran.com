@@ -8,3 +8,7 @@ const builder = createImageUrlBuilder(client);
 export function urlForImage(source: Image) {
     return builder.image(source).auto('format').fit('max');
 }
+
+export function urlForListingImage(source: Image) {
+    return urlForImage(source).width(400).height(300).fit('crop');
+}

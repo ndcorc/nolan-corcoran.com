@@ -1,8 +1,7 @@
 // src/app/blog/page.tsx
 import { BlogContent } from '@/components/blog/BlogContent';
-import Loading from '@/components/shared/Loading';
 import { createPageMetadata } from '@/lib/config/metadata';
-import { Suspense } from 'react';
+import { getCachedBlogListingData } from '@/lib/sanity/sanity.cache';
 
 export const metadata = createPageMetadata({
     title: 'Blog',
@@ -11,10 +10,10 @@ export const metadata = createPageMetadata({
     ogImageAlt: 'Every Thought Captive Blog'
 });
 
-export default function BlogPage() {
-    return (
-        <Suspense fallback={<Loading />}>
-            <BlogContent />
-        </Suspense>
-    );
+export const revalidate = 3600;
+
+export default async function BlogPage() {
+    const { posts, categories, featuredPost } = await getCachedBlogListingData();
+
+    return <BlogContent posts={posts} categories={categories} featuredPost={featuredPost} />;
 }
