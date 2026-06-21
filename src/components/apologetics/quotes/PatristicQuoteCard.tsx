@@ -12,7 +12,7 @@ interface PatristicQuoteCardProps {
 
 export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuoteCardProps) {
     const eraStyle = ERA_COLORS[quote.era];
-    const posStyle = POSITION_COLORS[quote.perkinsPosition];
+    const posStyle = POSITION_COLORS[quote.position];
 
     return (
         <Paper withBorder radius="md" className="patristic-quote-card" style={{ overflow: 'hidden' }}>
@@ -51,7 +51,9 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                             <Badge size="sm" variant="light" className="patristic-quote-card__subtopic-badge">
                                 {quote.subtopic}
                             </Badge>
-                            <QuoteBadge label={quote.perkinsPosition} style={posStyle} />
+                            {quote.position ? (
+                                <QuoteBadge label={quote.position} style={posStyle} />
+                            ) : null}
                         </Group>
 
                         <Text
@@ -88,7 +90,7 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                         }}>
                         <Text size="sm" style={{ lineHeight: 1.6 }}>
                             <Text component="span" fw={600} c="dimmed">
-                                PERKINS&apos;S USE ▸{' '}
+                                NOTES ▸{' '}
                             </Text>
                             {quote.notes}
                         </Text>

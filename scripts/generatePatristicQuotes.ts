@@ -75,7 +75,7 @@ function toQuote(row: Record<string, string>) {
         quote: row.Quote_Text,
         topic: row.Topic,
         subtopic: row.Subtopic,
-        perkinsPosition: row.Perkins_Use,
+        position: row.Position,
         book: row.Book,
         section: row.Section,
         notes: row.Notes

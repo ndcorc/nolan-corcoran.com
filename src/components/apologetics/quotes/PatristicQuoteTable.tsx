@@ -66,10 +66,12 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                                         <Table.Td>{quote.subtopic}</Table.Td>
                                         <Table.Td>{quote.section}</Table.Td>
                                         <Table.Td>
-                                            <QuoteBadge
-                                                label={quote.perkinsPosition}
-                                                style={POSITION_COLORS[quote.perkinsPosition]}
-                                            />
+                                            {quote.position ? (
+                                                <QuoteBadge
+                                                    label={quote.position}
+                                                    style={POSITION_COLORS[quote.position]}
+                                                />
+                                            ) : null}
                                         </Table.Td>
                                         <Table.Td>{quote.book}</Table.Td>
                                     </Table.Tr>
@@ -106,7 +108,7 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                     </Text>
                     <Text size="sm" style={{ lineHeight: 1.6 }}>
                         <Text component="span" fw={600} c="dimmed">
-                            PERKINS&apos;S USE ▸{' '}
+                            NOTES ▸{' '}
                         </Text>
                         {activeQuote.notes}
                     </Text>

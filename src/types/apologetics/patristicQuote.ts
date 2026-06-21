@@ -1,4 +1,4 @@
-export type PerkinsPosition = 'Reformed' | 'Roman Catholic' | 'Nuanced';
+export type QuotePosition = 'Reformed' | 'Roman Catholic' | 'Nuanced';
 
 export interface PatristicQuote {
     id: string;
@@ -11,7 +11,7 @@ export interface PatristicQuote {
     quote: string;
     topic: string;
     subtopic: string;
-    perkinsPosition: PerkinsPosition;
+    position: QuotePosition | '';
     book: string;
     section: string;
     notes: string;

@@ -16,7 +16,9 @@ export function computePatristicQuoteStats(quotes: PatristicQuote[]): PatristicQ
 
     quotes.forEach((quote) => {
         byEra[quote.era] = (byEra[quote.era] || 0) + 1;
-        byPosition[quote.perkinsPosition] = (byPosition[quote.perkinsPosition] || 0) + 1;
+        if (quote.position) {
+            byPosition[quote.position] = (byPosition[quote.position] || 0) + 1;
+        }
     });
 
     return { byEra, byPosition };
@@ -48,7 +50,7 @@ export function filterAndSortPatristicQuotes(
             (!filters.era || quote.era === filters.era) &&
             (!filters.book || quote.book === filters.book) &&
             (!filters.subtopic || quote.subtopic === filters.subtopic) &&
-            (!filters.position || quote.perkinsPosition === filters.position)
+            (!filters.position || quote.position === filters.position)
         );
     });
 

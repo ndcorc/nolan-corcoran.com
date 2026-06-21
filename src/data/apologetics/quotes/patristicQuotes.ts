@@ -15,7 +15,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I adore the fullness and perfection of the Scripture.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Proves Scripture is perfect rule."
@@ -31,7 +31,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Those doctrines which are contained in the Scriptures are sufficient for faith.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Patristic witness to Scripture's sufficiency."
@@ -47,7 +47,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is a manifest offense of arrogance and infidelity, either to reject any part of that which is written, or to add any other thing which is not written.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Proves Scripture is complete."
@@ -63,7 +63,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Whether it concerns Christ, or His church, or any other thing belonging to our faith, or life, I will not say if we do preach, that even as the apostle himself says afterwards, if an angel comes from heaven with any other doctrine than that you have heard out of the legal and evangelical Scriptures, let him be accursed.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scripture alone is the rule."
@@ -79,7 +79,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Whereas our Savior Christ did many things, and yet all of them are not written: those things were chosen to be written which were sufficient for the salvation of believers.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Sufficiency of written Scripture."
@@ -95,7 +95,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The Canon of Holy Scripture suffices for all things even abundantly.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Key patristic sola scriptura text."
@@ -111,7 +111,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The books of the gospel contain doctrine replete with all manner of perfection.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Gospel sufficiency."
@@ -127,7 +127,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is evident that the Scripture sufficiently contains all things necessary for the pilgrimage to heaven.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scholastic witness to Scripture sufficiency."
@@ -143,7 +143,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We must have recourse only to the Scriptures, that we may obtain salvation.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Medieval conciliarist agrees with Reformed position."
@@ -159,7 +159,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I say that all those things were written by the apostles which are necessary for all men, and which they publicly preached to all men.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Bellarmine's own concession used against him."
@@ -175,7 +175,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In many other things I do embrace and love Nepos, but surely the truth is to be preferred and respected before all. If any man speaks well, we ought to give him his due praise and approbation without all envy, but if he speaks anything that is not sound, we must both examine it and try it thoroughly.",
     "topic": "Scripture & Canon",
     "subtopic": "Patristic Fallibility",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Fathers must be tested by truth."
@@ -191,7 +191,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I will not bind you to my authority, that you should therefore think anything necessary to be believed because I affirm it.",
     "topic": "Scripture & Canon",
     "subtopic": "Patristic Fallibility",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Augustine disclaims binding authority."
@@ -207,7 +207,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I have learned to give this honor and reverence to those books alone which are now called canonical, that I do infallibly believe that no author of them all, or any of them, ever erred in any of his writings. For others, I so read them that (however holy or learned they may be) I do not think this or that to be true because they so held it, but so far as they are able to persuade me, either by those canonical authors, or by probable reason, that it is not opposing the truth.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Classic Augustine statement on canonical vs. patristic authority."
@@ -223,7 +223,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I am not tied to the authority of this epistle, because I do not hold Cyprian's letters for canonical, but I examine them by canonical Scriptures: and whatever I find therein consenting to them, I approve with his praise; and whatever is opposite to them, by his leave I must reject.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Augustine tests even Cyprian by Scripture."
@@ -239,7 +239,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In those parts of Scripture which are most plain, we found all those things that contain the rules of our faith and manner, namely, hope and charity.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scripture's perspicuity."
@@ -255,7 +255,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If a man affirms anything without authority of Scripture, his auditors do but slenderly respect it.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Chrysostom on Scripture's authority."
@@ -271,7 +271,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is not sufficient for us to believe the fathers and writers of the Church in matters of faith, unless they confirm their sayings by Scripture.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Basil: Fathers must be confirmed by Scripture."
@@ -287,7 +287,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We preach and observe some things out of the written word, and other some which we have received by mystical tradition from the apostles. And both these have like force and efficacy unto godliness.",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Perkins uses this to show Basil contradicts himself vs. his Regulae."
@@ -303,7 +303,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is a tradition, inquire no further.",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Shown as self-contradicting his own sola scriptura statements."
@@ -319,7 +319,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If we preach anything without Scripture, our auditory will be most uncertain what to think, now assenting, now doubting, and sometimes plainly rejecting as frivolous the words they hear.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Chrysostom against himself on traditions."
@@ -335,7 +335,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If you hear any say, I have the Holy Spirit, and yet he speaks not out of the gospel, but of his own fantasy, he speaks of himself, and the Holy Ghost is not in him. If any of those that are said to have the Holy Ghost, do speak ought besides the gospel of themselves, believe them not, but follow my doctrine.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Chrysostom's strong sola scriptura statement."
@@ -351,7 +351,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Therefore is Christ called the Mediator of God and man, between immortal God and mortal man; God and man reconciling man unto God, remaining that which He was, and made that which He was not.",
     "topic": "Christology",
     "subtopic": "Mediatorship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "The Mediator",
     "notes": "Christ as God-man Mediator."
@@ -367,7 +367,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Christ's death is confessed to be profitable unto us, but if He were not God, how could He, and He alone suffice for the price of all our redemption? But He only in His death satisfied for all, because He is above all.",
     "topic": "Christology",
     "subtopic": "Divinity of Christ",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "The Mediator",
     "notes": "Christ's deity necessary for sufficient redemption."
@@ -383,7 +383,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Neither could we be freed by that one Mediator of God and man, the man Christ, unless He were God.",
     "topic": "Christology",
     "subtopic": "Mediatorship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "The Mediator",
     "notes": "Christ's deity essential to mediation."
@@ -399,7 +399,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Besides these, there are other books of the Old Testament which are not canonical, but only read by the catechumens, as the book of Wisdom, Ecclesiasticus, etc.",
     "topic": "Scripture & Canon",
     "subtopic": "Biblical Canon",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Athanasius limits OT canon, excluding Apocrypha."
@@ -415,7 +415,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Of these, read the 22 books, but meddle not with the Apocrypha. Meditate diligently upon those Scriptures which the Church confidently reads and use no other. The apostles and bishops, at the first sowing of the Word, who left us these books, were far wiser, far holier than you are; therefore since you are a son of the church, do not break the bounds they have set you.",
     "topic": "Scripture & Canon",
     "subtopic": "Biblical Canon",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Cyril strictly limits canon to 22 OT books."
@@ -431,7 +431,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "They are fit and profitable, but not reckoned among those which are approved by the church, and therefore they were neither laid up in Aaron, nor in the ark of the testament.",
     "topic": "Scripture & Canon",
     "subtopic": "Biblical Canon",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Epiphanius on Wisdom and Ecclesiasticus — useful but not canonical."
@@ -447,7 +447,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He sits at God's right hand, but He has sent His deputy, namely, the power of the Holy Spirit to work upon the hearts of the faithful.",
     "topic": "Scripture & Canon",
     "subtopic": "Scripture's Authority",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Holy Spirit speaks through Scripture."
@@ -463,7 +463,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Since earth affords no judgment of this matter, we must seek a judge in heaven. But what need we knock at heaven, since we have here a testament in the gospel? An earthly father, feeling himself near death, and fearing the contention of his sons after his death, calling some witnesses, he transposes his will out of his dying breast into lasting parchment. If so be now contention do arise among the brethren, do they run to their father's grave? No, but seek out his will and testament, and he who sleeps in his tomb speaks lively out of the silent parchment.",
     "topic": "Scripture & Canon",
     "subtopic": "Scripture as Judge",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scripture as the testament / will of Christ settling controversies."
@@ -479,7 +479,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This controversy requires a judge. Then let Christ be the judge, let Himself speak who it was that His death did profit, and with Him let the apostle also judge, because in the apostle Christ speaks.",
     "topic": "Scripture & Canon",
     "subtopic": "Scripture as Judge",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scripture as judge of controversy."
@@ -495,7 +495,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If it be taught in the gospel, or contained in the epistles or Acts of the Apostles, that converts from heresies should not be baptized, but only have imposition of hands in sign of repentance, let this holy and divine tradition be observed.",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Tradition defined as what is in Scripture."
@@ -511,7 +511,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Custom without truth, is but an antiquity in error.",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Classic Reformed proof-text against mere tradition."
@@ -527,7 +527,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Every province thinks their fathers' precepts to be apostolic doctrines.",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Shows tradition is relative to region, not universally apostolic."
@@ -543,7 +543,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Do you not think that it is lawful for any Christian to invent and institute what agrees with God, assists discipline, and helps unto salvation?",
     "topic": "Scripture & Canon",
     "subtopic": "Tradition vs. Scripture",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Tradition",
     "notes": "Tertullian on custom — Perkins shows this proves too much."
@@ -559,7 +559,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We must know that there passed many ages after the revelation of the gospel before these hours were ordained to be the solemnities of certain hours in the day and night as they are now.",
     "topic": "Church Practice",
     "subtopic": "Canonical Hours",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Canonical Hours",
     "notes": "Hours are medieval, not apostolic."
@@ -575,7 +575,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Epiphanius gives a venerable respect unto Mary, but denies her both adoration and invocation.]",
     "topic": "Invocation of Saints",
     "subtopic": "Against Marian Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Epiphanius denies adoration and invocation of Mary."
@@ -591,7 +591,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He thinks them fools that do adore and worship their fellow servants.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Ambrose condemns worship of fellow servants."
@@ -607,7 +607,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "As it is meet and fit we should worship nothing but God, so ought we not to fasten our hopes upon any but upon God.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Basil: hope and worship for God alone."
@@ -623,7 +623,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We do not worship nor adore, I do not say, the relics of the martyrs, but neither the sun nor the moon, no, nor the angels, lest we should be thought to serve the creature rather than the Creator.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Relic Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Jerome denies adoration of relics."
@@ -639,7 +639,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We neither affirm that the martyrs are gods, neither have we accustomed ourselves to adore them.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Cyril denies martyrs are gods or to be adored."
@@ -655,7 +655,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "You need not any patron before God, nor with long discourse to curry favor with others, but though you do come alone without ever a patron, and offer your prayers unto God by yourself, yet shall you obtain your petition. For God does not consent unto our request so easily when others pray for us, as when we pray for ourselves.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Direct prayer to God preferred over saintly intercession."
@@ -671,7 +671,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let not our religion be to worship the dead. We are to honor them for imitation's sake, but not to worship them for religion's sake.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Distinction between honor and religious worship."
@@ -687,7 +687,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We do not build temples unto our martyrs, as unto gods, but we set up memorials for them, as for men departed, whose souls do live in rest with God. Nor do we set up any altars to sacrifice unto them, but we offer our sacrifice unto one only God, both theirs and ours. At which sacrifice they are named in their order as men of God, who have conquered the world by confessing of Him, but they are not invocated of the priest that sacrifices.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Memorials vs. worship; saints not invocated."
@@ -703,7 +703,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Those that defended the law drew on the people unto the worship of angels also, saying that the law was given by them. And this vice remained very long in Phrygia and Pisidia, wherefore the synod which met at Laodicea, the metropolitan city of Phrygia, did by a decree prohibit all men from praying unto angels.",
     "topic": "Invocation of Saints",
     "subtopic": "Angel Worship Condemned",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Laodicea condemned angel-prayer — by analogy, saint invocation."
@@ -719,7 +719,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "When we offer this sacrifice, we make mention of them that are departed before us, that God may receive our prayers by their intercession.",
     "topic": "Invocation of Saints",
     "subtopic": "Commemoration vs. Invocation",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins: this is commemoration / petition to God, not direct invocation of saints."
@@ -735,7 +735,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "At the communion, we mention not them as we do the others that rest in peace, or that we should pray for them, but rather that they may pray for us.",
     "topic": "Invocation of Saints",
     "subtopic": "Commemoration vs. Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Augustine: commemoration at communion is not prayer to saints."
@@ -751,7 +751,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Although the saints do pray for us, yet shall we be sooner heard when we pray for ourselves.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Direct prayer surpasses saintly intercession."
@@ -767,7 +767,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The souls of the faithful are reserved in secret habitacles out of heaven, not enjoying the sight of God until the last judgment.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "No immediate beatific vision."
@@ -783,7 +783,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Souls of the faithful reserved in secret places out of heaven, not enjoying sight of God until last judgment.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Pre-resurrection state."
@@ -799,7 +799,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Souls reserved in habitacles out of heaven until last judgment.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Origen on intermediate state."
@@ -815,7 +815,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Souls reserved in habitacles out of heaven until last judgment.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Chrysostom on intermediate state."
@@ -831,7 +831,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The souls of the dead were kept all in one common receptacle out of heaven until the resurrection.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Clear statement on intermediate state."
@@ -847,7 +847,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Every soul is sequestered in the lower places, until the judgment day.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Intermediate state in lower places."
@@ -863,7 +863,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Abraham's bosom, that is, the habitation of secret rest, is not to be held any part of hell.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Limbus Patrum",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Augustine denies Limbus Patrum is part of hell."
@@ -879,7 +879,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "There is no middle place for any man to be, but with the devil, that is, not with Christ.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Against Purgatory",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "No middle place between heaven and hell."
@@ -895,7 +895,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Hell is one place, as I think, and Abraham's bosom another. And I call that region Abraham's bosom which, if it be not heavenly, yet is higher than hell, giving rest unto the souls of the righteous until the consummation of all things terminates their resurrection, with fullness of reward.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "State of the Dead",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Prayers for the Dead",
     "notes": "Tertullian's intermediate state theology."
@@ -911,7 +911,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Christ descended into hell for no other cause but to preach the gospel to the Gentiles, that they might learn the true faith and be saved, or justly be condemned for ever.",
     "topic": "Christology",
     "subtopic": "Descent into Hell",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Descension into Hell",
     "notes": "Clement's descent doctrine — considered heretical by some."
@@ -927,7 +927,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I think it no absurdity to believe that the saints of old that expected Christ in faith were in habitacles far distant from the torments of the wicked, but yet that they were in hell until that Christ's blood and descending thither set them free.",
     "topic": "Christology",
     "subtopic": "Descent into Hell",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Descension into Hell",
     "notes": "Augustine on Christ freeing OT saints."
@@ -943,7 +943,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I think that after the resurrection from the dead, we shall all need a purging, and purifying sacrament, for none can arise again without some stains.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Purgatorial Fire",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Origen places purification at resurrection, not between death and judgment."
@@ -959,7 +959,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "After the end of the world, this shall be the future baptism, when iniquity shall be burned away by the furnace, that the just may shine as the sun in the kingdom of God.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Purgatorial Fire",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Ambrose places fire at end of world, not between death and judgment."
@@ -975,7 +975,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "All must come to the fire, all must come to this furnace.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Purgatorial Fire",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Origen's universal purification — undercuts Roman purgatory."
@@ -991,7 +991,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Some commit greater venial sins, and some lesser, and therefore it is meet to have them put into the fire of purgatory, now in the space between this and the judgment.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Purgatory",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Bede — one of the clearest pro-purgatory patristic witnesses."
@@ -1007,7 +1007,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Because we are redeemed by the grace of our Creator, we have this heavenly gift bestowed upon us, that when we leave our carnal habitation, immediately we are carried unto our heavenly rewards, because seeing that our Maker and Redeemer breaking up the gates of hell, took thence all the souls of the elect, surely He suffers not us to go thither from whence He brought all the rest in His descension.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Against Purgatory",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Gregory's authentic works undermine his Dialogues on purgatory."
@@ -1023,7 +1023,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "All the saints are everywhere, and assist all men, and are always with us, and stay still with us, that is, do both keep and defend us while we are in our bodies, and also do receive and entertain us when we leave our bodies.",
     "topic": "Invocation of Saints",
     "subtopic": "Omnipresence of Saints",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins: 'boldly affirmed and weakly concluded.' Used ubique for passim."
@@ -1039,7 +1039,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Hear also, O you soul of great Constantine, if you have any sense, perceivance, or understanding.",
     "topic": "Invocation of Saints",
     "subtopic": "Apostrophe vs. Invocation",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins: rhetorical apostrophe (prosopopoeia), not true invocation."
@@ -1055,7 +1055,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Farewell, O Paula, and by your prayers help the decrepit age of him that honors you.",
     "topic": "Invocation of Saints",
     "subtopic": "Apostrophe vs. Invocation",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins: apostrophe as if present, not actual invocation."
@@ -1071,7 +1071,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Those that behold do embrace, as though the body were living and flourishing, using the eyes, ears, mouth, and instruments of all the senses. And the pouring out the tears of love and duty unto the martyr, as though he were living and present, they offer up their humble prayers unto him, to be an intercessor for them, entreating him as a soldier of God.",
     "topic": "Invocation of Saints",
     "subtopic": "Apostrophe vs. Invocation",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins acknowledges Gregory errs here; patristic evidence of error."
@@ -1087,7 +1087,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If any man do but stand by these sepulchers, the very sight of the coffin invading his soul penetrates it, and stirs it up, moving therein such an affect that he deems them that lie therein buried, to be visibly present with him, and offering their prayers together with him.",
     "topic": "Invocation of Saints",
     "subtopic": "Apostrophe vs. Invocation",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Chrysostom's popular affective language misused to support invocation."
@@ -1103,7 +1103,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "You do affirm that the souls of the apostles and martyrs are placed either in Abraham's bosom, or the place of repose, or under God's altar, and that they cannot be present at their tombs and where themselves please. If the Lamb be everywhere, then those that are with the Lamb must be believed to be everywhere.",
     "topic": "Invocation of Saints",
     "subtopic": "Martyrs' Presence",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Jerome argues martyrs are everywhere — Perkins says 'boldly affirmed.'"
@@ -1119,7 +1119,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine proves by Scripture, namely out of Isaiah 63:16, that the saints know not what is done here below.]",
     "topic": "Invocation of Saints",
     "subtopic": "Against Omniscience of Saints",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Saints do not know what occurs on earth."
@@ -1135,7 +1135,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine] leaves it undetermined whether the dead martyrs do help us or no, and adds that these things pass our understanding.",
     "topic": "Invocation of Saints",
     "subtopic": "Uncertainty of Intercession",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Augustine's agnosticism on saint intercession."
@@ -1151,7 +1151,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Look how much our own sins do cast us down, so much the apostles' merits do raise us up.",
     "topic": "Invocation of Saints",
     "subtopic": "Merits of Saints",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Perkins cites as patristic error — post-400 corruption."
@@ -1167,7 +1167,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Obtain that God would pardon us our sin by thy just prayers and merits.",
     "topic": "Invocation of Saints",
     "subtopic": "Erroneous Invocation",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "Cited as evidence fathers erred in invocation."
@@ -1183,7 +1183,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Cyril in his Thesaurus lib. 2, cap. 1:] There is no man that knows not that the Scriptures deny adoration unto every created nature and allow that to God only.",
     "topic": "Invocation of Saints",
     "subtopic": "Worship of God Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Intercession/Invocation",
     "notes": "God alone receives adoration."
@@ -1199,7 +1199,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I confidently affirm that whosoever calls himself, or is willing to be called universal priest or bishop, in this loftiness and pride of his, he is the forerunner of Antichrist.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Against Universal Bishop",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Gregory condemns the title 'universal bishop.'"
@@ -1215,7 +1215,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This word of commanding, or command, I pray you take it away, let me hear no more of it; for I know who I am, and who you are. For by your places you are my brethren, in virtues and good examples, my fathers. I have therefore commanded nothing, but I have labored to show what in my opinion is most profitable or convenient.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Against Papal Jurisdiction",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Gregory disclaims jurisdictional command."
@@ -1231,7 +1231,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[No primacy of power, dominion, jurisdiction, or authority in first 600 years.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Papal Primacy",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Chrysostom cited against papal jurisdiction."
@@ -1247,7 +1247,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The rest of the apostles were even the very same that Peter was, partakers of the same fellowship with him, both of honor and power.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Apostolic Equality",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Apostles equal to Peter in honor and power."
@@ -1263,7 +1263,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The church was built upon all the apostles, and every one of them received the keys of the kingdom of heaven, and the strength of the church was founded on them all equally, yet that among the twelve one was chosen, that a head or chief being appointed, the occasion of schism might be taken away.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Apostolic Equality",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Church built on all apostles, not Peter alone."
@@ -1279,7 +1279,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "God gave the apostles and their successors full and plenary power in the church.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Apostolic Power",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Power distributed to all apostles."
@@ -1295,7 +1295,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The church was constituted upon bishops, and not upon Peter only.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Episcopal Collegiality",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Church built on episcopate, not Peter uniquely."
@@ -1311,7 +1311,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Peter is called a rock, and has the foundations of the church committed to his trust.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Perkins uses Ambrose to qualify this as referring to faith, not jurisdiction."
@@ -1327,7 +1327,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Peter is called a rock, for that he first laid the foundation of faith in the nations.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Peter's rock = his foundational preaching of faith, not jurisdiction."
@@ -1343,7 +1343,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ, not Peter.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1359,7 +1359,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1375,7 +1375,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1391,7 +1391,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1407,7 +1407,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1423,7 +1423,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[That Peter himself was the rock seemed to Augustine after good deliberation so harsh a speech that he recanted it in his retractions.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Augustine retracts his interpretation of Peter as rock."
@@ -1439,7 +1439,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Number the priests, even from the very seat of Peter, that is, the rock which the gates of hell cannot overcome.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Peter's seat = his doctrine / confession, not personal authority."
@@ -1455,7 +1455,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Peter's faith/confession is the rock, not Peter himself.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = faith of Peter."
@@ -1471,7 +1471,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Peter's faith/confession is the rock, not Peter himself.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = faith of Peter."
@@ -1487,7 +1487,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Your faith is the rock.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Faith = the rock."
@@ -1503,7 +1503,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Peter's faith/confession is the rock, not Peter himself.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Peter's confession."
@@ -1519,7 +1519,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The rock in Matthew 16 is Christ, not Peter.]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Matthew 16:18",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Rock = Christ."
@@ -1535,7 +1535,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The pope is called] Christ by his anointing.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Papal Hyperbole",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Cited as example of hyperbolical patristic language about the pope."
@@ -1551,7 +1551,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Peter was assumed into the fellowship of the undivided Trinity.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Papal Hyperbole",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Extreme hyperbole about Peter — Perkins: not literal doctrine."
@@ -1567,7 +1567,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Basil's soul is in heaven and offers sacrifice, as I suppose (ὡς οἶμαι).]",
     "topic": "Papacy & Church Governance",
     "subtopic": "Apostrophe vs. Assertion",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Nazianzene hedges with 'as I suppose' — shows he is not asserting doctrine."
@@ -1583,7 +1583,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The emperor called that noble Council of Nicaea.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Councils called by emperors, not popes."
@@ -1599,7 +1599,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Peter's chair is the church, where not so much the person of Peter, or his personal successor, as his doctrine is resident.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Peter's Chair",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Petrine chair = doctrinal teaching, not jurisdictional seat."
@@ -1615,7 +1615,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Cyprian was not set over the Church of Carthage only, no, nor only over the churches of Africa, all which have received much honor and renown by him and from him, but he was, as it were, a bishop, even over all the western churches, yea almost over all the eastern also.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Honorific Primacy",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Primacy of Rome",
     "notes": "Honorific, not jurisdictional, primacy of Cyprian — parallels Roman claims."
@@ -1631,7 +1631,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Irenaeus believed the bread Christ broke as His body, yet never dreamed of transubstantiation.]",
     "topic": "Lord's Supper",
     "subtopic": "Against Transubstantiation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Real presence without transubstantiation."
@@ -1647,7 +1647,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Justin Martyr held the bread is body, but never dreamed of transubstantiation.]",
     "topic": "Lord's Supper",
     "subtopic": "Against Transubstantiation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Pre-transubstantiation eucharistic theology."
@@ -1663,7 +1663,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Tertullian takes 'this is my body' in a figurative sense.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative interpretation of institution words."
@@ -1679,7 +1679,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Origen takes 'this is my body' in an allegorical sense.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Allegorical/figurative reading."
@@ -1695,7 +1695,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Cyprian takes 'this is my body' in a figurative sense.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative reading."
@@ -1711,7 +1711,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Nazianzene takes 'this is my body' in a figurative sense.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative reading."
@@ -1727,7 +1727,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Ambrose takes 'this is my body' in a figurative sense in three places.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative reading in Ambrose."
@@ -1743,7 +1743,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Jerome takes 'this is my body' in a figurative sense in two places.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative reading in Jerome."
@@ -1759,7 +1759,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine takes 'this is my body' in a figurative sense in seven or eight places.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Multiple instances of figurative reading in Augustine."
@@ -1775,7 +1775,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Chrysostom takes 'this is my body' in a figurative sense.]",
     "topic": "Lord's Supper",
     "subtopic": "Figurative Interpretation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Figurative reading."
@@ -1791,7 +1791,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Our Lord is above, but here also, and our Lord is truth. For His body wherein He rose again, may be but in one place, but His truth is spread abroad everywhere.",
     "topic": "Lord's Supper",
     "subtopic": "Christ's Body in One Place",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Christ's body is locally circumscribed — against ubiquity."
@@ -1807,7 +1807,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He ascended into heaven, sits at God's right hand, from whence and from no other place He shall come to judgment. In that He is God, He is everywhere; but as He is man, He is but in heaven.",
     "topic": "Lord's Supper",
     "subtopic": "Christ's Body in One Place",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Christ as man is locally in heaven."
@@ -1823,7 +1823,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "According to His human substance, he left the earth, when He ascended up to heaven.",
     "topic": "Lord's Supper",
     "subtopic": "Christ's Body in One Place",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Christ's humanity ascended and departed earth."
@@ -1839,7 +1839,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We call that only the body and blood of Christ, which we, taking from the fruits of the earth and consecrating with mystical prayer, do receive in due order, for our soul's health; and as a memorial of our Lord's suffering for us.",
     "topic": "Lord's Supper",
     "subtopic": "Sacramental Body",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Consecration by prayer, not bare words alone."
@@ -1855,7 +1855,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine makes an opposition between sacramental eating and true (spiritual) eating.]",
     "topic": "Lord's Supper",
     "subtopic": "Spiritual Reception",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "True eating = spiritual, not bodily reception."
@@ -1871,7 +1871,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Therein the church truly offers herself unto God.",
     "topic": "Lord's Supper",
     "subtopic": "Sacrifice of the Mass",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Church offers herself, not Christ to the Father."
@@ -1887,7 +1887,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "What is in the cup? That which flowed from His side. And again, that which He suffered not upon the cross, He suffers for you in the offering, suffering Himself to be thrust through.",
     "topic": "Lord's Supper",
     "subtopic": "Eucharistic Hyperbole",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Perkins: rhetorical hyperbole, not literal doctrine of repeated sacrifice."
@@ -1903,7 +1903,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Will you know what are the heavenly words of consecration? These are they: the priest says, 'Make this oblation ascribed unto us, reasonable and acceptable for us, who the day before His passion took bread in His holy hands...'",
     "topic": "Lord's Supper",
     "subtopic": "Words of Consecration",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Shows early church used longer narrative, not just 5 words, for consecration."
@@ -1919,7 +1919,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The flesh and blood of our Lord is understood two ways: either for His spiritual, and divine flesh and blood, whereof He said, 'My flesh is meat indeed'; or for the flesh which was nailed on the cross, and that blood which was shed by the soldier's spear.",
     "topic": "Lord's Supper",
     "subtopic": "Two Modes of Presence",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Lord's Supper",
     "notes": "Jerome's two-nature eucharistic theology."
@@ -1935,7 +1935,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let no man glory in his works, because no man is justified by his deeds. But he that has justice, has it in gifts, because after baptism he is justified. It is therefore faith that frees him through the blood of Christ, because happy is he that has his sins forgiven and his pardon granted.",
     "topic": "Justification",
     "subtopic": "Faith Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Ambrose: justification by faith, not works."
@@ -1951,7 +1951,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Woe also be unto the man of most commendable life, if you sift his actions without the favor of mercy.",
     "topic": "Justification",
     "subtopic": "Grace & Mercy",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "No trust in personal merit before God's tribunal."
@@ -1967,7 +1967,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Only Christ did undergo punishment for us without any evil desert, that we might attain unto grace by Him, without any good desert.",
     "topic": "Justification",
     "subtopic": "Grace vs. Merit",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Grace without desert."
@@ -1983,7 +1983,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "What is that? Enter not into judgment with Thy servant. Stand not in judgment with me, nor exact of me all that Thou hast constrained me, and enjoined me, for Thou wilt find me guilty, if Thou enter but in judgment with me. Wherefore I stand in need of Thy mercy, rather than of Thy most easy judgment.",
     "topic": "Justification",
     "subtopic": "Grace & Mercy",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Augustine's penitential trust in mercy alone."
@@ -1999,7 +1999,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If that your good deserts be God's gifts, then He does not crown your good deserts as your own deservings, but as His own gifts.",
     "topic": "Justification",
     "subtopic": "Grace vs. Merit",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Merit is God's gift, not basis of reward."
@@ -2015,7 +2015,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The ungodly is justified by faith without any good deserts of his works.",
     "topic": "Justification",
     "subtopic": "Faith Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Justification by faith without works."
@@ -2031,7 +2031,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We do gather out of many testimonies, that man is not justified by the precepts of good life, but by the faith of Jesus Christ.",
     "topic": "Justification",
     "subtopic": "Faith Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Classic Augustine sola fide text."
@@ -2047,7 +2047,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Eternal rest is prepared for those that have resisted the devil strongly in this life, not as a debt given to their works, but out of the bounteous grace of the most mighty and merciful God.",
     "topic": "Justification",
     "subtopic": "Grace vs. Merit",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Eternal life is not a debt for works."
@@ -2063,7 +2063,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If by Himself the judgment of God were sufficient, and if He should deal with us severely according unto our merits, what hope were there remaining for any of us?",
     "topic": "Justification",
     "subtopic": "Grace vs. Merit",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "No hope in merits if God judges strictly."
@@ -2079,7 +2079,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "All my faith is in Christ. By Him only I believe to be justified and saved; He is my rock, He is my refuge.",
     "topic": "Justification",
     "subtopic": "Faith Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Medieval witness to faith in Christ alone."
@@ -2095,7 +2095,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He that believes with a strong affection extends his heart wholly unto God, and what then? He is united to him. And his heart being enkindled, conceives a most certain assurance to be made partaker of His desire.",
     "topic": "Justification",
     "subtopic": "Assurance of Faith",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Assurance through strong faith."
@@ -2111,7 +2111,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If you believe that your sins cannot be forgiven but by Him whom only you did sin against, and who Himself cannot sin, you do well. But add this, that you believe that by Him they may be forgiven; this is the testimony that the Holy Ghost sets down in your heart, saying your sins are forgiven you.",
     "topic": "Justification",
     "subtopic": "Assurance of Faith",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Spirit-wrought certainty of forgiveness."
@@ -2127,7 +2127,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Who is righteous but he that recompenses God's love with his love again? And this is never done but when the Holy Ghost by faith reveals unto man God's purpose from everlasting, concerning his future salvation.",
     "topic": "Justification",
     "subtopic": "Assurance of Faith",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Assurance revealed by the Holy Ghost through faith."
@@ -2143,7 +2143,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Here it is most plainly necessary that faith do succor us, that that which lies hidden concerning us in the heart of the Father, may by His Spirit be revealed unto us, and the same Spirit testifying unto us, may persuade our spirits that we are the sons of God.",
     "topic": "Justification",
     "subtopic": "Assurance of Faith",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Filial assurance by the Spirit."
@@ -2159,7 +2159,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In this death alone place all your trust; unto this death commit yourself wholly, with this death cover yourself wholly, and therein enwrap yourself wholly. If God will judge you, say, 'O Lord, I put the death of our Lord Jesus Christ betwixt me and Thee and Thy judgment; no otherwise do I stand out with Thee.'",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Medieval imputed righteousness language."
@@ -2175,7 +2175,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Because of the uncertainty of our own justice, and the danger of vain glory, it is most safe and sure to place all our trust upon the only mercy and benignity of God.",
     "topic": "Justification",
     "subtopic": "Assurance",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Bellarmine's admission used against Roman confidence in merit."
@@ -2191,7 +2191,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The principles of divinity are the very truths of the sacred canon. Moreover, the final resolution of theological discourse appertains unto them, and from them the conclusions of all divinity are drawn.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Scholastic concession to Scripture's foundational role."
@@ -2207,7 +2207,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Not to steal or kill is in every man's power, but to believe that God can do that which is otherwise impossible, this requires a mind elevated, and a more vehement affection towards God, for this is a sign of a worthy and noble love. He honors God that keeps His commandments, but he much more that can argue and dispute through his faith.",
     "topic": "Works & Supererogation",
     "subtopic": "Supererogation Defined",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Supererogation",
     "notes": "Supererogation = elevated faith and affection, not meritorious excess."
@@ -2223,7 +2223,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Are not His precepts so easy that many have gone beyond them by philosophical reason?",
     "topic": "Works & Supererogation",
     "subtopic": "Supererogation Qualified",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Supererogation",
     "notes": "Philosophers exceed external precepts — not moral law."
@@ -2239,7 +2239,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The apostle Paul did spend more, because (as himself witnessed) he warred at his own charges.",
     "topic": "Works & Supererogation",
     "subtopic": "Supererogation Qualified",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Supererogation",
     "notes": "Augustine's supererogation = exceeding common practice, not the law."
@@ -2255,7 +2255,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The virgins did labor for the beauty of the heart. What do You command us? To abstain from adultery; do You command us this? We do perform more in loving You than You command us, that is, in this commandment.",
     "topic": "Works & Supererogation",
     "subtopic": "Supererogation Qualified",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Supererogation",
     "notes": "Supererogation = exceeding one particular commandment in love."
@@ -2271,7 +2271,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We can hardly do one good work without intermixing of some sin or other with it. And it is to be feared, lest when we look for a complete reward of devotion, the punishment for the fault therewith conjoined be not exacted of us.",
     "topic": "Works & Supererogation",
     "subtopic": "Impossibility of Supererogation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Supererogation",
     "notes": "Good works contain intermixed sin — supererogation impossible."
@@ -2287,7 +2287,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "There should no law have been given unto him that has not the due keeping of the law in his own power. And the same freedom of will makes us victors of the same devil.",
     "topic": "Free Will & Grace",
     "subtopic": "Pre-Augustinian Free Will",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Pre-Augustinian free will — Perkins calls this patristic error."
@@ -2303,7 +2303,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is our part to begin, and God's to perfect; we must do what we can, he will fulfill what we cannot.",
     "topic": "Free Will & Grace",
     "subtopic": "Synergism",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Semi-Pelagian free will — patristic error before Augustine's full teaching."
@@ -2319,7 +2319,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Unless the patriarch had first done his part, he had not obtained so great things of God. God in His blessings to us does not prevent our wills, but it must begin in ourselves.",
     "topic": "Free Will & Grace",
     "subtopic": "Synergism",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Chrysostom's synergism — patristic error."
@@ -2335,7 +2335,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let us here observe that God in His blessings to us does not prevent our wills, but it must begin in ourselves. And when He sees our minds prompt and ready to receive grace, then He gives us many occasions of salvation.",
     "topic": "Free Will & Grace",
     "subtopic": "Synergism",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Chrysostom's synergism."
@@ -2351,7 +2351,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I said that it lives in us to believe and to will, and in God to give the power of working well unto the believing and willing.",
     "topic": "Free Will & Grace",
     "subtopic": "Semi-Pelagian slip",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Augustine's earlier (not fully mature) position — he distinguishes."
@@ -2367,7 +2367,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Why do we presume so much of the power of nature? It is wounded, maimed, vexed, and lost. Let us confess it freely, and not defend it falsely. Wherefore let us seek the grace of God, not to inform, but to reform it thereby.",
     "topic": "Free Will & Grace",
     "subtopic": "Bondage of the Will",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Augustine's mature view of will's bondage."
@@ -2383,7 +2383,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Free will has not any power but unto sin, if the way of truth be unknown; and when that which is to be done begins to appear, unless also it delight, and be beloved, there is no doing, no undertaking, no well living.",
     "topic": "Free Will & Grace",
     "subtopic": "Bondage of the Will",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Free Will",
     "notes": "Will cannot act toward good without grace."
@@ -2399,7 +2399,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Use your marriage with modesty and moderation, and you shall be the chief in the kingdom and enjoy the fullness of blessings.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Dignity of Marriage",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Chrysostom affirms married life and kingdom blessing."
@@ -2415,7 +2415,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Because we see that divers of the saints, yea, and some apostles, have had wives, we cannot think thus of virginity only.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Dignity of Marriage",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Married apostles prove marriage is honored."
@@ -2431,7 +2431,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Virginity is equal unto angels; nay, if we seek it willingly, it exceeds them, because in striving in the flesh, it obtains a victory against nature, which the angels have not.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Praise of Virginity",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Cited as patristic hyperbole about virginity."
@@ -2447,7 +2447,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "O continency, the prophet's joy, the apostle's glory! O continency, the life of angels and the crown of sanctity!",
     "topic": "Marriage & Celibacy",
     "subtopic": "Praise of Virginity",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Hyperbolic praise of virginity."
@@ -2463,7 +2463,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Those that are in the flesh, that is, in matrimony, cannot please God.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Denigration of Marriage",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Patristic error — denigrating marriage."
@@ -2479,7 +2479,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is evil to contract matrimony.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Denigration of Marriage",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Patristic error — Tertullian in Montanist period."
@@ -2495,7 +2495,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In the fulfilling the duty of a husband, I fulfilled not the duty of a Christian, and it is an evil thing to touch a woman.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Denigration of Marriage",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Jerome's extreme anti-marriage statement."
@@ -2511,7 +2511,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The woman's body is polluted by her husband's.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Denigration of Marriage",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Patristic error."
@@ -2527,7 +2527,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let those that meddle with the holy mysteries be chaste, and continent, and free from all fleshly uncleanness.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Clerical Celibacy",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Celibacy for ministers of sacred rites."
@@ -2543,7 +2543,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He that has attained unto true perfection has the apostles for his patterns, and is truly counted a man, not in that he has made a choice of monastical life; but he conquers and excels men, that exercises himself in matrimony and increase of children, and in care and governance of his family, without either pleasure or sorrow.",
     "topic": "Marriage & Celibacy",
     "subtopic": "Dignity of Marriage",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Celibacy",
     "notes": "Clement holds married life as true perfection."
@@ -2559,7 +2559,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Chrysostom touches Mary with ambition and rashness at the wedding in Cana.]",
     "topic": "Marian Doctrine",
     "subtopic": "Mary's Sinlessness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Marian Doctrine",
     "notes": "Fathers accused Mary of sin — against Immaculate Conception."
@@ -2575,7 +2575,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Origen accuses Mary of infidelity.]",
     "topic": "Marian Doctrine",
     "subtopic": "Mary's Sinlessness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Marian Doctrine",
     "notes": "Fathers accused Mary of sin."
@@ -2591,7 +2591,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Tertullian accuses Mary of infidelity.]",
     "topic": "Marian Doctrine",
     "subtopic": "Mary's Sinlessness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Marian Doctrine",
     "notes": "Fathers accused Mary of sin."
@@ -2607,7 +2607,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Irenaeus calls Mary Eve's advocate hyperbolically — referring to her bringing Christ the Redeemer, not to her intercession.]",
     "topic": "Marian Doctrine",
     "subtopic": "Mary as Mediatrix",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Marian Doctrine",
     "notes": "Eve/Mary typology does not support Marian mediation."
@@ -2623,7 +2623,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We must beware lest we do not diminish the Son's glory in amplifying of the mother's, and therein provoke the mother to wrath, who had rather have her Son honored than herself, as the Creator ought to be before the creature.",
     "topic": "Marian Doctrine",
     "subtopic": "Marian Veneration Qualified",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Marian Doctrine",
     "notes": "Even Bonaventure urges restraint in Marian honor."
@@ -2639,7 +2639,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I think that he calls the cherubim the thrones (for the prophet Ezekiel saw the throne of the deity placed upon them), and by dominations, principalities, and powers, he means those that governed the nations.",
     "topic": "Angels",
     "subtopic": "Angelic Orders",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Theodoret's interpretation overthrows nine-choir schema."
@@ -2655,7 +2655,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Whether the archangels be called virtues, or what the difference is between these four words, 'thrones, dominations, principalities, and powers,' let them tell that can, if they prove what they say. I confess plainly, that I am altogether ignorant.",
     "topic": "Angels",
     "subtopic": "Nine Choirs",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Augustine's ignorance proves nine choirs is a later innovation."
@@ -2671,7 +2671,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Chrysostom denies that the souls of the dead can return unto the living.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Souls Cannot Return",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Fathers deny souls of dead return to living."
@@ -2687,7 +2687,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Tertullian denies that the souls of the dead can return unto the living.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Souls Cannot Return",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Fathers deny souls of dead return to living."
@@ -2703,7 +2703,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Isidore denies that the souls of the dead can return unto the living.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Souls Cannot Return",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Fathers deny souls of dead return to living."
@@ -2719,7 +2719,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Theophilact denies that the souls of the dead can return unto the living.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Souls Cannot Return",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Fathers deny souls of dead return to living."
@@ -2735,7 +2735,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine seems to be of another opinion — the souls of the dead may appear to the living.]",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Souls Cannot Return",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Additions",
     "notes": "Augustine hedges — some tension with other fathers."
@@ -2751,7 +2751,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The emperor called a council at Nicaea in Bithynia, setting down a day for all the rulers of every church in all places, to be there present.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Councils convened by emperors, not popes."
@@ -2767,7 +2767,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The king, having a care of the church, called a general council. We bishops, assembled from divers provinces, as Selvica in Isauria, at the command of our high and mighty prince Constantine.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Emperor commands council, not pope."
@@ -2783,7 +2783,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The emperor, without delay called a council of bishops that embraced his faith.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Emperor convenes councils."
@@ -2799,7 +2799,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We went unto his sacred majesty and entreated him to call a council.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Chrysostom petitions emperor, not pope, for council."
@@ -2815,7 +2815,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I cannot find, neither in ancient history, nor in the Acts of the Apostles, that it was a use at any time for the popes alone to call councils.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Imperial Convocation of Councils",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Councils",
     "notes": "Even a future pope admits popes did not call councils."
@@ -2831,7 +2831,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Undergo the yoke of Christ... He does not bind your neck with bands, but couples the mind to Him with favor and grace. He does not compel a man by necessity, but directs the willing of good works.",
     "topic": "Fasting",
     "subtopic": "Voluntary Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Fasting is voluntary, not legally compelled."
@@ -2847,7 +2847,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Christians, not heretics, but Catholics do abstain both from some sorts of flesh and also from some kinds of fruits, and that for the taming of the flesh... And this use is observed either continually, which few do, or at certain times and days, as almost all do throughout the Lent, everyone as much or as little as he is willing, or as he is able.",
     "topic": "Fasting",
     "subtopic": "Voluntary Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Lent was voluntary, not legally binding."
@@ -2863,7 +2863,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "What should I stand to relate the often meetings together, and the exercises of the men being placed together in one room, and the women in another apart, and the severe order of discipline, which we as yet do customably observe, and do use to celebrate, especially upon the feast of our Lord's passion, not only in fasting and watchings, but in the diligent hearing of the Holy Scriptures?",
     "topic": "Fasting",
     "subtopic": "Early Practice",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Early fasting was accompanied by Scripture hearing, not mere abstinence."
@@ -2879,7 +2879,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If we have done no good by so many admonitions, which I have never omitted to exhort you with in all the time before, and now especially in these seven weeks of fasting, wherein continually, night and day, I have instructed you in the doctrine of the Gospel without all intermission.",
     "topic": "Fasting",
     "subtopic": "Fasting with Teaching",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Basil: Lent is for intensive spiritual instruction."
@@ -2895,7 +2895,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This fast is not appointed us whereby to render any favor or good turn unto Him that suffered for us, but to confess and acknowledge His passion, which He undertook for us unto our salvation.",
     "topic": "Fasting",
     "subtopic": "Purpose of Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Fasting = acknowledgment of Christ's passion, not meritorious work."
@@ -2911,7 +2911,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "For this end have we our fastings and our Lent. For this end have we so many holy meetings, and hearing, and hitherto tend all our prayers, and all our doctrine, namely, that being by the diligent meditation of God's precepts cleansed from all the spots of sin, we may receive that unbloody sacrifice.",
     "topic": "Fasting",
     "subtopic": "Purpose of Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Fasting for spiritual cleansing and worthy communion."
@@ -2927,7 +2927,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In the primitive church, their fast was alike throughout the whole year, and then devotion beginning to grow cold, and fasting to be neglected, the priests commanded this fast of Lent.",
     "topic": "Fasting",
     "subtopic": "Origin of Lent",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Lent is ecclesiastical, not apostolic institution."
@@ -2943,7 +2943,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Lent is but merely] a custom risen out of simplicity, and some private institution.",
     "topic": "Fasting",
     "subtopic": "Origin of Lent",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Lent as private custom, not universal apostolic tradition."
@@ -2959,7 +2959,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We ought to fast and abstain, that we do not bind ourselves to the necessity of fasting, lest thereby we should be brought to do a voluntary thing, not of devotion, but of compulsion.",
     "topic": "Fasting",
     "subtopic": "Voluntary Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Fastings",
     "notes": "Fasting must remain voluntary, not compelled."
@@ -2975,7 +2975,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Our faith is our defense, and if it be not stricken with distrust when we sign on this fashion, that is, by making this sign, we often do good unto the heathen, God giving us that power.",
     "topic": "Sign of the Cross",
     "subtopic": "Power in Faith not Sign",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Sign of the Cross",
     "notes": "Power is from faith and invocation of Christ, not the sign itself."
@@ -2991,7 +2991,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He may soon know how much this sign terrifies the devils, that sees how when they are adjured by Christ, they were forced to flee from the bodies they had possessed.",
     "topic": "Sign of the Cross",
     "subtopic": "Power Through Christ's Name",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Sign of the Cross",
     "notes": "Power from Christ's name, sign is instrumental."
@@ -3007,7 +3007,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This directs our course, together with the faithful calling upon Christ's name, namely, the famous memory of the victorious cross.",
     "topic": "Sign of the Cross",
     "subtopic": "Cross + Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Sign of the Cross",
     "notes": "Cross efficacious together with calling on Christ's name."
@@ -3023,7 +3023,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Stand stoutly upon this sign, for when the devils see the cross, they remember the crucified.",
     "topic": "Sign of the Cross",
     "subtopic": "Cross Efficacious",
-    "perkinsPosition": "Nuanced",
+    "position": "Nuanced",
     "book": "Forged Catholicism",
     "section": "Sign of the Cross",
     "notes": "Perkins: efficacy comes from remembrance of Christ, not sign ex opere operato."
@@ -3039,7 +3039,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Therefore did Luke notify his age, because you should know that he spoke of His manhood. For it is the body, not the deity, that is the object of age. Wherefore, if He increased in the years of man, He also increased in the wisdom of man.",
     "topic": "Christology",
     "subtopic": "Christ's Human Development",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Truth of Humanity",
     "notes": "Christ grew in human wisdom — against omniscience from conception."
@@ -3055,7 +3055,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The Lord's Prayer is the breviary of the gospel.",
     "topic": "Prayer",
     "subtopic": "Lord's Prayer",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Canonical Hours",
     "notes": "Lord's Prayer as summary of gospel."
@@ -3071,7 +3071,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The law of praying is the law of believing, and the law of working.",
     "topic": "Prayer",
     "subtopic": "Lex Orandi Lex Credendi",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Holy Scripture",
     "notes": "Prayer to God alone establishes faith in God alone."
@@ -3087,7 +3087,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The Platonists] will have no sin unpunished, yet all those punishments, they will have to tend unto reformation, whether they be inflicted by law divine, or human; in this life, or after death.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Pagan Antecedents",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Purgatory has pagan philosophical antecedents — Augustine citing Platonists."
@@ -3103,7 +3103,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Out of this which is already spoken, we do plainly see that there are some that in that judgment shall be punished with certain purging fires.",
     "topic": "Purgatory & Afterlife",
     "subtopic": "Purgatorial Fire",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "Forged Catholicism",
     "section": "Purgatory",
     "notes": "Augustine allows for purging fires at final judgment."
@@ -3119,7 +3119,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Being offered for our sins, [Christ] took the name of sin that we might be made the righteousness of God in him, NOT OURS NOR IN US.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "Forged Catholicism",
     "section": "Justification",
     "notes": "Jerome: righteousness of God in Christ is not ours inherently but imputed."
@@ -3135,7 +3135,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The will of the regenerate is kindled only by the Holy Ghost: that they may therefore be able because they will thus: and they will thus, because God works in them to will.",
     "topic": "Free Will & Grace",
     "subtopic": "Bondage of the Will",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Free Will",
     "notes": "Regenerate will enabled by Holy Spirit alone."
@@ -3151,7 +3151,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We have lost our free will to love God by the greatness of our sin.",
     "topic": "Free Will & Grace",
     "subtopic": "Bondage of the Will",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Free Will",
     "notes": "Free will lost through sin."
@@ -3167,7 +3167,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Man when he was created, received a great strength in his free will: but by sinning he lost it.",
     "topic": "Free Will & Grace",
     "subtopic": "Bondage of the Will",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Free Will",
     "notes": "Free will lost through the fall."
@@ -3183,7 +3183,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "God gives grace freely to the unworthy, whereby the wicked man being justified is enlightened, with the gift of good will, and with a faculty of doing good: that by mercy preventing him, he may begin to will well, and by mercy coming after he may do the good he will.",
     "topic": "Free Will & Grace",
     "subtopic": "Prevenient Grace",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Free Will",
     "notes": "Grace prevents and enables good will."
@@ -3199,7 +3199,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is wholly the grace of God that we are created, healed, saved. To believe and to will is given from above by infusion, and inspiration of the Holy Ghost.",
     "topic": "Free Will & Grace",
     "subtopic": "Grace Alone",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Free Will",
     "notes": "Bernard: all from grace including faith and will."
@@ -3215,7 +3215,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Concupiscence against which the spirit lusteth is sin, because in it there is disobedience against the rule of the mind: and it is the punishment of sin because it befalls man for the merits of his disobedience: and it is the cause of sin.",
     "topic": "Free Will & Grace",
     "subtopic": "Original Sin",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Original Sin",
     "notes": "Concupiscence is sin, punishment, and cause of sin."
@@ -3231,7 +3231,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Charity in some is more, in some less, in some none: the highest degree of all which cannot be increased, is in none, as long as man lives upon earth. And as long as it may be increased, that which is less then it should be, is in fault.",
     "topic": "Free Will & Grace",
     "subtopic": "Original Sin",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Original Sin",
     "notes": "Concupiscence as moral defect."
@@ -3247,7 +3247,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We say that the guilt of concupiscence, not whereby it is guilty (for that is not a person) but that whereby it made man guilty from the beginning, is pardoned, and that the thing itself is evil so as the regenerate desire to be healed of this plague.",
     "topic": "Free Will & Grace",
     "subtopic": "Original Sin Remains After Baptism",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Original Sin",
     "notes": "Concupiscence remains as evil after baptism."
@@ -3263,7 +3263,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The law of sin in baptism is remitted and not ended.",
     "topic": "Free Will & Grace",
     "subtopic": "Original Sin Remains After Baptism",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Original Sin",
     "notes": "Sin's law remitted but not ended at baptism."
@@ -3279,7 +3279,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let not sin reign: he saith not, let not sin be, but let it not reign. For as long as thou livest, of necessity sin will be in thy members: at the least, let it reign not in thee.",
     "topic": "Free Will & Grace",
     "subtopic": "Original Sin Remains After Baptism",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Original Sin",
     "notes": "Sin remains after baptism but must not reign."
@@ -3295,7 +3295,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The justice of another is assigned unto man: who wanted his own, man was indebted and man made payment. The satisfaction of one is imputed to all. And, why may not justice be from another as well as guiltiness is from another.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Bernard: alien righteousness imputed to us."
@@ -3311,7 +3311,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It suffices me, for all righteousness to have him alone merciful to me, against whom I have sinned. And, not to sin is God's justice, man's justice is the mercifulness of God.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Man's justice = God's mercy."
@@ -3327,7 +3327,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Shall I sing mine own righteousness, Lord I will remember thy righteousness alone: for it is mine also: in that even thou art made unto me righteousness of God. What, shall I fear lest that one be not sufficient for us both? it is not a short cloak that cannot cover two.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Christ's righteousness is ours — covers both."
@@ -3343,7 +3343,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He prays for our faults, and has made our faults his faults, that he might make his justice our justice.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Exchange of sin and righteousness."
@@ -3359,7 +3359,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Christ being offered for our sins, took the name of sin that we might be made the righteousness of God in him, NOT OURS NOR IN US.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Righteousness is not inherent but imputed."
@@ -3375,7 +3375,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is called God's righteousness, because it is not of works, and because it must be without all stain or want: and that cannot be inherent righteousness.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "God's righteousness cannot be inherent."
@@ -3391,7 +3391,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He is made sin as we are made justice: not ours but God's, not in us but in him: as he is made sin not his own but ours: not in himself, but in us.",
     "topic": "Justification",
     "subtopic": "Imputed Righteousness",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Anselm: imputed exchange of sin and righteousness."
@@ -3407,7 +3407,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Adam's first sin was the eating of the forbidden fruit which very act is no personal offence, but is imputed to all his posterity.]",
     "topic": "Justification",
     "subtopic": "Imputation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Adam's sin imputed — parallel: Christ's righteousness imputed."
@@ -3423,7 +3423,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Adam's sin is called his handwriting, making us debtors unto God — by imputation.]",
     "topic": "Justification",
     "subtopic": "Imputation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Imputation of Adam's sin as model for imputation of Christ's righteousness."
@@ -3439,7 +3439,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Good works are] the way to the kingdom, not the cause of reigning there.",
     "topic": "Justification",
     "subtopic": "Works and Justification",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Works are means, not causes of salvation."
@@ -3455,7 +3455,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The satisfaction made by Christ in his death, and the merit of his death is imputed to every sinner that does believe, for his satisfaction before God.",
     "topic": "Justification",
     "subtopic": "Imputed Satisfaction",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Justification",
     "notes": "Bellarmine's concession — imputed satisfaction."
@@ -3471,7 +3471,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Take from heretics the opinions which they maintain with the heathen, that they may defend their questions by Scripture alone, and they cannot stand. Again, We need no curiosity after Christ Jesus, nor inquisition after the Gospel. When we believe it, we desire to believe nothing beside: for this we first believe that there is nothing more which we may believe.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Traditions",
     "notes": "Tertullian: Scripture alone suffices."
@@ -3487,7 +3487,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Writing of an opinion lacking Scripture authority:] This, because it hath not authority from Scriptures, may as easily be contemned as approved.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Traditions",
     "notes": "Jerome: lacking Scripture warrant, any opinion may be contemned."
@@ -3503,7 +3503,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In those things which are plainly set down in Scripture, are found all those points which contain faith and manners of living well.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Traditions",
     "notes": "Scripture's plain texts contain all faith and morals."
@@ -3519,7 +3519,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The Canon of the Scripture is perfect, and fully sufficient to it self for all things.",
     "topic": "Scripture & Canon",
     "subtopic": "Sufficiency of Scripture",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Traditions",
     "notes": "Vincentian canon of Scripture."
@@ -3535,7 +3535,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Every form or representation is to be termed an idol.",
     "topic": "Images",
     "subtopic": "Against Religious Images",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Image = idol in religious use."
@@ -3551,7 +3551,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The heathen used the names of image and idol indifferently in one and the same signification.",
     "topic": "Images",
     "subtopic": "Image = Idol",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Image and idol are synonymous in heathen usage."
@@ -3567,7 +3567,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Idols are images of dead men.",
     "topic": "Images",
     "subtopic": "Against Religious Images",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Idols = images of dead men."
@@ -3583,7 +3583,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Where images are for religions sake, there is no religion.",
     "topic": "Images",
     "subtopic": "Against Religious Images",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Images for religion = no religion."
@@ -3599,7 +3599,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We suffer not any to worship Jesus at altars, images, and temples: because it is written, Thou shalt have none other gods.",
     "topic": "Images",
     "subtopic": "Against Image Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Origen forbids worship via images."
@@ -3615,7 +3615,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is against the authority of the Scriptures to see the image of Christ, or of any Saints hanging in the Church. Be mindful beloved children not to bring images into the Church, nor set them in the places where the Saints are buried, but always carry God in your hearts; neither let them be suffered in any common house.",
     "topic": "Images",
     "subtopic": "Against Images in Churches",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Epiphanius bans all images from churches."
@@ -3631,7 +3631,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Augustine] in plain terms denies images to be adored.",
     "topic": "Images",
     "subtopic": "Against Image Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Augustine denies adoration of images."
@@ -3647,7 +3647,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Gregory] in plain terms denies images to be adored.",
     "topic": "Images",
     "subtopic": "Against Image Worship",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "Gregory denies adoration of images."
@@ -3663,7 +3663,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "That supplications and thanksgivings are the only perfect sacrifices pleasing God, and that Christians have learned to offer them alone.",
     "topic": "Lord's Supper",
     "subtopic": "Sacrifice of the Mass",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Sacrifice of the Mass",
     "notes": "True sacrifice = prayer and thanksgiving, not bodily sacrifice."
@@ -3679,7 +3679,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We sacrifice for the health of the Emperor as God hath commanded with pure prayer.",
     "topic": "Lord's Supper",
     "subtopic": "Spiritual Sacrifice",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Sacrifice of the Mass",
     "notes": "True sacrifice = pure prayer, not re-offering of Christ."
@@ -3695,7 +3695,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This clean offering to be offered in every place, is the prayers of the Saints.",
     "topic": "Lord's Supper",
     "subtopic": "Spiritual Sacrifice",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Sacrifice of the Mass",
     "notes": "Clean offering = prayers of saints, not mass."
@@ -3711,7 +3711,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Because we sin daily Christ is sacrificed for us mystically, and his Passion is given in mystery. The blood is drunk in mystery spiritually: and it is all spiritual which we eat. The priest distributes to every one not as much as the outward sight giveth, but as much as faith receiveth.",
     "topic": "Lord's Supper",
     "subtopic": "Spiritual Sacrifice",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Sacrifice of the Mass",
     "notes": "Paschasius: mystical and spiritual eating only."
@@ -3727,7 +3727,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If there be any grace in the water, it is not from the nature of the water, but from the presence of the Spirit.",
     "topic": "Sacraments",
     "subtopic": "Efficacy of Sacraments",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "Grace in baptism is from the Spirit, not the element."
@@ -3743,7 +3743,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Man gives water, but God gives the Holy Ghost.",
     "topic": "Sacraments",
     "subtopic": "Efficacy of Sacraments",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "God gives grace, not the sacramental act."
@@ -3759,7 +3759,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Water touches the body and washes the heart. There is one water of the sacrament; another of the Spirit. The water of the sacrament is visible, the water of the Spirit invisible. That washes the body and signifies what is done in the soul; by this the soul is purged and healed.",
     "topic": "Sacraments",
     "subtopic": "Efficacy of Sacraments",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "Distinction between outward and inward water."
@@ -3775,7 +3775,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Believers are partakers of the body and blood of Christ in baptism.",
     "topic": "Sacraments",
     "subtopic": "Spiritual Eating",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "Spiritual reception of Christ in baptism."
@@ -3791,7 +3791,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is profitable to be filled with the body of Christ, and drink His blood, not only in mystery, but in knowledge of Holy Scripture.",
     "topic": "Sacraments",
     "subtopic": "Spiritual Eating",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "Scripture also feeds on Christ's body and blood."
@@ -3807,7 +3807,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "In baptism we eat and drink the body and blood of Christ.",
     "topic": "Sacraments",
     "subtopic": "Spiritual Eating",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Efficacy of Sacraments",
     "notes": "Spiritual eating in baptism."
@@ -3823,7 +3823,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "All Christian men commend each other in their prayers to God. And who prays for all, and for whom none prays, he is that one and true mediator.",
     "topic": "Invocation of Saints",
     "subtopic": "Christ the Sole Mediator",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "Christ alone is universal mediator."
@@ -3839,7 +3839,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "This saith thy Saviour, thou hast no where to go but to me, thou hast no way to go but by me.",
     "topic": "Invocation of Saints",
     "subtopic": "Christ the Sole Mediator",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "Christ is the only way to God."
@@ -3855,7 +3855,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Thou hast no need of patrons to God, or much discourse that thou shouldest sooth others: but though thou be alone and want a patron, and by thyself pray unto God, thou shalt obtain thy desire.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "No patrons needed; pray directly to God."
@@ -3871,7 +3871,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Thy prayers have no effect unless they be such as the Lord commends unto thy Father.",
     "topic": "Invocation of Saints",
     "subtopic": "Against Saint Invocation",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "Only Christ-commended prayers reach the Father."
@@ -3887,7 +3887,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He being such a man said not, ye have an Advocate, but if any sin we have: he said not ye have, neither said he, ye have me.",
     "topic": "Invocation of Saints",
     "subtopic": "Christ the Sole Mediator",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "Christ is the advocate; saints are not."
@@ -3903,7 +3903,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Neither Christ nor His apostles appointed any times of fasting.",
     "topic": "Fasting",
     "subtopic": "Set Fasting Times",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Fasting",
     "notes": "No apostolic command for set fasting times."
@@ -3919,7 +3919,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The early church] fasted of their own accord freely, without law or commandment, as occasions and time served.",
     "topic": "Fasting",
     "subtopic": "Voluntary Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Fasting",
     "notes": "Early fasting was free, not legally prescribed."
@@ -3935,7 +3935,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Montanus was the first that made laws of fasting.",
     "topic": "Fasting",
     "subtopic": "Origin of Compulsory Fasting",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Fasting",
     "notes": "Compulsory fasting originates with the heretic Montanus."
@@ -3951,7 +3951,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We must acknowledge the great mercy of God, who puts a difference between sins of ignorance, and such as are done wittingly; and forgives manifold ignorances to them, that know but the foundation and be teachable.",
     "topic": "Scripture & Canon",
     "subtopic": "Implicit Faith",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Implicit Faith",
     "notes": "Melanchthon on implicit faith and God's mercy on ignorance."
@@ -3967,7 +3967,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We have no images framed by any base workmen, but such as are brought forth and framed by the word of God, namely patterns of virtue, and frames resembling Christians.",
     "topic": "Images",
     "subtopic": "Against Material Images",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Images",
     "notes": "True images are patterns of virtue in Christians, not material."
@@ -3983,7 +3983,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He believes not in God, who putteth not affiance concerning his salvation in God alone.",
     "topic": "Justification",
     "subtopic": "Faith and Assurance",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Worshipping Saints",
     "notes": "True faith = confidence in God alone for salvation."
@@ -3999,7 +3999,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[The Lord's Prayer is] the breviary of the gospel.",
     "topic": "Prayer",
     "subtopic": "Lord's Prayer",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Lord's Prayer",
     "notes": "Lord's Prayer as gospel summary."
@@ -4015,7 +4015,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "The law of praying is the law of believing, and the law of working.",
     "topic": "Prayer",
     "subtopic": "Lex Orandi Lex Credendi",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Lord's Prayer",
     "notes": "Prayer to God alone establishes doctrine."
@@ -4031,7 +4031,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "[Irenaeus] said that Antichrist should be Lateinus, a Roman.",
     "topic": "Papacy & Church Governance",
     "subtopic": "Antichrist",
-    "perkinsPosition": "Reformed",
+    "position": "Reformed",
     "book": "A Reformed Catholic",
     "section": "Separation from Rome",
     "notes": "Irenaeus identified Antichrist with Rome."
@@ -4047,7 +4047,7 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "I think that he as it were passing by the fire shall be saved by the merits and intercessions of the heavenly Church; which does always make intercession for the faithful by request and merit, till Christ shall be complete in his members.",
     "topic": "Invocation of Saints",
     "subtopic": "Merits of Saints",
-    "perkinsPosition": "Roman Catholic",
+    "position": "Roman Catholic",
     "book": "A Reformed Catholic",
     "section": "Intercession of Saints",
     "notes": "Lombard on saints' merits — cited and refuted."
@@ -4063,10 +4063,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Similarly we also, who by His will have been called in Christ Jesus, are not justified by ourselves, or our own wisdom or understanding or godliness, nor by such deeds as we have done in holiness of heart, but by that faith through which Almighty God has justified all men since the beginning of time.",
     "topic": "Salvation",
     "subtopic": "Sola Fide",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Oldest extrabiblical witness to justification by faith; Clement knew the apostles personally."
   },
   {
     "id": "FC255",
@@ -4079,10 +4079,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Human beings can be saved from the ancient wound of the serpent in no other way than by believing in him who, when he was raised up from the earth on the tree of martyrdom in the likeness of sinful flesh, drew all things to himself and gave life to the dead.",
     "topic": "Salvation",
     "subtopic": "Faith and Salvation",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Salvation only through faith in Christ crucified — no other way of deliverance from sin."
   },
   {
     "id": "FC256",
@@ -4095,10 +4095,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He became to me righteousness, and sanctification, and salvation. Righteousness, by setting me free from sin through faith in Him.",
     "topic": "Salvation",
     "subtopic": "Sola Fide",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Righteousness through faith in Christ, not human works — early patristic sola fide."
   },
   {
     "id": "FC257",
@@ -4111,10 +4111,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Vainly then do they run about with the pretext that they have demanded Councils for the faith’s sake; for divine Scripture is sufficient above all things.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Divine Scripture sufficient above councils — patristic appeal to Scripture over conciliar authority."
   },
   {
     "id": "FC258",
@@ -4127,10 +4127,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "For concerning the divine and holy mysteries of the Faith, not even a casual statement must be delivered without the Holy Scriptures... give not absolute credence, unless you receive the proof of the things which I announce from the Divine Scriptures.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Catechesis must be proved from Scripture, not mere plausibility — Word set over tradition."
   },
   {
     "id": "FC259",
@@ -4143,10 +4143,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "What is the mark of a faithful soul? To be in these dispositions of full acceptance on the authority of the words of Scripture, not venturing to reject anything nor making additions... everything outside Holy Scripture, not being of faith, is sin.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Everything outside Scripture, not being of faith, is sin — strong patristic sola scriptura formula."
   },
   {
     "id": "FC260",
@@ -4159,10 +4159,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Let the inspired Scriptures then be our umpire, and the vote of truth will be given to those whose dogmas are found to agree with the Divine words.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Scripture umpires doctrine; dogmas judged by agreement with Divine words."
   },
   {
     "id": "FC261",
@@ -4175,10 +4175,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Regarding the things I say, I should supply even the proofs... prove them with Scripture, so that the matter will remain certain and steadfast.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Teachers must prove teaching from Scripture, not private opinion."
   },
   {
     "id": "FC262",
@@ -4191,10 +4191,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "If we bid you believe the Scriptures, and these are simple and true, the decision is easy for you. If any agree with the Scriptures, he is the Christian; if any fight against them, he is far from this rule.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Prospective converts decide by Scripture; those who oppose it are not Christian."
   },
   {
     "id": "FC263",
@@ -4207,10 +4207,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "We make the Holy Scriptures the rule and the measure of every tenet; we approve that alone which may be made to harmonize with the intention of those writings.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Only teaching harmonizing with Scripture is approved; no license to invent tenets."
   },
   {
     "id": "FC264",
@@ -4223,10 +4223,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "It is impossible either to say or fully to understand anything about God beyond what has been divinely proclaimed to us, whether told or revealed, by the sacred declarations of the Old and New Testaments.",
     "topic": "Scripture & Canon",
     "subtopic": "Sola Scriptura",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Knowledge of God bounded by OT/NT revelation — doctrinal limit at Scripture."
   },
   {
     "id": "FC265",
@@ -4239,10 +4239,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "To be righteous does not derive from human achievement, but from a divine gift.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Righteousness before God is divine gift, not human achievement."
   },
   {
     "id": "FC266",
@@ -4255,10 +4255,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Grace is before you... you will not be saved by the Law, and will mar this gift also.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Grace offered without works demanded; insisting on Law-salvation nullifies God's gift."
   },
   {
     "id": "FC267",
@@ -4271,10 +4271,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "He does not say, the wages of your good deeds, but the gift of God... by grace all these things came about.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Not wages of deeds or return for labor, but gift of God by grace alone."
   },
   {
     "id": "FC268",
@@ -4287,10 +4287,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Your wickedness is measurable, but the medicine is immeasurable... God’s philanthropy is unlimited.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Human wickedness finite; God's philanthropy immeasurable — mercy exceeds our sin."
   },
   {
     "id": "FC269",
@@ -4303,10 +4303,10 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "What should we resourceless people give Thee in return for all things?... Thou askest nothing of us but that we be saved. Even this Thou hast given us.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "God asks only that we be saved — even that saving grace is his gift."
   },
   {
     "id": "FC270",
@@ -4319,9 +4319,9 @@ export const PATRISTIC_QUOTES: PatristicQuote[] = [
     "quote": "Purification from sins is not effected by our merit, but by the compassion of God... even that poor little virtue which we call ours has itself been granted to us by his bounty.",
     "topic": "Salvation",
     "subtopic": "Sola Gratia",
-    "perkinsPosition": "",
+    "position": "",
     "book": "",
     "section": "",
-    "notes": "Added from ACTheologian"
+    "notes": "Purification by God's compassion, not merit; even our virtue is his bounty."
   }
 ];
