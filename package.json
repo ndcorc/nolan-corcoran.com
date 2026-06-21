@@ -3,8 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "NODE_OPTIONS='--inspect' next dev",
-        "build": "next build",
+        "generate:patristic-quotes": "tsx scripts/generatePatristicQuotes.ts",
+        "dev": "yarn generate:patristic-quotes && NODE_OPTIONS='--inspect' next dev",
+        "build": "yarn generate:patristic-quotes && next build",
         "start": "next start",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",

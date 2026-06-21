@@ -20,6 +20,7 @@ import {
     IconGitBranch,
     IconFileText,
     IconBook,
+    IconQuote,
     IconChevronRight,
     IconChevronDown
 } from '@tabler/icons-react';
@@ -366,6 +367,22 @@ export function ApologeticsSidebar() {
                             </Stack>
                         </ScrollArea>
                     </Collapse>
+                </Box>
+
+                {/* Quotes */}
+                <Box className="flex-shrink-0">
+                    <NavLink
+                        component={Link}
+                        href="/apologetics/quotes"
+                        label="Quotes"
+                        leftSection={<IconQuote size={18} />}
+                        active={pathname === '/apologetics/quotes'}
+                        variant="subtle"
+                        className="apologetics-navlink rounded-md"
+                        styles={{
+                            label: { fontSize: '14px' }
+                        }}
+                    />
                 </Box>
             </Box>
 

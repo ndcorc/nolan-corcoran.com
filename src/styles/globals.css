@@ -110,3 +110,84 @@ body {
 [data-mantine-color-scheme='dark'] [data-section='apologetics'] {
     --paper-border-color: var(--mantine-color-dark-4) !important;
 }
+
+/* Patristic quote cards */
+.patristic-quote-card {
+    transition: transform 150ms ease;
+}
+
+.patristic-quote-card:hover,
+.patristic-quote-card:has(.patristic-quote-card__trigger[data-expanded='true']) {
+    transform: translateY(-2px);
+}
+
+[data-mantine-color-scheme='light'] .patristic-quote-card {
+    border-color: var(--mantine-color-gray-5);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card {
+    background-color: #282828;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Patristic quote cards — hover/active highlight in light mode (default bg unchanged) */
+[data-mantine-color-scheme='light'] .patristic-quote-card__trigger:hover,
+[data-mantine-color-scheme='light'] .patristic-quote-card__trigger[data-expanded='true'],
+[data-mantine-color-scheme='light'] .patristic-quote-card__notes {
+    background-color: #f5f3f0;
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'],
+[data-mantine-color-scheme='dark'] .patristic-quote-card__notes {
+    background-color: var(--mantine-color-default-hover);
+}
+
+/* Topic / subtopic badges — stepped brightness above active state */
+.patristic-quote-card__topic-badge,
+.patristic-quote-card__subtopic-badge,
+.patristic-quote-card__meta-badge {
+    border-radius: var(--mantine-radius-xs);
+}
+
+.patristic-quote-card__topic-badge,
+.patristic-quote-card__subtopic-badge {
+    text-transform: none;
+    font-weight: 500;
+}
+
+.patristic-quote-card__topic-badge .mantine-Badge-label,
+.patristic-quote-card__subtopic-badge .mantine-Badge-label {
+    text-transform: none;
+}
+
+[data-mantine-color-scheme='light'] .patristic-quote-card__subtopic-badge {
+    background-color: #e9e9e5;
+    color: var(--mantine-color-gray-7);
+}
+
+[data-mantine-color-scheme='light'] .patristic-quote-card__topic-badge {
+    background-color: #e1e1dd;
+    color: var(--mantine-color-gray-7);
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card__subtopic-badge {
+    background-color: var(--mantine-color-dark-6);
+    color: var(--mantine-color-dark-1);
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card__topic-badge {
+    background-color: var(--mantine-color-dark-5);
+    color: var(--mantine-color-dark-1);
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover .patristic-quote-card__topic-badge,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'] .patristic-quote-card__topic-badge {
+    background-color: #343434;
+}
+
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover .patristic-quote-card__subtopic-badge,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'] .patristic-quote-card__subtopic-badge {
+    background-color: #383838;
+}

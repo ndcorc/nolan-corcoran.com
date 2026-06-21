@@ -1,7 +1,17 @@
 // src/components/layout/Header.tsx
 'use client';
 
-import { Group, Text, Indicator, useMantineColorScheme, Title, AppShell, Burger, Menu } from '@mantine/core';
+import {
+    Group,
+    Text,
+    Indicator,
+    useMantineColorScheme,
+    Title,
+    AppShell,
+    Burger,
+    Menu,
+    ScrollArea
+} from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useEffect, useState, useCallback, useMemo } from 'react';
@@ -13,6 +23,7 @@ import Loading from '../shared/Loading';
 import { NavigationProgress, nprogress } from '@mantine/nprogress';
 import useDevice from '@/lib/hooks/useDevice';
 import { IconChevronDown } from '@tabler/icons-react';
+import { buildApologeticsSubmenu } from '@/lib/apologetics/apologeticsNav';
 
 interface NavLink {
     href: string;
@@ -42,6 +53,10 @@ const NAVIGATION_LINKS: NavLink[] = [
     },
     { href: '/apologetics', label: 'APOLOGETICS' }
 ];
+
+const MOBILE_NAVIGATION_LINKS: NavLink[] = NAVIGATION_LINKS.map((link) =>
+    link.href === '/apologetics' ? { ...link, submenu: buildApologeticsSubmenu() } : link
+);
 
 const SCROLL_SETTINGS = {
     duration: 800,
@@ -179,6 +194,37 @@ export default function Header() {
         }
         close();
     };
+
+    const isMobileSubmenuItemActive = useCallback(
+        (href: string) => (href === '/apologetics' ? activeLink === href : isActive(href)),
+        [activeLink, isActive]
+    );
+
+    const renderMobileSubmenuItems = useCallback(
+        (items: NavLink[]) =>
+            items.map((subItem) => {
+                if (subItem.submenu && subItem.submenu.length > 0) {
+                    return (
+                        <div key={subItem.label} className="mb-1">
+                            <Text className="px-3 py-1 text-sm font-medium opacity-80">{subItem.label}</Text>
+                            <div className="pl-4">{renderMobileSubmenuItems(subItem.submenu)}</div>
+                        </div>
+                    );
+                }
+
+                return (
+                    <Link
+                        key={`${subItem.href}-${subItem.label}`}
+                        href={subItem.href}
+                        onClick={(e) => handleLinkClick(e, subItem.href, subItem.isScrollLink)}
+                        className="header-nav-menu-item block w-full px-3 py-2 rounded-md no-underline text-inherit"
+                        data-active={isMobileSubmenuItemActive(subItem.href) ? 'true' : undefined}>
+                        {subItem.label}
+                    </Link>
+                );
+            }),
+        [handleLinkClick, isMobileSubmenuItemActive]
+    );
 
     const renderNavLink = useCallback(
         (link: NavLink) => {
@@ -335,25 +381,15 @@ export default function Header() {
                 </Group>
             </AppShell.Header>
             <AppShell.Navbar py="md" px={4}>
-                <div className="space-y-2">
-                    {NAVIGATION_LINKS.map((item) => {
+                <AppShell.Section grow component={ScrollArea} type="auto" offsetScrollbars className="min-h-0">
+                    <div className="space-y-2">
+                    {MOBILE_NAVIGATION_LINKS.map((item) => {
                         // If it's a dropdown menu
                         if (item.submenu && item.submenu.length > 0) {
                             return (
                                 <div key={item.label} className="mb-2">
                                     <Text className="px-3 py-2 font-medium">{item.label}</Text>
-                                    <div className="pl-4">
-                                        {item.submenu.map((subItem) => (
-                                            <Link
-                                                key={subItem.href}
-                                                href={subItem.href}
-                                                onClick={(e) => handleLinkClick(e, subItem.href, subItem.isScrollLink)}
-                                                className="header-nav-menu-item block w-full px-3 py-2 rounded-md no-underline text-inherit"
-                                                data-active={isActive(subItem.href) ? 'true' : undefined}>
-                                                {subItem.label}
-                                            </Link>
-                                        ))}
-                                    </div>
+                                    <div className="pl-4">{renderMobileSubmenuItems(item.submenu)}</div>
                                 </div>
                             );
                         }
@@ -386,7 +422,8 @@ export default function Header() {
                             </Link>
                         );
                     })}
-                </div>
+                    </div>
+                </AppShell.Section>
             </AppShell.Navbar>
         </>
     );
