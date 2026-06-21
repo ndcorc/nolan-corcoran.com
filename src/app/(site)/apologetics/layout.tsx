@@ -12,9 +12,9 @@ export default function ApologeticsLayout({ children }: { children: React.ReactN
                 wrap="nowrap"
                 gap={0}
                 align="stretch"
-                className="min-h-[calc(100vh-60px)]"
+                className="min-h-screen"
                 data-section="apologetics"
-                style={{ marginTop: '60px' }}>
+                style={{ paddingTop: '60px', backgroundColor: 'var(--mantine-color-body)' }}>
                 {/* Sidebar - fixed width on desktop */}
                 <Box
                     className="hidden md:block"

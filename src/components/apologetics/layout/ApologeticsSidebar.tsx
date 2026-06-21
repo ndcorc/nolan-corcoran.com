@@ -117,6 +117,16 @@ export function ApologeticsSidebar() {
         setSelectedIndex(0);
     }, [searchResults]);
 
+    // Collapse section dropdowns when navigating to a page outside that section
+    useEffect(() => {
+        if (!pathname.startsWith('/apologetics/diagrams')) {
+            setIsDiagramsOpen(false);
+        }
+        if (!pathname.startsWith('/apologetics/arguments')) {
+            setIsArgumentsOpen(false);
+        }
+    }, [pathname, setIsDiagramsOpen, setIsArgumentsOpen]);
+
     // Handle keyboard navigation in search
     const handleSearchKeyDown = (e: React.KeyboardEvent) => {
         if (searchResults.length === 0) return;
