@@ -47,7 +47,7 @@ export function filterAndSortPatristicQuotes(
             (!filters.father || quote.father === filters.father) &&
             (!filters.era || quote.era === filters.era) &&
             (!filters.book || quote.book === filters.book) &&
-            (!filters.section || quote.section === filters.section) &&
+            (!filters.subtopic || quote.subtopic === filters.subtopic) &&
             (!filters.position || quote.perkinsPosition === filters.position)
         );
     });
@@ -80,7 +80,7 @@ export function hasActivePatristicFilters(filters: PatristicQuoteFilters): boole
             filters.father ||
             filters.era ||
             filters.book ||
-            filters.section ||
+            filters.subtopic ||
             filters.position
     );
 }

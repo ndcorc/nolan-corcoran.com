@@ -5,7 +5,7 @@ import {
     PATRISTIC_ERAS,
     PATRISTIC_FATHERS,
     PATRISTIC_POSITIONS,
-    PATRISTIC_SECTIONS,
+    PATRISTIC_SUBTOPICS,
     PATRISTIC_TOPICS
 } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuoteFilters } from '@/types/apologetics/patristicQuote';
@@ -19,6 +19,23 @@ interface QuoteFilterBarProps {
 
 const toOptions = (values: string[]) => values.map((value) => ({ value, label: value }));
 
+const searchInputStyles = {
+    input: {
+        borderColor: 'var(--mantine-color-default-border)'
+    }
+};
+
+const filterInputStyles = {
+    input: {
+        cursor: 'pointer',
+        borderColor: 'var(--mantine-color-default-border)'
+    }
+};
+
+const filterSelectClassNames = {
+    option: 'patristic-quotes-filter-option'
+};
+
 export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }: QuoteFilterBarProps) {
     const update = (partial: Partial<PatristicQuoteFilters>) => onChange({ ...filters, ...partial });
 
@@ -30,6 +47,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 onChange={(e) => update({ search: e.currentTarget.value })}
                 leftSection={<IconSearch size={16} />}
                 mb="md"
+                styles={searchInputStyles}
             />
 
             <Group gap="sm" align="flex-end" wrap="wrap">
@@ -43,15 +61,19 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                     onChange={(value) => update({ topic: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
-                    placeholder="Section"
-                    data={toOptions(PATRISTIC_SECTIONS)}
-                    value={filters.section}
-                    onChange={(value) => update({ section: value })}
+                    placeholder="Subtopic"
+                    data={toOptions(PATRISTIC_SUBTOPICS)}
+                    value={filters.subtopic}
+                    onChange={(value) => update({ subtopic: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
@@ -61,6 +83,8 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                     onChange={(value) => update({ era: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
@@ -70,6 +94,8 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                     onChange={(value) => update({ father: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
@@ -79,6 +105,8 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                     onChange={(value) => update({ book: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
@@ -88,6 +116,8 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                     onChange={(value) => update({ position: value })}
                     clearable
                     searchable
+                    classNames={filterSelectClassNames}
+                    styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 {hasActiveFilters && (

@@ -27,7 +27,7 @@ const EMPTY_FILTERS: PatristicQuoteFilters = {
     father: null,
     era: null,
     book: null,
-    section: null,
+    subtopic: null,
     position: null
 };
 
@@ -57,13 +57,13 @@ export function PatristicQuotesApp() {
     const handleClearFilters = () => setFilters(EMPTY_FILTERS);
 
     return (
-        <Stack gap="lg">
+        <Stack gap="lg" className="patristic-quotes-page">
             <Paper withBorder radius="md" p="md">
                 <GroupHeader quoteCount={PATRISTIC_QUOTES.length} />
                 <QuoteStats stats={stats} />
             </Paper>
 
-            <Paper withBorder radius="md" p="md">
+            <Paper withBorder radius="md" p="md" className="patristic-quotes-controls">
                 <QuoteFilterBar
                     filters={filters}
                     onChange={setFilters}

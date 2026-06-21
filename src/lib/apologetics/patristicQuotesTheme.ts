@@ -7,7 +7,7 @@ export const PATRISTIC_TOPICS = unique(PATRISTIC_QUOTES.map((q) => q.topic));
 export const PATRISTIC_FATHERS = unique(PATRISTIC_QUOTES.map((q) => q.father));
 export const PATRISTIC_ERAS = unique(PATRISTIC_QUOTES.map((q) => q.era));
 export const PATRISTIC_BOOKS = unique(PATRISTIC_QUOTES.map((q) => q.book));
-export const PATRISTIC_SECTIONS = unique(PATRISTIC_QUOTES.map((q) => q.section));
+export const PATRISTIC_SUBTOPICS = unique(PATRISTIC_QUOTES.map((q) => q.subtopic));
 export const PATRISTIC_POSITIONS = unique(PATRISTIC_QUOTES.map((q) => q.perkinsPosition));
 
 export const ERA_ORDER: Record<string, number> = {

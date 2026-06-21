@@ -18,6 +18,20 @@ const SORT_OPTIONS: { field: PatristicQuoteSortField; label: string }[] = [
     { field: 'topic', label: 'Topic' }
 ];
 
+const controlBorder = 'calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border)';
+
+const inactiveSortButtonStyles = {
+    root: {
+        '--button-bd': controlBorder
+    }
+};
+
+const segmentedControlStyles = {
+    root: {
+        border: controlBorder
+    }
+};
+
 export function QuoteSortBar({
     sortBy,
     sortDir,
@@ -41,6 +55,7 @@ export function QuoteSortBar({
                             size="compact-sm"
                             variant={isActive ? 'filled' : 'light'}
                             color={isActive ? 'brand' : 'gray'}
+                            styles={isActive ? undefined : inactiveSortButtonStyles}
                             onClick={() => onSortChange(field)}>
                             {label}
                             {isActive ? (sortDir === 'asc' ? ' ↑' : ' ↓') : ''}
@@ -53,6 +68,7 @@ export function QuoteSortBar({
                 <SegmentedControl
                     value={view}
                     onChange={(value) => onViewChange(value as PatristicQuoteViewMode)}
+                    styles={segmentedControlStyles}
                     data={[
                         { value: 'cards', label: 'Cards' },
                         { value: 'table', label: 'Table' }

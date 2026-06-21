@@ -27,7 +27,7 @@ export interface PatristicQuoteFilters {
     father: string | null;
     era: string | null;
     book: string | null;
-    section: string | null;
+    subtopic: string | null;
     position: string | null;
 }
 
