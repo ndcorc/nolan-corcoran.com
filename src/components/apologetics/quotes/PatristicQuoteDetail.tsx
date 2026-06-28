@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Anchor, Badge, Box, Group, Paper, Stack, Text, Title } from '@mantine/core';
+import { Badge, Box, Group, Paper, Stack, Text, Title } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { QuoteBadge } from './QuoteBadge';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
@@ -16,15 +16,20 @@ export function PatristicQuoteDetail({ quote, relatedQuotes }: PatristicQuoteDet
 
     return (
         <Stack gap="lg">
-            <Anchor
-                component={Link}
+            <Link
                 href="/apologetics/quotes"
-                size="sm"
-                c="dimmed"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 4, width: 'fit-content' }}>
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    width: 'fit-content',
+                    fontSize: 'var(--mantine-font-size-sm)',
+                    color: 'var(--mantine-color-dimmed)',
+                    textDecoration: 'none'
+                }}>
                 <IconArrowLeft size={14} />
                 All patristic quotes
-            </Anchor>
+            </Link>
 
             <Paper withBorder radius="md" p={{ base: 'md', md: 'xl' }}>
                 <Group gap="xs" wrap="wrap" mb="sm">
@@ -98,32 +103,30 @@ export function PatristicQuoteDetail({ quote, relatedQuotes }: PatristicQuoteDet
                     </Title>
                     <Stack gap="sm">
                         {relatedQuotes.map((related) => (
-                            <Paper
+                            <Link
                                 key={related.id}
-                                component={Link}
                                 href={`/apologetics/quotes/${related.slug}`}
-                                withBorder
-                                radius="md"
-                                p="md"
                                 style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <Group gap="xs" wrap="wrap" mb={4}>
-                                    <Text fw={600}>{related.father}</Text>
-                                    <QuoteBadge label={related.era} style={ERA_COLORS[related.era]} />
-                                </Group>
-                                <Text
-                                    size="sm"
-                                    style={{
-                                        fontFamily: 'Merriweather, serif',
-                                        fontStyle: 'italic',
-                                        lineHeight: 1.6,
-                                        display: '-webkit-box',
-                                        WebkitLineClamp: 2,
-                                        WebkitBoxOrient: 'vertical',
-                                        overflow: 'hidden'
-                                    }}>
-                                    &ldquo;{related.quote}&rdquo;
-                                </Text>
-                            </Paper>
+                                <Paper withBorder radius="md" p="md">
+                                    <Group gap="xs" wrap="wrap" mb={4}>
+                                        <Text fw={600}>{related.father}</Text>
+                                        <QuoteBadge label={related.era} style={ERA_COLORS[related.era]} />
+                                    </Group>
+                                    <Text
+                                        size="sm"
+                                        style={{
+                                            fontFamily: 'Merriweather, serif',
+                                            fontStyle: 'italic',
+                                            lineHeight: 1.6,
+                                            display: '-webkit-box',
+                                            WebkitLineClamp: 2,
+                                            WebkitBoxOrient: 'vertical',
+                                            overflow: 'hidden'
+                                        }}>
+                                        &ldquo;{related.quote}&rdquo;
+                                    </Text>
+                                </Paper>
+                            </Link>
                         ))}
                     </Stack>
                 </Box>
