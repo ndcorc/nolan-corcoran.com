@@ -100,6 +100,7 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                             component={Link}
                             href={quotePath}
                             size="sm"
+                            className="patristic-quotes-page-link"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                             View full page
                             <IconExternalLink size={14} />

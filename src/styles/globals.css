@@ -213,6 +213,24 @@ body {
     --input-bd: var(--mantine-color-default-border);
 }
 
+.patristic-quotes-sort-btn[data-active='true'] {
+    background-color: var(--apologetics-navlink-active-bg) !important;
+    color: var(--apologetics-primary) !important;
+}
+
+.patristic-quotes-sort-btn[data-active='true']:hover {
+    background-color: var(--apologetics-navlink-hover-bg) !important;
+}
+
+.patristic-quotes-page-link {
+    color: var(--apologetics-primary) !important;
+}
+
+.patristic-quotes-page-link:hover {
+    color: var(--apologetics-primary) !important;
+    opacity: 0.85;
+}
+
 @media (hover: hover) {
     .patristic-quotes-filter-option:hover:not([data-combobox-selected], [data-combobox-disabled]),
     .patristic-quotes-filter-option[data-combobox-active]:not([data-combobox-selected], [data-combobox-disabled]) {

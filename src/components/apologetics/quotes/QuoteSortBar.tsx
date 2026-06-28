@@ -53,8 +53,10 @@ export function QuoteSortBar({
                         <Button
                             key={field}
                             size="compact-sm"
-                            variant={isActive ? 'filled' : 'light'}
-                            color={isActive ? 'brand' : 'gray'}
+                            variant="light"
+                            color="gray"
+                            className="patristic-quotes-sort-btn"
+                            data-active={isActive || undefined}
                             styles={isActive ? undefined : inactiveSortButtonStyles}
                             onClick={() => onSortChange(field)}>
                             {label}

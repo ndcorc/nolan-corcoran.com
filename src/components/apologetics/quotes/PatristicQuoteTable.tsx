@@ -99,6 +99,7 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                                 component={Link}
                                 href={`/apologetics/quotes/${activeQuote.slug}`}
                                 size="sm"
+                                className="patristic-quotes-page-link"
                                 style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
                                 View page
                                 <IconExternalLink size={14} />
