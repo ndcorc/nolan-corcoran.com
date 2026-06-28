@@ -25,13 +25,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7
     }));
 
+    const patristicQuoteSlugs = await serverSanity.getPatristicQuoteSlugs();
+    const patristicQuoteUrls = patristicQuoteSlugs.map((quote) => ({
+        url: `${baseUrl}/apologetics/quotes/${quote.slug.current}`,
+        lastModified: new Date(quote._updatedAt),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6
+    }));
+
     // Add static routes
-    const routes = ['', '/#about', '/#contact', '/blog', '/quotes', '/portfolio'].map((route) => ({
+    const routes = [
+        '',
+        '/#about',
+        '/#contact',
+        '/blog',
+        '/quotes',
+        '/portfolio',
+        '/apologetics/quotes'
+    ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: route === '' ? 1 : 0.8
     }));
 
-    return [...routes, ...blogUrls, ...projectUrls];
+    return [...routes, ...blogUrls, ...projectUrls, ...patristicQuoteUrls];
 }

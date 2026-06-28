@@ -4,9 +4,9 @@ import { useMemo, useState } from 'react';
 import { Box, Paper, Stack, Text, Title } from '@mantine/core';
 import { IconCross } from '@tabler/icons-react';
 import {
-    PATRISTIC_QUOTES,
     computePatristicQuoteStats,
     filterAndSortPatristicQuotes,
+    getPatristicFilterOptions,
     hasActivePatristicFilters
 } from '@/lib/apologetics/patristicQuotes';
 import { QuoteFilterBar } from './QuoteFilterBar';
@@ -15,6 +15,7 @@ import { QuoteStats } from './QuoteStats';
 import { PatristicQuoteCard } from './PatristicQuoteCard';
 import { PatristicQuoteTable } from './PatristicQuoteTable';
 import type {
+    PatristicQuote,
     PatristicQuoteFilters,
     PatristicQuoteSortField,
     PatristicQuoteViewMode,
@@ -31,18 +32,23 @@ const EMPTY_FILTERS: PatristicQuoteFilters = {
     position: null
 };
 
-export function PatristicQuotesApp() {
+interface PatristicQuotesAppProps {
+    quotes: PatristicQuote[];
+}
+
+export function PatristicQuotesApp({ quotes }: PatristicQuotesAppProps) {
     const [filters, setFilters] = useState<PatristicQuoteFilters>(EMPTY_FILTERS);
     const [sortBy, setSortBy] = useState<PatristicQuoteSortField>('father');
     const [sortDir, setSortDir] = useState<SortDirection>('asc');
     const [expandedId, setExpandedId] = useState<string | null>(null);
     const [view, setView] = useState<PatristicQuoteViewMode>('cards');
 
-    const stats = useMemo(() => computePatristicQuoteStats(PATRISTIC_QUOTES), []);
+    const filterOptions = useMemo(() => getPatristicFilterOptions(quotes), [quotes]);
+    const stats = useMemo(() => computePatristicQuoteStats(quotes), [quotes]);
 
     const filteredQuotes = useMemo(
-        () => filterAndSortPatristicQuotes(PATRISTIC_QUOTES, filters, sortBy, sortDir),
-        [filters, sortBy, sortDir]
+        () => filterAndSortPatristicQuotes(quotes, filters, sortBy, sortDir),
+        [quotes, filters, sortBy, sortDir]
     );
 
     const handleSortChange = (field: PatristicQuoteSortField) => {
@@ -59,13 +65,14 @@ export function PatristicQuotesApp() {
     return (
         <Stack gap="lg" className="patristic-quotes-page">
             <Paper withBorder radius="md" p="md">
-                <GroupHeader quoteCount={PATRISTIC_QUOTES.length} />
+                <GroupHeader quoteCount={quotes.length} />
                 <QuoteStats stats={stats} />
             </Paper>
 
             <Paper withBorder radius="md" p="md" className="patristic-quotes-controls">
                 <QuoteFilterBar
                     filters={filters}
+                    filterOptions={filterOptions}
                     onChange={setFilters}
                     onClear={handleClearFilters}
                     hasActiveFilters={hasActivePatristicFilters(filters)}
@@ -75,7 +82,7 @@ export function PatristicQuotesApp() {
                     sortDir={sortDir}
                     view={view}
                     filteredCount={filteredQuotes.length}
-                    totalCount={PATRISTIC_QUOTES.length}
+                    totalCount={quotes.length}
                     onSortChange={handleSortChange}
                     onViewChange={setView}
                 />

@@ -461,3 +461,74 @@ export const getQuoteFilterOptionsQuery = groq`{
   "tags": *[_type == "quote"].tags[]
 }
 `;
+
+export const getAllPatristicQuotesQuery = groq`
+*[_type == "patristicQuote"] | order(father asc, diedSort asc) {
+  _id,
+  legacyId,
+  slug,
+  father,
+  died,
+  diedSort,
+  era,
+  sourceWork,
+  sourceRef,
+  quoteText,
+  topic,
+  subtopic,
+  position,
+  book,
+  section,
+  notes
+}
+`;
+
+export const getPatristicQuoteBySlugQuery = groq`
+*[_type == "patristicQuote" && slug.current == $slug][0] {
+  _id,
+  legacyId,
+  slug,
+  father,
+  died,
+  diedSort,
+  era,
+  sourceWork,
+  sourceRef,
+  quoteText,
+  topic,
+  subtopic,
+  position,
+  book,
+  section,
+  notes
+}
+`;
+
+export const getPatristicQuoteSlugsQuery = groq`
+*[_type == "patristicQuote" && defined(slug.current)] {
+  slug,
+  _updatedAt
+}
+`;
+
+export const getRelatedPatristicQuotesQuery = groq`
+*[_type == "patristicQuote" && slug.current != $slug && (father == $father || topic == $topic)]
+  | order(father asc, diedSort asc)[0...$limit] {
+  _id,
+  legacyId,
+  slug,
+  father,
+  died,
+  diedSort,
+  era,
+  sourceWork,
+  sourceRef,
+  quoteText,
+  topic,
+  subtopic,
+  position,
+  book,
+  section,
+  notes
+}
+`;

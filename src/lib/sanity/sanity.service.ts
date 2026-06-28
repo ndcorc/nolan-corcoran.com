@@ -9,7 +9,9 @@ import type {
     ProjectWithDiagram,
     ProjectDetails,
     Quote,
-    QuoteFilterOptions
+    QuoteFilterOptions,
+    SanityPatristicQuote,
+    PatristicQuoteSlug
 } from '@/types/sanity';
 import {
     getAllPostsQuery,
@@ -41,7 +43,11 @@ import {
     getFeedPostsQuery,
     getAllQuotesQuery,
     getFilteredQuotesQuery,
-    getQuoteFilterOptionsQuery
+    getQuoteFilterOptionsQuery,
+    getAllPatristicQuotesQuery,
+    getPatristicQuoteBySlugQuery,
+    getPatristicQuoteSlugsQuery,
+    getRelatedPatristicQuotesQuery
 } from './sanity.queries';
 import { QueryParams } from 'next-sanity';
 
@@ -318,6 +324,45 @@ export class SanityService {
         return this.extractData(
             this.fetcher({
                 query: getQuoteFilterOptionsQuery
+            })
+        );
+    }
+
+    async getAllPatristicQuotes(): Promise<SanityPatristicQuote[]> {
+        return this.extractData(
+            this.fetcher({
+                query: getAllPatristicQuotesQuery
+            })
+        );
+    }
+
+    async getPatristicQuoteBySlug(slug: string): Promise<SanityPatristicQuote | null> {
+        return this.extractData(
+            this.fetcher({
+                query: getPatristicQuoteBySlugQuery,
+                params: { slug }
+            })
+        );
+    }
+
+    async getPatristicQuoteSlugs(): Promise<PatristicQuoteSlug[]> {
+        return this.extractData(
+            this.fetcher({
+                query: getPatristicQuoteSlugsQuery
+            })
+        );
+    }
+
+    async getRelatedPatristicQuotes(
+        slug: string,
+        father: string,
+        topic: string,
+        limit: number = 5
+    ): Promise<SanityPatristicQuote[]> {
+        return this.extractData(
+            this.fetcher({
+                query: getRelatedPatristicQuotesQuery,
+                params: { slug, father, topic, limit }
             })
         );
     }

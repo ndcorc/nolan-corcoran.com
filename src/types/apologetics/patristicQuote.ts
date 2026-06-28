@@ -2,6 +2,7 @@ export type QuotePosition = 'Reformed' | 'Roman Catholic' | 'Nuanced';
 
 export interface PatristicQuote {
     id: string;
+    slug: string;
     father: string;
     died: string;
     diedSort: number;

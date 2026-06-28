@@ -1,4 +1,6 @@
-import { Box, Group, Text, Paper, Table, ScrollArea, Button } from '@mantine/core';
+import Link from 'next/link';
+import { Box, Group, Text, Paper, Table, ScrollArea, Button, Anchor } from '@mantine/core';
+import { IconExternalLink } from '@tabler/icons-react';
 import { QuoteBadge } from './QuoteBadge';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
@@ -92,9 +94,19 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                             </Text>{' '}
                             {activeQuote.ref}
                         </Text>
-                        <Button size="compact-sm" variant="subtle" onClick={() => onSelect(null)}>
-                            Close
-                        </Button>
+                        <Group gap="xs">
+                            <Anchor
+                                component={Link}
+                                href={`/apologetics/quotes/${activeQuote.slug}`}
+                                size="sm"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                                View page
+                                <IconExternalLink size={14} />
+                            </Anchor>
+                            <Button size="compact-sm" variant="subtle" onClick={() => onSelect(null)}>
+                                Close
+                            </Button>
+                        </Group>
                     </Group>
                     <Text
                         mb="sm"

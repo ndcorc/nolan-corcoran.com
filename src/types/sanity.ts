@@ -140,3 +140,31 @@ export interface QuoteFilterOptions {
     subtopics: string[];
     tags: string[];
 }
+
+export interface SanityPatristicQuote {
+    _id: string;
+    legacyId: string;
+    slug: {
+        current: string;
+    };
+    father: string;
+    died: string;
+    diedSort: number;
+    era: string;
+    sourceWork: string;
+    sourceRef: string;
+    quoteText: string;
+    topic: string;
+    subtopic: string;
+    position: 'Reformed' | 'Roman Catholic' | 'Nuanced' | '';
+    book: string;
+    section: string;
+    notes: string;
+}
+
+export interface PatristicQuoteSlug {
+    slug: {
+        current: string;
+    };
+    _updatedAt: string;
+}

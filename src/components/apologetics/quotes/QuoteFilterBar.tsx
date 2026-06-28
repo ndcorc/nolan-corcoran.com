@@ -1,17 +1,11 @@
 import { Box, Group, Text, TextInput, Select, Button } from '@mantine/core';
 import { IconSearch, IconFilterX } from '@tabler/icons-react';
-import {
-    PATRISTIC_BOOKS,
-    PATRISTIC_ERAS,
-    PATRISTIC_FATHERS,
-    PATRISTIC_POSITIONS,
-    PATRISTIC_SUBTOPICS,
-    PATRISTIC_TOPICS
-} from '@/lib/apologetics/patristicQuotesTheme';
+import type { PatristicFilterOptions } from '@/lib/apologetics/patristicQuotes';
 import type { PatristicQuoteFilters } from '@/types/apologetics/patristicQuote';
 
 interface QuoteFilterBarProps {
     filters: PatristicQuoteFilters;
+    filterOptions: PatristicFilterOptions;
     onChange: (filters: PatristicQuoteFilters) => void;
     onClear: () => void;
     hasActiveFilters: boolean;
@@ -36,7 +30,13 @@ const filterSelectClassNames = {
     option: 'patristic-quotes-filter-option'
 };
 
-export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }: QuoteFilterBarProps) {
+export function QuoteFilterBar({
+    filters,
+    filterOptions,
+    onChange,
+    onClear,
+    hasActiveFilters
+}: QuoteFilterBarProps) {
     const update = (partial: Partial<PatristicQuoteFilters>) => onChange({ ...filters, ...partial });
 
     return (
@@ -56,7 +56,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 </Text>
                 <Select
                     placeholder="Topic"
-                    data={toOptions(PATRISTIC_TOPICS)}
+                    data={toOptions(filterOptions.topics)}
                     value={filters.topic}
                     onChange={(value) => update({ topic: value })}
                     clearable
@@ -67,7 +67,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 />
                 <Select
                     placeholder="Subtopic"
-                    data={toOptions(PATRISTIC_SUBTOPICS)}
+                    data={toOptions(filterOptions.subtopics)}
                     value={filters.subtopic}
                     onChange={(value) => update({ subtopic: value })}
                     clearable
@@ -78,7 +78,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 />
                 <Select
                     placeholder="Era"
-                    data={toOptions(PATRISTIC_ERAS)}
+                    data={toOptions(filterOptions.eras)}
                     value={filters.era}
                     onChange={(value) => update({ era: value })}
                     clearable
@@ -89,7 +89,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 />
                 <Select
                     placeholder="Father"
-                    data={toOptions(PATRISTIC_FATHERS)}
+                    data={toOptions(filterOptions.fathers)}
                     value={filters.father}
                     onChange={(value) => update({ father: value })}
                     clearable
@@ -100,7 +100,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 />
                 <Select
                     placeholder="Book"
-                    data={toOptions(PATRISTIC_BOOKS)}
+                    data={toOptions(filterOptions.books)}
                     value={filters.book}
                     onChange={(value) => update({ book: value })}
                     clearable
@@ -111,7 +111,7 @@ export function QuoteFilterBar({ filters, onChange, onClear, hasActiveFilters }:
                 />
                 <Select
                     placeholder="Position"
-                    data={toOptions(PATRISTIC_POSITIONS)}
+                    data={toOptions(filterOptions.positions)}
                     value={filters.position}
                     onChange={(value) => update({ position: value })}
                     clearable

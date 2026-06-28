@@ -1,10 +1,23 @@
 import fs from 'fs';
 import path from 'path';
 
-const csvPath = path.join(process.cwd(), 'data/patristic_quotes_complete.csv');
-const outPath = path.join(process.cwd(), 'src/data/apologetics/quotes/patristicQuotes.ts');
+export interface PatristicQuoteCsvRow {
+    ID: string;
+    Father: string;
+    Died_AD: string;
+    Era: string;
+    Source_Work: string;
+    Source_Ref: string;
+    Quote_Text: string;
+    Topic: string;
+    Subtopic: string;
+    Position: string;
+    Book: string;
+    Section: string;
+    Notes: string;
+}
 
-function parseCSV(text: string): Record<string, string>[] {
+export function parsePatristicQuotesCsv(text: string): PatristicQuoteCsvRow[] {
     const rows: string[][] = [];
     let row: string[] = [];
     let field = '';
@@ -54,46 +67,33 @@ function parseCSV(text: string): Record<string, string>[] {
 
     return rows.map((values) =>
         Object.fromEntries(headers.map((header, index) => [header, values[index] ?? '']))
-    );
+    ) as unknown as PatristicQuoteCsvRow[];
 }
 
-function parseDiedSort(died: string): number {
+export function parseDiedSort(died: string): number {
     const nums = died.match(/\d+/g);
     if (!nums) return 0;
     return Math.max(...nums.map(Number));
 }
 
-function toQuote(row: Record<string, string>) {
-    return {
-        id: row.ID,
-        father: row.Father,
-        died: row.Died_AD,
-        diedSort: parseDiedSort(row.Died_AD),
-        era: row.Era,
-        source: row.Source_Work,
-        ref: row.Source_Ref,
-        quote: row.Quote_Text,
-        topic: row.Topic,
-        subtopic: row.Subtopic,
-        position: row.Position,
-        book: row.Book,
-        section: row.Section,
-        notes: row.Notes
-    };
+export function slugify(value: string): string {
+    return value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/['']/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 80);
 }
 
-const csv = fs.readFileSync(csvPath, 'utf8');
-const records = parseCSV(csv).map(toQuote);
+export function buildPatristicQuoteSlug(row: PatristicQuoteCsvRow): string {
+    const parts = [row.Father, row.Subtopic || row.Topic, row.ID].filter(Boolean);
+    return slugify(parts.join(' '));
+}
 
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
-
-const output = `// Auto-generated from data/patristic_quotes_complete.csv — do not edit by hand.
-// Regenerate with: yarn generate:patristic-quotes
-
-import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
-
-export const PATRISTIC_QUOTES: PatristicQuote[] = ${JSON.stringify(records, null, 2)};
-`;
-
-fs.writeFileSync(outPath, output);
-console.log(`Generated ${records.length} quotes → ${path.relative(process.cwd(), outPath)}`);
+export function readPatristicQuotesCsv(csvPath?: string): PatristicQuoteCsvRow[] {
+    const resolvedPath = csvPath ?? path.join(process.cwd(), 'data/patristic_quotes_complete.csv');
+    const csv = fs.readFileSync(resolvedPath, 'utf8');
+    return parsePatristicQuotesCsv(csv);
+}

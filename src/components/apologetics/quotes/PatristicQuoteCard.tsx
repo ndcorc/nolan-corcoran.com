@@ -1,5 +1,6 @@
-import { Box, Group, Text, Paper, UnstyledButton, Collapse, Badge } from '@mantine/core';
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
+import Link from 'next/link';
+import { Box, Group, Text, Paper, UnstyledButton, Collapse, Badge, Anchor } from '@mantine/core';
+import { IconChevronDown, IconChevronUp, IconExternalLink } from '@tabler/icons-react';
 import { QuoteBadge } from './QuoteBadge';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
@@ -13,6 +14,7 @@ interface PatristicQuoteCardProps {
 export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuoteCardProps) {
     const eraStyle = ERA_COLORS[quote.era];
     const posStyle = POSITION_COLORS[quote.position];
+    const quotePath = `/apologetics/quotes/${quote.slug}`;
 
     return (
         <Paper withBorder radius="md" className="patristic-quote-card" style={{ overflow: 'hidden' }}>
@@ -88,12 +90,20 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                             borderTop: '1px solid var(--mantine-color-default-border)',
                             padding: 16
                         }}>
-                        <Text size="sm" style={{ lineHeight: 1.6 }}>
+                        <Text size="sm" style={{ lineHeight: 1.6 }} mb="sm">
                             <Text component="span" fw={600} c="dimmed">
                                 NOTES ▸{' '}
                             </Text>
                             {quote.notes}
                         </Text>
+                        <Anchor
+                            component={Link}
+                            href={quotePath}
+                            size="sm"
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                            View full page
+                            <IconExternalLink size={14} />
+                        </Anchor>
                     </Box>
                 </Box>
             </Collapse>

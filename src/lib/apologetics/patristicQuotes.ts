@@ -1,4 +1,3 @@
-import { PATRISTIC_QUOTES } from '@/data/apologetics/quotes/patristicQuotes';
 import { ERA_ORDER } from '@/lib/apologetics/patristicQuotesTheme';
 import type {
     PatristicQuote,
@@ -7,8 +6,6 @@ import type {
     PatristicQuoteStats,
     SortDirection
 } from '@/types/apologetics/patristicQuote';
-
-export { PATRISTIC_QUOTES };
 
 export function computePatristicQuoteStats(quotes: PatristicQuote[]): PatristicQuoteStats {
     const byEra: Record<string, number> = {};
@@ -86,3 +83,18 @@ export function hasActivePatristicFilters(filters: PatristicQuoteFilters): boole
             filters.position
     );
 }
+
+const unique = (values: string[]) => [...new Set(values)].sort();
+
+export function getPatristicFilterOptions(quotes: PatristicQuote[]) {
+    return {
+        topics: unique(quotes.map((q) => q.topic)),
+        fathers: unique(quotes.map((q) => q.father)),
+        eras: unique(quotes.map((q) => q.era)),
+        books: unique(quotes.map((q) => q.book)),
+        subtopics: unique(quotes.map((q) => q.subtopic)),
+        positions: unique(quotes.map((q) => q.position).filter(Boolean))
+    };
+}
+
+export type PatristicFilterOptions = ReturnType<typeof getPatristicFilterOptions>;
