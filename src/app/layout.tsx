@@ -1,9 +1,8 @@
 // src/app/layout.ts
 import type { Metadata } from 'next';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '@/theme';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import QueryProvider from '@/providers/query-provider';
-import { Notifications } from '@mantine/notifications';
+import MantineThemeProvider from '@/providers/mantine-provider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -57,7 +56,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" {...mantineHtmlProps} suppressHydrationWarning>
             <head>
                 <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
                 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
@@ -67,10 +66,7 @@ export default function RootLayout({
             </head>
             <body className="antialiased min-h-lvh">
                 <QueryProvider>
-                    <MantineProvider theme={theme}>
-                        <Notifications position="top-right" />
-                        {children}
-                    </MantineProvider>
+                    <MantineThemeProvider>{children}</MantineThemeProvider>
                 </QueryProvider>
                 <Analytics />
                 <SpeedInsights />

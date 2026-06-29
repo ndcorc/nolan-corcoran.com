@@ -35,6 +35,14 @@ const subtopicsSelectClassNames = {
     pill: 'patristic-quotes-filter-pill'
 };
 
+const subtopicsSelectStyles = {
+    input: {
+        ...filterInputStyles.input,
+        display: 'flex',
+        alignItems: 'center'
+    }
+};
+
 export function QuoteFilterBar({
     filters,
     filterOptions,
@@ -79,7 +87,7 @@ export function QuoteFilterBar({
                     searchable
                     hidePickedOptions
                     classNames={subtopicsSelectClassNames}
-                    styles={filterInputStyles}
+                    styles={subtopicsSelectStyles}
                     style={{ flex: '1 1 220px', minWidth: 220 }}
                 />
                 <Select

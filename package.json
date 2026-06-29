@@ -4,6 +4,8 @@
     "private": true,
     "scripts": {
         "migrate:patristic-quotes": "tsx scripts/migratePatristicQuotesToSanity.ts",
+        "migrate:patristic-quote-text": "tsx scripts/upgradePatristicQuoteTextToPortableText.ts",
+        "migrate:patristic-quote-references": "tsx scripts/upgradePatristicQuoteReferencesToStrong.ts",
         "dev": "NODE_OPTIONS='--inspect' next dev",
         "build": "next build",
         "start": "next start",

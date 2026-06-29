@@ -1,4 +1,10 @@
 import { defineField, defineType } from 'sanity';
+import { toPlainText } from '@portabletext/react';
+import { patristicQuoteTextBlock } from './blocks/patristicQuoteTextBlock';
+import {
+    defineVocabularyReferenceArrayField,
+    defineVocabularyReferenceField
+} from './patristicVocabulary';
 
 export default defineType({
     name: 'patristicQuote',
@@ -17,25 +23,12 @@ export default defineType({
             title: 'Slug',
             type: 'slug',
             options: {
-                source: (doc) => {
-                    const father = doc.father as string | undefined;
-                    const subtopics = doc.subtopics as string[] | undefined;
-                    const legacySubtopic = doc.subtopic as string | undefined;
-                    const primarySubtopic = subtopics?.[0] ?? legacySubtopic;
-                    const topic = doc.topic as string | undefined;
-                    const legacyId = doc.legacyId as string | undefined;
-                    return [father, primarySubtopic || topic, legacyId].filter(Boolean).join(' ');
-                },
+                source: 'legacyId',
                 maxLength: 120
             },
             validation: (Rule) => Rule.required()
         }),
-        defineField({
-            name: 'father',
-            title: 'Church Father / Author',
-            type: 'string',
-            validation: (Rule) => Rule.required()
-        }),
+        defineVocabularyReferenceField('father', 'Church Father / Author', 'patristicFather', true),
         defineField({
             name: 'died',
             title: 'Died (AD)',
@@ -48,70 +41,30 @@ export default defineType({
             type: 'number',
             description: 'Numeric sort key derived from died date (auto-set during migration).'
         }),
-        defineField({
-            name: 'era',
-            title: 'Era',
-            type: 'string',
-            options: {
-                list: [
-                    { title: 'Apostolic Father', value: 'Apostolic Father' },
-                    { title: 'Latin Patristic', value: 'Latin Patristic' },
-                    { title: 'Greek Patristic', value: 'Greek Patristic' },
-                    { title: 'Byzantine', value: 'Byzantine' },
-                    { title: 'Medieval', value: 'Medieval' },
-                    { title: 'Post-Tridentine', value: 'Post-Tridentine' },
-                    { title: 'Reformation', value: 'Reformation' }
-                ]
-            },
-            validation: (Rule) => Rule.required()
-        }),
-        defineField({
-            name: 'sourceWork',
-            title: 'Source Work',
-            type: 'string'
-        }),
+        defineVocabularyReferenceField('era', 'Era', 'patristicEra', true),
+        defineVocabularyReferenceField('sourceWork', 'Work', 'patristicWork'),
         defineField({
             name: 'sourceRef',
             title: 'Source Reference',
-            type: 'string'
+            type: 'string',
+            description: 'Citation within the work (e.g. book/chapter).'
         }),
         defineField({
             name: 'quoteText',
             title: 'Quote Text',
-            type: 'text',
-            rows: 6,
-            validation: (Rule) => Rule.required()
-        }),
-        defineField({
-            name: 'topic',
-            title: 'Topic',
-            type: 'string',
-            validation: (Rule) => Rule.required()
-        }),
-        defineField({
-            name: 'subtopics',
-            title: 'Subtopics',
             type: 'array',
-            of: [{ type: 'string' }],
-            description: 'One or more thematic labels. Quotes match a subtopic filter if any value is included.'
+            of: [patristicQuoteTextBlock],
+            validation: (Rule) => Rule.required().min(1)
         }),
-        defineField({
-            name: 'position',
-            title: 'Position',
-            type: 'string',
-            options: {
-                list: [
-                    { title: 'Reformed', value: 'Reformed' },
-                    { title: 'Roman Catholic', value: 'Roman Catholic' },
-                    { title: 'Nuanced', value: 'Nuanced' }
-                ]
-            }
-        }),
-        defineField({
-            name: 'book',
-            title: 'Book',
-            type: 'string'
-        }),
+        defineVocabularyReferenceField('topic', 'Topic', 'patristicTopic', true),
+        defineVocabularyReferenceArrayField(
+            'subtopics',
+            'Subtopics',
+            'patristicSubtopic',
+            'One or more thematic labels. Quotes match a subtopic filter if any value is included.'
+        ),
+        defineVocabularyReferenceField('position', 'Position', 'patristicPosition'),
+        defineVocabularyReferenceField('book', 'Source', 'patristicSource'),
         defineField({
             name: 'section',
             title: 'Section',
@@ -129,7 +82,7 @@ export default defineType({
             title: 'Father, A → Z',
             name: 'fatherAsc',
             by: [
-                { field: 'father', direction: 'asc' },
+                { field: 'father.title', direction: 'asc' },
                 { field: 'diedSort', direction: 'asc' }
             ]
         },
@@ -141,13 +94,15 @@ export default defineType({
     ],
     preview: {
         select: {
-            title: 'father',
-            subtitle: 'quoteText',
+            father: 'father.title',
+            quoteText: 'quoteText',
             description: 'legacyId'
         },
-        prepare({ title, subtitle, description }) {
+        prepare({ father, quoteText, description }) {
+            const subtitle =
+                typeof quoteText === 'string' ? quoteText : toPlainText(quoteText ?? []);
             return {
-                title: `${description} — ${title}`,
+                title: `${description} — ${father ?? 'Unknown'}`,
                 subtitle: subtitle?.length > 80 ? subtitle.substring(0, 80) + '…' : subtitle
             };
         }

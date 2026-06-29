@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from '@portabletext/types';
+
 export type QuotePosition = 'Reformed' | 'Roman Catholic' | 'Nuanced';
 
 export interface PatristicQuote {
@@ -9,7 +11,10 @@ export interface PatristicQuote {
     era: string;
     source: string;
     ref: string;
+    /** Plain-text quote body (search, copy, SEO). */
     quote: string;
+    /** Rich quote body with inline bold / italic marks from Sanity. */
+    quoteBlocks: PortableTextBlock[];
     topic: string;
     subtopics: string[];
     position: QuotePosition | '';

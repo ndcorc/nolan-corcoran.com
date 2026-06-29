@@ -172,7 +172,7 @@ export default function BlogPost({ post, previousPost, nextPost, url }: BlogPost
 
                     <Container
                         size="md"
-                        className="relative py-12 md:px-20 px-8 max-sm:-mt-[calc(50vh/2)] -mt-[calc(50vh/3)] mb-8 bg-[#F9F8F2] dark:bg-dark-600 rounded-lg shadow-dark-z">
+                        className="relative py-12 md:px-20 px-8 max-sm:-mt-[calc(50vh/2)] -mt-[calc(50vh/3)] mb-8 bg-[#F9F8F2] dark:bg-dark-500 rounded-lg shadow-dark-z">
                         <header className="mb-12 flex flex-col items-center gap-8">
                             <Group gap="xs" className="flex items-center justify-center">
                                 <Text size="sm" className="dark:text-gray-500">

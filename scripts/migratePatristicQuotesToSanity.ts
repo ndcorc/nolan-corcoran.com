@@ -9,6 +9,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createClient } from '@sanity/client';
+import { plainTextToPatristicQuoteBlocks } from '../src/lib/apologetics/patristicQuoteText';
 import { resolvePatristicEra } from '../src/lib/apologetics/patristicQuotesEras';
 import {
     buildPatristicQuoteSlug,
@@ -17,6 +18,12 @@ import {
     readPatristicQuotesCsv,
     type PatristicQuoteCsvRow
 } from './lib/patristicQuotesCsv';
+import {
+    patristicVocabularyDocument,
+    patristicVocabularyReference,
+    patristicVocabularyReferences,
+    type PatristicVocabularyType
+} from './lib/patristicVocabulary';
 
 function loadEnvFile(filename: string) {
     const envPath = path.join(process.cwd(), filename);
@@ -65,33 +72,79 @@ const client = createClient({
     useCdn: false
 });
 
+function uniqueValues(values: string[]): string[] {
+    return [...new Set(values.map((value) => value.trim()).filter(Boolean))].sort();
+}
+
+function collectVocabulary(rows: PatristicQuoteCsvRow[]) {
+    const topics = uniqueValues(rows.map((row) => row.Topic));
+    const subtopics = uniqueValues(rows.flatMap((row) => parseSubtopics(row.Subtopics)));
+    const eras = uniqueValues(
+        rows.map((row) => resolvePatristicEra(row.Father, row.Era))
+    );
+    const fathers = uniqueValues(rows.map((row) => row.Father));
+    const sources = uniqueValues(rows.map((row) => row.Book));
+    const works = uniqueValues(rows.map((row) => row.Source_Work));
+    const positions = uniqueValues(rows.map((row) => row.Position));
+
+    return {
+        patristicTopic: topics,
+        patristicSubtopic: subtopics,
+        patristicEra: eras,
+        patristicFather: fathers,
+        patristicSource: sources,
+        patristicWork: works,
+        patristicPosition: positions
+    } satisfies Record<PatristicVocabularyType, string[]>;
+}
+
 function toSanityDocument(row: PatristicQuoteCsvRow) {
     const legacyId = row.ID.trim();
     const slug = buildPatristicQuoteSlug(row);
+    const era = resolvePatristicEra(row.Father, row.Era);
+    const subtopics = parseSubtopics(row.Subtopics);
 
     return {
         _id: `patristicQuote-${legacyId.toLowerCase()}`,
         _type: 'patristicQuote' as const,
         legacyId,
         slug: { _type: 'slug' as const, current: slug },
-        father: row.Father.trim(),
+        father: patristicVocabularyReference('patristicFather', row.Father),
         died: row.Died_AD.trim(),
         diedSort: parseDiedSort(row.Died_AD),
-        era: resolvePatristicEra(row.Father, row.Era),
-        sourceWork: row.Source_Work.trim(),
+        era: patristicVocabularyReference('patristicEra', era),
+        sourceWork: patristicVocabularyReference('patristicWork', row.Source_Work),
         sourceRef: row.Source_Ref.trim(),
-        quoteText: row.Quote_Text.trim(),
-        topic: row.Topic.trim(),
-        subtopics: parseSubtopics(row.Subtopics),
-        position: row.Position.trim() || undefined,
-        book: row.Book.trim(),
+        quoteText: plainTextToPatristicQuoteBlocks(row.Quote_Text.trim()),
+        topic: patristicVocabularyReference('patristicTopic', row.Topic),
+        subtopics: patristicVocabularyReferences('patristicSubtopic', subtopics),
+        position: patristicVocabularyReference('patristicPosition', row.Position),
+        book: patristicVocabularyReference('patristicSource', row.Book),
         section: row.Section.trim(),
         notes: row.Notes.trim()
     };
 }
 
+async function commitInBatches(
+    label: string,
+    documents: Array<{ _id: string; _type: string }>,
+    batchSize = 50
+) {
+    for (let i = 0; i < documents.length; i += batchSize) {
+        const batch = documents.slice(i, i + batchSize);
+        const transaction = client.transaction();
+        batch.forEach((doc) => transaction.createOrReplace(doc));
+        await transaction.commit();
+        console.log(`  ✓ ${label}: ${Math.min(i + batchSize, documents.length)} / ${documents.length}`);
+    }
+}
+
 async function migrate() {
     const rows = readPatristicQuotesCsv();
+    const vocabulary = collectVocabulary(rows);
+    const vocabularyDocuments = Object.entries(vocabulary).flatMap(([type, titles]) =>
+        titles.map((title) => patristicVocabularyDocument(type as PatristicVocabularyType, title))
+    );
     const documents = rows.map(toSanityDocument);
 
     const slugCounts = new Map<string, number>();
@@ -109,16 +162,11 @@ async function migrate() {
         }
     }
 
-    console.log(`Migrating ${documents.length} patristic quotes to Sanity (${dataset})…`);
+    console.log(`Seeding ${vocabularyDocuments.length} patristic vocabulary documents…`);
+    await commitInBatches('vocabulary', vocabularyDocuments);
 
-    const batchSize = 50;
-    for (let i = 0; i < documents.length; i += batchSize) {
-        const batch = documents.slice(i, i + batchSize);
-        const transaction = client.transaction();
-        batch.forEach((doc) => transaction.createOrReplace(doc));
-        await transaction.commit();
-        console.log(`  ✓ ${Math.min(i + batchSize, documents.length)} / ${documents.length}`);
-    }
+    console.log(`Migrating ${documents.length} patristic quotes to Sanity (${dataset})…`);
+    await commitInBatches('quotes', documents);
 
     console.log('Migration complete.');
 }

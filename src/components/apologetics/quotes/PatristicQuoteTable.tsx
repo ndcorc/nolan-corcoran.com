@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Box, Group, Text, Paper, Table, ScrollArea, Button, Anchor } from '@mantine/core';
 import { IconExternalLink } from '@tabler/icons-react';
 import { QuoteBadge } from './QuoteBadge';
+import { PatristicQuoteText } from './PatristicQuoteText';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
 
@@ -109,16 +110,7 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                             </Button>
                         </Group>
                     </Group>
-                    <Text
-                        mb="sm"
-                        style={{
-                            fontFamily: 'Merriweather, serif',
-                            fontStyle: 'italic',
-                            lineHeight: 1.6,
-                            fontSize: '15px'
-                        }}>
-                        &ldquo;{activeQuote.quote}&rdquo;
-                    </Text>
+                    <PatristicQuoteText quote={activeQuote} variant="table" className="patristic-quote-table__quote" />
                     <Text size="sm" style={{ lineHeight: 1.6 }}>
                         <Text component="span" fw={600} c="dimmed">
                             NOTES ▸{' '}

@@ -1,3 +1,4 @@
+export { PatristicQuoteText } from './PatristicQuoteText';
 export { PatristicQuotesApp } from './PatristicQuotesApp';
 export { PatristicQuoteCard } from './PatristicQuoteCard';
 export { PatristicQuoteTable } from './PatristicQuoteTable';

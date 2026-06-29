@@ -44,12 +44,18 @@ html {
     --button-hover-bg: var(--mantine-color-navy-6);
     --mantine-primary-color-filled: var(--mantine-color-navy-4);
     --mantine-primary-color-filled-hover: var(--mantine-color-navy-6);
+    --mantine-color-body: #1A1B1E;
     --apologetics-badge-color: #c9c9c9;
     --apologetics-primary: var(--mantine-color-navy-4);
     --apologetics-badge-bg: var(--mantine-color-navy-light);
     --apologetics-navlink-hover-bg: var(--mantine-color-navy-light-hover);
     --apologetics-navlink-active-bg: var(--mantine-color-navy-light);
     background-color: #1a1b1e;
+}
+
+/* Dark mode inputs — card surface (dark-5) instead of page background (dark-6) */
+[data-mantine-color-scheme='dark'] [data-variant='default'] {
+    --input-bg: var(--mantine-color-dark-5);
 }
 
 /* Handle iOS safe areas */
@@ -127,7 +133,62 @@ body {
 
 .patristic-quote-card__quote {
     user-select: text;
-    cursor: text;
+    cursor: pointer;
+    display: block;
+    margin-top: var(--mantine-spacing-sm);
+}
+
+.patristic-quote-text {
+    font-family: Merriweather, serif;
+    font-style: italic;
+    color: inherit;
+}
+
+.patristic-quote-text--card,
+.patristic-quote-text--table {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.patristic-quote-text--detail {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.patristic-quote-text--snippet {
+    font-size: var(--mantine-font-size-sm);
+    line-height: 1.6;
+}
+
+.patristic-quote-text__block {
+    display: inline;
+}
+
+.patristic-quote-text__block + .patristic-quote-text__block::before {
+    content: ' ';
+}
+
+.patristic-quote-text__strong {
+    font-weight: 700;
+    font-style: italic;
+    font-synthesis: weight;
+}
+
+.patristic-quote-text__em {
+    font-style: normal;
+    font-weight: 500;
+}
+
+.patristic-quote-text--clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.patristic-quote-table__quote {
+    display: block;
+    margin-bottom: var(--mantine-spacing-sm);
 }
 
 .patristic-quote-card:hover,
@@ -141,7 +202,7 @@ body {
 }
 
 [data-mantine-color-scheme='dark'] .patristic-quote-card {
-    background-color: #282828;
+    background-color: #222428;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -155,7 +216,8 @@ body {
 [data-mantine-color-scheme='dark'] .patristic-quote-card__header:hover,
 [data-mantine-color-scheme='dark'] .patristic-quote-card__header[data-expanded='true'],
 [data-mantine-color-scheme='dark'] .patristic-quote-card__notes {
-    background-color: var(--mantine-color-default-hover);
+    /* background-color: var(--mantine-color-default-hover); */
+    background-color: #292C32;
 }
 
 /* Topic / subtopic badges — stepped brightness above active state */

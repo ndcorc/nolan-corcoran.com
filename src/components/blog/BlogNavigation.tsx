@@ -19,7 +19,7 @@ const BlogNavigation = ({ previousPost, nextPost }: BlogNavigationProps) => {
                     onClick={nprogress.start}
                     className="no-underline w-full md:w-[48%]">
                     <Card
-                        className="bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
+                        className="bg-[#F9F8F2] dark:bg-dark-500 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
                         padding="lg">
                         <Group>
                             <IconArrowLeft size={20} className="text-gray-500" />
@@ -44,7 +44,7 @@ const BlogNavigation = ({ previousPost, nextPost }: BlogNavigationProps) => {
                     onClick={nprogress.start}
                     className="no-underline w-full md:w-[48%]">
                     <Card
-                        className="bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
+                        className="bg-[#F9F8F2] dark:bg-dark-500 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400"
                         padding="lg">
                         <Group justify="flex-end" wrap="nowrap">
                             <Stack className="text-right gap-0 overflow-hidden whitespace-nowrap">

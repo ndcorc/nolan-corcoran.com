@@ -22,7 +22,7 @@ export default function BlogCard({ post, index, excerpt }: BlogCardProps) {
     return (
         <Link href={`/blog/${post.slug.current}`} onClick={nprogress.start} className="no-underline">
             <MotionCard
-                className="h-full rounded-xl shadow-sm hover:shadow-md border border-solid dark:border-dark-400 bg-slate-50 dark:bg-dark-600 dark:shadow-dark-md"
+                className="h-full rounded-xl shadow-sm hover:shadow-md border border-solid dark:border-dark-400 bg-slate-50 dark:bg-dark-500 dark:shadow-dark-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{

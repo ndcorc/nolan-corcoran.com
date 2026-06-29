@@ -15,7 +15,7 @@ const ShareButtons = ({ post, url }: ShareButtonsProps) => {
     return (
         <Group gap="xs" grow={isMobile} className="mt-0 max-sm:w-full px-2">
             <FacebookShareButton url={url} className="md:w-[148px]">
-                <Card className="pl-4 py-sm bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400 w-full">
+                <Card className="pl-4 py-sm bg-[#F9F8F2] dark:bg-dark-500 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400 w-full">
                     <Group gap="xs">
                         <IconBrandFacebook size={20} />
                     </Group>
@@ -23,7 +23,7 @@ const ShareButtons = ({ post, url }: ShareButtonsProps) => {
             </FacebookShareButton>
 
             <TwitterShareButton url={url} title={post.title} className="md:w-[148px]">
-                <Card className="pl-4 py-sm bg-[#F9F8F2] dark:bg-dark-600 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400 w-full">
+                <Card className="pl-4 py-sm bg-[#F9F8F2] dark:bg-dark-500 hover:shadow-z dark:hover:shadow-dark-z transition-shadow rounded-md shadow-sm text-brand dark:text-stone-50 border border-solid border-dark-100 dark:border-dark-400 w-full">
                     <Group gap="xs">
                         <IconBrandX size={20} />
                     </Group>

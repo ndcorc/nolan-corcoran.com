@@ -153,7 +153,7 @@ export interface SanityPatristicQuote {
     era: string;
     sourceWork: string;
     sourceRef: string;
-    quoteText: string;
+    quoteText: PortableTextBlock[] | string;
     topic: string;
     subtopics?: string[];
     /** @deprecated Legacy field — mapped to subtopics when present */

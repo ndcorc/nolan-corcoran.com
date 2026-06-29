@@ -24,6 +24,7 @@ export const fonts = [
 ];
 
 export const colors: MantineThemeColors = {
+    ...DEFAULT_THEME.colors,
     brand: [
         '#FFF5F5',
         '#FFE3E3',
@@ -48,7 +49,18 @@ export const colors: MantineThemeColors = {
         '#0C6883',
         '#0E627B'
     ],
-    ...DEFAULT_THEME.colors
+    dark: [
+        '#bdc0c6', // 0 → dark-50
+        '#9da0aa', // 1 → dark-100
+        '#7c808d', // 2 → dark-200
+        '#636773', // 3 → dark-300
+        '#303239', // 4 → dark-400  hover / elevated surfaces
+        '#222428', // 5 → dark-500  card backgrounds
+        '#1a1b1e', // 6 → dark-600  page / body background
+        '#141517', // 7 → dark-700
+        '#0f1011', // 8 → dark-800
+        '#0a0b0c', // 9 → dark-900
+    ]    
 };
 
 export const breakpoints = {

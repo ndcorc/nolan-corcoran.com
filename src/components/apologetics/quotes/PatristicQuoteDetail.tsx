@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Badge, Box, Group, Paper, Stack, Text, Title } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { QuoteBadge } from './QuoteBadge';
+import { PatristicQuoteText } from './PatristicQuoteText';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
 
@@ -75,15 +76,7 @@ export function PatristicQuoteDetail({ quote, relatedQuotes }: PatristicQuoteDet
                         backgroundColor: 'var(--apologetics-badge-bg)',
                         borderRadius: 'var(--mantine-radius-md)'
                     }}>
-                    <Text
-                        style={{
-                            fontFamily: 'Merriweather, serif',
-                            fontStyle: 'italic',
-                            lineHeight: 1.8,
-                            fontSize: '18px'
-                        }}>
-                        &ldquo;{quote.quote}&rdquo;
-                    </Text>
+                    <PatristicQuoteText quote={quote} variant="detail" />
                 </Box>
 
                 {quote.notes ? (
@@ -112,19 +105,7 @@ export function PatristicQuoteDetail({ quote, relatedQuotes }: PatristicQuoteDet
                                         <Text fw={600}>{related.father}</Text>
                                         <QuoteBadge label={related.era} style={ERA_COLORS[related.era]} />
                                     </Group>
-                                    <Text
-                                        size="sm"
-                                        style={{
-                                            fontFamily: 'Merriweather, serif',
-                                            fontStyle: 'italic',
-                                            lineHeight: 1.6,
-                                            display: '-webkit-box',
-                                            WebkitLineClamp: 2,
-                                            WebkitBoxOrient: 'vertical',
-                                            overflow: 'hidden'
-                                        }}>
-                                        &ldquo;{related.quote}&rdquo;
-                                    </Text>
+                                    <PatristicQuoteText quote={related} variant="snippet" lineClamp={2} />
                                 </Paper>
                             </Link>
                         ))}

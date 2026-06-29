@@ -5,6 +5,7 @@ import { Box, Group, Text, Paper, UnstyledButton, Collapse, Badge, Anchor } from
 import { IconChevronDown, IconChevronUp, IconExternalLink } from '@tabler/icons-react';
 import { useSelectableToggle } from '@/lib/hooks/useSelectableToggle';
 import { PatristicQuoteCopyButton } from './PatristicQuoteCopyButton';
+import { PatristicQuoteText } from './PatristicQuoteText';
 import { QuoteBadge } from './QuoteBadge';
 import { ERA_COLORS, POSITION_COLORS } from '@/lib/apologetics/patristicQuotesTheme';
 import type { PatristicQuote } from '@/types/apologetics/patristicQuote';
@@ -70,21 +71,12 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                             ) : null}
                         </Group>
 
-                        <Text
+                        <PatristicQuoteText
+                            quote={quote}
+                            variant="card"
                             className="patristic-quote-card__quote"
-                            mt="sm"
-                            style={{
-                                fontFamily: 'Merriweather, serif',
-                                fontStyle: 'italic',
-                                lineHeight: 1.6,
-                                fontSize: '15px',
-                                display: '-webkit-box',
-                                WebkitLineClamp: expanded ? undefined : 2,
-                                WebkitBoxOrient: 'vertical',
-                                overflow: expanded ? 'visible' : 'hidden'
-                            }}>
-                            &ldquo;{quote.quote}&rdquo;
-                        </Text>
+                            lineClamp={expanded ? undefined : 2}
+                        />
                     </Box>
 
                     <Group

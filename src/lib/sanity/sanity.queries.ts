@@ -462,45 +462,34 @@ export const getQuoteFilterOptionsQuery = groq`{
 }
 `;
 
-export const getAllPatristicQuotesQuery = groq`
-*[_type == "patristicQuote"] | order(father asc, diedSort asc) {
+const patristicQuoteProjection = `
   _id,
   legacyId,
   slug,
-  father,
+  "father": father->title,
   died,
   diedSort,
-  era,
-  sourceWork,
+  "era": era->title,
+  "sourceWork": coalesce(sourceWork->title, sourceWork),
   sourceRef,
   quoteText,
-  topic,
-  subtopics,
-  position,
-  book,
+  "topic": topic->title,
+  "subtopics": coalesce(subtopics[]->title, subtopics),
+  "position": coalesce(position->title, position),
+  "book": coalesce(book->title, book),
   section,
   notes
+`;
+
+export const getAllPatristicQuotesQuery = groq`
+*[_type == "patristicQuote"] | order(father->title asc, diedSort asc) {
+  ${patristicQuoteProjection}
 }
 `;
 
 export const getPatristicQuoteBySlugQuery = groq`
 *[_type == "patristicQuote" && slug.current == $slug][0] {
-  _id,
-  legacyId,
-  slug,
-  father,
-  died,
-  diedSort,
-  era,
-  sourceWork,
-  sourceRef,
-  quoteText,
-  topic,
-  subtopics,
-  position,
-  book,
-  section,
-  notes
+  ${patristicQuoteProjection}
 }
 `;
 
@@ -513,26 +502,11 @@ export const getPatristicQuoteSlugsQuery = groq`
 
 export const getRelatedPatristicQuotesQuery = groq`
 *[_type == "patristicQuote" && slug.current != $slug && (
-    father == $father ||
-    topic == $topic ||
-    count(subtopics[@ in $subtopics]) > 0
+    father->title == $father ||
+    topic->title == $topic ||
+    count((subtopics[]->title)[@ in $subtopics]) > 0
   )]
-  | order(father asc, diedSort asc)[0...$limit] {
-  _id,
-  legacyId,
-  slug,
-  father,
-  died,
-  diedSort,
-  era,
-  sourceWork,
-  sourceRef,
-  quoteText,
-  topic,
-  subtopics,
-  position,
-  book,
-  section,
-  notes
+  | order(father->title asc, diedSort asc)[0...$limit] {
+  ${patristicQuoteProjection}
 }
 `;
