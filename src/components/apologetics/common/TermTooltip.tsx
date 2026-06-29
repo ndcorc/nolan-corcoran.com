@@ -5,6 +5,7 @@ import { useState, useRef, useEffect, ReactNode } from 'react';
 import { Box, Text, Paper } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
+import { handleCrossPageHashClick } from '@/lib/navigation/safeNavigate';
 
 interface TermTooltipProps {
     term: string;
@@ -114,10 +115,14 @@ export function TermTooltip({ term, definition, termId, children }: TermTooltipP
                         <Text
                             component={Link}
                             href={`/apologetics/glossary#${termId}`}
+                            prefetch={false}
                             size="sm"
                             className="inline-flex items-center gap-1 no-underline hover:underline"
                             style={{ color: 'var(--apologetics-primary)' }}
-                            onClick={(e) => e.stopPropagation()}>
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleCrossPageHashClick(e, `/apologetics/glossary#${termId}`);
+                            }}>
                             Go to definition
                             <IconArrowRight size={12} />
                         </Text>

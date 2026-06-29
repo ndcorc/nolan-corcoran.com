@@ -25,7 +25,7 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                             <Table.Th>Era</Table.Th>
                             <Table.Th>Source / Ref</Table.Th>
                             <Table.Th>Topic</Table.Th>
-                            <Table.Th>Subtopic</Table.Th>
+                            <Table.Th>Subtopics</Table.Th>
                             <Table.Th>Section</Table.Th>
                             <Table.Th>Position</Table.Th>
                             <Table.Th>Book</Table.Th>
@@ -65,7 +65,7 @@ export function PatristicQuoteTable({ quotes, expandedId, onSelect }: PatristicQ
                                             {quote.ref}
                                         </Table.Td>
                                         <Table.Td>{quote.topic}</Table.Td>
-                                        <Table.Td>{quote.subtopic}</Table.Td>
+                                        <Table.Td>{quote.subtopics.join(', ')}</Table.Td>
                                         <Table.Td>{quote.section}</Table.Td>
                                         <Table.Td>
                                             {quote.position ? (

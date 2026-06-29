@@ -29,7 +29,7 @@ export default function PatristicQuoteJsonLd({ quote }: PatristicQuoteJsonLdProp
               }
             : {}),
         about: quote.topic,
-        keywords: [quote.topic, quote.subtopic, quote.era, quote.position, quote.father]
+        keywords: [quote.topic, ...quote.subtopics, quote.era, quote.position, quote.father]
             .filter(Boolean)
             .join(', ')
     };
@@ -53,7 +53,7 @@ export default function PatristicQuoteJsonLd({ quote }: PatristicQuoteJsonLdProp
             {
                 '@type': 'ListItem',
                 position: 3,
-                name: `${quote.father} — ${quote.subtopic || quote.topic}`,
+                name: `${quote.father} — ${quote.subtopics[0] || quote.topic}`,
                 item: url
             }
         ]

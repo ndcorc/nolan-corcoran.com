@@ -475,7 +475,7 @@ export const getAllPatristicQuotesQuery = groq`
   sourceRef,
   quoteText,
   topic,
-  subtopic,
+  subtopics,
   position,
   book,
   section,
@@ -496,7 +496,7 @@ export const getPatristicQuoteBySlugQuery = groq`
   sourceRef,
   quoteText,
   topic,
-  subtopic,
+  subtopics,
   position,
   book,
   section,
@@ -512,7 +512,11 @@ export const getPatristicQuoteSlugsQuery = groq`
 `;
 
 export const getRelatedPatristicQuotesQuery = groq`
-*[_type == "patristicQuote" && slug.current != $slug && (father == $father || topic == $topic)]
+*[_type == "patristicQuote" && slug.current != $slug && (
+    father == $father ||
+    topic == $topic ||
+    count(subtopics[@ in $subtopics]) > 0
+  )]
   | order(father asc, diedSort asc)[0...$limit] {
   _id,
   legacyId,
@@ -525,7 +529,7 @@ export const getRelatedPatristicQuotesQuery = groq`
   sourceRef,
   quoteText,
   topic,
-  subtopic,
+  subtopics,
   position,
   book,
   section,

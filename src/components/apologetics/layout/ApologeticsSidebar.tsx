@@ -27,6 +27,7 @@ import {
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useApologetics } from '@/lib/apologetics/ApologeticsContext';
+import { safeNavigate } from '@/lib/navigation/safeNavigate';
 
 interface SearchResult {
     id: string;
@@ -139,7 +140,7 @@ export function ApologeticsSidebar() {
             setSelectedIndex((i) => Math.max(i - 1, 0));
         } else if (e.key === 'Enter' && searchResults[selectedIndex]) {
             e.preventDefault();
-            router.push(searchResults[selectedIndex].path);
+            safeNavigate(router, searchResults[selectedIndex].path);
             setSearchQuery('');
         } else if (e.key === 'Escape') {
             setSearchQuery('');
@@ -147,7 +148,7 @@ export function ApologeticsSidebar() {
     };
 
     const handleResultClick = (path: string) => {
-        router.push(path);
+        safeNavigate(router, path);
         setSearchQuery('');
     };
 

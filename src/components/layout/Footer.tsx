@@ -7,6 +7,7 @@ import { IconBrandInstagram, IconBrandX, IconBrandYoutube } from '@tabler/icons-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { animateScroll, scroller } from 'react-scroll';
+import { assignHref } from '@/lib/navigation/safeNavigate';
 
 export default function Footer() {
     const pathname = usePathname();
@@ -25,7 +26,16 @@ export default function Footer() {
                 });
             }
             window.history.replaceState(null, '', path);
+            return;
         }
+
+        if (path.includes('#')) {
+            e.preventDefault();
+            nprogress.start();
+            assignHref(path);
+            return;
+        }
+
         nprogress.start();
     };
 
@@ -50,12 +60,14 @@ export default function Footer() {
                         </Link>
                         <Link
                             href="/#about"
+                            prefetch={false}
                             className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline"
                             onClick={(e) => handleHomeClick(e, '/#about')}>
                             ABOUT
                         </Link>
                         <Link
                             href="/#contact"
+                            prefetch={false}
                             className="text-sm text-brand-600 dark:text-white hover:opacity-70 transition-opacity no-underline"
                             onClick={(e) => handleHomeClick(e, '/#contact')}>
                             CONTACT

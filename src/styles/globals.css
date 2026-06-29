@@ -30,10 +30,15 @@ html {
     background-color: #f8f6f4;
 }
 
+:root[data-mantine-color-scheme='light'] {
+    --mantine-color-placeholder: #808386;
+}
+
 :root[data-mantine-color-scheme='dark'] {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 18, 18, 18;
     --background-end-rgb: 23, 23, 23;
+    --mantine-color-placeholder: #9d9d9d;
     --button-color: white;
     --button-bg: var(--mantine-color-navy-4);
     --button-hover-bg: var(--mantine-color-navy-6);
@@ -156,8 +161,9 @@ body {
 /* Topic / subtopic badges — stepped brightness above active state */
 .patristic-quote-card__topic-badge,
 .patristic-quote-card__subtopic-badge,
-.patristic-quote-card__meta-badge {
-    border-radius: var(--mantine-radius-xs);
+.patristic-quote-card__meta-badge,
+.patristic-quote-stat {
+    border-radius: var(--mantine-radius-sm);
 }
 
 .patristic-quote-card__topic-badge,
@@ -251,4 +257,14 @@ body {
     .patristic-quotes-filter-option:active:not([data-combobox-selected], [data-combobox-disabled]) {
         background-color: var(--apologetics-navlink-active-bg) !important;
     }
+}
+
+.patristic-quotes-filter-pill {
+    background-color: var(--apologetics-navlink-active-bg) !important;
+    color: var(--apologetics-primary) !important;
+}
+
+.patristic-quotes-filter-pill > span,
+.patristic-quotes-filter-pill > button {
+    color: var(--apologetics-primary) !important;
 }

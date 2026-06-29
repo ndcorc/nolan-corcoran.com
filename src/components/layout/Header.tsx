@@ -24,6 +24,7 @@ import { NavigationProgress, nprogress } from '@mantine/nprogress';
 import useDevice from '@/lib/hooks/useDevice';
 import { IconChevronDown } from '@tabler/icons-react';
 import { buildApologeticsSubmenu } from '@/lib/apologetics/apologeticsNav';
+import { replaceHash, safeNavigate } from '@/lib/navigation/safeNavigate';
 
 interface NavLink {
     href: string;
@@ -91,7 +92,7 @@ export default function Header() {
             setActiveLink(section);
             if (pathname !== '/') {
                 nprogress.start();
-                router.push(section);
+                safeNavigate(router, section);
                 return;
             }
 
@@ -108,21 +109,21 @@ export default function Header() {
             const newPath = `/#${to}`;
             setActiveLink(newPath);
             if (pathname === '/') {
-                nprogress.start();
-                router.replace(newPath);
+                replaceHash(newPath);
             }
         },
-        [isScrolling, pathname, router]
+        [isScrolling, pathname]
     );
 
     const handleRouteClick = useCallback(
         (e: React.MouseEvent, path: string) => {
+            e.preventDefault();
+
             if (!isScrolling) {
                 setActiveLink(path);
             }
 
             if (path === '/' && pathname === '/') {
-                e.preventDefault();
                 animateScroll.scrollToTop({
                     ...SCROLL_SETTINGS
                 });
@@ -130,7 +131,7 @@ export default function Header() {
                 return;
             }
             nprogress.start();
-            router.push(path);
+            safeNavigate(router, path);
         },
         [isScrolling, pathname, router]
     );
@@ -184,12 +185,17 @@ export default function Header() {
     const handleLinkClick = (e: React.MouseEvent, href: string, isHash: boolean = false) => {
         setActiveLink(href);
 
-        if (isHash && pathname === '/') {
+        if (isHash) {
             e.preventDefault();
-            const element = document.querySelector(href.replace('/#', '#'));
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                window.history.pushState(null, '', href);
+            if (pathname === '/') {
+                const element = document.querySelector(href.replace('/#', '#'));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', href);
+                }
+            } else {
+                nprogress.start();
+                safeNavigate(router, href);
             }
         }
         close();
@@ -257,11 +263,12 @@ export default function Header() {
                                     key={sublink.href}
                                     component={Link}
                                     href={sublink.href}
+                                    prefetch={sublink.href.includes('#') ? false : undefined}
                                     className="header-nav-menu-item rounded-md"
                                     data-active={isActive(sublink.href) ? 'true' : undefined}
                                     onClick={(e) => {
-                                        if (sublink.isScrollLink && pathname === '/') {
-                                            e.preventDefault();
+                                        e.preventDefault();
+                                        if (sublink.isScrollLink) {
                                             handleSectionClick(sublink.href);
                                         } else {
                                             handleRouteClick(e, sublink.href);

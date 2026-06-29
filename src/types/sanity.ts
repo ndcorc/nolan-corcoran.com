@@ -155,7 +155,9 @@ export interface SanityPatristicQuote {
     sourceRef: string;
     quoteText: string;
     topic: string;
-    subtopic: string;
+    subtopics?: string[];
+    /** @deprecated Legacy field — mapped to subtopics when present */
+    subtopic?: string;
     position: 'Reformed' | 'Roman Catholic' | 'Nuanced' | '';
     book: string;
     section: string;

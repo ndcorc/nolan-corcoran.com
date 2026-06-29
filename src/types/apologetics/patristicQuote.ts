@@ -11,7 +11,7 @@ export interface PatristicQuote {
     ref: string;
     quote: string;
     topic: string;
-    subtopic: string;
+    subtopics: string[];
     position: QuotePosition | '';
     book: string;
     section: string;
@@ -27,8 +27,8 @@ export interface PatristicQuoteFilters {
     topic: string | null;
     father: string | null;
     era: string | null;
-    book: string | null;
-    subtopic: string | null;
+    source: string | null;
+    subtopics: string[];
     position: string | null;
 }
 

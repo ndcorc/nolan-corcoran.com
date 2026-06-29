@@ -9,9 +9,11 @@
 import fs from 'fs';
 import path from 'path';
 import { createClient } from '@sanity/client';
+import { resolvePatristicEra } from '../src/lib/apologetics/patristicQuotesEras';
 import {
     buildPatristicQuoteSlug,
     parseDiedSort,
+    parseSubtopics,
     readPatristicQuotesCsv,
     type PatristicQuoteCsvRow
 } from './lib/patristicQuotesCsv';
@@ -75,12 +77,12 @@ function toSanityDocument(row: PatristicQuoteCsvRow) {
         father: row.Father.trim(),
         died: row.Died_AD.trim(),
         diedSort: parseDiedSort(row.Died_AD),
-        era: row.Era.trim(),
+        era: resolvePatristicEra(row.Father, row.Era),
         sourceWork: row.Source_Work.trim(),
         sourceRef: row.Source_Ref.trim(),
         quoteText: row.Quote_Text.trim(),
         topic: row.Topic.trim(),
-        subtopic: row.Subtopic.trim(),
+        subtopics: parseSubtopics(row.Subtopics),
         position: row.Position.trim() || undefined,
         book: row.Book.trim(),
         section: row.Section.trim(),

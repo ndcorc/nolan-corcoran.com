@@ -1,4 +1,4 @@
-import { Box, Group, Text, TextInput, Select, Button } from '@mantine/core';
+import { Box, Group, Text, TextInput, Select, MultiSelect, Button } from '@mantine/core';
 import { IconSearch, IconFilterX } from '@tabler/icons-react';
 import type { PatristicFilterOptions } from '@/lib/apologetics/patristicQuotes';
 import type { PatristicQuoteFilters } from '@/types/apologetics/patristicQuote';
@@ -28,6 +28,11 @@ const filterInputStyles = {
 
 const filterSelectClassNames = {
     option: 'patristic-quotes-filter-option'
+};
+
+const subtopicsSelectClassNames = {
+    option: 'patristic-quotes-filter-option',
+    pill: 'patristic-quotes-filter-pill'
 };
 
 export function QuoteFilterBar({
@@ -65,16 +70,17 @@ export function QuoteFilterBar({
                     styles={filterInputStyles}
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
-                <Select
-                    placeholder="Subtopic"
+                <MultiSelect
+                    placeholder="Subtopics"
                     data={toOptions(filterOptions.subtopics)}
-                    value={filters.subtopic}
-                    onChange={(value) => update({ subtopic: value })}
+                    value={filters.subtopics}
+                    onChange={(value) => update({ subtopics: value })}
                     clearable
                     searchable
-                    classNames={filterSelectClassNames}
+                    hidePickedOptions
+                    classNames={subtopicsSelectClassNames}
                     styles={filterInputStyles}
-                    style={{ flex: '1 1 140px', minWidth: 140 }}
+                    style={{ flex: '1 1 220px', minWidth: 220 }}
                 />
                 <Select
                     placeholder="Era"
@@ -85,7 +91,7 @@ export function QuoteFilterBar({
                     searchable
                     classNames={filterSelectClassNames}
                     styles={filterInputStyles}
-                    style={{ flex: '1 1 140px', minWidth: 140 }}
+                    style={{ flex: '1 1 110px', minWidth: 110 }}
                 />
                 <Select
                     placeholder="Father"
@@ -99,10 +105,10 @@ export function QuoteFilterBar({
                     style={{ flex: '1 1 140px', minWidth: 140 }}
                 />
                 <Select
-                    placeholder="Book"
-                    data={toOptions(filterOptions.books)}
-                    value={filters.book}
-                    onChange={(value) => update({ book: value })}
+                    placeholder="Source Work"
+                    data={toOptions(filterOptions.sources)}
+                    value={filters.source}
+                    onChange={(value) => update({ source: value })}
                     clearable
                     searchable
                     classNames={filterSelectClassNames}
@@ -118,7 +124,7 @@ export function QuoteFilterBar({
                     searchable
                     classNames={filterSelectClassNames}
                     styles={filterInputStyles}
-                    style={{ flex: '1 1 140px', minWidth: 140 }}
+                    style={{ flex: '1 1 110px', minWidth: 110 }}
                 />
                 {hasActiveFilters && (
                     <Button variant="subtle" leftSection={<IconFilterX size={16} />} onClick={onClear}>

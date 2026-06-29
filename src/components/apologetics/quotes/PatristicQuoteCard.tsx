@@ -56,9 +56,15 @@ export function PatristicQuoteCard({ quote, expanded, onToggle }: PatristicQuote
                             <Badge size="sm" variant="light" className="patristic-quote-card__topic-badge">
                                 {quote.topic}
                             </Badge>
-                            <Badge size="sm" variant="light" className="patristic-quote-card__subtopic-badge">
-                                {quote.subtopic}
-                            </Badge>
+                            {quote.subtopics.map((subtopic) => (
+                                <Badge
+                                    key={subtopic}
+                                    size="sm"
+                                    variant="light"
+                                    className="patristic-quote-card__subtopic-badge">
+                                    {subtopic}
+                                </Badge>
+                            ))}
                             {quote.position ? (
                                 <QuoteBadge label={quote.position} style={posStyle} />
                             ) : null}

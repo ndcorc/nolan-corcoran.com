@@ -16,6 +16,7 @@ export function QuoteStats({ stats }: QuoteStatsProps) {
                         key={position}
                         size="lg"
                         variant="light"
+                        className="patristic-quote-stat"
                         style={{
                             backgroundColor: colors.bg,
                             color: colors.text,
@@ -33,6 +34,7 @@ export function QuoteStats({ stats }: QuoteStatsProps) {
                         key={era}
                         size="lg"
                         variant="light"
+                        className="patristic-quote-stat"
                         style={{ backgroundColor: colors.bg, color: colors.text }}>
                         <strong>{count}</strong> {era}
                     </Badge>

@@ -5,6 +5,7 @@ import React from 'react';
 import { Box } from '@mantine/core';
 import { useRouter } from 'next/navigation';
 import { useApologetics } from '@/lib/apologetics/ApologeticsContext';
+import { safeNavigate } from '@/lib/navigation/safeNavigate';
 import { TermTooltip } from './TermTooltip';
 
 interface TermReferenceProps {
@@ -30,7 +31,7 @@ export function TermReference({ termId, children }: TermReferenceProps) {
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
-        router.push(`/apologetics/glossary#${termId}`);
+        safeNavigate(router, `/apologetics/glossary#${termId}`);
     };
 
     // If children is provided (e.g., a Badge), clone it and add the term text

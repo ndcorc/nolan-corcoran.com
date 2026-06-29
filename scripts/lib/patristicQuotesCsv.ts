@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { canonicalizePatristicSubtopics } from '../../src/lib/apologetics/canonicalizePatristicSubtopics';
 
 export interface PatristicQuoteCsvRow {
     ID: string;
@@ -10,7 +11,7 @@ export interface PatristicQuoteCsvRow {
     Source_Ref: string;
     Quote_Text: string;
     Topic: string;
-    Subtopic: string;
+    Subtopics: string;
     Position: string;
     Book: string;
     Section: string;
@@ -87,8 +88,22 @@ export function slugify(value: string): string {
         .slice(0, 80);
 }
 
+export function parseSubtopics(value: string): string[] {
+    return canonicalizePatristicSubtopics(
+        value
+            .split('|')
+            .map((part) => part.trim())
+            .filter(Boolean)
+    );
+}
+
+export function formatSubtopics(subtopics: string[]): string {
+    return canonicalizePatristicSubtopics(subtopics).join('|');
+}
+
 export function buildPatristicQuoteSlug(row: PatristicQuoteCsvRow): string {
-    const parts = [row.Father, row.Subtopic || row.Topic, row.ID].filter(Boolean);
+    const primarySubtopic = parseSubtopics(row.Subtopics)[0];
+    const parts = [row.Father, primarySubtopic || row.Topic, row.ID].filter(Boolean);
     return slugify(parts.join(' '));
 }
 

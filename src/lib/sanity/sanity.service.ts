@@ -357,12 +357,13 @@ export class SanityService {
         slug: string,
         father: string,
         topic: string,
+        subtopics: string[],
         limit: number = 5
     ): Promise<SanityPatristicQuote[]> {
         return this.extractData(
             this.fetcher({
                 query: getRelatedPatristicQuotesQuery,
-                params: { slug, father, topic, limit }
+                params: { slug, father, topic, subtopics, limit }
             })
         );
     }

@@ -56,11 +56,11 @@ export function PatristicQuoteDetail({ quote, relatedQuotes }: PatristicQuoteDet
                     <Badge size="md" variant="light">
                         {quote.topic}
                     </Badge>
-                    {quote.subtopic ? (
-                        <Badge size="md" variant="light">
-                            {quote.subtopic}
+                    {quote.subtopics.map((subtopic) => (
+                        <Badge key={subtopic} size="md" variant="light">
+                            {subtopic}
                         </Badge>
-                    ) : null}
+                    ))}
                     <Badge size="md" variant="outline" c="dimmed">
                         {quote.id}
                     </Badge>

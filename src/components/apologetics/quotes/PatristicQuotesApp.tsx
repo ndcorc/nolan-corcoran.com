@@ -27,8 +27,8 @@ const EMPTY_FILTERS: PatristicQuoteFilters = {
     topic: null,
     father: null,
     era: null,
-    book: null,
-    subtopic: null,
+    source: null,
+    subtopics: [],
     position: null
 };
 

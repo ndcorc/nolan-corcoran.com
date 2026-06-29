@@ -16,8 +16,8 @@ interface PatristicQuotePageProps {
 
 export const revalidate = 3600;
 
-function buildQuoteTitle(quote: { father: string; subtopic: string; topic: string }) {
-    const subject = quote.subtopic || quote.topic;
+function buildQuoteTitle(quote: { father: string; subtopics: string[]; topic: string }) {
+    const subject = quote.subtopics[0] || quote.topic;
     return `${quote.father} on ${subject}`;
 }
 
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PatristicQuotePageProps): Pro
         ogImage: siteMetadata.apologeticsOgImage,
         ogImageAlt: `${quote.father} — Patristic Quote`,
         type: 'article',
-        tags: [quote.topic, quote.subtopic, quote.era, quote.father].filter(Boolean)
+        tags: [quote.topic, ...quote.subtopics, quote.era, quote.father].filter(Boolean)
     });
 }
 
@@ -68,7 +68,13 @@ export default async function PatristicQuotePage({ params }: PatristicQuotePageP
         redirect('/not-found');
     }
 
-    const relatedQuotes = await getCachedRelatedPatristicQuotes(slug, quote.father, quote.topic, 5);
+    const relatedQuotes = await getCachedRelatedPatristicQuotes(
+        slug,
+        quote.father,
+        quote.topic,
+        quote.subtopics,
+        5
+    );
 
     return (
         <>

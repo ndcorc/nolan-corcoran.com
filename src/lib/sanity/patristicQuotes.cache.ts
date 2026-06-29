@@ -16,9 +16,15 @@ export const getCachedPatristicQuoteBySlug = cache(async (slug: string) => {
 });
 
 export const getCachedRelatedPatristicQuotes = cache(
-    async (slug: string, father: string, topic: string, limit: number = 5): Promise<PatristicQuote[]> => {
+    async (
+        slug: string,
+        father: string,
+        topic: string,
+        subtopics: string[],
+        limit: number = 5
+    ): Promise<PatristicQuote[]> => {
         const serverSanity = await createServerSanity();
-        const docs = await serverSanity.getRelatedPatristicQuotes(slug, father, topic, limit);
+        const docs = await serverSanity.getRelatedPatristicQuotes(slug, father, topic, subtopics, limit);
         return mapSanityPatristicQuotes(docs);
     }
 );

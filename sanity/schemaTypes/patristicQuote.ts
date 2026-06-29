@@ -19,10 +19,12 @@ export default defineType({
             options: {
                 source: (doc) => {
                     const father = doc.father as string | undefined;
-                    const subtopic = doc.subtopic as string | undefined;
+                    const subtopics = doc.subtopics as string[] | undefined;
+                    const legacySubtopic = doc.subtopic as string | undefined;
+                    const primarySubtopic = subtopics?.[0] ?? legacySubtopic;
                     const topic = doc.topic as string | undefined;
                     const legacyId = doc.legacyId as string | undefined;
-                    return [father, subtopic || topic, legacyId].filter(Boolean).join(' ');
+                    return [father, primarySubtopic || topic, legacyId].filter(Boolean).join(' ');
                 },
                 maxLength: 120
             },
@@ -52,6 +54,7 @@ export default defineType({
             type: 'string',
             options: {
                 list: [
+                    { title: 'Apostolic Father', value: 'Apostolic Father' },
                     { title: 'Latin Patristic', value: 'Latin Patristic' },
                     { title: 'Greek Patristic', value: 'Greek Patristic' },
                     { title: 'Byzantine', value: 'Byzantine' },
@@ -86,9 +89,11 @@ export default defineType({
             validation: (Rule) => Rule.required()
         }),
         defineField({
-            name: 'subtopic',
-            title: 'Subtopic',
-            type: 'string'
+            name: 'subtopics',
+            title: 'Subtopics',
+            type: 'array',
+            of: [{ type: 'string' }],
+            description: 'One or more thematic labels. Quotes match a subtopic filter if any value is included.'
         }),
         defineField({
             name: 'position',

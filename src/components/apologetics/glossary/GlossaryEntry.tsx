@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { Box, Text, Group, Badge } from '@mantine/core';
 import Link from 'next/link';
 import { useApologetics } from '@/lib/apologetics/ApologeticsContext';
+import { handleCrossPageHashClick } from '@/lib/navigation/safeNavigate';
 import { TermTooltip } from '@/components/apologetics/common/TermTooltip';
 import type { GlossaryEntry as GlossaryEntryType } from '@/types/apologetics';
 
@@ -74,6 +75,8 @@ function parseTextWithGlossaryLinks(
             <Link
                 key={`term-${keyCounter}`}
                 href={`/apologetics/glossary#${termId}`}
+                prefetch={false}
+                onClick={(e) => handleCrossPageHashClick(e, `/apologetics/glossary#${termId}`)}
                 style={{
                     color: 'var(--apologetics-primary)',
                     textDecoration: 'underline',

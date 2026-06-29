@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import type { GlossaryEntry } from '@/types/apologetics';
+import { handleCrossPageHashClick } from '@/lib/navigation/safeNavigate';
 
 /**
  * Creates a map of terms/aliases to their glossary entry IDs for efficient lookup.
@@ -82,6 +83,8 @@ export function parseTextWithGlossaryLinks(
             <Link
                 key={`term-${keyCounter++}`}
                 href={`/apologetics/glossary#${termId}`}
+                prefetch={false}
+                onClick={(e) => handleCrossPageHashClick(e, `/apologetics/glossary#${termId}`)}
                 style={{
                     color: 'var(--apologetics-primary)',
                     textDecoration: 'underline',

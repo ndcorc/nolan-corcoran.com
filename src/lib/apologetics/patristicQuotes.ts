@@ -36,7 +36,7 @@ export function filterAndSortPatristicQuotes(
             quote.quote.toLowerCase().includes(search) ||
             quote.source.toLowerCase().includes(search) ||
             quote.topic.toLowerCase().includes(search) ||
-            quote.subtopic.toLowerCase().includes(search) ||
+            quote.subtopics.some((subtopic) => subtopic.toLowerCase().includes(search)) ||
             quote.section.toLowerCase().includes(search) ||
             quote.notes.toLowerCase().includes(search);
 
@@ -45,8 +45,9 @@ export function filterAndSortPatristicQuotes(
             (!filters.topic || quote.topic === filters.topic) &&
             (!filters.father || quote.father === filters.father) &&
             (!filters.era || quote.era === filters.era) &&
-            (!filters.book || quote.book === filters.book) &&
-            (!filters.subtopic || quote.subtopic === filters.subtopic) &&
+            (!filters.source || quote.source === filters.source) &&
+            (filters.subtopics.length === 0 ||
+                filters.subtopics.some((subtopic) => quote.subtopics.includes(subtopic))) &&
             (!filters.position || quote.position === filters.position)
         );
     });
@@ -78,8 +79,8 @@ export function hasActivePatristicFilters(filters: PatristicQuoteFilters): boole
             filters.topic ||
             filters.father ||
             filters.era ||
-            filters.book ||
-            filters.subtopic ||
+            filters.source ||
+            filters.subtopics.length > 0 ||
             filters.position
     );
 }
@@ -91,8 +92,8 @@ export function getPatristicFilterOptions(quotes: PatristicQuote[]) {
         topics: unique(quotes.map((q) => q.topic)),
         fathers: unique(quotes.map((q) => q.father)),
         eras: unique(quotes.map((q) => q.era)),
-        books: unique(quotes.map((q) => q.book)),
-        subtopics: unique(quotes.map((q) => q.subtopic)),
+        sources: unique(quotes.map((q) => q.source).filter(Boolean)),
+        subtopics: unique(quotes.flatMap((q) => q.subtopics)),
         positions: unique(quotes.map((q) => q.position).filter(Boolean))
     };
 }
