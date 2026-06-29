@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState, type ReactNode } from 'react';
 import { Box, Paper, Stack, Text, Title } from '@mantine/core';
 import { IconCross } from '@tabler/icons-react';
 import {
@@ -65,7 +65,7 @@ export function PatristicQuotesApp({ quotes }: PatristicQuotesAppProps) {
     return (
         <Stack gap="lg" className="patristic-quotes-page">
             <Paper withBorder radius="md" p="md">
-                <GroupHeader quoteCount={quotes.length} />
+                <GroupHeader quotes={quotes} />
                 <QuoteStats stats={stats} />
             </Paper>
 
@@ -120,7 +120,35 @@ export function PatristicQuotesApp({ quotes }: PatristicQuotesAppProps) {
     );
 }
 
-function GroupHeader({ quoteCount }: { quoteCount: number }) {
+function formatIndexingSource(book: string): ReactNode {
+    switch (book) {
+        case 'Forged Catholicism':
+            return <em>A Forged Catholicism</em>;
+        case 'Reformed Catholic':
+            return <em>A Reformed Catholic</em>;
+        default:
+            return book;
+    }
+}
+
+function formatIndexingSources(books: string[]): ReactNode {
+    if (books.length === 0) return null;
+    if (books.length === 1) return formatIndexingSource(books[0]);
+
+    return books.map((book, index) => (
+        <Fragment key={book}>
+            {index > 0 && (index === books.length - 1 ? ' & ' : ', ')}
+            {formatIndexingSource(book)}
+        </Fragment>
+    ));
+}
+
+function GroupHeader({ quotes }: { quotes: PatristicQuote[] }) {
+    const indexingSources = useMemo(
+        () => [...new Set(quotes.map((quote) => quote.book).filter(Boolean))].sort(),
+        [quotes]
+    );
+
     return (
         <Box>
             <Box style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -142,8 +170,13 @@ function GroupHeader({ quoteCount }: { quoteCount: number }) {
                         Patristic & Theological Quotation Database
                     </Title>
                     <Text c="dimmed" style={{ fontSize: '16px' }}>
-                        Extracted from Perkins&apos;s <em>A Forged Catholicism</em> &{' '}
-                        <em>A Reformed Catholic</em> · {quoteCount} citations indexed
+                        {quotes.length} citations from early church fathers and other primary sources
+                        {indexingSources.length > 0 ? (
+                            <>
+                                {' '}
+                                · indexed from {formatIndexingSources(indexingSources)}
+                            </>
+                        ) : null}
                     </Text>
                 </Box>
             </Box>

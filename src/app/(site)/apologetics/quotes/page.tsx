@@ -13,7 +13,8 @@ export default async function QuotesPage() {
                 Quotes
             </Title>
             <Text c="dimmed" mb="lg" style={{ fontSize: '18px' }}>
-                Patristic and historical quotations indexed from William Perkins&apos;s apologetic works.
+                Quotations from early church fathers and other primary sources, indexed from historical
+                Reformed theological works.
             </Text>
             <PatristicQuotesApp quotes={quotes} />
         </Box>
