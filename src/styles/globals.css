@@ -93,6 +93,19 @@ body {
     background-color: var(--apologetics-navlink-hover-bg) !important;
 }
 
+/* Apologetics card hover shadow */
+.apologetics-card {
+    transition: box-shadow 200ms ease;
+}
+
+[data-mantine-color-scheme='light'] .apologetics-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+[data-mantine-color-scheme='dark'] .apologetics-card:hover {
+    box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.65), 0 4px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
 /* Apologetics card link hover state (Related Diagram card) */
 .apologetics-card-link:hover {
     background-color: var(--mantine-color-default-hover) !important;
@@ -113,13 +126,9 @@ body {
     --mantine-color-default-border: var(--mantine-color-dark-4);
 }
 
-/* Override Mantine Paper border color in apologetics section */
-[data-mantine-color-scheme='light'] [data-section='apologetics'] {
-    --paper-border-color: var(--mantine-color-gray-4) !important;
-}
-
-[data-mantine-color-scheme='dark'] [data-section='apologetics'] {
-    --paper-border-color: var(--mantine-color-dark-4) !important;
+/* Paper borders match sidebar (uses --mantine-color-default-border above) */
+[data-section='apologetics'] [data-with-border] {
+    --paper-border-color: var(--mantine-color-default-border) !important;
 }
 
 /* Patristic quote cards */

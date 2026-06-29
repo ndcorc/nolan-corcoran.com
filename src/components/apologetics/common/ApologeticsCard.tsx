@@ -22,7 +22,7 @@ export function ApologeticsCard({ title, description, href, icon, category, clas
             p="lg"
             radius="md"
             withBorder
-            className={`block no-underline transition-all duration-200 hover:shadow-md ${className || ''} border-[#CED4DA]`}
+            className={`apologetics-card block no-underline transition-all duration-200 ${className || ''}`}
             style={{
                 backgroundColor: 'var(--mantine-color-body)'
             }}>

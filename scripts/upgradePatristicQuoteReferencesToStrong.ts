@@ -94,12 +94,32 @@ function toStrongReference(ref: SanityReference | undefined): SanityReference | 
 function toStrongReferences(refs: SanityReference[] | undefined): SanityReference[] | undefined {
     if (!refs?.length) return refs;
 
-    const upgraded = refs.map(toStrongReference);
-    if (upgraded.every((ref, index) => ref === refs[index])) {
-        return refs;
-    }
+    let changed = false;
+    const seenRefs = new Map<string, number>();
 
-    return upgraded as SanityReference[];
+    const upgraded = refs.map((ref) => {
+        let next = ref;
+
+        if (ref._weak) {
+            const { _weak: _, ...strong } = ref;
+            next = strong;
+            changed = true;
+        }
+
+        if (!next._key) {
+            const occurrence = seenRefs.get(next._ref) ?? 0;
+            seenRefs.set(next._ref, occurrence + 1);
+            next = {
+                ...next,
+                _key: occurrence === 0 ? next._ref : `${next._ref}-${occurrence}`
+            };
+            changed = true;
+        }
+
+        return next;
+    });
+
+    return changed ? upgraded : refs;
 }
 
 function upgradeDocument(doc: QuoteDoc): Record<string, unknown> | null {
@@ -120,6 +140,14 @@ function upgradeDocument(doc: QuoteDoc): Record<string, unknown> | null {
     return Object.keys(patch).length > 0 ? patch : null;
 }
 
+function documentNeedsUpgrade(doc: QuoteDoc): boolean {
+    for (const field of REFERENCE_FIELDS) {
+        if (doc[field]?._weak) return true;
+    }
+
+    return Boolean(doc.subtopics?.some((ref) => ref._weak || !ref._key));
+}
+
 async function upgrade() {
     const docs = await client.fetch<QuoteDoc[]>(
         `*[_type == "patristicQuote"]{
@@ -137,6 +165,7 @@ async function upgrade() {
 
     const toUpgrade = docs
         .map((doc) => {
+            if (!documentNeedsUpgrade(doc)) return null;
             const patch = upgradeDocument(doc);
             return patch ? { _id: doc._id, legacyId: doc.legacyId, patch } : null;
         })

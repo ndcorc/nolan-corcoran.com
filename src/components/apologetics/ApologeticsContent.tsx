@@ -42,8 +42,7 @@ export function ApologeticsContent() {
                     withBorder
                     style={{
                         backgroundColor: 'var(--mantine-color-body)'
-                    }}
-                    className="border-[#CED4DA]">
+                    }}>
                     <IconGitBranch size={20} style={{ color: 'var(--apologetics-primary)' }} />
                     <Text size="xl" fw={700} mt="xs">
                         {diagrams.length}
@@ -58,8 +57,7 @@ export function ApologeticsContent() {
                     withBorder
                     style={{
                         backgroundColor: 'var(--mantine-color-body)'
-                    }}
-                    className="border-[#CED4DA]">
+                    }}>
                     <IconFileText size={20} style={{ color: 'var(--apologetics-primary)' }} />
                     <Text size="xl" fw={700} mt="xs">
                         {args.length}
@@ -74,8 +72,7 @@ export function ApologeticsContent() {
                     withBorder
                     style={{
                         backgroundColor: 'var(--mantine-color-body)'
-                    }}
-                    className="border-[#CED4DA]">
+                    }}>
                     <IconBook size={20} style={{ color: 'var(--apologetics-primary)' }} />
                     <Text size="xl" fw={700} mt="xs">
                         {glossaryList.length}
@@ -127,8 +124,7 @@ export function ApologeticsContent() {
                 mt="xl"
                 style={{
                     backgroundColor: 'var(--mantine-color-body)'
-                }}
-                className="border-[#CED4DA]">
+                }}>
                 <Group align="flex-start" gap="md" wrap="nowrap">
                     <Box
                         p="sm"

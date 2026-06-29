@@ -6,6 +6,8 @@
         "migrate:patristic-quotes": "tsx scripts/migratePatristicQuotesToSanity.ts",
         "migrate:patristic-quote-text": "tsx scripts/upgradePatristicQuoteTextToPortableText.ts",
         "migrate:patristic-quote-references": "tsx scripts/upgradePatristicQuoteReferencesToStrong.ts",
+        "fix:patristic-quote-subtopic-keys": "tsx scripts/fixPatristicQuoteSubtopicKeys.ts",
+        "sanity:check-migration-token": "tsx scripts/checkSanityMigrationToken.ts",
         "dev": "NODE_OPTIONS='--inspect' next dev",
         "build": "next build",
         "start": "next start",

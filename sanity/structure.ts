@@ -1,8 +1,18 @@
 import type { StructureResolver } from 'sanity/structure';
+import { apiVersion } from './env';
 import { PATRISTIC_QUOTE_TYPES } from './schemaTypes/patristicVocabulary';
 
+function subtopicQuotesList(S: Parameters<StructureResolver>[0], subtopicId: string) {
+    return S.documentList()
+        .title('Quotes')
+        .schemaType('patristicQuote')
+        .filter('_type == "patristicQuote" && references($subtopicId)')
+        .params({ subtopicId })
+        .defaultOrdering([{ field: 'legacyId', direction: 'asc' }]);
+}
+
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = (S, context) =>
     S.list()
         .title('Content')
         .items([
@@ -23,7 +33,32 @@ export const structure: StructureResolver = (S) =>
                                 .child(S.documentTypeList('patristicTopic').title('Topics')),
                             S.listItem()
                                 .title('Subtopics')
-                                .child(S.documentTypeList('patristicSubtopic').title('Subtopics')),
+                                .child(
+                                    S.documentTypeList('patristicSubtopic')
+                                        .title('Subtopics')
+                                        .child(async (subtopicId) => {
+                                            const client = context.getClient({ apiVersion });
+                                            const title = await client.fetch<string | null>(
+                                                `*[_id == $id][0].title`,
+                                                { id: subtopicId }
+                                            );
+
+                                            return S.list()
+                                                .title(title ?? 'Subtopic')
+                                                .items([
+                                                    S.listItem()
+                                                        .title('Quotes')
+                                                        .child(subtopicQuotesList(S, subtopicId)),
+                                                    S.listItem()
+                                                        .title('Edit Subtopic')
+                                                        .child(
+                                                            S.document()
+                                                                .schemaType('patristicSubtopic')
+                                                                .documentId(subtopicId)
+                                                        )
+                                                ]);
+                                        })
+                                ),
                             S.listItem()
                                 .title('Era')
                                 .child(S.documentTypeList('patristicEra').title('Eras')),

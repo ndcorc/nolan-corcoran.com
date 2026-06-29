@@ -36,8 +36,25 @@ export function patristicVocabularyReference(type: PatristicVocabularyType, titl
     };
 }
 
+export function patristicVocabularyReferenceKey(
+    type: PatristicVocabularyType,
+    title: string,
+    index = 0
+): string {
+    const base = `${type}-${slugify(title.trim())}` || `${type}-ref`;
+    return index === 0 ? base : `${base}-${index}`;
+}
+
 export function patristicVocabularyReferences(type: PatristicVocabularyType, titles: string[]) {
     return titles
-        .map((title) => patristicVocabularyReference(type, title))
+        .map((title, index) => {
+            const ref = patristicVocabularyReference(type, title);
+            if (!ref) return undefined;
+
+            return {
+                ...ref,
+                _key: patristicVocabularyReferenceKey(type, title, index)
+            };
+        })
         .filter((ref): ref is NonNullable<typeof ref> => ref !== undefined);
 }
