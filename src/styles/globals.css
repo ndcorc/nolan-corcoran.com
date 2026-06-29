@@ -116,8 +116,17 @@ body {
     transition: transform 150ms ease;
 }
 
+.patristic-quote-card__header {
+    transition: background-color 150ms ease;
+}
+
+.patristic-quote-card__quote {
+    user-select: text;
+    cursor: text;
+}
+
 .patristic-quote-card:hover,
-.patristic-quote-card:has(.patristic-quote-card__trigger[data-expanded='true']) {
+.patristic-quote-card:has(.patristic-quote-card__header[data-expanded='true']) {
     transform: translateY(-2px);
 }
 
@@ -132,14 +141,14 @@ body {
 }
 
 /* Patristic quote cards — hover/active highlight in light mode (default bg unchanged) */
-[data-mantine-color-scheme='light'] .patristic-quote-card__trigger:hover,
-[data-mantine-color-scheme='light'] .patristic-quote-card__trigger[data-expanded='true'],
+[data-mantine-color-scheme='light'] .patristic-quote-card__header:hover,
+[data-mantine-color-scheme='light'] .patristic-quote-card__header[data-expanded='true'],
 [data-mantine-color-scheme='light'] .patristic-quote-card__notes {
     background-color: #f5f3f0;
 }
 
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover,
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'],
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header:hover,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header[data-expanded='true'],
 [data-mantine-color-scheme='dark'] .patristic-quote-card__notes {
     background-color: var(--mantine-color-default-hover);
 }
@@ -182,13 +191,13 @@ body {
     color: var(--mantine-color-dark-1);
 }
 
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover .patristic-quote-card__topic-badge,
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'] .patristic-quote-card__topic-badge {
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header:hover .patristic-quote-card__topic-badge,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header[data-expanded='true'] .patristic-quote-card__topic-badge {
     background-color: #343434;
 }
 
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger:hover .patristic-quote-card__subtopic-badge,
-[data-mantine-color-scheme='dark'] .patristic-quote-card__trigger[data-expanded='true'] .patristic-quote-card__subtopic-badge {
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header:hover .patristic-quote-card__subtopic-badge,
+[data-mantine-color-scheme='dark'] .patristic-quote-card__header[data-expanded='true'] .patristic-quote-card__subtopic-badge {
     background-color: #383838;
 }
 
