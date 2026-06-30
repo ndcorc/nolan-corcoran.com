@@ -5,8 +5,14 @@ function blockKey(): string {
     return Math.random().toString(36).slice(2, 12);
 }
 
+type QuoteSpan = { text: string; marks: string[] };
+
 /** Converts a plain string into a single-block Portable Text value for Sanity. */
 export function plainTextToPatristicQuoteBlocks(text: string): PortableTextBlock[] {
+    if (/\*\*\*|\*\*|\*(?!\*)/.test(text)) {
+        return formattedTextToPatristicQuoteBlocks(text);
+    }
+
     return [
         {
             _type: 'block',
@@ -21,6 +27,72 @@ export function plainTextToPatristicQuoteBlocks(text: string): PortableTextBlock
                     marks: []
                 }
             ]
+        }
+    ];
+}
+
+/**
+ * Converts markdown-style emphasis (**bold**, *italic*, nested) to Portable Text.
+ * Used when importing formatted patristic quote bodies from source documents.
+ */
+export function formattedTextToPatristicQuoteBlocks(text: string): PortableTextBlock[] {
+    const spans: QuoteSpan[] = [];
+    let index = 0;
+    let openStrong = false;
+    let openEm = false;
+
+    const pushSpan = (chunk: string) => {
+        if (!chunk) return;
+        const marks: string[] = [];
+        if (openStrong) marks.push('strong');
+        if (openEm) marks.push('em');
+        spans.push({ text: chunk, marks });
+    };
+
+    while (index < text.length) {
+        if (text.startsWith('***', index)) {
+            openStrong = !openStrong;
+            openEm = !openEm;
+            index += 3;
+            continue;
+        }
+
+        if (text.startsWith('**', index)) {
+            openStrong = !openStrong;
+            index += 2;
+            continue;
+        }
+
+        if (text.startsWith('*', index)) {
+            openEm = !openEm;
+            index += 1;
+            continue;
+        }
+
+        const nextMarker = (() => {
+            const positions = ['***', '**', '*']
+                .map((marker) => text.indexOf(marker, index))
+                .filter((pos) => pos !== -1);
+            return positions.length ? Math.min(...positions) : -1;
+        })();
+
+        const end = nextMarker === -1 ? text.length : nextMarker;
+        pushSpan(text.slice(index, end));
+        index = end;
+    }
+
+    return [
+        {
+            _type: 'block',
+            _key: blockKey(),
+            style: 'normal',
+            markDefs: [],
+            children: spans.map((span) => ({
+                _type: 'span' as const,
+                _key: blockKey(),
+                text: span.text,
+                marks: span.marks
+            }))
         }
     ];
 }

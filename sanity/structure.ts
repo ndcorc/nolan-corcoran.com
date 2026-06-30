@@ -2,6 +2,15 @@ import type { StructureResolver } from 'sanity/structure';
 import { apiVersion } from './env';
 import { PATRISTIC_QUOTE_TYPES } from './schemaTypes/patristicVocabulary';
 
+function topicQuotesList(S: Parameters<StructureResolver>[0], topicId: string) {
+    return S.documentList()
+        .title('Quotes')
+        .schemaType('patristicQuote')
+        .filter('_type == "patristicQuote" && references($topicId)')
+        .params({ topicId })
+        .defaultOrdering([{ field: 'legacyId', direction: 'asc' }]);
+}
+
 function subtopicQuotesList(S: Parameters<StructureResolver>[0], subtopicId: string) {
     return S.documentList()
         .title('Quotes')
@@ -30,7 +39,32 @@ export const structure: StructureResolver = (S, context) =>
                             S.divider(),
                             S.listItem()
                                 .title('Topic')
-                                .child(S.documentTypeList('patristicTopic').title('Topics')),
+                                .child(
+                                    S.documentTypeList('patristicTopic')
+                                        .title('Topics')
+                                        .child(async (topicId) => {
+                                            const client = context.getClient({ apiVersion });
+                                            const title = await client.fetch<string | null>(
+                                                `*[_id == $id][0].title`,
+                                                { id: topicId }
+                                            );
+
+                                            return S.list()
+                                                .title(title ?? 'Topic')
+                                                .items([
+                                                    S.listItem()
+                                                        .title('Quotes')
+                                                        .child(topicQuotesList(S, topicId)),
+                                                    S.listItem()
+                                                        .title('Edit Topic')
+                                                        .child(
+                                                            S.document()
+                                                                .schemaType('patristicTopic')
+                                                                .documentId(topicId)
+                                                        )
+                                                ]);
+                                        })
+                                ),
                             S.listItem()
                                 .title('Subtopics')
                                 .child(

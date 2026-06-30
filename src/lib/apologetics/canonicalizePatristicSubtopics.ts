@@ -12,7 +12,6 @@ export const PATRISTIC_SUBTOPIC_ALIASES: Record<string, string | string[]> = {
     'Grace vs. Merit': 'Sola Gratia',
 
     // Sola Scriptura
-    'Sufficiency of Scripture': 'Sola Scriptura',
     "Scripture's Authority": 'Sola Scriptura',
     'Scripture as Judge': 'Sola Scriptura',
 
@@ -22,30 +21,34 @@ export const PATRISTIC_SUBTOPIC_ALIASES: Record<string, string | string[]> = {
     // Assurance
     Assurance: 'Assurance of Faith',
 
-    // Images
-    'Against Religious Images': 'Against Image Worship',
-    'Against Images in Churches': 'Against Image Worship',
-    'Against Material Images': 'Against Image Worship',
-    'Image = Idol': 'Against Image Worship',
+    // Images / saint worship
+    'Against Religious Images': 'Saint & Idol Worship',
+    'Against Images in Churches': 'Saint & Idol Worship',
+    'Against Material Images': 'Saint & Idol Worship',
+    'Image = Idol': 'Saint & Idol Worship',
+    'Against Image Worship': 'Saint & Idol Worship',
 
     // Invocation of saints
     'Against Saint Invocation': 'Saint & Idol Worship',
-    'Erroneous Invocation': 'Saint & Idol Worship',
+    'Erroneous Invocation': 'Invocation & Intercession',
     'Against Saint Worship': 'Saint & Idol Worship',
-    'Against Marian Invocation': 'Saint & Idol Worship',
+    'Against Marian Invocation': 'Invocation & Intercession',
     'Against Relic Worship': 'Saint & Idol Worship',
     'Angel Worship Condemned': 'Saint & Idol Worship',
     'Worship of God Alone': 'Saint & Idol Worship',
-    'Against Omniscience of Saints': 'Uncertainty of Intercession',
-    'Omnipresence of Saints': 'Uncertainty of Intercession',
-    "Martyrs' Presence": 'Uncertainty of Intercession',
+    'Against Omniscience of Saints': 'Invocation & Intercession',
+    'Omnipresence of Saints': 'Invocation & Intercession',
+    "Martyrs' Presence": 'Invocation & Intercession',
+    'Uncertainty of Intercession': 'Invocation & Intercession',
+    'Merits of Saints': 'Saint & Idol Worship',
+    "Mary's Sinlessness": ['Invocation & Intercession', 'Saint & Idol Worship'],
+    'Mary as Mediatrix': ['Invocation & Intercession', 'Saint & Idol Worship'],
+    'Marian Veneration Qualified': ['Invocation & Intercession', 'Saint & Idol Worship'],
     'Apostrophe vs. Invocation': 'Invocation & Intercession',
     'Apostrophe vs. Assertion': 'Invocation & Intercession',
+    'Commemoration vs. Invocation': 'Invocation & Intercession',
 
     // Purgatory / afterlife
-    'State of the Dead': 'Purgatory',
-    'Limbus Patrum': 'Purgatory',
-    'Purgatorial Fire': 'Purgatory',
     'Against Purgatory': 'Purgatory',
     'Descent into Hell': 'Purgatory',
 
@@ -83,28 +86,38 @@ export const PATRISTIC_SUBTOPIC_ALIASES: Record<string, string | string[]> = {
     'Fasting with Teaching': 'Fasting',
 
     // Papacy / church governance
-    'Episcopal Collegiality': 'Papal Supremacy',
-    'Honorific Primacy': 'Papal Hyperbole',
-    "Peter's Chair": 'Papal Supremacy',
-    'Against Universal Bishop': 'Papal Supremacy',
-    'Against Papal Jurisdiction': 'Papal Supremacy',
-    'Matthew 16:18': 'Papal Supremacy',
-    'Papal Primacy': 'Papal Supremacy',
-    'Apostolic Equality': 'Papal Supremacy',
+    'Episcopal Collegiality': ['Church Governance', 'Authority'],
+    'Honorific Primacy': ['Church Governance', 'Authority'],
+    "Peter's Chair": ['Church Governance', 'Authority'],
+    'Against Universal Bishop': ['Church Governance', 'Authority'],
+    'Against Papal Jurisdiction': ['Church Governance', 'Authority'],
+    'Matthew 16:18': ['Church Governance', 'Authority'],
+    'Papal Primacy': ['Church Governance', 'Authority'],
+    'Papal Hyperbole': ['Church Governance', 'Authority'],
+    'Apostolic Equality': ['Church Governance', 'Authority'],
+    'Papal Supremacy': ['Church Governance', 'Authority'],
+    'Imperial Convocation of Councils': ['Church Governance', 'Authority'],
+    'Apostolic Power': ['Church Governance', 'Authority'],
+    Antichrist: ['Church Governance', 'Authority'],
 
     // Sign of the Cross
-    'Cross + Invocation': "Power Through Christ's Name",
+    'Power in Faith not Sign': 'Sign of the Cross',
+    "Power Through Christ's Name": 'Sign of the Cross',
+    'Cross Efficacious': 'Sign of the Cross',
+    'Cross + Invocation': 'Sign of the Cross',
 
     // Liturgy / tradition / prayer
     'Early Practice': 'Canonical Hours',
-    "Lord's Prayer": "The Lord's Prayer",
-    'Lex Orandi Lex Credendi': "The Lord's Prayer",
+    "The Lord's Prayer": "Lord's Prayer",
+    'Lex Orandi Lex Credendi': "Lord's Prayer",
 
     // Marriage / celibacy
-    'Denigration of Marriage': 'Marriage',
-    'Dignity of Marriage': 'Marriage',
-    'Praise of Virginity': 'Virginity',
-    'Clerical Celibacy': 'Virginity',
+    'Denigration of Marriage': 'Marriage & Celibacy',
+    'Dignity of Marriage': 'Marriage & Celibacy',
+    'Praise of Virginity': 'Marriage & Celibacy',
+    'Clerical Celibacy': 'Marriage & Celibacy',
+    Marriage: 'Marriage & Celibacy',
+    Virginity: 'Marriage & Celibacy',
 
     // Original sin
     'Original Sin': 'Original Sin Remains After Baptism'
