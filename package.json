@@ -8,6 +8,8 @@
         "migrate:patristic-quote-references": "tsx scripts/upgradePatristicQuoteReferencesToStrong.ts",
         "fix:patristic-quote-subtopic-keys": "tsx scripts/fixPatristicQuoteSubtopicKeys.ts",
         "migrate:patristic-taxonomy": "tsx scripts/migratePatristicTaxonomyInSanity.ts",
+        "apply:patristic-taxonomy": "tsx scripts/applyProposedPatristicTaxonomy.ts",
+        "sync:patristic-taxonomy": "tsx scripts/syncProposedPatristicTaxonomy.ts",
         "sanity:check-migration-token": "tsx scripts/checkSanityMigrationToken.ts",
         "dev": "NODE_OPTIONS='--inspect' next dev",
         "build": "next build",

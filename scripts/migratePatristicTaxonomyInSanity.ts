@@ -1,8 +1,11 @@
 /**
- * Migrates patristic topic/subtopic vocabulary and quote references in Sanity.
+ * @deprecated Use scripts/syncProposedPatristicTaxonomy.ts instead.
  *
- *   npx tsx scripts/migratePatristicTaxonomyInSanity.ts          # dry run
- *   npx tsx scripts/migratePatristicTaxonomyInSanity.ts --apply  # write changes
+ * Legacy incremental taxonomy migration (Lord's Supper → Sacraments, subtopic merges).
+ * Superseded by the proposed taxonomy sync:
+ *
+ *   yarn sync:patristic-taxonomy          # dry run
+ *   yarn sync:patristic-taxonomy --apply    # CSV + Sanity
  */
 import { createClient, type SanityClient } from '@sanity/client';
 import {

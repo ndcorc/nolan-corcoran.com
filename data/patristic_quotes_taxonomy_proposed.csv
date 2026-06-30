@@ -1,0 +1,60 @@
+topic_sort,topic,subtopic,list1_cap,list3_section,legacy_topic_aliases,legacy_subtopic_aliases
+1,The Old Testament Canon,,SCRIPTURE,The Holy Scriptures,Scripture & Canon|The Old Testament Canon of Scripture,Biblical Canon|Old Testament Canon
+2,The New Testament Canon,,SCRIPTURE,The Holy Scriptures,Scripture & Canon|The New Testament Canon of Scripture,New Testament Canon
+3,The Inerrancy of Scripture,,SCRIPTURE,Prolegomena → The Holy Scriptures,Scripture & Canon,Inerrancy of Scripture
+4,The Sufficiency of Scripture,Sola Scriptura,SCRIPTURE,Prolegomena,Scripture & Canon,Sola Scriptura|Sufficiency of Scripture
+4,The Sufficiency of Scripture,Tradition vs. Scripture,SCRIPTURE,Prolegomena,Scripture & Canon,Tradition vs. Scripture
+4,The Sufficiency of Scripture,Patristic Fallibility,SCRIPTURE,Prolegomena,Scripture & Canon|Fathers Know Best?,Patristic Fallibility|Implicit Faith
+5,The Perspicuity of Scripture,,SCRIPTURE,Prolegomena,Scripture & Canon,Perspicuity of Scripture
+6,The Trinity,Tri-personality,,Covenant of Redemption → The Doctrine of God,Christology,Tri-personality|Trinity
+6,The Trinity,Homoousios,,Covenant of Redemption → The Doctrine of God,Christology,Homoousios|Homoousion|Consubstantial
+6,The Trinity,Person and Hypostasis,,Covenant of Redemption → The Doctrine of God,Christology,Person and Hypostasis|Hypostasis|Person in Trinity|Three Persons
+6,The Trinity,Procession of the Spirit,,Covenant of Redemption → The Doctrine of God,Christology,Procession of the Spirit|Filioque|Holy Spirit Proceeds
+6,The Trinity,Eternal Generation,,Covenant of Redemption → The Doctrine of God,Christology,Eternal Generation|Generation of the Son
+7,Christology,Two Natures,,Covenant of Redemption → The Person of Christ,Christology|The Person of Christ,Two Natures|Chalcedon|Nestorianism|Monophysitism
+7,Christology,Theotokos,,Covenant of Redemption → The Person of Christ,Christology|The Person of Christ,Theotokos|Mother of God
+7,Christology,Against Ransom to Satan,,Covenant of Redemption → The Person of Christ,Christology|The Atonement of Christ,Against Ransom to Satan|Ransom to Satan|Ransom to the Devil
+7,Christology,Against Moral Influence,,Covenant of Redemption → The Person of Christ,Christology|The Atonement of Christ,Against Moral Influence|Moral Influence|Moral-influence
+8,Atonement,Penal Substitution,,Covenant of Redemption → The Work of Christ,Christology|The Atonement of Christ,Atonement|Penal Substitutionary Atonement|Definite Atonement
+8,Atonement,Humiliation,,Covenant of Redemption → The Humiliation of Christ,Christology|The Atonement of Christ,Works of Christ
+8,Atonement,Satisfaction,,Covenant of Redemption → The Satisfaction of Christ,Christology|The Atonement of Christ,Redemption
+8,Atonement,Divinity of Christ,,Covenant of Redemption → The Person of Christ,Christology|The Deity of Christ|The Atonement of Christ,Divinity of Christ
+8,Atonement,Mediator,,Covenant of Redemption → The Person of Christ,Christology|The Deity of Christ|The Atonement of Christ,Christ the Sole Mediator
+8,Atonement,Incarnation,,Covenant of Redemption → The Humiliation of Christ,Christology|The Deity of Christ|The Atonement of Christ,Christ's Human Development
+9,Particular Redemption,Limited Atonement,,Covenant of Redemption → The Work of Christ,Justification|Christology,Particular Redemption|Definite Atonement|Limited Atonement
+10,Justification by Faith Alone,Sola Fide,,Covenant of Grace → Ordo Salutis → Justification,Justification,Sola Fide
+10,Justification by Faith Alone,Sola Gratia,,Covenant of Grace → Ordo Salutis → Justification,Justification,Sola Gratia
+10,Justification by Faith Alone,Imputed Righteousness,,Covenant of Grace → Ordo Salutis → Justification,Justification,Imputed Righteousness
+10,Justification by Faith Alone,Assurance,,Covenant of Grace → Ordo Salutis → Perseverance,Justification,Assurance of Faith|Salvation
+10,Justification by Faith Alone,Perseverance of the Saints,,Covenant of Grace → Ordo Salutis → Perseverance,Justification,Perseverance of the Saints|Perseverance
+10,Justification by Faith Alone,Supererogation,,Covenant of Grace → Good Works,Works & Supererogation|Strange Teachings,Supererogation Qualified
+11,Predestination,Election,PROVIDENCE,Covenant of Grace → Ordo Salutis → Predestination,Sovereignty,Predestination|Election|Calvinism
+11,Predestination,Unconditional Election,PROVIDENCE,Covenant of Grace → Ordo Salutis → Predestination,Sovereignty,Unconditional Election
+11,Predestination,Effectual Calling,PROVIDENCE,Covenant of Grace → Ordo Salutis → Calling,Sovereignty,Salvation
+11,Predestination,Irresistible Grace,PROVIDENCE,Covenant of Grace → Ordo Salutis → Calling,Sovereignty,Irresistible Grace
+12,Original Sin,Bondage of the Will,LAW OF GOD,Covenant of Works → Sin,Free Will & Grace,Bondage of the Will
+12,Original Sin,Total Depravity,LAW OF GOD,Covenant of Works → Sin,Free Will & Grace,Total Depravity|Depravity of Man
+12,Original Sin,Synergism,LAW OF GOD,Covenant of Works → Free Will,Free Will & Grace,Synergism|Pre-Augustinian Free Will|Prevenient Grace
+12,Original Sin,Original Sin,LAW OF GOD,Covenant of Works → Original Sin,Free Will & Grace,Original Sin Remains After Baptism
+13,The Church,Extra Ecclesiam Nulla Salus,CHURCH GOVERNMENT,The Church,,Extra Ecclesiam Nulla Salus|No Salvation Outside Church|Outside the Church
+13,The Church,Visible Church,CHURCH GOVERNMENT,The Church,Church Practice|Spiritual Practices,Visible Church|Apostolic Churches|External Communion
+13,The Church,Church as Kingdom of God,CHURCH GOVERNMENT,The Church,,Church as Kingdom of God|Kingdom of Heaven|Kingdom of God
+14,The Rock,Papal Primacy,CHURCH GOVERNMENT,The Church,Scripture & Canon|The Rock of Matthew 16:18,Church Governance|Papal Supremacy|Papal Primacy|Papal Hyperbole|Against Universal Bishop|Against Papal Jurisdiction
+14,The Rock,Councils,CHURCH GOVERNMENT,The Church,Scripture & Canon|The Rock of Matthew 16:18,Authority|Imperial Convocation of Councils|Apostolic Equality|Apostolic Power
+14,The Rock,Matthew 16:18,CHURCH GOVERNMENT,The Church,Scripture & Canon|The Rock of Matthew 16:18,Matthew 16:18|Antichrist
+15,Images,Iconoclasm,,The Church,Christology|Images,Against Image Worship|Against Religious Images|Against Images in Churches|Against Material Images|Image = Idol|Saint & Idol Worship|Against Saint Worship|Against Relic Worship|Worship of God Alone|Against Marian Invocation
+15,Images,Nine Choirs,ANGELOLOGY,Creation → Angels,Angels|The Angel of the Lord,Nine Choirs|Angelic Orders
+15,Images,Sola Deo Gloria,,The Church,Christology|Strange Teachings,Sola Deo Gloria
+16,Praying to Mary and the Saints,Invocation,,The Church,Christology,Invocation & Intercession|Apostrophe vs. Invocation|Apostrophe vs. Assertion|Commemoration vs. Invocation|Uncertainty of Intercession|Against Omniscience of Saints|Omnipresence of Saints|Martyrs' Presence|Erroneous Invocation
+16,Praying to Mary and the Saints,Commemoration,,The Church,Christology,Marian Veneration Qualified
+16,Praying to Mary and the Saints,Merits of Saints,,The Church,Christology,Mary's Sinlessness|Mary as Mediatrix|Merits of Saints
+17,The Eucharist,Real Presence,SACRAMENTS,The Sacraments → The Eucharist,Lord's Supper|The Lord's Supper|Sacraments,Sacraments|Christ's Body in One Place|Efficacy of Sacraments|Sacramental Body|Two Modes of Presence|Words of Consecration
+17,The Eucharist,Figurative Language,SACRAMENTS,The Sacraments → The Eucharist,Lord's Supper|The Lord's Supper|Sacraments,Spiritual Language|Figurative Interpretation|Spiritual Sacrifice|Spiritual Eating|Spiritual Reception|Eucharistic Hyperbole|Sacrifice of the Mass
+17,The Eucharist,Against Transubstantiation,SACRAMENTS,The Sacraments → The Eucharist,Lord's Supper|The Lord's Supper,Against Transubstantiation
+18,The Lord's Day Worship,Fasting,WORSHIP,The Christian Life → Worship,Spiritual Practices|Worship on Sunday,Fasting|Voluntary Fasting|Origin of Lent|Purpose of Fasting|Fasting with Teaching|Origin of Compulsory Fasting|Set Fasting Times
+18,The Lord's Day Worship,Liturgical Practice,WORSHIP,The Christian Life → Worship,Spiritual Practices|Church Practice|Worship on Sunday,Canonical Hours|Lord's Prayer|The Lord's Prayer|Lex Orandi Lex Credendi|Early Practice
+18,The Lord's Day Worship,Sign of the Cross,WORSHIP,The Christian Life → Worship,Spiritual Practices|Sign of the Cross|Worship on Sunday,Sign of the Cross|Power in Faith not Sign|Power Through Christ's Name|Cross Efficacious|Cross + Invocation
+19,The Law of Continence,Marriage & Celibacy,MARRIAGE,The Christian Life,Spiritual Practices|Marriage & Celibacy,Marriage & Celibacy|Marriage|Virginity|Denigration of Marriage|Praise of Virginity|Dignity of Marriage|Clerical Celibacy
+20,Purgatory,Intermediate State,PROVIDENCE,Eschatology → The Intermediate State,Purgatory & Afterlife,Purgatory|State of the Dead|Limbus Patrum|Purgatorial Fire|Against Purgatory|Descent into Hell
+20,Purgatory,Souls Cannot Return,PROVIDENCE,Eschatology → The Intermediate State,Purgatory & Afterlife|The Subterranean Intermediate State,Souls Cannot Return
+20,Purgatory,Eschatological Purging,PROVIDENCE,Eschatology,Purgatory & Afterlife,Pagan Antecedents

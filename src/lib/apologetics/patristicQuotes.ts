@@ -1,4 +1,5 @@
 import { ERA_ORDER } from '@/lib/apologetics/patristicQuotesTheme';
+import { comparePatristicTopics } from '@/lib/apologetics/patristicTaxonomyOrder';
 import type {
     PatristicQuote,
     PatristicQuoteFilters,
@@ -89,7 +90,7 @@ const unique = (values: string[]) => [...new Set(values)].sort();
 
 export function getPatristicFilterOptions(quotes: PatristicQuote[]) {
     return {
-        topics: unique(quotes.map((q) => q.topic)),
+        topics: unique(quotes.map((q) => q.topic)).sort(comparePatristicTopics),
         fathers: unique(quotes.map((q) => q.father)),
         eras: unique(quotes.map((q) => q.era)),
         sources: unique(quotes.map((q) => q.source).filter(Boolean)),

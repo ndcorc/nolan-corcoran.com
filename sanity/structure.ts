@@ -1,6 +1,7 @@
 import type { StructureResolver } from 'sanity/structure';
 import { apiVersion } from './env';
 import { PATRISTIC_QUOTE_TYPES } from './schemaTypes/patristicVocabulary';
+import { comparePatristicTopics } from '../src/lib/apologetics/patristicTaxonomyOrder';
 
 function topicQuotesList(S: Parameters<StructureResolver>[0], topicId: string) {
     return S.documentList()
@@ -39,32 +40,44 @@ export const structure: StructureResolver = (S, context) =>
                             S.divider(),
                             S.listItem()
                                 .title('Topic')
-                                .child(
-                                    S.documentTypeList('patristicTopic')
-                                        .title('Topics')
-                                        .child(async (topicId) => {
-                                            const client = context.getClient({ apiVersion });
-                                            const title = await client.fetch<string | null>(
-                                                `*[_id == $id][0].title`,
-                                                { id: topicId }
-                                            );
+                                .child(async () => {
+                                    const client = context.getClient({ apiVersion });
+                                    const topics = await client.fetch<
+                                        Array<{ _id: string; title: string }>
+                                    >('*[_type == "patristicTopic"]{ _id, title } | order(title asc)');
 
-                                            return S.list()
-                                                .title(title ?? 'Topic')
-                                                .items([
-                                                    S.listItem()
-                                                        .title('Quotes')
-                                                        .child(topicQuotesList(S, topicId)),
-                                                    S.listItem()
-                                                        .title('Edit Topic')
-                                                        .child(
-                                                            S.document()
-                                                                .schemaType('patristicTopic')
-                                                                .documentId(topicId)
-                                                        )
-                                                ]);
-                                        })
-                                ),
+                                    topics.sort((a, b) => comparePatristicTopics(a.title, b.title));
+
+                                    return S.list()
+                                        .title('Topics')
+                                        .items(
+                                            topics.map((topic) =>
+                                                S.listItem()
+                                                    .id(topic._id)
+                                                    .title(topic.title)
+                                                    .child(
+                                                        S.list()
+                                                            .title(topic.title)
+                                                            .items([
+                                                                S.listItem()
+                                                                    .title('Quotes')
+                                                                    .child(
+                                                                        topicQuotesList(S, topic._id)
+                                                                    ),
+                                                                S.listItem()
+                                                                    .title('Edit Topic')
+                                                                    .child(
+                                                                        S.document()
+                                                                            .schemaType(
+                                                                                'patristicTopic'
+                                                                            )
+                                                                            .documentId(topic._id)
+                                                                    )
+                                                            ])
+                                                    )
+                                            )
+                                        );
+                                }),
                             S.listItem()
                                 .title('Subtopics')
                                 .child(
