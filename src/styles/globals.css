@@ -330,6 +330,18 @@ body {
     }
 }
 
+.patristic-quotes-filter-dropdown {
+    z-index: 400;
+}
+
+@media (hover: none) {
+    .patristic-quotes-filter-dropdown {
+        max-height: min(260px, 45dvh);
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 .patristic-quotes-filter-pill {
     background-color: var(--apologetics-navlink-active-bg) !important;
     color: var(--apologetics-primary) !important;
